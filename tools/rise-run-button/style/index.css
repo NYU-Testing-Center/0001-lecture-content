@@ -1,0 +1,82 @@
+/* Hidden in the ordinary editor; visible only when RISE/reveal is active. */
+.cs1-run-button {
+  display: none;
+}
+
+body.rise-enabled .cs1-run-button,
+body:has(.reveal) .cs1-run-button {
+  display: flex;
+}
+
+body.rise-enabled .jp-CodeCell,
+body:has(.reveal) .jp-CodeCell {
+  position: relative;
+}
+
+body.rise-enabled .jp-CodeCell .jp-InputPrompt,
+body:has(.reveal) .jp-CodeCell .jp-InputPrompt {
+  visibility: hidden;
+}
+
+.cs1-run-button {
+  position: absolute;
+  top: 5px;
+  left: 8px;
+  z-index: 12;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 1.5px solid #57068c;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #57068c;
+  cursor: pointer;
+  transition: background 0.12s ease, color 0.12s ease, transform 0.12s ease;
+}
+
+.cs1-run-button svg {
+  margin-left: 2px;
+}
+
+.cs1-run-button:hover {
+  background: #57068c;
+  color: #ffffff;
+}
+
+.cs1-run-button:active {
+  transform: scale(0.92);
+}
+
+.cs1-run-button:focus-visible {
+  outline: 2px solid #b26a00;
+  outline-offset: 2px;
+}
+
+.cs1-run-button.cs1-run-button-busy {
+  cursor: progress;
+  border-color: #b26a00;
+  color: #b26a00;
+  animation: cs1-run-pulse 1s ease-in-out infinite;
+}
+
+@keyframes cs1-run-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.45;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cs1-run-button {
+    transition: none;
+  }
+  .cs1-run-button.cs1-run-button-busy {
+    animation: none;
+  }
+}

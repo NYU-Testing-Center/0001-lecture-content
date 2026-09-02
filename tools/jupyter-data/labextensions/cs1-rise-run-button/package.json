@@ -1,0 +1,45 @@
+{
+  "name": "cs1-rise-run-button",
+  "version": "1.0.0",
+  "description": "A per-cell Run button for RISE slideshows (CS0002 lecture decks).",
+  "keywords": [
+    "jupyter",
+    "jupyterlab",
+    "jupyterlab-extension",
+    "rise"
+  ],
+  "license": "BSD-3-Clause",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "style": "style/index.css",
+  "styleModule": "style/index.js",
+  "files": [
+    "lib/**/*.{d.ts,js,js.map}",
+    "style/**/*.{css,js}"
+  ],
+  "scripts": {
+    "build": "jlpm build:lib && jlpm build:labextension:dev",
+    "build:prod": "jlpm build:lib && jlpm build:labextension",
+    "build:lib": "tsc",
+    "build:labextension": "jupyter labextension build .",
+    "build:labextension:dev": "jupyter labextension build --development True ."
+  },
+  "dependencies": {
+    "@jupyterlab/application": "^4.1.2",
+    "@jupyterlab/cells": "^4.1.2",
+    "@jupyterlab/notebook": "^4.1.2"
+  },
+  "devDependencies": {
+    "@jupyterlab/builder": "^4.1.2",
+    "typescript": "~5.3.3"
+  },
+  "jupyterlab": {
+    "extension": true,
+    "outputDir": "../jupyter-data/labextensions/cs1-rise-run-button",
+    "_build": {
+      "load": "static/remoteEntry.4d87d7ae9c9d14a6fb9d.js",
+      "extension": "./extension",
+      "style": "./style"
+    }
+  }
+}

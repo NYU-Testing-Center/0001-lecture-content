@@ -1,0 +1,552 @@
+{
+  "id": "cs1_week_01_lecture_01_history_of_computing_introduction_to_computers",
+  "course": "CS 1",
+  "title": "Week 1, Lecture 1: History of Computing; Introduction to Computers",
+  "source": {
+    "platform": "ed",
+    "lesson_id": "116432",
+    "provenance": "authoritative screenshots and transcription supplied for migration"
+  },
+  "targets": ["codespaces"],
+  "presentation": {
+    "ui": "semantic-callouts-v1",
+    "include_title": true,
+    "include_exercise_index": false,
+    "rise": {
+      "theme": "simple",
+      "transition": "slide",
+      "start_slideshow_at": "selected"
+    }
+  },
+  "lecture_blocks": [
+    {
+      "id": "ed-645915-what-is-a-computer",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "645915",
+      "title": "What is a Computer?",
+      "layout": "nyu-text-slide",
+      "tags": ["ed-slide-645915", "section-history"],
+      "segments": [
+        {
+          "type": "list",
+          "items": [
+            "A computer is an information processing system which takes instructions from a program",
+            "Virtually all electronic devices either are computers or contain them.",
+            "Smartphones and tablets are handheld computers.",
+            "Many everyday machines, such as airplanes, cars, and electronic musical instruments, contain computers"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-645916-early-mechanical-computers",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "645916",
+      "title": "Early Mechanical Computers",
+      "layout": "nyu-reading-slide",
+      "tags": ["ed-slide-645916", "section-history", "image-placeholder"],
+      "segments": [
+        {"type": "paragraph", "text": "Charles Babbage designed the difference engine, an early mechanical computer, in the 19th Century"},
+        {"type": "paragraph", "text": "Babbage and his daughter, Ada Lovelace, were important figures in the early development of computers."},
+        {"type": "paragraph", "text": "Below is a picture of an early mechanical computer."},
+        {"type": "image", "src": "images/lecture_01/645916_difference_engine.png", "alt": "Charles Babbage's Difference Engine on display in a museum case."}
+      ]
+    },
+    {
+      "id": "ed-645917-alan-turing-and-the-turing-machine",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "645917",
+      "title": "Alan Turing and the Turing Machine",
+      "layout": "nyu-reading-slide",
+      "tags": ["ed-slide-645917", "section-history", "image-placeholder"],
+      "segments": [
+        {"type": "paragraph", "text": "British mathematician Alan Turing (1912-1954) developed many of the ideas that led to the development of the modern computer"},
+        {"type": "paragraph", "text": "One of his main conceptions was the Turing Machine, which consisted of a “head” which reads and writes symbols from/to the tape, which moves backwards and forwards so that different parts of the tape. Turing proved that the Turing Machine could execute a very wide range of programs."},
+        {"type": "paragraph", "text": "Turing influenced John Von Neumann, one of the leading early computer designers."},
+        {"type": "paragraph", "text": "Turing had a tragic life because he was treated horribly by the British government because he was gay, despite his invaluable services in code-cracking during WWII"},
+        {"type": "paragraph", "text": "Below is a model of a Turing Machine:"},
+        {"type": "image", "src": "images/lecture_01/645917_turing_machine_model.png", "alt": "A physical model of a Turing Machine with two tape reels."}
+      ]
+    },
+    {
+      "id": "ed-645918-turing-test",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "645918",
+      "title": "Turing Test",
+      "layout": "nyu-activity-slide",
+      "tags": ["ed-slide-645918", "section-history", "exercise-reflection", "not-auto-graded"],
+      "prairielearn_signpost": {
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2705687",
+        "location": "Week 1, Lecture 1 — first exercise in PrairieLearn list"
+      },
+      "segments": [
+        {"type": "prompt", "label": "Reflection", "text": "You may have heard of the \"Turing Test.\" If you have, please write a description of what it is. (Turing originally referred to it as the \"imitation game\" when he conceived of it in 1950. If you haven't heard of it, feel free to Google it!"}
+      ]
+    },
+    {
+      "id": "ed-645920-eniac",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "645920",
+      "title": "ENIAC: The First Electronic Digital Computer",
+      "layout": "nyu-text-slide",
+      "tags": ["ed-slide-645920", "section-history", "image-placeholder"],
+      "segments": [
+        {
+          "type": "list",
+          "items": [
+            "ENIAC was designed at the University of Pennsylvania for the US Army in 1945",
+            "Used to calculate artillery trajectories and in nuclear weapons research",
+            "Made out of 18,000 vacuum tubes (current computers use miniaturized transistors)",
+            "Modern day iPhones, iPads, and computers are more than a million times more powerful than ENIAC",
+            "Below is a photo of ENIAC."
+          ]
+        },
+        {"type": "image", "src": "images/lecture_01/645920_eniac.png", "alt": "A preserved section of the ENIAC computer on display at the University of Pennsylvania."}
+      ]
+    },
+    {
+      "id": "ed-645921-mainframe-computers",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "645921",
+      "title": "1950s to today: Mainframe Computers",
+      "layout": "nyu-text-slide",
+      "tags": ["ed-slide-645921", "section-history", "image-placeholder"],
+      "segments": [
+        {
+          "type": "list",
+          "items": [
+            "These are used by large corporations and other large organizations, like government agencies",
+            "Quite expensive",
+            "Most famous one is probably the IBM 370",
+            "Still used today; IBM’s current models are the Z series",
+            "Below is a picture of the IBM 370:"
+          ]
+        },
+        {"type": "image", "src": "images/lecture_01/645921_ibm_370.png", "alt": "An IBM System 370 mainframe control console."}
+      ]
+    },
+    {
+      "id": "ed-645922-minicomputers",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "645922",
+      "title": "1970s: Minicomputers",
+      "layout": "nyu-reading-slide",
+      "tags": ["ed-slide-645922", "section-history", "image-placeholder"],
+      "segments": [
+        {
+          "type": "list",
+          "items": [
+            "The 1970s saw the development of smaller, less expensive computers called minicomputers",
+            "This included Digital Equipment Corporation’s PDP-11 and Data General’s Eclipse MV",
+            "They were still too expensive for most individuals to own, but became affordable for smaller businesses and schools that couldn’t afford mainframe computers",
+            "Tracy Kidder’s The Soul of a New Machine is a good book about the minicomputer era",
+            "Below is a photo of the PDP-11:"
+          ]
+        },
+        {"type": "image", "src": "images/lecture_01/645922_pdp_11.png", "alt": "A Digital Equipment Corporation PDP-11 minicomputer cabinet."}
+      ]
+    },
+    {
+      "id": "ed-646264-personal-computers",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "646264",
+      "title": "1980s: Personal Computers",
+      "layout": "nyu-text-slide",
+      "tags": ["ed-slide-646264", "section-history", "image-placeholder"],
+      "segments": [
+        {
+          "type": "list",
+          "items": [
+            "The late 1970s saw the development of the personal computer, which was based on a CPU on a single chip",
+            "Best known examples were the IBM PC and its clones, and the Apple Macintosh",
+            "PCs and clones ran Microsoft’s MS-DOS and then Microsoft Windows",
+            "First computers that were inexpensive enough for individuals to own"
+          ]
+        },
+        {"type": "image", "src": "images/lecture_01/646264_early_personal_computers.png", "alt": "An early IBM personal computer and an early Apple Macintosh."}
+      ]
+    },
+    {
+      "id": "ed-646269-development-of-the-internet",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "646269",
+      "title": "1960s to today: Development of the Internet",
+      "layout": "nyu-reading-slide",
+      "tags": ["ed-slide-646269", "section-internet", "image-placeholder"],
+      "segments": [
+        {
+          "type": "list",
+          "items": [
+            "The Internet grew out of ARPAnet, a US military-sponsored project to connect laboratories, many at universities, that were conducting military-sponsored research",
+            "Early applications of the Internet were email and file transfer (FTP)",
+            "The World Wide Web was a later application run on the Internet",
+            "The following picture shows a timeline of the Internet."
+          ]
+        },
+        {"type": "image", "src": "images/lecture_01/646269_internet_timeline.png", "alt": "Timeline showing milestones in the development of the Internet and World Wide Web."}
+      ]
+    },
+    {
+      "id": "ed-646271-development-of-the-world-wide-web",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "646271",
+      "title": "1990s: The Development of the World Wide Web",
+      "layout": "nyu-reading-slide",
+      "tags": ["ed-slide-646271", "section-internet", "image-placeholder"],
+      "segments": [
+        {
+          "type": "list",
+          "items": [
+            "In 1989, Tim Berners-Lee and Robert Cailliau invented the World Wide Web at CERN, a physics research laboratory in Switzerland. It was made public in 1991.",
+            "Uses the hypertext transfer protocol (HTTP) and hypertext markup language (HTML) to link “pages” and “sites” on different machines on the internet",
+            "Early web browser: Netscape Navigator",
+            "Grew explosively, requiring the development of web search engines",
+            "Google founded in 1998",
+            "Below: the LinkedIn network of a single user"
+          ]
+        },
+        {"type": "image", "src": "images/lecture_01/646271_linkedin_network.png", "alt": "A LinkedIn map visualizing the professional network of one user."}
+      ]
+    },
+    {
+      "id": "ed-646272-market-power-of-technology-companies",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "646272",
+      "title": "Today: The Market Power of Technology Companies",
+      "layout": "nyu-reading-slide",
+      "tags": ["ed-slide-646272", "section-internet"],
+      "segments": [
+        {
+          "type": "list",
+          "items": [
+            "Google: search engine, internet advertising, Gmail, productivity software, Chrome Browser, Android OS",
+            "Apple: iPhones and iPads",
+            "Meta: Facebook, Instagram, Whatsapp",
+            "Twitter: Social Networking",
+            "LinkedIn: Social networking in business",
+            "Microsoft: PC operating systems, office productivity software",
+            "Amazon: E-Commerce",
+            "Oracle: databases",
+            "Adobe: “creative” software, PDF software"
+          ]
+        },
+        {"type": "paragraph", "text": "Market power is based on the fact that a network gets more useful and economical the more people participate in it. For instance, if everyone on my block is constantly ordering packages from Amazon, it becomes cheaper for Amazon to supply each item on a per-item basis (economies of scale). A social network is more useful to each of its members the more members it has."}
+      ]
+    },
+    {
+      "id": "ed-646273-parts-of-a-computer",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "646273",
+      "title": "Parts of a Computer",
+      "layout": "nyu-text-slide",
+      "tags": ["ed-slide-646273", "section-hardware", "image-placeholder"],
+      "segments": [
+        {
+          "type": "list",
+          "items": [
+            "CPU- microchip that is the “brain” of the computer; runs the programs",
+            "RAM- memory that holds programs and data temporarily",
+            "HDD- stores programs and data permanently (even when off)",
+            "Other parts shown are probably familiar",
+            "Not shown: wireless and wired network connections"
+          ]
+        },
+        {"type": "image", "src": "images/lecture_01/646273_computer_parts.png", "alt": "Diagram labeling a computer's CPU, RAM, hard drive, video card, case, monitor, keyboard, and mouse."}
+      ]
+    },
+    {
+      "id": "ed-646274-processor-cpu",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "646274",
+      "title": "The Processor (Central Processing Unit or CPU)",
+      "layout": "nyu-reading-slide",
+      "tags": ["ed-slide-646274", "section-hardware", "image-placeholder"],
+      "segments": [
+        {
+          "type": "list",
+          "items": [
+            "Every computer has at least one processor and most have several processors",
+            "The processor acts as the computer’s “brain” and coordinates all its operations.",
+            "A processor can perform four distinct operations (typically within one or more nanoseconds):"
+          ]
+        },
+        {"type": "list", "items": ["Receive a new instruction (fetch)", "Make sense of this instruction (decode)", "Perform the action defined by this instruction (execute)", "Store the result of the action (store)"]},
+        {"type": "paragraph", "text": "A processor is made up of miniaturized transistors and other components and circuits on a semiconductor “chip.” The following shows a microprocessor chip next to a penny."},
+        {"type": "image", "src": "images/lecture_01/646274_microprocessor_and_penny.png", "alt": "An Intel microprocessor next to a United States penny for scale."}
+      ]
+    },
+    {
+      "id": "ed-646275-moores-law",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "646275",
+      "title": "Moore's Law",
+      "layout": "nyu-text-slide",
+      "tags": ["ed-slide-646275", "section-hardware"],
+      "segments": [
+        {
+          "type": "list",
+          "items": [
+            "Advances in microchip design have facilitated the development of computer technology thanks to Moore’s Law. Gordon Moore, one of the founders of Intel, first formulated the law.",
+            "Moore’s Law is the empirical observation that the complexity of an integrated circuit (microchip) doubles about every two years.",
+            "It’s unclear how much longer Moore’s Law will continue to describe the state of affairs, but it has done so in the past.",
+            "Moore’s law is why computers have gotten faster and faster over time."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-646276-moores-law-illustrated",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "646276",
+      "title": "Moore's Law Illustrated",
+      "layout": "nyu-text-slide",
+      "tags": ["ed-slide-646276", "section-hardware", "image-placeholder", "visual-only-source"],
+      "segments": [
+        {"type": "image", "src": "images/lecture_01/646276_moores_law.png", "alt": "Our World in Data chart illustrating the growth in transistor counts described by Moore's Law."}
+      ]
+    },
+    {
+      "id": "ed-646277-computer-memory-ram",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "646277",
+      "title": "Computer Memory (RAM)",
+      "layout": "nyu-reading-slide",
+      "tags": ["ed-slide-646277", "section-hardware", "image-placeholder"],
+      "segments": [
+        {
+          "type": "list",
+          "items": [
+            "Computers, like us, need short-term memory in order to function properly",
+            "We call this “Random Access Memory” or RAM and it is very fast!",
+            "We call it “random” since the computer can selectively read and write to any place in its RAM in a fixed (short) amount of time",
+            "When a computer turns off, it loses what is stored in RAM (we call this volatility)",
+            "In general, the more RAM a system has, the better it performs. Often the amount of RAM is more important to performance than CPU speed, although that depends on the application."
+          ]
+        },
+        {"type": "paragraph", "text": "Here's a picture of some RAM \"sticks\" with memory chips on them."},
+        {"type": "image", "src": "images/lecture_01/646277_ram_modules.png", "alt": "Three computer RAM modules of different sizes."}
+      ]
+    },
+    {
+      "id": "ed-646278-long-term-computer-storage",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "646278",
+      "title": "Long Term Computer Storage",
+      "layout": "nyu-reading-slide",
+      "tags": ["ed-slide-646278", "section-hardware", "image-placeholder"],
+      "segments": [
+        {
+          "type": "list",
+          "items": [
+            "Temporary storage is accomplished in memory (RAM)",
+            "We use RAM for short term memory because it is very fast, but it is also volatile and loses it contents when the computer is shut off",
+            "Long term storage is, by definition, non-volatile- it has the ability to persist even if the power is off",
+            "It also typically holds far more data than the RAM can",
+            "Long term storage devices include hard drives, solid-state drives, and USB “key” drive",
+            "Sometimes this storage is available in the cloud"
+          ]
+        },
+        {"type": "paragraph", "text": "Here is a picture of a hard drive:"},
+        {"type": "image", "src": "images/lecture_01/646278_hard_drive.png", "alt": "An open hard disk drive showing its platter and actuator arm."}
+      ]
+    },
+    {
+      "id": "ed-646279-operating-system",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "646279",
+      "title": "The Operating System",
+      "layout": "nyu-text-slide",
+      "tags": ["ed-slide-646279", "section-software", "image-placeholder"],
+      "segments": [
+        {"type": "paragraph", "text": "The operating system (OS) is:"},
+        {
+          "type": "list",
+          "items": [
+            "Specialized software that coordinates all activities of the hardware",
+            "Used to run all application software through a user interface that starts and stops applications and manages files",
+            "Also known as as a “platform” or “software platform”",
+            "Examples: Unix/Linux, MacOS, Windows, Android, ChromeOS",
+            "Below are the Windows, MacOS, and Linux logos"
+          ]
+        },
+        {"type": "image", "src": "images/lecture_01/646279_operating_system_logos.png", "alt": "Windows, macOS Finder, and Linux Tux logos."}
+      ]
+    },
+    {
+      "id": "ed-646282-operating-systems-quiz",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "646282",
+      "title": "Quiz Question on Operating Systems",
+      "layout": "nyu-quiz-slide",
+      "tags": ["ed-slide-646282", "section-software", "exercise-quiz", "not-auto-graded"],
+      "prairielearn_signpost": {
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2705687",
+        "location": "Week 1, Lecture 1 — second exercise in PrairieLearn list"
+      },
+      "segments": [
+        {"type": "prompt", "label": "Question", "text": "Unix is a famous computer operating system developed in the 1970s. Many modern operating systems are based on Unix. Which of the following operating systems is not based on Unix? There is only one."},
+        {"type": "choices", "items": ["Linux", "iOS", "Microsoft Windows", "ChromeOS", "Android", "MacOS"]}
+      ]
+    },
+    {
+      "id": "ed-646283-application-software",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "646283",
+      "title": "Application Software",
+      "layout": "nyu-text-slide",
+      "tags": ["ed-slide-646283", "section-software", "image-placeholder"],
+      "segments": [
+        {"type": "paragraph", "text": "Application software is:"},
+        {"type": "list", "items": ["Software that serves to help users accomplish tasks, like write a paper (MS-Word), do some calculations (MS-Excel), or draw (Adobe Illustrator)"]},
+        {"type": "paragraph", "text": "Categories:"},
+        {"type": "list", "items": ["Productivity (MS-Office)", "Graphic Design", "Web Browsers", "Databases", "Communications (email, FaceTime)", "Entertainment"]},
+        {"type": "image", "src": "images/lecture_01/646283_application_software.png", "alt": "Examples of general-purpose application software represented by familiar application icons."}
+      ]
+    },
+    {
+      "id": "ed-646284-binary-storage",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "646284",
+      "title": "Computers Store Information in Binary",
+      "layout": "nyu-text-slide",
+      "tags": ["ed-slide-646284", "section-encoding"],
+      "segments": [
+        {"type": "list", "items": ["One binary digit or “bit” is a zero or a one.", "Eight bits is a “byte”", "Binary sequences encode:"]},
+        {"type": "list", "items": ["Instructions for the computer", "Numbers in binary: for instance 1011 is 11 in decimal", "Characters according to some character encoding", "Images as RGB (red-green-blue)"]}
+      ]
+    },
+    {
+      "id": "ed-646285-ascii",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "646285",
+      "title": "Encoding Characters: ASCII (American Standard Code for Information Interchange)",
+      "layout": "nyu-text-slide",
+      "tags": ["ed-slide-646285", "section-encoding", "image-placeholder", "visual-primary-source"],
+      "segments": [
+        {"type": "image", "src": "images/lecture_01/646285_ascii_character_binary_chart.png", "alt": "ASCII chart mapping characters to their binary encodings."}
+      ]
+    },
+    {
+      "id": "ed-646286-encoding-images",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "646286",
+      "title": "Encoding Images",
+      "layout": "nyu-text-slide",
+      "tags": ["ed-slide-646286", "section-encoding", "image-placeholder", "visual-primary-source"],
+      "segments": [
+        {"type": "image", "src": "images/lecture_01/646286_rgb_binary_encoding.png", "alt": "Diagram showing binary RGB values for red, green, blue, and yellow."}
+      ]
+    },
+    {
+      "id": "ed-646287-computers-only-understand-binary-codes",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "646287",
+      "title": "Computers Only Understand Binary Codes",
+      "layout": "nyu-reading-slide",
+      "tags": ["ed-slide-646287", "section-encoding", "image-placeholder"],
+      "segments": [
+        {"type": "list", "items": ["The underlying language, the machine language, of a computer is numerical and is expressed in binary (zeros and ones).", "Each code represents an instruction to the CPU (e.g. add two numbers)", "High-level languages, like Python and Java, are translated into machine language by a program called an interpreter or a compiler", "Python is usually an interpreted language but compilers exist", "Compilers produce faster code than interpreters"]},
+        {"type": "image", "src": "images/lecture_01/646287_language_translation.png", "alt": "Diagram showing high-level languages compiled to assembly language and then assembled into machine language."}
+      ]
+    },
+    {
+      "id": "ed-646288-machine-language",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "646288",
+      "title": "Machine Language",
+      "layout": "nyu-text-slide",
+      "tags": ["ed-slide-646288", "section-encoding", "image-placeholder"],
+      "segments": [
+        {"type": "paragraph", "text": "Instructions in machine language typically consist of a code for the instruction plus the numerical operands of the instruction, that is, the binary numbers it operates on, as in the following illustration:"},
+        {"type": "image", "src": "images/lecture_01/646288_machine_language_instruction.png", "alt": "Binary machine-language instruction with fields corresponding to ADD, 1, and 2."}
+      ]
+    },
+    {
+      "id": "ed-646289-high-level-language-timeline",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "646289",
+      "title": "High Level Computer Languages: A Timeline",
+      "layout": "nyu-text-slide",
+      "tags": ["ed-slide-646289", "section-programming-languages", "image-placeholder", "visual-primary-source"],
+      "segments": [
+        {"type": "image", "src": "images/lecture_01/646289_programming_language_timeline.png", "alt": "Timeline of high-level computer languages from 1940 through the 2010s."}
+      ]
+    },
+    {
+      "id": "ed-646290-python",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "646290",
+      "title": "Python",
+      "layout": "nyu-text-slide",
+      "tags": ["ed-slide-646290", "section-programming-languages", "image-placeholder"],
+      "segments": [
+        {"type": "paragraph", "text": "This semester we will be using Python to write our programs"},
+        {"type": "list", "items": ["It is a a high-level interpreted language", "Two modes"]},
+        {"type": "list", "items": ["Interactive", "Script"]},
+        {"type": "list", "items": ["It comes with IDLE when installed on your computer"]},
+        {"type": "list", "items": ["An Integrated Development Environment", "Named for Eric Idle of Monty Python’s Flying Circus (the name Python comes from there as well.)"]},
+        {"type": "image", "src": "images/lecture_01/646290_python_logo.png", "alt": "The Python programming language logo."}
+      ]
+    },
+    {
+      "id": "ed-646291-influences-on-python",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "646291",
+      "title": "Influences on Python",
+      "layout": "nyu-text-slide",
+      "tags": ["ed-slide-646291", "section-programming-languages"],
+      "segments": [
+        {"type": "list", "items": ["Structured Programming: Algol, Pascal, C, Java", "Object-Oriented Programming: Smalltalk, Java", "Functional Programming: Lisp, Haskell", "Hash-based programming (dictionaries): Perl", "Mapping functions: Lisp", "Lambda: Lisp", "Lists: Lisp", "Indentation, Sequences: ABC, SETL (the latter developed at NYU Courant)"]}
+      ]
+    },
+    {
+      "id": "ed-646292-a-first-program",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "646292",
+      "title": "A First Program",
+      "layout": "nyu-explanation-code-slide",
+      "tags": ["ed-slide-646292", "section-programming-languages", "code-demonstration"],
+      "segments": [
+        {"type": "paragraph", "text": "A First Program"},
+        {"type": "paragraph", "text": "The program on the right converts temperature from Fahrenheit to Celsius."},
+        {"type": "paragraph", "text": "The program uses the input function to get a value of Fahrenheit degrees from the user. It then converts that input to a floating point number using the float function. It stores the result in the degreesF variable. It then converts degreesF to degreesC using a formula, and prints out the result."}
+      ],
+      "code_cells": [
+        {
+          "content": "degreesF=float(input(\"How many degrees Fahrenheit?\"))\ndegreesC=(degreesF-32)*5/9\nprint(\"That is\", degreesC,\"degrees Celsius\")",
+          "tags": ["nyu-short-code", "interactive-input", "skip-auto-run"]
+        }
+      ],
+      "source_file": "convert.py"
+    }
+  ]
+}

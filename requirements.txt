@@ -1,0 +1,4 @@
+jupyterlab>=4.1.2,<5
+jupyterlab_rise>=0.43,<0.44
+ipykernel
+nbformat

@@ -1,0 +1,470 @@
+{
+  "id": "cs1_week_01_lecture_02_functions_print_variables_input_format",
+  "course": "CS 1",
+  "title": "Week 1, Lecture 2: Functions, Print, Variables, Input, Format",
+  "source": {
+    "platform": "ed",
+    "baseline": "docs/cs1_week_01_lecture_02_ed_content_baseline.md",
+    "path_or_url": "https://edstem.org/us/courses/62123/lessons/117103/slides/650718"
+  },
+  "targets": ["codespaces", "prairielearn"],
+  "presentation": {
+    "ui": "semantic-callouts-v1",
+    "include_title": false,
+    "include_exercise_index": false,
+    "rise": {
+      "theme": "simple",
+      "transition": "slide",
+      "start_slideshow_at": "selected"
+    }
+  },
+  "lecture_blocks": [
+    {
+      "id": "ed-software-development-process-requirements",
+      "block_type": "ed_slide",
+      "provenance": "ed-derived",
+      "ed_slide_id": "650718",
+      "title": "The Software Development Process — Defining Requirements",
+      "layout": "nyu-reading-slide",
+      "segments": [
+        {"type": "heading", "text": "Defining Requirements"},
+        {"type": "paragraph", "text": "The software development process starts with gathering requirements. This involves meeting with the ultimate end users of the software and finding out what they need, then documenting these needs in English."},
+        {"type": "paragraph", "text": "For instance, we might be developing a database application for theater schools for kids. These schools might need to sell tickets to shows that the schools stage with the kids, track students, track their parents, track donors (for non-profit schools), track the classes that the kids are enrolled in, track expenses and payroll, etc. All of these things are specified in the requirements document, written in English."},
+        {"type": "paragraph", "text": "After the requirements are developed, they are passed to the programmer to implement in code."}
+      ]
+    },
+    {
+      "id": "ed-software-development-process-testing-releases",
+      "block_type": "ed_slide",
+      "provenance": "ed-derived",
+      "ed_slide_id": "650718",
+      "title": "The Software Development Process — Testing and Releases",
+      "layout": "nyu-reading-slide",
+      "segments": [
+        {"type": "heading", "text": "Testing"},
+        {"type": "paragraph", "text": "After the first version of the program is completed, it is passed to \"alpha\" (internal) testers."},
+        {"type": "paragraph", "text": "As bugs are found, they are passed back to the developer for fixes. There are two main types of bugs: failure to meet the requirements, and meeting the requirements incorrectly."},
+        {"type": "paragraph", "text": "After alpha testing, the program proceeds to public beta testing. More bugs are collected and fixed. Some programs remain in beta a long time. For instance, Gmail was in beta from 2004 to 2009."},
+        {"type": "paragraph", "text": "After beta testing, the first official non-testing version-- the 1.0 version-- is released. Feature additions are associated with new version numbers. Major revisions are associated with full increments in the version, from 1.0 to 2.0, say. Most actively-used software is a constant work-in-progress."}
+      ]
+    },
+    {
+      "id": "ed-python-functions",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "650719",
+      "title": "Python: Functions",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {"type": "paragraph", "text": "We begin our study of Python with the study of Python functions."},
+        {"type": "list", "items": [
+          "A function is a piece of computer code that performs a particular action or set of actions",
+          "Python comes with a large number of built-in functions and you can write your own (we will be learning how later in the semester)",
+          "Functions always begin with a keyword followed by a pair of parenthesis, for example, `print()`",
+          "You send one or more \"arguments\" into the function by putting them in the parentheses. For instance, `print(\"hello world\")`",
+          "Different functions expect different types and number of arguments",
+          "When you ask Python to run a function, you say you have \"called\" the function"
+        ]},
+        {"type": "paragraph", "text": "Here is a bit of Python code that calls the print function three times."}
+      ],
+      "code_cells": [
+        {"content": "print(\"goodbye\",\"cruel\",\"world\", sep=' ')\nprint()\nprint('hi I\\'m back')", "tags": ["nyu-short-code"]}
+      ]
+    },
+    {
+      "id": "ed-python-strings",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "650720",
+      "title": "Python Strings",
+      "layout": "nyu-text-slide",
+      "segments": [
+        {"type": "list", "items": [
+          "Data that contains text is called a string, for example, \"Hello World\"",
+          "Strings can have zero or more characters in them",
+          "Strings in Python must be surrounded by a single quote (') a double quote (\") or a triple quote (\"\"\")"
+        ]}
+      ]
+    },
+    {
+      "id": "ed-printing-in-python",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "650721",
+      "title": "Printing in Python",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {"type": "paragraph", "text": "You can print multiple things in Python with one print statement. It separates them by spaces, and adds a new line at the end."},
+        {"type": "paragraph", "text": "Here are two ways to get the same output:"}
+      ],
+      "code_cells": [
+        {"content": "print(77, \"plus\", 33, \"is\", 110) # prints three numbers and two strings\nprint(\"77 plus 33 is 110\") # prints a single string", "tags": ["nyu-short-code"]}
+      ]
+    },
+    {
+      "id": "ed-more-printing-lines-end",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "650722",
+      "title": "More Printing: Separate Lines and `end`",
+      "layout": "nyu-code-comparison-slide",
+      "layout_variant": "nyu-code-stack-slide",
+      "segments": [
+        {"type": "paragraph", "text": "Separate print statements come out on separate lines."},
+        {"type": "paragraph", "text": "You can suppress the final new line by setting `end=\"\"`, but then you sometimes need to add explicit spaces."}
+      ],
+      "code_cells": [
+        {"content": "print(77, \"plus\")\nprint(33, \"is\")\nprint(110)", "tags": ["nyu-short-code"]},
+        {"content": "print(77,\"plus \",end=\"\")\nprint(33, \"is \",end=\"\")\nprint(110)", "tags": ["nyu-short-code"]}
+      ]
+    },
+    {
+      "id": "ed-more-printing-separator",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "650722",
+      "title": "More Printing: Changing the Separator",
+      "layout": "nyu-code-demo-slide",
+      "segments": [
+        {"type": "paragraph", "text": "You can change the separator."}
+      ],
+      "code_cells": [
+        {"content": "print(\"hello\", \"world!\")\nprint(\"hello\", \"world!\", sep=\" ? \")", "tags": ["nyu-short-code"]}
+      ]
+    },
+    {
+      "id": "ed-more-printing-equivalent",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "650722",
+      "title": "More Printing: Equivalent Output",
+      "layout": "nyu-code-comparison-slide",
+      "layout_variant": "nyu-code-stack-slide",
+      "segments": [
+        {"type": "paragraph", "text": "Here is are three ways to print the same thing, one way using one print statement and two ways using two."},
+        {"type": "paragraph", "text": "The following prints three lines with a single print statement by using a newline as the separator."}
+      ],
+      "code_cells": [
+        {"content": "print(\"hello\",\"there\",sep=\"! \")", "tags": ["nyu-short-code"]},
+        {"content": "print(\"hello!\", end=' ')\nprint(\" there\")", "tags": ["nyu-short-code"]},
+        {"content": "print(\"hel\",\"lo!\",sep='',end='')\nprint(\" there\")", "tags": ["nyu-short-code"]},
+        {"content": "print(\"hello\",\"there\",\"world!\",sep=\"\\n\")", "tags": ["nyu-short-code"]}
+      ]
+    },
+    {
+      "id": "ed-print-int-round-type",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "650723",
+      "title": "The Print, Int, Round, and Type Functions",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {"type": "paragraph", "text": "Print is an example of a function in Python. A function uses parentheses, takes one or more arguments, and produces a result."},
+        {"type": "paragraph", "text": "There are hundreds of functions in Python, and you can even write your own. We will be covering how to do this later on."},
+        {"type": "paragraph", "text": "Some more functions:"},
+        {"type": "list", "items": [
+          "The function `int` returns the integer part of a floating point number.",
+          "The function `round` rounds a floating point number to a given number of decimals (default zero).",
+          "The function `type` tells you the type of an object."
+        ]},
+        {"type": "paragraph", "text": "Here are some examples:"}
+      ],
+      "code_cells": [
+        {"content": "print(int(2.6)) # returns 2 and prints it\nprint(round(2.6)) # returns 3 and prints it\nprint(type(2.6)) # returns float\nprint(type(2)) # returns int", "tags": ["nyu-short-code"]}
+      ]
+    },
+    {
+      "id": "ed-variables-assignment",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "650726",
+      "title": "Variables in Python: Assignment",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {"type": "paragraph", "text": "You can think of a variable as a box that holds a value. The following are \"assignment statements\" that assign values to the variables city and population using the \"=\" symbol. One has a string value and one has an integer value."},
+        {"type": "paragraph", "text": "You can print out multiple variables and fixed strings in a single print statement, as below."}
+      ],
+      "code_cells": [
+        {"content": "city=\"New York City\"\npopulation=8419000\nprint(\"The population of\", city, \"is\", population)", "tags": ["nyu-short-code"]}
+      ]
+    },
+    {
+      "id": "ed-variables-reassignment",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "650726",
+      "title": "Variables in Python: Reassignment",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {"type": "paragraph", "text": "You can also change the value of a variable. That is why it is called a variable, since its value can change (vary) as a program runs."}
+      ],
+      "code_cells": [
+        {"content": "city=\"New York City\"\npopulation=8419000\nprint(\"The population of\",city,\"is\",population)\ncity=\"Boston\"\npopulation=684000\nprint(\"The population of\", city, \"is\", population)", "tags": ["nyu-short-code"]}
+      ]
+    },
+    {
+      "id": "ed-swapping-variables",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "650727",
+      "title": "Swapping the Values of Two Variables",
+      "layout": "nyu-code-comparison-slide",
+      "segments": [
+        {"type": "paragraph", "text": "What if we want to swap the values of two variables? We need a third variable as a temporary holder of one of the values."},
+        {"type": "paragraph", "text": "After we use the temporary third variable, we can use the \"del\" keyword to remove it."},
+        {"type": "paragraph", "text": "Note that if you try to print a variable that has been deleted, you will get an error, as in the following:"}
+      ],
+      "code_cells": [
+        {"content": "v1=10\nv2=20\nprint(v1,v2)\ntempvar=v1\nv1=v2\nv2=tempvar\n# remove the temporary variable\ndel tempvar\nprint(v1,v2)", "tags": ["nyu-long-code"]},
+        {"content": "myvar=10\nprint(myvar)\ndel myvar\nprint(myvar)", "tags": ["nyu-short-code", "expected-error", "skip-auto-run"]}
+      ]
+    },
+    {
+      "id": "ed-multiple-variables",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "650728",
+      "title": "Initializing Multiple Variables to the Same Value",
+      "layout": "nyu-code-only-slide",
+      "segments": [
+        {"type": "paragraph", "text": "We can initialize several variables to the same value if we want in a single line of code, as follows:"}
+      ],
+      "code_cells": [
+        {"content": "i=j=k=14\nprint(i,j,k)", "tags": ["nyu-short-code"]}
+      ]
+    },
+    {
+      "id": "ed-variable-names",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "650729",
+      "title": "Variable Names in Python",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {"type": "paragraph", "text": "Variable names in Python must contain only letters (upper and lower case), digits, or underscores. They cannot begin with a digit, but have to begin with either a letter or an underscore. Variable names can't contain spaces. The following are some valid variable names:"}
+      ],
+      "code_cells": [
+        {"content": "population_1961=2000000\n_myvar=2.1\nx99=\"hello\"\nprint(population_1961,_myvar,x99)", "tags": ["nyu-short-code"]}
+      ]
+    },
+    {
+      "id": "ed-case-sensitivity",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "650730",
+      "title": "Python's Case Sensitivity",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {"type": "paragraph", "text": "Python is case-sensitive. So the variables \"population_1961\" and \"Population_1961\" are distinct variables (as would be POPULATION_1961)."}
+      ],
+      "code_cells": [
+        {"content": "population_1961=2000000\nPopulation_1961=3000000\nprint(population_1961,Population_1961)", "tags": ["nyu-short-code"]}
+      ]
+    },
+    {
+      "id": "ed-variable-really",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "650731",
+      "title": "What is a Variable, Really?",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {"type": "paragraph", "text": "Although you can think of a variable as a box containing a value, more accurately a variable is actually a pointer to an object. So in the statement:"},
+        {"type": "paragraph", "text": "Python creates an object which is the integer 2000000 in its memory, and then creates a variable population_1961 which points to that object."}
+      ],
+      "code_cells": [
+        {"content": "population_1961=2000000", "tags": ["nyu-short-code"]}
+      ]
+    },
+    {
+      "id": "ed-variable-no-nos",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "650732",
+      "title": "Variable No-Nos",
+      "layout": "nyu-code-demo-slide",
+      "segments": [
+        {"type": "paragraph", "text": "You can't start a variable with a digit. The following code produces an error:"},
+        {"type": "paragraph", "text": "You can't use any of the following Python \"reserved words\" as a variable name:"},
+        {"type": "list", "items": ["'False','None', 'True', 'and', 'as', 'assert', 'break', 'class', 'continue','def', 'del', 'elif', 'else', 'except', 'finally', 'for', 'from', 'global','if', 'import', 'in', 'is', 'lambda', 'nonlocal', 'not', 'or', 'pass','raise', 'return', 'try', 'while', 'with', 'yield'"]},
+        {"type": "paragraph", "text": "This is because these names are used by Python itself; for instance \"if\" is used by the \"if\" statement in python."}
+      ],
+      "code_cells": [
+        {"content": "1961population=2000000", "tags": ["nyu-short-code", "expected-error", "skip-auto-run"]}
+      ]
+    },
+    {
+      "id": "ed-variable-name-quiz",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "650734",
+      "title": "Quiz",
+      "layout": "nyu-quiz-slide",
+      "prairielearn_signpost": {
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2705687",
+        "location": "Week 1, Lecture 2 — first exercise in PrairieLearn list"
+      },
+      "segments": [
+        {"type": "prompt", "label": "Question", "text": "Which of the following is not a valid Python variable name?"},
+        {"type": "choices", "items": ["pop", "_popVal", "pop!", "Pop_on_Top"]},
+        {"type": "link", "provenance": "supplemental", "href": "courseInstances/OpenPractice/assessments/CS1InClassExercises", "text": "Open the Variable Name Quiz practice assessment"}
+      ]
+    },
+    {
+      "id": "ed-naming-conventions",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "650735",
+      "title": "Common Variable Naming Conventions",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {"type": "paragraph", "text": "Often people put underscores inside variable names to make them more readable. Or they use \"camel case\" (an example of this is given below."},
+        {"type": "prompt", "text": "Why do you think it is called \"camel case\"?"}
+      ],
+      "code_cells": [
+        {"content": "rockettopspeed=1000 # can be hard to read without separators\nrocket_top_speed=1000 # added underscores, easier to read\nrocketTopSpeed=1000 # \"camel case\"", "tags": ["nyu-short-code"]}
+      ]
+    },
+    {
+      "id": "ed-input-function",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "650736",
+      "title": "The Input Function",
+      "layout": "nyu-code-interaction-slide",
+      "segments": [
+        {"type": "paragraph", "text": "The \"input\" function is used to take input from the user. It takes the prompt string as an argument and returns a string which represents the response. The input function returns when the user hits the \"enter\" key. Your program than resumes. For instance:"},
+        {"type": "prompt", "provenance": "supplemental", "label": "Execution note", "text": "This executable cell waits for keyboard input and should be run on its own, not during automated validation."}
+      ],
+      "code_cells": [
+        {"content": "name=input(\"What is your name?\")\nprint(\"Welcome, \",name,\"!\",sep='')", "tags": ["nyu-short-code", "interactive-input", "skip-auto-run"]}
+      ]
+    },
+    {
+      "id": "ed-input-returns-string",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "650737",
+      "title": "Input Returns a String",
+      "layout": "nyu-code-comparison-slide",
+      "layout_variant": "nyu-code-stack-slide",
+      "segments": [
+        {"type": "paragraph", "text": "The following will generate an error because nFish is a string and you can't add one to a string."},
+        {"type": "paragraph", "text": "Converting the output to an integer fixes the problem."},
+        {"type": "prompt", "provenance": "supplemental", "label": "Execution note", "text": "Both executable cells wait for keyboard input and should be run individually."}
+      ],
+      "code_cells": [
+        {"content": "nFish=input(\"How many fish do you have?\")\nprint(type(nFish))\nprint(nFish)\nprint(\"If you buy one more, you will have\",nFish+1,\"fish.\")", "tags": ["nyu-long-code", "interactive-input", "expected-error", "skip-auto-run"]},
+        {"content": "nFish=int(input(\"How many fish do you have?\"))\nprint(\"If you buy one more, you will have\",nFish+1,\"fish.\")", "tags": ["nyu-short-code", "interactive-input", "skip-auto-run"]}
+      ]
+    },
+    {
+      "id": "ed-mad-libs",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "650738",
+      "title": "Mad Libs",
+      "layout": "nyu-activity-slide",
+      "prairielearn_signpost": {
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2705687",
+        "location": "Week 1, Lecture 2 — second exercise in PrairieLearn list"
+      },
+      "segments": [
+        {"type": "paragraph", "text": "Using four input statements, have the user enter a noun, a verb, an adjective, and an adverb."},
+        {"type": "paragraph", "text": "Then have the program output the following text substituting in the user's input:"},
+        {"type": "prompt", "label": "Required output", "text": "The (adjective) (noun) was very hungry, so it decided to (adverb) (verb) to the nearest restaurant."},
+        {"type": "link", "provenance": "supplemental", "href": "courseInstances/OpenPractice/assessments/CS1InClassExercises", "text": "Open the Mad Libs practice assessment"}
+      ]
+    },
+    {
+      "id": "ed-mathematical-expressions",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "650739",
+      "title": "Mathematical Expressions",
+      "layout": "nyu-explanation-code-slide",
+      "layout_variant": "nyu-code-side-by-side-slide",
+      "segments": [
+        {"type": "paragraph", "text": "You can do mathematical calculations in Python. The following math operators exist:"},
+        {"type": "list", "items": ["addition: +", "subtraction: -", "multiplication: *", "division (floating point): /", "division (integer): //", "exponentiation: **", "modulus: %"]},
+        {"type": "paragraph", "text": "The following are some mathematical expressions using these operators (and parentheses)"}
+      ],
+      "code_cells": [
+        {"content": "sum=4+4.5 # 8.5\nprint(sum)\nsquare=3**2 # 9\nprint(square)\nprint(3+3*5) # 18\nprint((3+3)*5) # 30\nprint(7/2) # 3.5\nprint(7//2) # 3\nprint(14%5) # 4\ntotal= sum+square # 17.5\nprint(total)", "tags": ["nyu-long-code"]}
+      ]
+    },
+    {
+      "id": "ed-format-function-strings",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "650740",
+      "title": "The Format Function: Strings",
+      "layout": "nyu-code-demo-slide",
+      "layout_variant": "nyu-code-wrap-slide",
+      "segments": [
+        {"type": "paragraph", "text": "The format function formats strings and numbers according to a \"format string.\" Let's look at some examples, first with strings, then with integers, and then with floating point numbers:"}
+      ],
+      "code_cells": [
+        {"content": "print(\"123456789-123456789-123456789-123456789-\")\n# two strings + a third string\n# left justified in a field of width 20, then right justified in a field of width 10\n# < means left-justified, and > right-justified\nprint(format(\"Hello\",\"<20s\"),format(\"there\",\">10s\"),\" world\",sep=\"\")", "tags": ["nyu-long-code"]}
+      ]
+    },
+    {
+      "id": "ed-format-function-integers",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "650740",
+      "title": "The Format Function: Integers",
+      "layout": "nyu-code-demo-slide",
+      "segments": [],
+      "code_cells": [
+        {"content": "# integers\nprint(\"123456789-123456789-123456789-123456789-\")\n# left justified, then right justified\nprint(format(23,\"<20d\"),format(192,\">10d\"), sep='')", "tags": ["nyu-long-code"]}
+      ]
+    },
+    {
+      "id": "ed-format-function-floats",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "650740",
+      "title": "The Format Function: Floating Point Numbers",
+      "layout": "nyu-code-only-slide",
+      "segments": [],
+      "code_cells": [
+        {"content": "# floating point numbers\nprint(\"123456789-123456789-123456789-123456789-\")\n# left justified, then right justified\nx=23.885\nprint(format(x,\"<20.2f\"),format(192.1234,\">10.3f\"), sep='')\nprint(x)", "tags": ["nyu-long-code"]}
+      ]
+    },
+    {
+      "id": "ed-types",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "650741",
+      "title": "Types",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {"type": "paragraph", "text": "Every object has a type. We have seen three, string, integer, and floating point. Actually, this means it is a particular type of object belonging to a class of objects of that type. We will see more later in the semester, and will even learn how to define our own classes and types. Here are some examples:"}
+      ],
+      "code_cells": [
+        {"content": "x=1\ny=2\nprint(x, type(x))\nz=x/y\nprint(format(z,\"5.2f\"),type(z))\nname=\"Joe\"\nprint(name, type(name))", "tags": ["nyu-long-code"]}
+      ]
+    }
+  ],
+  "in_class_exercises": [
+    {
+      "exercise_id": "cs1_week_01_lecture_02_variable_name_quiz",
+      "title": "Variable Name Quiz",
+      "placement": "after Variable No-Nos",
+      "target": "prairielearn",
+      "prairielearn_question_path": "questions/InClassExercises/CS1/Week01Lecture02/VariableNameQuiz/Base",
+      "prairielearn_site_url": ""
+    },
+    {
+      "exercise_id": "cs1_week_01_lecture_02_mad_libs",
+      "title": "Mad Libs",
+      "placement": "after Input Returns a String",
+      "target": "prairielearn",
+      "prairielearn_question_path": "questions/InClassExercises/CS1/Week01Lecture02/MadLibs/Base",
+      "prairielearn_site_url": ""
+    }
+  ],
+  "prairielearn_assessment_path": "courseInstances/OpenPractice/assessments/CS1InClassExercises",
+  "prairielearn_assessment_title": "CS 1 In-Class Exercises"
+}
