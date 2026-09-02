@@ -1,7 +1,7 @@
 {
   "name": "cs1-rise-run-button",
   "version": "1.0.0",
-  "description": "A per-cell Run button for RISE slideshows (CS0002 lecture decks).",
+  "description": "A per-cell Run button for RISE slideshows (CS0001 lecture decks).",
   "keywords": [
     "jupyter",
     "jupyterlab",

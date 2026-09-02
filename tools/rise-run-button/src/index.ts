@@ -1,4 +1,4 @@
-/** A per-cell Run button for CS0002 RISE slideshows. */
+/** A per-cell Run button for CS0001 RISE slideshows. */
 
 import {
   JupyterFrontEnd,

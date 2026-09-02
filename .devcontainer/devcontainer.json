@@ -1,5 +1,5 @@
 {
-  "name": "CS0002 Lectures — JupyterLab + RISE",
+  "name": "CS0001 Lectures — JupyterLab + RISE",
   "image": "mcr.microsoft.com/devcontainers/python:1-3.12-bookworm",
   "remoteEnv": {
     "JUPYTER_PATH": "${containerWorkspaceFolder}/tools/jupyter-data"

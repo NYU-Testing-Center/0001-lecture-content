@@ -1,4 +1,4 @@
-// JupyterLab keyboard overrides for presenting CS0002 lectures.
+// JupyterLab keyboard overrides for presenting CS0001 lectures.
 //
 // Shift+Enter runs the active cell without selecting the next cell, so RISE
 // stays on the current slide while its output appears. Disabling JupyterLab's

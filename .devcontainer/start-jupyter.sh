@@ -32,7 +32,7 @@ URL=${URL/0.0.0.0/127.0.0.1}
 cat <<BANNER
 
   ┌──────────────────────────────────────────────────────────────┐
-  │  CS0002 lecture decks — JupyterLab + RISE                    │
+  │  CS0001 lecture decks — JupyterLab + RISE                    │
   └──────────────────────────────────────────────────────────────┘
 
   Open:  ${URL:-<starting, run .devcontainer/start-jupyter.sh again>}

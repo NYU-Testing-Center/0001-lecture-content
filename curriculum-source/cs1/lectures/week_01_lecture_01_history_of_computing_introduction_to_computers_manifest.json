@@ -80,8 +80,8 @@
       "layout": "nyu-activity-slide",
       "tags": ["ed-slide-645918", "section-history", "exercise-reflection", "not-auto-graded"],
       "prairielearn_signpost": {
-        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2705687",
-        "location": "Week 1, Lecture 1 — first exercise in PrairieLearn list"
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2727726",
+        "location": "Single-exercise PrairieLearn assessment"
       },
       "segments": [
         {"type": "prompt", "label": "Reflection", "text": "You may have heard of the \"Turing Test.\" If you have, please write a description of what it is. (Turing originally referred to it as the \"imitation game\" when he conceived of it in 1950. If you haven't heard of it, feel free to Google it!"}
@@ -399,8 +399,8 @@
       "layout": "nyu-quiz-slide",
       "tags": ["ed-slide-646282", "section-software", "exercise-quiz", "not-auto-graded"],
       "prairielearn_signpost": {
-        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2705687",
-        "location": "Week 1, Lecture 1 — second exercise in PrairieLearn list"
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2727725",
+        "location": "Single-exercise PrairieLearn assessment"
       },
       "segments": [
         {"type": "prompt", "label": "Question", "text": "Unix is a famous computer operating system developed in the 1970s. Many modern operating systems are based on Unix. Which of the following operating systems is not based on Unix? There is only one."},

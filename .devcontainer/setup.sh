@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# One-time container setup for the CS0002 lecture runtime.
+# One-time container setup for the CS0001 lecture runtime.
 # Runs as postCreateCommand, so students never type a pip command.
 
 set -euo pipefail
@@ -13,7 +13,7 @@ if ! command -v sudo >/dev/null 2>&1; then
   exit 1
 fi
 
-echo "==> Installing CS0002 lecture runtime"
+echo "==> Installing CS0001 lecture runtime"
 sudo python -m pip install --quiet --upgrade pip
 sudo python -m pip install --quiet -r requirements.txt
 
