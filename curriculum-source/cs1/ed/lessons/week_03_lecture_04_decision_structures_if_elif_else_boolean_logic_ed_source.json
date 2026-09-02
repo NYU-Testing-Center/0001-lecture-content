@@ -1,0 +1,1215 @@
+{
+  "schema_version": 1,
+  "course_id": "62123",
+  "source_course": "CS 0002, Section 10, Fall 2024",
+  "target_course": "CS0001",
+  "lesson_id": "118028",
+  "lesson_title": "Week 3, Lecture 4: Decision Structures (If--Elif-Else) and Boolean Logic",
+  "target_lecture": 4,
+  "week": 3,
+  "slide_count": 27,
+  "slides": [
+    {
+      "slide_id": "655871",
+      "slide_type": "document",
+      "title": "Decision Structures (If--Elif-Else) and Boolean Logic",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118028/slides/655871",
+      "segments": [
+        {
+          "html": "So far we have been writing programs that execute one step after another. But it is often necessary to have programs that take different actions based on the data input to them. This is done with a decision structure: an \"If\" statement.",
+          "text": "So far we have been writing programs that execute one step after another. But it is often necessary to have programs that take different actions based on the data input to them. This is done with a decision structure: an \"If\" statement.",
+          "type": "paragraph"
+        }
+      ],
+      "code_blocks": [],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "655874",
+      "slide_type": "document",
+      "title": "An Example: Overtime Pay",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118028/slides/655874",
+      "segments": [
+        {
+          "html": "For instance, in the U.S., many workers are legally entitled to extra pay if they work more than 40 hours in a week. This is often paid as \"time and a half\" which means that they get 1.5 times their hourly wage for every hour over 40.",
+          "text": "For instance, in the U.S., many workers are legally entitled to extra pay if they work more than 40 hours in a week. This is often paid as \"time and a half\" which means that they get 1.5 times their hourly wage for every hour over 40.",
+          "type": "paragraph"
+        },
+        {
+          "html": "For instance, if your hourly wage is $20, your overtime wage is $30. If you work 60 hours in a week, you earn 40 * $20 == $800 plus 20 * $30 == $600, for a total of $1400.",
+          "text": "For instance, if your hourly wage is $20, your overtime wage is $30. If you work 60 hours in a week, you earn 40 * $20 == $800 plus 20 * $30 == $600, for a total of $1400.",
+          "type": "paragraph"
+        },
+        {
+          "language": "",
+          "text": "hours=float(input(\"How many hours did you work last week?\"))\nwage=float(input(\"What was your hourly wage?\"))\nif (hours>40.0):\n  # calculate non-overtime and overtime pay\n  non_overtime=40*wage\n  overtime=(hours-40)*(wage*1.5)\nif (hours<=40.0):\n  # otherwise no overtime\n  non_overtime=hours*wage\n  overtime=0\ntotal_pay=non_overtime+overtime\nprint(f\"Your pay should be ${total_pay:.2f} of which ${overtime:.2f} was overtime pay.\")",
+          "type": "code"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "hours=float(input(\"How many hours did you work last week?\"))\nwage=float(input(\"What was your hourly wage?\"))\nif (hours>40.0):\n  # calculate non-overtime and overtime pay\n  non_overtime=40*wage\n  overtime=(hours-40)*(wage*1.5)\nif (hours<=40.0):\n  # otherwise no overtime\n  non_overtime=hours*wage\n  overtime=0\ntotal_pay=non_overtime+overtime\nprint(f\"Your pay should be ${total_pay:.2f} of which ${overtime:.2f} was overtime pay.\")",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "655875",
+      "slide_type": "document",
+      "title": "\"If\" statements",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118028/slides/655875",
+      "segments": [
+        {
+          "html": "\"If\" statements are an example of a selection statement. In the overtime example, the program selects and executes the first group of statements after the \"if\" when the expression following the first \"if\" is true and the second group when the expression following the second \"if\" is true. Since only one can be true, only one of these groups of statements are executed.",
+          "text": "\"If\" statements are an example of a selection statement. In the overtime example, the program selects and executes the first group of statements after the \"if\" when the expression following the first \"if\" is true and the second group when the expression following the second \"if\" is true. Since only one can be true, only one of these groups of statements are executed.",
+          "type": "paragraph"
+        },
+        {
+          "html": "The expression after the \"if\" is called a Boolean expression because it takes on a value of True or False. Here the expression following the first \"if\" is \"(hours&gt;40)\". This will be True if the variable \"hours\" (input by the user) is greater than 40 and False otherwise.",
+          "text": "The expression after the \"if\" is called a Boolean expression because it takes on a value of True or False. Here the expression following the first \"if\" is \"(hours>40)\". This will be True if the variable \"hours\" (input by the user) is greater than 40 and False otherwise.",
+          "type": "paragraph"
+        },
+        {
+          "html": "Boolean expressions are named after the nineteenth-century English mathematican George Boole who developed <a class=\"amber-el amber-link amber-el ed-focus-outline\" href=\"https://www.google.com/url?q=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FBoolean_algebra\" target=\"_blank\" rel=\"noopener noreferrer\">Boolean algebra</a>, which defined the True and False values and the AND, OR and NOT operations that underpin modern computing and the logic used in all computer languages, including Python. In the computer, True is represented by a value of 1 and False with a value of 0.",
+          "text": "Boolean expressions are named after the nineteenth-century English mathematican George Boole who developed Boolean algebra, which defined the True and False values and the AND, OR and NOT operations that underpin modern computing and the logic used in all computer languages, including Python. In the computer, True is represented by a value of 1 and False with a value of 0.",
+          "type": "paragraph"
+        },
+        {
+          "alt": "",
+          "height": 345,
+          "src": "https://static.us.edusercontent.com/files/0PQXyAVhCsovKagiswSd3DIG",
+          "type": "image",
+          "width": 297
+        }
+      ],
+      "code_blocks": [],
+      "links": [
+        {
+          "href": "https://www.google.com/url?q=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FBoolean_algebra",
+          "text": "Boolean algebra"
+        }
+      ],
+      "assets": [
+        {
+          "source_url": "https://static.us.edusercontent.com/files/0PQXyAVhCsovKagiswSd3DIG",
+          "width": 297,
+          "height": 345,
+          "local_path": "notebooks/cs1/images/lecture_04/655875_boolean_orders_lunch.png"
+        }
+      ]
+    },
+    {
+      "slide_id": "655876",
+      "slide_type": "document",
+      "title": "Boolean Expressions",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118028/slides/655876",
+      "segments": [
+        {
+          "items": [
+            "Used as the condition in the \"If\" statement and other statements that do logical tests that we will see later on (e.g. \"while\")",
+            "Usually formed using \"relational operators\" like less than (\"<\") or greater than which allow you to compare two values and get a result."
+          ],
+          "ordered": false,
+          "type": "list"
+        },
+        {
+          "language": "",
+          "text": "hours=float(input(\"How many hours did you work last week?\"))\n# (hours>40) is a Boolean expression\n# overtimeFlag is a Boolean variable which takes on the value of True or False\novertimeFlag=(hours>40)\nprint(\"Did you work overtime?\",overtimeFlag)\n\nif overtimeFlag:\n  print(\"You worked overtime.\")\nelse:\n  print(\"You didn't work overtime.\")",
+          "type": "code"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "hours=float(input(\"How many hours did you work last week?\"))\n# (hours>40) is a Boolean expression\n# overtimeFlag is a Boolean variable which takes on the value of True or False\novertimeFlag=(hours>40)\nprint(\"Did you work overtime?\",overtimeFlag)\n\nif overtimeFlag:\n  print(\"You worked overtime.\")\nelse:\n  print(\"You didn't work overtime.\")",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "655877",
+      "slide_type": "document",
+      "title": "Relational Operators",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118028/slides/655877",
+      "segments": [
+        {
+          "html": "Produce a value of True or False",
+          "text": "Produce a value of True or False",
+          "type": "paragraph"
+        },
+        {
+          "items": [
+            "a>b (a is greater than b)",
+            "a<b (a is less than b)",
+            "a==b (a is equal to b) (different from the assignment operator \"=\")",
+            "a!=b (a is not equal to b)",
+            "a<=b (a is less than or equal to b)",
+            "a>=b (a is greater than or equal to b)"
+          ],
+          "ordered": false,
+          "type": "list"
+        },
+        {
+          "language": "",
+          "text": "ageSimon=int(input(\"Enter Simon's age:\"))\nageSasha=int(input(\"Enter Sasha's age:\"))\nif (ageSimon>ageSasha):\n  print(\"Simon is older than Sasha\")\nelse:\n  print(\"Either Sasha is older than Simon, or they are the same age.\")",
+          "type": "code"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "ageSimon=int(input(\"Enter Simon's age:\"))\nageSasha=int(input(\"Enter Sasha's age:\"))\nif (ageSimon>ageSasha):\n  print(\"Simon is older than Sasha\")\nelse:\n  print(\"Either Sasha is older than Simon, or they are the same age.\")",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "655878",
+      "slide_type": "quiz",
+      "title": "Quiz",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118028/slides/655878",
+      "segments": [
+        {
+          "html": "If the value of the variable \"a\" is 9 and of the variable \"b\" is 10, which of the following Boolean expressions is False?",
+          "text": "If the value of the variable \"a\" is 9 and of the variable \"b\" is 10, which of the following Boolean expressions is False?",
+          "type": "paragraph"
+        },
+        {
+          "html": "a&gt;=b",
+          "text": "a>=b",
+          "type": "paragraph"
+        },
+        {
+          "html": "b&gt;a",
+          "text": "b>a",
+          "type": "paragraph"
+        },
+        {
+          "html": "b&gt;=a",
+          "text": "b>=a",
+          "type": "paragraph"
+        },
+        {
+          "html": "a!=b",
+          "text": "a!=b",
+          "type": "paragraph"
+        }
+      ],
+      "code_blocks": [],
+      "links": [],
+      "assets": [],
+      "quiz": {
+        "prompt": "If the value of the variable \"a\" is 9 and of the variable \"b\" is 10, which of the following Boolean expressions is False?",
+        "choices": [
+          "a>=b",
+          "b>a",
+          "b>=a",
+          "a!=b"
+        ],
+        "correct_answer_status": "present",
+        "correct_answer_provenance": "Ed staff edit view"
+      },
+      "activity_mapping": {
+        "question_path": "questions/InClassExercises/CS1/Week03Lecture04/Quiz655878/Base",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week03Lecture04Quiz655878",
+        "deployment_status": "pending"
+      }
+    },
+    {
+      "slide_id": "655882",
+      "slide_type": "quiz",
+      "title": "Quiz",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118028/slides/655882",
+      "segments": [
+        {
+          "html": "Given the following values, which of the following print statements outputs True? (there is more than one)<br class=\"amber-el amber-break\">a=99<br class=\"amber-el amber-break\">b=7<br class=\"amber-el amber-break\">c=-5<br class=\"amber-el amber-break\">d=92",
+          "text": "Given the following values, which of the following print statements outputs True? (there is more than one)\na=99\nb=7\nc=-5\nd=92",
+          "type": "paragraph"
+        },
+        {
+          "html": "print(a&gt;b)",
+          "text": "print(a>b)",
+          "type": "paragraph"
+        },
+        {
+          "html": "print(b&lt;c)",
+          "text": "print(b<c)",
+          "type": "paragraph"
+        },
+        {
+          "html": "print(b&gt;=c)",
+          "text": "print(b>=c)",
+          "type": "paragraph"
+        },
+        {
+          "html": "print(c&lt;=d)",
+          "text": "print(c<=d)",
+          "type": "paragraph"
+        },
+        {
+          "html": "print(a==(b+d))",
+          "text": "print(a==(b+d))",
+          "type": "paragraph"
+        },
+        {
+          "html": "print(d&lt;=(a+c))",
+          "text": "print(d<=(a+c))",
+          "type": "paragraph"
+        },
+        {
+          "html": "print(c!=b)",
+          "text": "print(c!=b)",
+          "type": "paragraph"
+        }
+      ],
+      "code_blocks": [],
+      "links": [],
+      "assets": [],
+      "quiz": {
+        "prompt": "Given the following values, which of the following print statements outputs True? (there is more than one)\na=99\nb=7\nc=-5\nd=92",
+        "choices": [
+          "print(a>b)",
+          "print(b<c)",
+          "print(b>=c)",
+          "print(c<=d)",
+          "print(a==(b+d))",
+          "print(d<=(a+c))",
+          "print(c!=b)"
+        ],
+        "correct_answer_status": "present",
+        "correct_answer_provenance": "Ed staff edit view"
+      },
+      "activity_mapping": {
+        "question_path": "questions/InClassExercises/CS1/Week03Lecture04/Quiz655882/Base",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week03Lecture04Quiz655882",
+        "deployment_status": "pending"
+      }
+    },
+    {
+      "slide_id": "655883",
+      "slide_type": "document",
+      "title": "Notes on Boolean Operators",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118028/slides/655883",
+      "segments": [
+        {
+          "items": [
+            "\"=\" and \"==\" are not the same\n\n\"=\" is used for variable assignment\n\n\"==\" is a comparison operator\n\ndon't use one when you mean the other (I still sometimes make this mistake even after years of programming)",
+            "\"!=\" checks if two values are diferent",
+            "\">=\" means greater than or equal to",
+            "\"<=\" means less than or equal to"
+          ],
+          "ordered": false,
+          "type": "list"
+        }
+      ],
+      "code_blocks": [],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "655884",
+      "slide_type": "document",
+      "title": "The IF-ELSE Structure",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118028/slides/655884",
+      "segments": [
+        {
+          "html": "The IF-ELSE structure allows you to perform one set of statements if a condition is true, and another if it is false.",
+          "text": "The IF-ELSE structure allows you to perform one set of statements if a condition is true, and another if it is false.",
+          "type": "paragraph"
+        },
+        {
+          "language": "",
+          "text": "temp=float(input(\"Enter the temperature in degrees Fahrenheit:\"))\nif temp<32:\n  print(\"Oh no!\")\n  print(\"It's freezing outside!\")\nelse:\n  print(\"Terrific!\")\n  print(\"It's not so bad outside.\")",
+          "type": "code"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "temp=float(input(\"Enter the temperature in degrees Fahrenheit:\"))\nif temp<32:\n  print(\"Oh no!\")\n  print(\"It's freezing outside!\")\nelse:\n  print(\"Terrific!\")\n  print(\"It's not so bad outside.\")",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "655886",
+      "slide_type": "code_challenge",
+      "title": "Exercise: Supermarket Bonus",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118028/slides/655886",
+      "segments": [
+        {
+          "html": "Your supermarket gives you a cash credit of $50 if you spend $500 or more in a month. Write a program that asks the user how much they spent last month, and prints out one of the following:",
+          "text": "Your supermarket gives you a cash credit of $50 if you spend $500 or more in a month. Write a program that asks the user how much they spent last month, and prints out one of the following:",
+          "type": "paragraph"
+        },
+        {
+          "items": [
+            "\"Congratulations! You will receive a cash credit of $50.\"",
+            "\"Sorry, try again next month.\""
+          ],
+          "ordered": false,
+          "type": "list"
+        }
+      ],
+      "code_blocks": [],
+      "links": [],
+      "assets": [],
+      "exercise": {
+        "prompt": "Your supermarket gives you a cash credit of $50 if you spend $500 or more in a month. Write a program that asks the user how much they spent last month, and prints out one of the following:\n\n\"Congratulations! You will receive a cash credit of $50.\"\n\n\"Sorry, try again next month.\"",
+        "prompt_segments": [
+          {
+            "html": "Your supermarket gives you a cash credit of $50 if you spend $500 or more in a month. Write a program that asks the user how much they spent last month, and prints out one of the following:",
+            "text": "Your supermarket gives you a cash credit of $50 if you spend $500 or more in a month. Write a program that asks the user how much they spent last month, and prints out one of the following:",
+            "type": "paragraph"
+          },
+          {
+            "items": [
+              "\"Congratulations! You will receive a cash credit of $50.\"",
+              "\"Sorry, try again next month.\""
+            ],
+            "ordered": false,
+            "type": "list"
+          }
+        ],
+        "scaffold": {
+          "content": "",
+          "file": "solution.py",
+          "language": "python"
+        },
+        "workspace_files": [
+          {
+            "content": "",
+            "language": "python",
+            "name": "solution.py",
+            "role": "Ed staff-visible workspace file"
+          }
+        ],
+        "reference_solution_status": "present",
+        "reference_solution_provenance": "Ed staff edit view sample solution"
+      },
+      "activity_mapping": {
+        "question_path": "questions/InClassExercises/CS1/Week03Lecture04/SupermarketBonus/Base",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week03Lecture04SupermarketBonus",
+        "deployment_status": "pending"
+      }
+    },
+    {
+      "slide_id": "655887",
+      "slide_type": "document",
+      "title": "String Comparison",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118028/slides/655887",
+      "segments": [
+        {
+          "items": [
+            "So far, we have seen numerical comparisons",
+            "We can also compare strings",
+            "Strings that contain alphabetic characters are compared alphabetically, character by character.",
+            "All uppercase characters are \"before\" all lowercase characters\n\nthis is because the ASCII codes for the uppercase characters are lower than those for the lowercase characters",
+            "Other characters are also compared using their ASCII codes"
+          ],
+          "ordered": false,
+          "type": "list"
+        },
+        {
+          "html": "All four print statements below output TRUE.",
+          "text": "All four print statements below output TRUE.",
+          "type": "paragraph"
+        },
+        {
+          "language": "",
+          "text": "print(\"aardvark\"<\"zebra\")\n\nprint(\"ZEBRA\"<\"aardvark\")\n\nprint(\"Zebra\"<\"aardvark\")\n\nprint(\"ZEbra\"<\"ZEidenberg\")",
+          "type": "code"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "print(\"aardvark\"<\"zebra\")\n\nprint(\"ZEBRA\"<\"aardvark\")\n\nprint(\"Zebra\"<\"aardvark\")\n\nprint(\"ZEbra\"<\"ZEidenberg\")",
+          "language": ""
+        }
+      ],
+      "links": [
+        {
+          "href": "https://theasciicode.com.ar/",
+          "text": "ASCII codes"
+        }
+      ],
+      "assets": []
+    },
+    {
+      "slide_id": "655888",
+      "slide_type": "document",
+      "title": "Examine ascii codes with the \"ord\" function",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118028/slides/655888",
+      "segments": [
+        {
+          "html": "The ord function returns the ascii code of a character.",
+          "text": "The ord function returns the ascii code of a character.",
+          "type": "paragraph"
+        },
+        {
+          "language": "",
+          "text": "print('A',ord('A'))\nprint('Z',ord('Z'))\nprint('a',ord('a'))\nprint('z',ord('z'))",
+          "type": "code"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "print('A',ord('A'))\nprint('Z',ord('Z'))\nprint('a',ord('a'))\nprint('z',ord('z'))",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "655889",
+      "slide_type": "document",
+      "title": "Comparing strings",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118028/slides/655889",
+      "segments": [
+        {
+          "html": "These two strings are the same through their fourth character. So they are compared based on the fifth character which is \"e\" in one and \"a\" in the other.",
+          "text": "These two strings are the same through their fourth character. So they are compared based on the fifth character which is \"e\" in one and \"a\" in the other.",
+          "type": "paragraph"
+        },
+        {
+          "html": "Since \"e\" is after \"a\", \"Michelle\" is considered to be after \"Michael\".",
+          "text": "Since \"e\" is after \"a\", \"Michelle\" is considered to be after \"Michael\".",
+          "type": "paragraph"
+        },
+        {
+          "language": "",
+          "text": "print(\"Michelle\">\"Michael\")",
+          "type": "code"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "print(\"Michelle\">\"Michael\")",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "655890",
+      "slide_type": "document",
+      "title": "ASCII Codes of Special Characters",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118028/slides/655890",
+      "segments": [
+        {
+          "html": "Special characters like the tab (\"\\t\") and the newline (\"\\n\") have their own ascii codes.",
+          "text": "Special characters like the tab (\"\\t\") and the newline (\"\\n\") have their own ascii codes.",
+          "type": "paragraph"
+        },
+        {
+          "language": "",
+          "text": "print(ord(\"\\n\"),ord(\"\\t\"))\nprint(\"\\n\">\"\\t\")\nprint('Hello\\t','there',sep='')\nprint(\"\\n\\n\",\"Goodbye!\",sep='')",
+          "type": "code"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "print(ord(\"\\n\"),ord(\"\\t\"))\nprint(\"\\n\">\"\\t\")\nprint('Hello\\t','there',sep='')\nprint(\"\\n\\n\",\"Goodbye!\",sep='')",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "655891",
+      "slide_type": "quiz",
+      "title": "Quiz",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118028/slides/655891",
+      "segments": [
+        {
+          "html": "Which of these Boolean expressions involving strings is False?",
+          "text": "Which of these Boolean expressions involving strings is False?",
+          "type": "paragraph"
+        },
+        {
+          "html": "\"BAT\"&lt;\"bat\"",
+          "text": "\"BAT\"<\"bat\"",
+          "type": "paragraph"
+        },
+        {
+          "html": "\"BAT\"&lt;\"apple\"",
+          "text": "\"BAT\"<\"apple\"",
+          "type": "paragraph"
+        },
+        {
+          "html": "\"BAT\"&gt;\"APPLE\"",
+          "text": "\"BAT\">\"APPLE\"",
+          "type": "paragraph"
+        },
+        {
+          "html": "\"BAT\"&gt;\"bat\"",
+          "text": "\"BAT\">\"bat\"",
+          "type": "paragraph"
+        }
+      ],
+      "code_blocks": [],
+      "links": [],
+      "assets": [],
+      "quiz": {
+        "prompt": "Which of these Boolean expressions involving strings is False?",
+        "choices": [
+          "\"BAT\"<\"bat\"",
+          "\"BAT\"<\"apple\"",
+          "\"BAT\">\"APPLE\"",
+          "\"BAT\">\"bat\""
+        ],
+        "correct_answer_status": "present",
+        "correct_answer_provenance": "Ed staff edit view"
+      },
+      "activity_mapping": {
+        "question_path": "questions/InClassExercises/CS1/Week03Lecture04/Quiz655891/Base",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week03Lecture04Quiz655891",
+        "deployment_status": "pending"
+      }
+    },
+    {
+      "slide_id": "655892",
+      "slide_type": "document",
+      "title": "The upper() and lower() string methods",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118028/slides/655892",
+      "segments": [
+        {
+          "html": "The upper() and lower() string methods can be used on a string to convert it to upper or lower case. The syntax is to put a dot after the string and then the method name. (A method is a function that is connected to a type of object, here a string.)",
+          "text": "The upper() and lower() string methods can be used on a string to convert it to upper or lower case. The syntax is to put a dot after the string and then the method name. (A method is a function that is connected to a type of object, here a string.)",
+          "type": "paragraph"
+        },
+        {
+          "language": "",
+          "text": "a=\"aardvark\"\nz=\"ZEBRA\"\nprint(a, a.upper())\nprint(z, z.lower())\n\nif (a.upper()<z):\n  print(f'{a.upper()} is less than {z}')\n\n# remember all of the lower case characters are greater than all of the upper case characters\nif (a>z):\n  print(f'{a} is greater than {z}')\n\nif (a<z.lower()):\n  print(f'{a} is less than {z.lower()}')",
+          "type": "code"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "a=\"aardvark\"\nz=\"ZEBRA\"\nprint(a, a.upper())\nprint(z, z.lower())\n\nif (a.upper()<z):\n  print(f'{a.upper()} is less than {z}')\n\n# remember all of the lower case characters are greater than all of the upper case characters\nif (a>z):\n  print(f'{a} is greater than {z}')\n\nif (a<z.lower()):\n  print(f'{a} is less than {z.lower()}')",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "655893",
+      "slide_type": "code_challenge",
+      "title": "Exercise: Alphabetize Two Strings",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118028/slides/655893",
+      "segments": [
+        {
+          "html": "Ask the user for two strings. Convert both to lower case. If one of the strings is s, this can be done with:",
+          "text": "Ask the user for two strings. Convert both to lower case. If one of the strings is s, this can be done with:",
+          "type": "paragraph"
+        },
+        {
+          "language": "",
+          "text": "s=s.lower()",
+          "type": "code"
+        },
+        {
+          "language": "",
+          "text": "s=s.lower()",
+          "type": "code"
+        },
+        {
+          "html": "Then print them out in alphabetical order.",
+          "text": "Then print them out in alphabetical order.",
+          "type": "paragraph"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "s=s.lower()",
+          "language": ""
+        },
+        {
+          "content": "s=s.lower()",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": [],
+      "exercise": {
+        "prompt": "Ask the user for two strings. Convert both to lower case. If one of the strings is s, this can be done with:\n\ns=s.lower()\n\nThen print them out in alphabetical order.",
+        "prompt_segments": [
+          {
+            "html": "Ask the user for two strings. Convert both to lower case. If one of the strings is s, this can be done with:",
+            "text": "Ask the user for two strings. Convert both to lower case. If one of the strings is s, this can be done with:",
+            "type": "paragraph"
+          },
+          {
+            "language": "",
+            "text": "s=s.lower()",
+            "type": "code"
+          },
+          {
+            "language": "",
+            "text": "s=s.lower()",
+            "type": "code"
+          },
+          {
+            "html": "Then print them out in alphabetical order.",
+            "text": "Then print them out in alphabetical order.",
+            "type": "paragraph"
+          }
+        ],
+        "scaffold": {
+          "content": "",
+          "file": "solution.py",
+          "language": "python"
+        },
+        "workspace_files": [
+          {
+            "content": "",
+            "language": "python",
+            "name": "solution.py",
+            "role": "Ed staff-visible workspace file"
+          }
+        ],
+        "reference_solution_status": "present",
+        "reference_solution_provenance": "Ed staff edit view sample solution"
+      },
+      "activity_mapping": {
+        "question_path": "questions/InClassExercises/CS1/Week03Lecture04/AlphabetizeTwoStrings/Base",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week03Lecture04AlphabetizeTwoStrings",
+        "deployment_status": "pending"
+      }
+    },
+    {
+      "slide_id": "655894",
+      "slide_type": "document",
+      "title": "String Length",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118028/slides/655894",
+      "segments": [
+        {
+          "html": "String length (the number of characters in a string) can be determined by the len() function, as in the following example:",
+          "text": "String length (the number of characters in a string) can be determined by the len() function, as in the following example:",
+          "type": "paragraph"
+        },
+        {
+          "language": "",
+          "text": "s=input(\"Please enter a string:\")\nprint(f\"The length of your string is {len(s)}.\")",
+          "type": "code"
+        },
+        {
+          "html": "The following code compares the length of two strings:",
+          "text": "The following code compares the length of two strings:",
+          "type": "paragraph"
+        },
+        {
+          "language": "",
+          "text": "s1=input(\"Please enter a string:\")\ns2=input(\"Please enter another string:\")\nif (len(s1)>=len(s2)):\n  print(f\"{s1} is longer than, or the same length as, {s2}\")\nelse:\n  print(f\"{s2} is longer than {s1}\")",
+          "type": "code"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "s=input(\"Please enter a string:\")\nprint(f\"The length of your string is {len(s)}.\")",
+          "language": ""
+        },
+        {
+          "content": "s1=input(\"Please enter a string:\")\ns2=input(\"Please enter another string:\")\nif (len(s1)>=len(s2)):\n  print(f\"{s1} is longer than, or the same length as, {s2}\")\nelse:\n  print(f\"{s2} is longer than {s1}\")",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "655895",
+      "slide_type": "document",
+      "title": "Nested Decision Structures",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118028/slides/655895",
+      "segments": [
+        {
+          "html": "The following example shows an \"if\" within an \"if\", using indentation. The second \"if\" is only executed if we reach the \"else\" of the first \"if.\"",
+          "text": "The following example shows an \"if\" within an \"if\", using indentation. The second \"if\" is only executed if we reach the \"else\" of the first \"if.\"",
+          "type": "paragraph"
+        },
+        {
+          "language": "",
+          "text": "# tropical fish thrive between 72 and 86 degrees, inclusive\ntemp=float(input(\"Enter the temperature in Fahrenheit:\"))\nif (temp>86):\n  print(\"Your fish are too hot!\")\nelse:\n  if (temp<72):\n    print(\"Your fish are too cold!\")\n  else:\n    print(\"Your fish are fine.\")",
+          "type": "code"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "# tropical fish thrive between 72 and 86 degrees, inclusive\ntemp=float(input(\"Enter the temperature in Fahrenheit:\"))\nif (temp>86):\n  print(\"Your fish are too hot!\")\nelse:\n  if (temp<72):\n    print(\"Your fish are too cold!\")\n  else:\n    print(\"Your fish are fine.\")",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "655896",
+      "slide_type": "document",
+      "title": "If-Elif-Else",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118028/slides/655896",
+      "segments": [
+        {
+          "html": "Elif is a way to express additional conditions on the same level as the first \"if\". Elif is short for \"else if.\" An elif is only run if all the previous conditions have failed to be True. The final \"else\" is only run if all of the previous conditions have failed. You can have as many elifs as you like.",
+          "text": "Elif is a way to express additional conditions on the same level as the first \"if\". Elif is short for \"else if.\" An elif is only run if all the previous conditions have failed to be True. The final \"else\" is only run if all of the previous conditions have failed. You can have as many elifs as you like.",
+          "type": "paragraph"
+        },
+        {
+          "html": "Elifs aren't necessary, because everything could be written with nested ifs as shown previously, but they can simplify code by eliminating the need for nesting.",
+          "text": "Elifs aren't necessary, because everything could be written with nested ifs as shown previously, but they can simplify code by eliminating the need for nesting.",
+          "type": "paragraph"
+        },
+        {
+          "language": "",
+          "text": "weight=float(input(\"Enter the weight of your dog in pounds:\"))\nif weight<=5:\n  dogType=\"teacup\"\nelif weight<=12:\n  dogType=\"toy\"\nelif weight<=24:\n  dogType=\"small\"\nelif weight<=57:\n  dogType=\"medium\"\nelse:\n  dogType=\"large\"\nprint(f\"You have a {dogType} dog.\")\nif (weight>=1000):\n  print(\"Is it Clifford?\")",
+          "type": "code"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "weight=float(input(\"Enter the weight of your dog in pounds:\"))\nif weight<=5:\n  dogType=\"teacup\"\nelif weight<=12:\n  dogType=\"toy\"\nelif weight<=24:\n  dogType=\"small\"\nelif weight<=57:\n  dogType=\"medium\"\nelse:\n  dogType=\"large\"\nprint(f\"You have a {dogType} dog.\")\nif (weight>=1000):\n  print(\"Is it Clifford?\")",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "655898",
+      "slide_type": "code_challenge",
+      "title": "Exercise: Skiing Weather",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118028/slides/655898",
+      "segments": [
+        {
+          "html": "The ideal weather for skiing is between 20 and 30 degrees Fahrenheit, inclusive.",
+          "text": "The ideal weather for skiing is between 20 and 30 degrees Fahrenheit, inclusive.",
+          "type": "paragraph"
+        },
+        {
+          "html": "Write a program that asks the user for the temperature in Fahrenheit.",
+          "text": "Write a program that asks the user for the temperature in Fahrenheit.",
+          "type": "paragraph"
+        },
+        {
+          "html": "Then print one of the following:",
+          "text": "Then print one of the following:",
+          "type": "paragraph"
+        },
+        {
+          "items": [
+            "It is too warm for skiing",
+            "It is too cold for skiing",
+            "It is good weather for skiing"
+          ],
+          "ordered": false,
+          "type": "list"
+        },
+        {
+          "html": "Use \"if\"-\"elif\"-\"else\" to write your program.",
+          "text": "Use \"if\"-\"elif\"-\"else\" to write your program.",
+          "type": "paragraph"
+        }
+      ],
+      "code_blocks": [],
+      "links": [],
+      "assets": [],
+      "exercise": {
+        "prompt": "The ideal weather for skiing is between 20 and 30 degrees Fahrenheit, inclusive.\n\nWrite a program that asks the user for the temperature in Fahrenheit.\n\nThen print one of the following:\n\nIt is too warm for skiing\n\nIt is too cold for skiing\n\nIt is good weather for skiing\n\nUse \"if\"-\"elif\"-\"else\" to write your program.",
+        "prompt_segments": [
+          {
+            "html": "The ideal weather for skiing is between 20 and 30 degrees Fahrenheit, inclusive.",
+            "text": "The ideal weather for skiing is between 20 and 30 degrees Fahrenheit, inclusive.",
+            "type": "paragraph"
+          },
+          {
+            "html": "Write a program that asks the user for the temperature in Fahrenheit.",
+            "text": "Write a program that asks the user for the temperature in Fahrenheit.",
+            "type": "paragraph"
+          },
+          {
+            "html": "Then print one of the following:",
+            "text": "Then print one of the following:",
+            "type": "paragraph"
+          },
+          {
+            "items": [
+              "It is too warm for skiing",
+              "It is too cold for skiing",
+              "It is good weather for skiing"
+            ],
+            "ordered": false,
+            "type": "list"
+          },
+          {
+            "html": "Use \"if\"-\"elif\"-\"else\" to write your program.",
+            "text": "Use \"if\"-\"elif\"-\"else\" to write your program.",
+            "type": "paragraph"
+          }
+        ],
+        "scaffold": {
+          "content": "",
+          "file": "solution.py",
+          "language": "python"
+        },
+        "workspace_files": [
+          {
+            "content": "",
+            "language": "python",
+            "name": "solution.py",
+            "role": "Ed staff-visible workspace file"
+          }
+        ],
+        "reference_solution_status": "present",
+        "reference_solution_provenance": "Ed staff edit view sample solution"
+      },
+      "activity_mapping": {
+        "question_path": "questions/InClassExercises/CS1/Week03Lecture04/SkiingWeather/Base",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week03Lecture04SkiingWeather",
+        "deployment_status": "pending"
+      }
+    },
+    {
+      "slide_id": "655899",
+      "slide_type": "document",
+      "title": "Logical Operators",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118028/slides/655899",
+      "segments": [
+        {
+          "html": "These work on Boolean values or expressions",
+          "text": "These work on Boolean values or expressions",
+          "type": "paragraph"
+        },
+        {
+          "items": [
+            "and: works on two Booleans of which both must be True",
+            "or: works on two Booleans at least one of which must be True",
+            "not: works on one Boolean and flips its value; True becomes False and vice versa"
+          ],
+          "ordered": false,
+          "type": "list"
+        },
+        {
+          "language": "",
+          "text": "print(True and True) # True\nprint(True and False) # False\nprint(True or True) # True\nprint(True or False) # True\nprint(False or False) # False\nprint(not False) # True\nprint(not True) # False",
+          "type": "code"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "print(True and True) # True\nprint(True and False) # False\nprint(True or True) # True\nprint(True or False) # True\nprint(False or False) # False\nprint(not False) # True\nprint(not True) # False",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "655900",
+      "slide_type": "quiz",
+      "title": "Quiz",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118028/slides/655900",
+      "segments": [
+        {
+          "html": "Which of these Boolean expressions involving numbers is False?",
+          "text": "Which of these Boolean expressions involving numbers is False?",
+          "type": "paragraph"
+        },
+        {
+          "html": "not(3&gt;2)",
+          "text": "not(3>2)",
+          "type": "paragraph"
+        },
+        {
+          "html": "(3&gt;4 or 4&gt;3)",
+          "text": "(3>4 or 4>3)",
+          "type": "paragraph"
+        },
+        {
+          "html": "(4&gt;3 and 5&gt;4)",
+          "text": "(4>3 and 5>4)",
+          "type": "paragraph"
+        },
+        {
+          "html": "(not(3&gt;4) or 3&gt;4)",
+          "text": "(not(3>4) or 3>4)",
+          "type": "paragraph"
+        }
+      ],
+      "code_blocks": [],
+      "links": [],
+      "assets": [],
+      "quiz": {
+        "prompt": "Which of these Boolean expressions involving numbers is False?",
+        "choices": [
+          "not(3>2)",
+          "(3>4 or 4>3)",
+          "(4>3 and 5>4)",
+          "(not(3>4) or 3>4)"
+        ],
+        "correct_answer_status": "present",
+        "correct_answer_provenance": "Ed staff edit view"
+      },
+      "activity_mapping": {
+        "question_path": "questions/InClassExercises/CS1/Week03Lecture04/Quiz655900/Base",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week03Lecture04Quiz655900",
+        "deployment_status": "pending"
+      }
+    },
+    {
+      "slide_id": "655901",
+      "slide_type": "document",
+      "title": "Fish Temperature: Another Version",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118028/slides/655901",
+      "segments": [
+        {
+          "html": "Following is another version of the the program which asks you what the temperature of your fish tank is. The program tells you if the temperature is in the proper range for tropical fish. It uses a boolean variable fishOK which is true if the temperature is in the proper range.",
+          "text": "Following is another version of the the program which asks you what the temperature of your fish tank is. The program tells you if the temperature is in the proper range for tropical fish. It uses a boolean variable fishOK which is true if the temperature is in the proper range.",
+          "type": "paragraph"
+        },
+        {
+          "language": "",
+          "text": "# tropical fish thrive between 72 and 86 degrees, inclusive\n# version using \"and\"\ntemp=float(input(\"Enter the temperature in Fahrenheit:\"))\nfishOK=(temp>=72) and (temp<=86)\nif (fishOK):\n  print(\"Your fish are fine.\")\nelse:\n  print(\"Your fish are too hot or too cold.\")",
+          "type": "code"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "# tropical fish thrive between 72 and 86 degrees, inclusive\n# version using \"and\"\ntemp=float(input(\"Enter the temperature in Fahrenheit:\"))\nfishOK=(temp>=72) and (temp<=86)\nif (fishOK):\n  print(\"Your fish are fine.\")\nelse:\n  print(\"Your fish are too hot or too cold.\")",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "655902",
+      "slide_type": "code_challenge",
+      "title": "Exercise: Can your dog travel with you in the cabin on a plane?",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118028/slides/655902",
+      "segments": [
+        {
+          "html": "Write a program that asks three yes/no questions about your dog:",
+          "text": "Write a program that asks three yes/no questions about your dog:",
+          "type": "paragraph"
+        },
+        {
+          "items": [
+            "whether they have all of their shots",
+            "whether they are a support animal",
+            "whether they weigh 18 pounds or less"
+          ],
+          "ordered": false,
+          "type": "list"
+        },
+        {
+          "html": "Assume the user will enter \"yes\" if appropriate.",
+          "text": "Assume the user will enter \"yes\" if appropriate.",
+          "type": "paragraph"
+        },
+        {
+          "html": "If your dog meets the first condition and at least one of the other two conditions, they can travel with you in the cabin; otherwise they must travel in the hold of the plane. Print out which of these it is based on the information you have input.",
+          "text": "If your dog meets the first condition and at least one of the other two conditions, they can travel with you in the cabin; otherwise they must travel in the hold of the plane. Print out which of these it is based on the information you have input.",
+          "type": "paragraph"
+        },
+        {
+          "html": "You can see if your input equals \"yes\" with a test like the following:",
+          "text": "You can see if your input equals \"yes\" with a test like the following:",
+          "type": "paragraph"
+        },
+        {
+          "language": "",
+          "text": "hasShots==\"yes\"",
+          "type": "code"
+        },
+        {
+          "language": "",
+          "text": "hasShots==\"yes\"",
+          "type": "code"
+        },
+        {
+          "html": "Generate a boolean expression that uses \"and\" and \"or\" to write this program.",
+          "text": "Generate a boolean expression that uses \"and\" and \"or\" to write this program.",
+          "type": "paragraph"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "hasShots==\"yes\"",
+          "language": ""
+        },
+        {
+          "content": "hasShots==\"yes\"",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": [],
+      "exercise": {
+        "prompt": "Write a program that asks three yes/no questions about your dog:\n\nwhether they have all of their shots\n\nwhether they are a support animal\n\nwhether they weigh 18 pounds or less\n\nAssume the user will enter \"yes\" if appropriate.\n\nIf your dog meets the first condition and at least one of the other two conditions, they can travel with you in the cabin; otherwise they must travel in the hold of the plane. Print out which of these it is based on the information you have input.\n\nYou can see if your input equals \"yes\" with a test like the following:\n\nhasShots==\"yes\"\n\nGenerate a boolean expression that uses \"and\" and \"or\" to write this program.",
+        "prompt_segments": [
+          {
+            "html": "Write a program that asks three yes/no questions about your dog:",
+            "text": "Write a program that asks three yes/no questions about your dog:",
+            "type": "paragraph"
+          },
+          {
+            "items": [
+              "whether they have all of their shots",
+              "whether they are a support animal",
+              "whether they weigh 18 pounds or less"
+            ],
+            "ordered": false,
+            "type": "list"
+          },
+          {
+            "html": "Assume the user will enter \"yes\" if appropriate.",
+            "text": "Assume the user will enter \"yes\" if appropriate.",
+            "type": "paragraph"
+          },
+          {
+            "html": "If your dog meets the first condition and at least one of the other two conditions, they can travel with you in the cabin; otherwise they must travel in the hold of the plane. Print out which of these it is based on the information you have input.",
+            "text": "If your dog meets the first condition and at least one of the other two conditions, they can travel with you in the cabin; otherwise they must travel in the hold of the plane. Print out which of these it is based on the information you have input.",
+            "type": "paragraph"
+          },
+          {
+            "html": "You can see if your input equals \"yes\" with a test like the following:",
+            "text": "You can see if your input equals \"yes\" with a test like the following:",
+            "type": "paragraph"
+          },
+          {
+            "language": "",
+            "text": "hasShots==\"yes\"",
+            "type": "code"
+          },
+          {
+            "language": "",
+            "text": "hasShots==\"yes\"",
+            "type": "code"
+          },
+          {
+            "html": "Generate a boolean expression that uses \"and\" and \"or\" to write this program.",
+            "text": "Generate a boolean expression that uses \"and\" and \"or\" to write this program.",
+            "type": "paragraph"
+          }
+        ],
+        "scaffold": {
+          "content": "",
+          "file": "solution.py",
+          "language": "python"
+        },
+        "workspace_files": [
+          {
+            "content": "",
+            "language": "python",
+            "name": "solution.py",
+            "role": "Ed staff-visible workspace file"
+          }
+        ],
+        "reference_solution_status": "present",
+        "reference_solution_provenance": "Ed staff edit view sample solution"
+      },
+      "activity_mapping": {
+        "question_path": "questions/InClassExercises/CS1/Week03Lecture04/CanYourDogTravelWithYouInTheCabinOnAPlane/Base",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week03Lecture04CanYourDogTravelWithYouInTheCabinOnAPlane",
+        "deployment_status": "pending"
+      }
+    },
+    {
+      "slide_id": "655903",
+      "slide_type": "document",
+      "title": "Generating Random Numbers and then Guessing them",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118028/slides/655903",
+      "segments": [
+        {
+          "html": "To generate random integers, you first import the random module and then you use the randint method. The randint method takes the two limits of the range of random integers you want (inclusively.)",
+          "text": "To generate random integers, you first import the random module and then you use the randint method. The randint method takes the two limits of the range of random integers you want (inclusively.)",
+          "type": "paragraph"
+        },
+        {
+          "html": "This program picks a random number and then sees if the user can guess it.",
+          "text": "This program picks a random number and then sees if the user can guess it.",
+          "type": "paragraph"
+        },
+        {
+          "language": "",
+          "text": "import random\n# generate a random integer between 1 and 3\nsecret=random.randint(1,3)\nguess=int(input(\"What is your guess between 1 and 3?\"))\nif (guess==secret):\n  print(\"You guessed it!\")\nelse:\n  print(\"Sorry, you didn't guess it.\")",
+          "type": "code"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "import random\n# generate a random integer between 1 and 3\nsecret=random.randint(1,3)\nguess=int(input(\"What is your guess between 1 and 3?\"))\nif (guess==secret):\n  print(\"You guessed it!\")\nelse:\n  print(\"Sorry, you didn't guess it.\")",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "655904",
+      "slide_type": "code_challenge",
+      "title": "Exercise: Manhattan Apartment Rental Prices",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118028/slides/655904",
+      "segments": [
+        {
+          "html": "Assume that the base monthly rent for a studio apartment in Manhattan is $3500, which is considered zero bedrooms, one bathroom. For each additional bedroom, the additional monthly cost is $500, and for each additional bathroom, $300. To live in a building with a doorman costs an additional $400 per month.",
+          "text": "Assume that the base monthly rent for a studio apartment in Manhattan is $3500, which is considered zero bedrooms, one bathroom. For each additional bedroom, the additional monthly cost is $500, and for each additional bathroom, $300. To live in a building with a doorman costs an additional $400 per month.",
+          "type": "paragraph"
+        },
+        {
+          "html": "Write a program that asks for for the number of bedrooms, the number of bathrooms, and whether or not they want a doorman, and gives the total rent. Assume they want the doorman if they answer \"yes\" to that question.",
+          "text": "Write a program that asks for for the number of bedrooms, the number of bathrooms, and whether or not they want a doorman, and gives the total rent. Assume they want the doorman if they answer \"yes\" to that question.",
+          "type": "paragraph"
+        }
+      ],
+      "code_blocks": [],
+      "links": [],
+      "assets": [],
+      "exercise": {
+        "prompt": "Assume that the base monthly rent for a studio apartment in Manhattan is $3500, which is considered zero bedrooms, one bathroom. For each additional bedroom, the additional monthly cost is $500, and for each additional bathroom, $300. To live in a building with a doorman costs an additional $400 per month.\n\nWrite a program that asks for for the number of bedrooms, the number of bathrooms, and whether or not they want a doorman, and gives the total rent. Assume they want the doorman if they answer \"yes\" to that question.",
+        "prompt_segments": [
+          {
+            "html": "Assume that the base monthly rent for a studio apartment in Manhattan is $3500, which is considered zero bedrooms, one bathroom. For each additional bedroom, the additional monthly cost is $500, and for each additional bathroom, $300. To live in a building with a doorman costs an additional $400 per month.",
+            "text": "Assume that the base monthly rent for a studio apartment in Manhattan is $3500, which is considered zero bedrooms, one bathroom. For each additional bedroom, the additional monthly cost is $500, and for each additional bathroom, $300. To live in a building with a doorman costs an additional $400 per month.",
+            "type": "paragraph"
+          },
+          {
+            "html": "Write a program that asks for for the number of bedrooms, the number of bathrooms, and whether or not they want a doorman, and gives the total rent. Assume they want the doorman if they answer \"yes\" to that question.",
+            "text": "Write a program that asks for for the number of bedrooms, the number of bathrooms, and whether or not they want a doorman, and gives the total rent. Assume they want the doorman if they answer \"yes\" to that question.",
+            "type": "paragraph"
+          }
+        ],
+        "scaffold": {
+          "content": "",
+          "file": "solution.py",
+          "language": "python"
+        },
+        "workspace_files": [
+          {
+            "content": "",
+            "language": "python",
+            "name": "solution.py",
+            "role": "Ed staff-visible workspace file"
+          }
+        ],
+        "reference_solution_status": "present",
+        "reference_solution_provenance": "Ed staff edit view sample solution"
+      },
+      "activity_mapping": {
+        "question_path": "questions/InClassExercises/CS1/Week03Lecture04/ManhattanApartmentRentalPrices/Base",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week03Lecture04ManhattanApartmentRentalPrices",
+        "deployment_status": "pending"
+      }
+    }
+  ]
+}

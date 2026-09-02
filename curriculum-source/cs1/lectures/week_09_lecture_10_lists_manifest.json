@@ -1,0 +1,894 @@
+{
+  "id": "cs1_week_09_lecture_10_lists",
+  "course": "CS 1",
+  "title": "Week 9, Lecture 10: Lists",
+  "source": {
+    "platform": "ed",
+    "lesson_id": "119186",
+    "course_id": "62123",
+    "inventory": "curriculum-source/cs1/ed/lessons/week_09_lecture_10_lists_ed_source.json"
+  },
+  "targets": [
+    "codespaces",
+    "prairielearn"
+  ],
+  "presentation": {
+    "ui": "semantic-callouts-v1",
+    "include_title": false,
+    "include_exercise_index": false,
+    "rise": {
+      "theme": "simple",
+      "transition": "slide",
+      "start_slideshow_at": "selected"
+    }
+  },
+  "lecture_blocks": [
+    {
+      "id": "ed-slide-662380",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662380",
+      "ed_slide_type": "document",
+      "title": "Variables So Far",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "So far we have been working with variables that can hold one piece of data, like floats, integers, strings, and booleans."
+        }
+      ],
+      "code_cells": [
+        {
+          "content": "x=15.5 # float\ny=10 # integer\nz=\"Hello There\" # string\nw=True #Boolean\nprint(x,y,z,w)\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-662381",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662381",
+      "ed_slide_type": "document",
+      "title": "Lists",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "There are also objects in Python that can hold multiple items of data. These include lists, tuples, dictionaries, and sets. This week we will talk about lists."
+        },
+        {
+          "type": "paragraph",
+          "text": "As you might imagine, a list is an object that can hold a list of items."
+        },
+        {
+          "type": "paragraph",
+          "text": "A list is a kind of sequence object in Python because the items in the list have an order."
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-662382",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662382",
+      "ed_slide_type": "document",
+      "title": "Creating a List in Python",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "You create a list in Python using bracket notation.",
+            "The code below will create a list in Python that holds three integers-- 1, 2, and 3-- in that order",
+            "You can think of a list as a \"book\" that holds a series of sheets of paper, each of holds one item.",
+            "You can print lists."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Lists can be composed of a single data type or a mix of data types."
+        },
+        {
+          "type": "paragraph",
+          "text": "You can use the repetition operator (\"*\") to have Python repeat a list, much as we have done with strings."
+        },
+        {
+          "type": "paragraph",
+          "text": "You can use the concatenation (\"+\") to combine lists, much as we have done with strings."
+        }
+      ],
+      "code_cells": [
+        {
+          "content": "my_list=[1,2,3]\nprint(my_list)\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        },
+        {
+          "content": "l1=[\"Adam\",\"Eve\",\"Cain\",\"Abel\"]\nl2=[\"Joe\",True,4.1,5]\nprint(l1)\nprint(l2)\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        },
+        {
+          "content": "# this will create a list consisting of 12 strings.\nsong=[\"Tra\",\"La\",\"La\"]*4\nprint(song)\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        },
+        {
+          "content": "# here a line of a song is represented by a list of the words in that line.\nline1=[\"Ob\", \"la\", \"di\"]\nline2=[\"Ob\", \"la\", \"da\"]\ncombinedLines=line1+line2\nprint(combinedLines)\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-662485",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662485",
+      "ed_slide_type": "document",
+      "title": "Indexing into Lists",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "You can index into lists in a similar manner that you did with strings. In the case of strings, indeces pull out individual characters; in the case of lists they pull out individual list elements.",
+            "The first index into a list is zero."
+          ]
+        }
+      ],
+      "code_cells": [
+        {
+          "content": "line1=[\"Ob\", \"la\", \"di\"]\nline2=[\"Ob\", \"la\", \"da\"]\ncombinedLines=line1+line2\n\nprint(combinedLines)\nprint(combinedLines[0])\nprint(combinedLines[2])\nprint(combinedLines[-1])\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-662486",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662486",
+      "ed_slide_type": "document",
+      "title": "Lists are Mutable",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "Lists, unlike strings, are mutable. That means that their elements can be changed."
+        }
+      ],
+      "code_cells": [
+        {
+          "content": "# create a list\nl=[1,2,3]\nprint(l)\n# change its third element\nl[2]=99\nprint(l)\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-662487",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662487",
+      "ed_slide_type": "document",
+      "title": "List Mechanics",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "List variables are \"references\"",
+            "That means that they point to objects in memory, and more than one variable can point to the same object. The following creates one list and then sets it up so that two variables point to that list."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "This means that if you change the list using one of the variables, the change will be reflected in the other one as well."
+        }
+      ],
+      "code_cells": [
+        {
+          "content": "mylist=[1,2,3]\nmylist2=mylist\nprint(mylist)\nprint(mylist2)\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        },
+        {
+          "content": "mylist=[1,2,3]\nmylist2=mylist\nmylist2[0]=999\nprint(mylist)\nprint(mylist2)\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-662488",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662488",
+      "ed_slide_type": "document",
+      "title": "Copying a List",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "Python will only create new lists when you use the square bracket list creation syntax",
+            "You can take advantage of this behavior to create true copies of your list objects, as in the following example:"
+          ]
+        }
+      ],
+      "code_cells": [
+        {
+          "content": "mylist1=[1,2,3] # this creates a list object\nmylist2=[]+mylist1 # this creates a second, distinct list object (with the same structure as the first)\nmylist1[0]=999 # therefore this only changes the first object\nprint(mylist1)\nprint(mylist2)\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-662489",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662489",
+      "ed_slide_type": "document",
+      "title": "Creating a empty list",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "Either of the following creates an empty list with no elements in it."
+        },
+        {
+          "type": "paragraph",
+          "text": "Sometimes you want to create a list with a certain number of identical elements. You can do this with the \"*\" operator. The following creates a list of 10 zeros."
+        }
+      ],
+      "code_cells": [
+        {
+          "content": "mylist1=[]\nmylist2=list()\nprint(mylist1)\nprint(mylist2)\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        },
+        {
+          "content": "mylist=[0]*10\nprint(mylist)\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-662490",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662490",
+      "ed_slide_type": "code_challenge",
+      "title": "Exercise: Random Integers",
+      "layout": "nyu-activity-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "Write a program that generates 1000 random integers between 1 and 10 inclusive. Use a list to keep track of how many you get of each integer. At the end, print that list."
+        }
+      ],
+      "prairielearn_signpost": {
+        "status": "deployment_pending",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week09Lecture10RandomIntegers",
+        "question_path": "questions/InClassExercises/CS1/Week09Lecture10/RandomIntegers/Base"
+      }
+    },
+    {
+      "id": "ed-slide-662491",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662491",
+      "ed_slide_type": "document",
+      "title": "Creating Lists Using the Range Function",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "You can also create lists using the range function. For instance, if you want the multiples of 5 between 5 and 100, do the following:"
+        }
+      ],
+      "code_cells": [
+        {
+          "content": "m5=list(range(5,101,5))\nprint(m5)\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-662492",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662492",
+      "ed_slide_type": "document",
+      "title": "Looping Over the Values of a List",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "You can loop over the values of a list using the \"in\" keyword, as in the following. Each time through, your loop variable takes on the next value in the list."
+        }
+      ],
+      "code_cells": [
+        {
+          "content": "choices=[\"eenie\",\"meanie\",\"minee\",\"moe\"]\nfor c in choices:\n  print(c)\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-662493",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662493",
+      "ed_slide_type": "code_challenge",
+      "title": "Exercise: Professional Level",
+      "layout": "nyu-activity-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "Given the following list of golf scores:"
+        },
+        {
+          "type": "paragraph",
+          "text": "golf_scores=[72, 65, 81, 93, 71, 69, 85, 67]"
+        },
+        {
+          "type": "paragraph",
+          "text": "golf_scores=[72, 65, 81, 93, 71, 69, 85, 67]"
+        },
+        {
+          "type": "paragraph",
+          "text": "Write a program that loops through them and finds how many of are professional level (72 or below)."
+        }
+      ],
+      "prairielearn_signpost": {
+        "status": "deployment_pending",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week09Lecture10ProfessionalLevel",
+        "question_path": "questions/InClassExercises/CS1/Week09Lecture10/ProfessionalLevel/Base"
+      }
+    },
+    {
+      "id": "ed-slide-662495",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662495",
+      "ed_slide_type": "document",
+      "title": "Drawbacks to Using \"for\" Loops with \"in\" to iterate through a list",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "A \"for\" loop is a convenient way to iterate through a list",
+            "The loop target variable assumes the value of each list item in turn",
+            "However, you can't change the list this way. See the following example:"
+          ]
+        }
+      ],
+      "code_cells": [
+        {
+          "content": "mylist=[1,2,3]\nfor n in mylist:\n  n=n*5\n# no effect on the list!\nprint(mylist)\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-662496",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662496",
+      "ed_slide_type": "document",
+      "title": "Changing List Items",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "In order to change a list item, you need to know the index of the item you wish to change. For example:"
+          ]
+        }
+      ],
+      "code_cells": [
+        {
+          "content": "mylist=[1,2,3]\nmylist[1]=444\nprint(mylist)\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-662497",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662497",
+      "ed_slide_type": "document",
+      "title": "Iterating Over a List Using Index Values",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "There are two techniques for iterating over a list using index values. They are:"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "Setting up a counter variable outside the loop and continually updating the variable as you move to the next position in the list",
+            "Using the range() function to create a custom range that represents the size of your list"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-662498",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662498",
+      "ed_slide_type": "document",
+      "title": "Using a Counter Variable",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "You can add a counter variable to your \"for\" loop to keep track of the list index. The following code doubles each element in the list."
+        }
+      ],
+      "code_cells": [
+        {
+          "content": "mylist=[1,2,3]\ncounter=0\nfor _ in mylist:\n  mylist[counter]*=2\n  counter+=1\nprint(mylist)\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-662499",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662499",
+      "ed_slide_type": "document",
+      "title": "Using the range Function",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "The range function will also generate all of the indeces of the list, when combined with the len function. The following code is another way to double all of the elements of a list."
+        }
+      ],
+      "code_cells": [
+        {
+          "content": "mylist=[1,2,3]\nfor i in range(len(mylist)):\n  mylist[i]*=2\nprint(mylist)\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-662500",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662500",
+      "ed_slide_type": "code_challenge",
+      "title": "Exercise: Fibonacci Sequence",
+      "layout": "nyu-activity-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "The Fibonacci sequence starts with [0,1] and then each number after that is the sum of the previous two. Initialize a list to contain ten zeros (hint: use the \"*\" operator) and then set the second element to 1. Then use a loop to fill in the third through tenth values of the list. Then print the list."
+        }
+      ],
+      "prairielearn_signpost": {
+        "status": "deployment_pending",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week09Lecture10FibonacciSequence",
+        "question_path": "questions/InClassExercises/CS1/Week09Lecture10/FibonacciSequence/Base"
+      }
+    },
+    {
+      "id": "ed-slide-662501",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662501",
+      "ed_slide_type": "code_challenge",
+      "title": "Exercise: Prices",
+      "layout": "nyu-activity-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "Consider the following list of prices: [1.99, 2.99, 3.99, 4.99, 5.99]. Transform this list so that the prices include the 8.875 percent sales tax charged in New York City."
+        }
+      ],
+      "prairielearn_signpost": {
+        "status": "deployment_pending",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week09Lecture10Prices",
+        "question_path": "questions/InClassExercises/CS1/Week09Lecture10/Prices/Base"
+      }
+    },
+    {
+      "id": "ed-slide-662503",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662503",
+      "ed_slide_type": "document",
+      "title": "Slicing Lists",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "You can extract multiple items from a list.",
+            "This is done with slicing; the syntax for this is the same as what we saw for strings.",
+            "As was the case with strings, the slicing syntax is similar to the range function"
+          ]
+        }
+      ],
+      "code_cells": [
+        {
+          "content": "names=[\"Amy\",\"Bob\",\"Carol\",\"Dave\",\"Eddie\",\"Flo\"]\nsomeNames=names[1:4]\nprint(someNames)\n\nmoreNames=names[-2:]\nprint(moreNames)\n\notherNames=names[0:-1:2]\nprint(otherNames)\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-662504",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662504",
+      "ed_slide_type": "code_challenge",
+      "title": "Exercise: List Slicing",
+      "layout": "nyu-activity-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "Write a program that uses the range function to create a list of all of the numbers between 1 and 100. Then use list slicing to create a second list of all of the even numbers in that interval from the first list."
+        }
+      ],
+      "prairielearn_signpost": {
+        "status": "deployment_pending",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week09Lecture10ListSlicing",
+        "question_path": "questions/InClassExercises/CS1/Week09Lecture10/ListSlicing/Base"
+      }
+    },
+    {
+      "id": "ed-slide-662505",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662505",
+      "ed_slide_type": "document",
+      "title": "The \"in\" Operator for Lists",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "The \"in\" operator returns True or False depending on whether it finds an item in a list."
+        }
+      ],
+      "code_cells": [
+        {
+          "content": "foods=[\"pie\",\"cake\",\"pizza\"]\nif \"lasagne\" in foods:\n  print(\"'lasagne' found\")\nelse:\n  print(\"'lasagne' not found\")\nif \"pizza\" in foods:\n  print(\"'pizza' found\")\nelse:\n  print(\"'pizza' not found\")\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-662506",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662506",
+      "ed_slide_type": "document",
+      "title": "The \"index\" Method",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "The index method gives the index of an item in a list. If the item is not in the list, it gives an error."
+        }
+      ],
+      "code_cells": [
+        {
+          "content": "foods=[\"pie\",\"cake\",\"pizza\"]\nprint(foods.index('pizza'))\n# this would generate an error\n# print(foods.index('lasagne'))\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-662507",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662507",
+      "ed_slide_type": "code_challenge",
+      "title": "Exercise: Index Method",
+      "layout": "nyu-activity-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "Given the following two lists of products and their respective prices, ask the user for the name of a product and if it is in the list, print out the price."
+        },
+        {
+          "type": "paragraph",
+          "text": "products=['peanut butter','jelly','bread']prices=[3.99,2.99,1.99]"
+        },
+        {
+          "type": "paragraph",
+          "text": "products=['peanut butter','jelly','bread']prices=[3.99,2.99,1.99]"
+        },
+        {
+          "type": "paragraph",
+          "text": "Hint: use the index method."
+        }
+      ],
+      "prairielearn_signpost": {
+        "status": "deployment_pending",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week09Lecture10IndexMethod",
+        "question_path": "questions/InClassExercises/CS1/Week09Lecture10/IndexMethod/Base"
+      }
+    },
+    {
+      "id": "ed-slide-662508",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662508",
+      "ed_slide_type": "document",
+      "title": "Adding items to a list",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "You have already seen a couple of ways in which you can add items to a list:\n\nRepeat the list with the \"*\" operator\n\nConcatenate two lists together with the \"+\" operator",
+            "Another way is to use the append method. It allows you to add an item to the end of a list."
+          ]
+        }
+      ],
+      "code_cells": [
+        {
+          "content": "mylist=[\"Alan\",\"Betty\",\"Chris\"]\nmylist.append(\"Dave\")\nprint(mylist)\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-662509",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662509",
+      "ed_slide_type": "code_challenge",
+      "title": "Exercise: Intersection",
+      "layout": "nyu-activity-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "Given the following two lists:"
+        },
+        {
+          "type": "paragraph",
+          "text": "a=[1,2,3,4,5]b=[2,3,10,11,12,1]"
+        },
+        {
+          "type": "paragraph",
+          "text": "a=[1,2,3,4,5]b=[2,3,10,11,12,1]"
+        },
+        {
+          "type": "paragraph",
+          "text": "Write a program that finds their intersection, that is, the list of items that are in both lists, and print it out."
+        }
+      ],
+      "prairielearn_signpost": {
+        "status": "deployment_pending",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week09Lecture10Intersection",
+        "question_path": "questions/InClassExercises/CS1/Week09Lecture10/Intersection/Base"
+      }
+    },
+    {
+      "id": "ed-slide-662510",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662510",
+      "ed_slide_type": "document",
+      "title": "Sorting a list",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "You can use the sort method to sort a list (numerically or alphabetically). It replaces the list with the sorted version."
+        }
+      ],
+      "code_cells": [
+        {
+          "content": "fruits=['melon','orange','banana']\nfruits.append('apple')\nprint(fruits)\nfruits.sort()\nprint(fruits)\nsequence=list(range(10,0,-1))\nprint(sequence)\nsequence.sort()\nprint(sequence)\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-662511",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662511",
+      "ed_slide_type": "code_challenge",
+      "title": "Exercise: Sorting a List",
+      "layout": "nyu-activity-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "Write a program that asks the user for a series of first names, one after the other. End the program when the user types \"stop\". Print out the list and then a sorted version of it."
+        }
+      ],
+      "prairielearn_signpost": {
+        "status": "deployment_pending",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week09Lecture10SortingAList",
+        "question_path": "questions/InClassExercises/CS1/Week09Lecture10/SortingAList/Base"
+      }
+    },
+    {
+      "id": "ed-slide-662513",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662513",
+      "ed_slide_type": "document",
+      "title": "The max and min Functions",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "You can use the max and min functions to find the largest and smallest elements of a list."
+        }
+      ],
+      "code_cells": [
+        {
+          "content": "prices = [3.99, 2.99, 1.99]\nprint(f\"The highest price is ${max(prices)} and the lowest price is ${min(prices)}.\")\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-662514",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662514",
+      "ed_slide_type": "document",
+      "title": "Removing an Item",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "You can use the \"remove\" method to remove an item from the list."
+        },
+        {
+          "type": "paragraph",
+          "text": "It will generate an error if it is not in the list, so you might want to check if it is using the \"in\" operator first."
+        }
+      ],
+      "code_cells": [
+        {
+          "content": "prices=[3.99,2.99,1.99]\nprices.remove(2.99)\nprint(prices)\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-662515",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662515",
+      "ed_slide_type": "document",
+      "title": "Removing an Item by its Position",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "You can also use the \"del\" keyword to remove an item by specifying its index position."
+        }
+      ],
+      "code_cells": [
+        {
+          "content": "prices=[3.99,2.99,1.99]\ndel prices[1]\nprint(prices)\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-662516",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662516",
+      "ed_slide_type": "document",
+      "title": "Reversing a List",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "You can use the \"reverse\" method on list to reverse the order of its elements."
+        },
+        {
+          "type": "paragraph",
+          "text": "This will not sort the list, but will just reverse the order."
+        }
+      ],
+      "code_cells": [
+        {
+          "content": "names=[\"Alan\",\"Betty\",\"Dave\",\"Chris\"]\nnames.reverse()\nprint(names)\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-662518",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662518",
+      "ed_slide_type": "code_challenge",
+      "title": "Exercise: Lottery",
+      "layout": "nyu-activity-slide",
+      "segments": [
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "Write a program which generates a lottery pick, stored as a Python list, which consists of five random numbers between 1 and 60 inclusive",
+            "No duplicate numbers are allowed",
+            "Sort the numbers in ascending order and print them out"
+          ]
+        }
+      ],
+      "prairielearn_signpost": {
+        "status": "deployment_pending",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week09Lecture10Lottery",
+        "question_path": "questions/InClassExercises/CS1/Week09Lecture10/Lottery/Base"
+      },
+      "include_source_with_signpost": true
+    }
+  ]
+}

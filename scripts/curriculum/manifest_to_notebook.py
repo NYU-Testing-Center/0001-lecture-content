@@ -94,13 +94,22 @@ def render_paragraphs(value):
     return "\n".join(paragraphs)
 
 
-def render_list(items):
+def render_list(items, ordered=False):
     if not items:
         return ""
-    lines = ["<ul>"]
+    tag = "ol" if ordered else "ul"
+    lines = [f"<{tag}>"]
     for item in items:
-        lines.append(f"  <li>{render_inline(item)}</li>")
-    lines.append("</ul>")
+        if isinstance(item, dict):
+            content = item.get("html") or render_inline(item.get("text", ""))
+            children = render_list(item.get("items", []), item.get("ordered", False))
+            lines.append(f"  <li>{content}")
+            if children:
+                lines.append(children)
+            lines.append("  </li>")
+        else:
+            lines.append(f"  <li>{render_inline(item)}</li>")
+    lines.append(f"</{tag}>")
     return "\n".join(lines)
 
 
@@ -302,9 +311,17 @@ def render_ed_segments(segments):
         if segment_type == "heading":
             lines.append(f'<h3>{render_inline(segment.get("text", ""))}</h3>')
         elif segment_type == "paragraph":
-            lines.append(f'<p>{render_inline(segment.get("text", ""))}</p>')
+            if segment.get("html"):
+                lines.append(f'<p>{segment["html"]}</p>')
+            else:
+                lines.append(f'<p>{render_inline(segment.get("text", ""))}</p>')
         elif segment_type == "list":
-            lines.append(render_list(segment.get("items", [])))
+            lines.append(render_list(segment.get("items", []), segment.get("ordered", False)))
+        elif segment_type == "math":
+            lines.append(f'<div class="lecture-ed-math">\\[{html.escape(str(segment.get("tex", "")), quote=False)}\\]</div>')
+        elif segment_type == "source_code":
+            language = html.escape(str(segment.get("language", "text")), quote=True)
+            lines.append(f'<pre class="lecture-ed-source"><code data-language="{language}">{html.escape(str(segment.get("text", "")))}</code></pre>')
         elif segment_type == "prompt":
             lines.append(
                 f'<p class="lecture-ed-prompt"><strong>{render_inline(segment.get("label", "Prompt"))}:</strong> '
@@ -339,7 +356,9 @@ def render_ed_segments(segments):
 def render_prairielearn_signpost(block):
     signpost = block.get("prairielearn_signpost") or {}
     href = str(signpost.get("href", "")).strip()
-    if not href:
+    status = str(signpost.get("status", "")).strip()
+    pending = status == "deployment_pending"
+    if not href and not pending:
         raise ValueError("PrairieLearn signposts require a non-empty href")
 
     location = str(signpost.get("location", "")).strip()
@@ -356,10 +375,19 @@ def render_prairielearn_signpost(block):
         '  </div>',
         '  <div style="background:#fff;border:2px dashed #b26a00;border-radius:8px;',
         '              padding:0.8em 1em;">',
-        f'    <a href="{html.escape(href, quote=True)}" target="_blank" rel="noopener"',
-        '       style="font-size:1.05em;font-weight:800;color:#b26a00;',
-        '              text-decoration:underline;">Exercise Link</a>',
     ]
+    if pending:
+        lines.extend([
+            '    <span style="font-size:1.05em;font-weight:800;color:#b26a00;">',
+            '      PrairieLearn activity deployment pending',
+            '    </span>',
+        ])
+    else:
+        lines.extend([
+            f'    <a href="{html.escape(href, quote=True)}" target="_blank" rel="noopener"',
+            '       style="font-size:1.05em;font-weight:800;color:#b26a00;',
+            '              text-decoration:underline;">Exercise Link</a>',
+        ])
     if location:
         lines.extend(
             [
@@ -368,23 +396,21 @@ def render_prairielearn_signpost(block):
                 '    </div>',
             ]
         )
-    lines.extend(
-        [
+    if not pending:
+        lines.extend([
             '    <div style="font-size:0.6em;color:#6b6478;margin-top:0.5em;',
             '                overflow-wrap:anywhere;">',
             "      If the hyperlink doesn't work, paste this link into your browser:",
             '      <span style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;">'
             f'{html.escape(href)}</span>',
             '    </div>',
-            '  </div>',
-            '</div>',
-        ]
-    )
+        ])
+    lines.extend(['  </div>', '</div>'])
     return "\n".join(lines)
 
 
 def render_ed_slide(block, cell_id):
-    if block.get("prairielearn_signpost"):
+    if block.get("prairielearn_signpost") and not block.get("include_source_with_signpost"):
         return render_prairielearn_signpost(block)
 
     heading_id = f"{cell_id}-heading"
@@ -414,6 +440,8 @@ def render_ed_slide(block, cell_id):
         lines.append("  </div>")
     else:
         lines.append(render_ed_segments(block.get("segments", [])))
+    if block.get("prairielearn_signpost"):
+        lines.append(render_prairielearn_signpost(block))
     lines.append("</article>")
     return "\n".join(line for line in lines if line)
 

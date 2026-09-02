@@ -1,0 +1,1474 @@
+{
+  "schema_version": 1,
+  "course_id": "62123",
+  "source_course": "CS 0002, Section 10, Fall 2024",
+  "target_course": "CS0001",
+  "lesson_id": "118177",
+  "lesson_title": "Week 4, Lecture 5: Condition-Controlled (While) Loops in Python",
+  "target_lecture": 5,
+  "week": 4,
+  "slide_count": 33,
+  "slides": [
+    {
+      "slide_id": "656807",
+      "slide_type": "document",
+      "title": "Problem: Guess a Secret Number",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118177/slides/656807",
+      "segments": [
+        {
+          "html": "Python selects a random number between 1 and 5. We have to run the program multiple times until we guess it.",
+          "text": "Python selects a random number between 1 and 5. We have to run the program multiple times until we guess it.",
+          "type": "paragraph"
+        },
+        {
+          "language": "",
+          "text": "import random\nsecret=random.randint(1,5)\n\nprint(\"I've picked a secret number between 1 and 5.\")\nguess=int(input(\"What is your guess?\"))\nif guess==secret:\n  print(\"You got it!\")\nelif (guess>=1) and (guess<=5):\n  print(\"Sorry, you guessed wrong.\")\nelse:\n  print(\"That number wasn't in range.\")",
+          "type": "code"
+        },
+        {
+          "html": "What if we want to allow them to continue to guess, within a single run of the program? We use a while loop, which allows us to repeat some code as long as a particular condition remains true.",
+          "text": "What if we want to allow them to continue to guess, within a single run of the program? We use a while loop, which allows us to repeat some code as long as a particular condition remains true.",
+          "type": "paragraph"
+        },
+        {
+          "language": "",
+          "text": "import random\nsecret=random.randint(1,5)\n\nprint(\"I've picked a secret number between 1 and 5.\")\nguess=0 # set it to zero so the following line will be true the first time\n\n# this code repeats until the condition is false\n# that is,\nwhile (secret!=guess):\n  # beginning of indented block of statements associated with the \"while\"\n  guess=int(input(\"What is your guess?\"))\n  if (guess>5) or (guess<1):\n    print(\"Your guess wasn't between 1 and 5.\")\n    print(\"Try again.\")\n  elif secret!=guess:\n    print(\"Sorry, you guessed wrong. Try again.\")\n  # end of statements associated with the while\n\nprint(\"You got it!\")",
+          "type": "code"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "import random\nsecret=random.randint(1,5)\n\nprint(\"I've picked a secret number between 1 and 5.\")\nguess=int(input(\"What is your guess?\"))\nif guess==secret:\n  print(\"You got it!\")\nelif (guess>=1) and (guess<=5):\n  print(\"Sorry, you guessed wrong.\")\nelse:\n  print(\"That number wasn't in range.\")",
+          "language": ""
+        },
+        {
+          "content": "import random\nsecret=random.randint(1,5)\n\nprint(\"I've picked a secret number between 1 and 5.\")\nguess=0 # set it to zero so the following line will be true the first time\n\n# this code repeats until the condition is false\n# that is,\nwhile (secret!=guess):\n  # beginning of indented block of statements associated with the \"while\"\n  guess=int(input(\"What is your guess?\"))\n  if (guess>5) or (guess<1):\n    print(\"Your guess wasn't between 1 and 5.\")\n    print(\"Try again.\")\n  elif secret!=guess:\n    print(\"Sorry, you guessed wrong. Try again.\")\n  # end of statements associated with the while\n\nprint(\"You got it!\")",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "656808",
+      "slide_type": "document",
+      "title": "How Do While Loops Work?",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118177/slides/656808",
+      "segments": [
+        {
+          "items": [
+            "They start by evaluating the boolean expression that follows the word \"while\"",
+            "If the expression is false, the block of statements associated with the while loop is not executed, and the program continues below them.",
+            "If the expression is true, the block of statements associated with the while loop is executed, and then step (1) above is repeated."
+          ],
+          "ordered": true,
+          "type": "list"
+        },
+        {
+          "html": "The two types of loops in Python are while loops and for loops. In both types of loops, one pass through the block of statements indented under the loop is called an iteration. For instance, if the block is executed five times, the loop is said to have executed five iterations.",
+          "text": "The two types of loops in Python are while loops and for loops. In both types of loops, one pass through the block of statements indented under the loop is called an iteration. For instance, if the block is executed five times, the loop is said to have executed five iterations.",
+          "type": "paragraph"
+        }
+      ],
+      "code_blocks": [],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "662502",
+      "slide_type": "document",
+      "title": "A Simple While Loop",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118177/slides/662502",
+      "segments": [
+        {
+          "html": "This while loop prints the word \"hello\" repeatedly until the user types \"yes\".",
+          "text": "This while loop prints the word \"hello\" repeatedly until the user types \"yes\".",
+          "type": "paragraph"
+        },
+        {
+          "language": "",
+          "text": "stop=\"no\"\nwhile stop!=\"yes\":\n    print(\"hello\")\n    stop=input(\"Stop?\")\n",
+          "type": "code"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "stop=\"no\"\nwhile stop!=\"yes\":\n    print(\"hello\")\n    stop=input(\"Stop?\")\n",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "656809",
+      "slide_type": "code_challenge",
+      "title": "Exercise: Use a While Loop",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118177/slides/656809",
+      "segments": [
+        {
+          "html": "Write a program that asks the user to enter one of the following: \"rock\", \"paper\", or \"scissors\". Make sure that they entered one of those: if they didn't, ask them to enter their input again.",
+          "text": "Write a program that asks the user to enter one of the following: \"rock\", \"paper\", or \"scissors\". Make sure that they entered one of those: if they didn't, ask them to enter their input again.",
+          "type": "paragraph"
+        },
+        {
+          "html": "Use a while loop. This is called input \"validation\" in that the program is checking for valid input and asking the user to revise it. Many websites use input validation.",
+          "text": "Use a while loop. This is called input \"validation\" in that the program is checking for valid input and asking the user to revise it. Many websites use input validation.",
+          "type": "paragraph"
+        }
+      ],
+      "code_blocks": [],
+      "links": [],
+      "assets": [],
+      "exercise": {
+        "prompt": "Write a program that asks the user to enter one of the following: \"rock\", \"paper\", or \"scissors\". Make sure that they entered one of those: if they didn't, ask them to enter their input again.\n\nUse a while loop. This is called input \"validation\" in that the program is checking for valid input and asking the user to revise it. Many websites use input validation.",
+        "prompt_segments": [
+          {
+            "html": "Write a program that asks the user to enter one of the following: \"rock\", \"paper\", or \"scissors\". Make sure that they entered one of those: if they didn't, ask them to enter their input again.",
+            "text": "Write a program that asks the user to enter one of the following: \"rock\", \"paper\", or \"scissors\". Make sure that they entered one of those: if they didn't, ask them to enter their input again.",
+            "type": "paragraph"
+          },
+          {
+            "html": "Use a while loop. This is called input \"validation\" in that the program is checking for valid input and asking the user to revise it. Many websites use input validation.",
+            "text": "Use a while loop. This is called input \"validation\" in that the program is checking for valid input and asking the user to revise it. Many websites use input validation.",
+            "type": "paragraph"
+          }
+        ],
+        "scaffold": {
+          "content": "",
+          "file": "solution.py",
+          "language": "python"
+        },
+        "workspace_files": [
+          {
+            "content": "",
+            "language": "python",
+            "name": "solution.py",
+            "role": "Ed staff-visible workspace file"
+          }
+        ],
+        "reference_solution_status": "present",
+        "reference_solution_provenance": "Ed staff edit view sample solution"
+      },
+      "activity_mapping": {
+        "question_path": "questions/InClassExercises/CS1/Week04Lecture05/UseAWhileLoop/Base",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week04Lecture05UseAWhileLoop",
+        "deployment_status": "pending"
+      }
+    },
+    {
+      "slide_id": "656810",
+      "slide_type": "code_challenge",
+      "title": "Exercise: Infinite Loops",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118177/slides/656810",
+      "segments": [
+        {
+          "html": "Warning: it is possible to write loops that never end. This happens when the boolean condition at the top of the loop remains True after each iteration and never changes. An infinite loop is usually a bug and can cause your computer to \"hang\" until you hit control-C on your keyboard. So you should make sure that it is possible to make a change during an iteration that affects the boolean expression at the top of the loop.",
+          "text": "Warning: it is possible to write loops that never end. This happens when the boolean condition at the top of the loop remains True after each iteration and never changes. An infinite loop is usually a bug and can cause your computer to \"hang\" until you hit control-C on your keyboard. So you should make sure that it is possible to make a change during an iteration that affects the boolean expression at the top of the loop.",
+          "type": "paragraph"
+        },
+        {
+          "html": "Apple named <a class=\"amber-el amber-link amber-el ed-focus-outline\" href=\"https://www.google.com/url?q=https%3A%2F%2Fwww.wired.com%2Fstory%2Fwired25-infinite-loop-apple-park-ring%2F\" target=\"_blank\" rel=\"noopener noreferrer\">the road</a> around some of its buildings \"Infinite Loop\" as a bit of techie humor.",
+          "text": "Apple named the road around some of its buildings \"Infinite Loop\" as a bit of techie humor.",
+          "type": "paragraph"
+        },
+        {
+          "html": "See if you can write a while loop that never ends.",
+          "text": "See if you can write a while loop that never ends.",
+          "type": "paragraph"
+        }
+      ],
+      "code_blocks": [],
+      "links": [
+        {
+          "href": "https://www.google.com/url?q=https%3A%2F%2Fwww.wired.com%2Fstory%2Fwired25-infinite-loop-apple-park-ring%2F",
+          "text": "the road"
+        }
+      ],
+      "assets": [],
+      "exercise": {
+        "prompt": "Warning: it is possible to write loops that never end. This happens when the boolean condition at the top of the loop remains True after each iteration and never changes. An infinite loop is usually a bug and can cause your computer to \"hang\" until you hit control-C on your keyboard. So you should make sure that it is possible to make a change during an iteration that affects the boolean expression at the top of the loop.\n\nApple named the road around some of its buildings \"Infinite Loop\" as a bit of techie humor.\n\nSee if you can write a while loop that never ends.",
+        "prompt_segments": [
+          {
+            "html": "Warning: it is possible to write loops that never end. This happens when the boolean condition at the top of the loop remains True after each iteration and never changes. An infinite loop is usually a bug and can cause your computer to \"hang\" until you hit control-C on your keyboard. So you should make sure that it is possible to make a change during an iteration that affects the boolean expression at the top of the loop.",
+            "text": "Warning: it is possible to write loops that never end. This happens when the boolean condition at the top of the loop remains True after each iteration and never changes. An infinite loop is usually a bug and can cause your computer to \"hang\" until you hit control-C on your keyboard. So you should make sure that it is possible to make a change during an iteration that affects the boolean expression at the top of the loop.",
+            "type": "paragraph"
+          },
+          {
+            "html": "Apple named <a class=\"amber-el amber-link amber-el ed-focus-outline\" href=\"https://www.google.com/url?q=https%3A%2F%2Fwww.wired.com%2Fstory%2Fwired25-infinite-loop-apple-park-ring%2F\" target=\"_blank\" rel=\"noopener noreferrer\">the road</a> around some of its buildings \"Infinite Loop\" as a bit of techie humor.",
+            "text": "Apple named the road around some of its buildings \"Infinite Loop\" as a bit of techie humor.",
+            "type": "paragraph"
+          },
+          {
+            "html": "See if you can write a while loop that never ends.",
+            "text": "See if you can write a while loop that never ends.",
+            "type": "paragraph"
+          }
+        ],
+        "scaffold": {
+          "content": "#while True: pass",
+          "file": "solution.py",
+          "language": "python"
+        },
+        "workspace_files": [
+          {
+            "content": "#while True: pass",
+            "language": "python",
+            "name": "solution.py",
+            "role": "Ed staff-visible workspace file"
+          }
+        ],
+        "reference_solution_status": "present",
+        "reference_solution_provenance": "Ed staff edit view sample solution"
+      },
+      "activity_mapping": {
+        "question_path": "questions/InClassExercises/CS1/Week04Lecture05/InfiniteLoops/Base",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week04Lecture05InfiniteLoops",
+        "deployment_status": "pending"
+      }
+    },
+    {
+      "slide_id": "656811",
+      "slide_type": "document",
+      "title": "Augmented Assignment Operators",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118177/slides/656811",
+      "segments": [
+        {
+          "html": "While loops often make use of so-called augmented assignment operators, especially \"+=\" which is used to increase a variable's value, often by 1 but sometimes by another value.<br class=\"amber-el amber-break\">",
+          "text": "While loops often make use of so-called augmented assignment operators, especially \"+=\" which is used to increase a variable's value, often by 1 but sometimes by another value.",
+          "type": "paragraph"
+        },
+        {
+          "alt": "",
+          "height": 528,
+          "src": "https://static.us.edusercontent.com/files/Oca0j6UReGdH4kwAdZ5p6hVh",
+          "type": "image",
+          "width": 660
+        }
+      ],
+      "code_blocks": [],
+      "links": [],
+      "assets": [
+        {
+          "source_url": "https://static.us.edusercontent.com/files/Oca0j6UReGdH4kwAdZ5p6hVh",
+          "width": 660,
+          "height": 528,
+          "local_path": "notebooks/cs1/images/lecture_05/656811_augmented_assignment_operators.png"
+        }
+      ]
+    },
+    {
+      "slide_id": "656812",
+      "slide_type": "code_challenge",
+      "title": "Examples of Operator Usage",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118177/slides/656812",
+      "segments": [
+        {
+          "html": "Here are some examples of using these operators.",
+          "text": "Here are some examples of using these operators.",
+          "type": "paragraph"
+        }
+      ],
+      "code_blocks": [],
+      "links": [],
+      "assets": [],
+      "exercise": {
+        "prompt": "Here are some examples of using these operators.",
+        "prompt_segments": [
+          {
+            "html": "Here are some examples of using these operators.",
+            "text": "Here are some examples of using these operators.",
+            "type": "paragraph"
+          }
+        ],
+        "scaffold": {
+          "content": "# example of addition augumented assignment operator\nc=3\nc+=5\nprint(c)\nc=3\nc=c+5\nprint(c)",
+          "file": "Operators.ipynb",
+          "language": "python"
+        },
+        "workspace_files": [
+          {
+            "content": "",
+            "language": "python",
+            "name": "Operators.ipynb",
+            "role": "Ed staff-visible workspace file"
+          }
+        ],
+        "reference_solution_status": "present",
+        "reference_solution_provenance": "Ed staff edit view sample solution"
+      }
+    },
+    {
+      "slide_id": "656813",
+      "slide_type": "document",
+      "title": "Infinite loop",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118177/slides/656813",
+      "segments": [
+        {
+          "html": "In the following example, of an effectively infinite loop, we use an accumulator variable. An accumulator variable i is a variable that is increased inside the loop.",
+          "text": "In the following example, of an effectively infinite loop, we use an accumulator variable. An accumulator variable i is a variable that is increased inside the loop.",
+          "type": "paragraph"
+        },
+        {
+          "language": "",
+          "text": "# not an infinite loop, but effectively one.\n# initialize i to zero\ni=0\n# set upper limit to one trillion (10 to the 12th power)\nlimit=1000000000000\n# print it using an f string with comma separators\nprint(f\"{limit:,d}\")\nwhile(i<limit):\n  # increment i by one\n  i+=1\n  # print every ten million\n  if (i%10000000)==0: print(f\"{i:,d}\")",
+          "type": "code"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "# not an infinite loop, but effectively one.\n# initialize i to zero\ni=0\n# set upper limit to one trillion (10 to the 12th power)\nlimit=1000000000000\n# print it using an f string with comma separators\nprint(f\"{limit:,d}\")\nwhile(i<limit):\n  # increment i by one\n  i+=1\n  # print every ten million\n  if (i%10000000)==0: print(f\"{i:,d}\")",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "656814",
+      "slide_type": "code_challenge",
+      "title": "Exercise: A While Loop",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118177/slides/656814",
+      "segments": [
+        {
+          "html": "Write a while loop that prints out the multiples of 5 between 5 and 100, inclusive, that is, 5, 10, 15 ... 100. You can base it on the code from the effectively infinite loop above.",
+          "text": "Write a while loop that prints out the multiples of 5 between 5 and 100, inclusive, that is, 5, 10, 15 ... 100. You can base it on the code from the effectively infinite loop above.",
+          "type": "paragraph"
+        }
+      ],
+      "code_blocks": [],
+      "links": [],
+      "assets": [],
+      "exercise": {
+        "prompt": "Write a while loop that prints out the multiples of 5 between 5 and 100, inclusive, that is, 5, 10, 15 ... 100. You can base it on the code from the effectively infinite loop above.",
+        "prompt_segments": [
+          {
+            "html": "Write a while loop that prints out the multiples of 5 between 5 and 100, inclusive, that is, 5, 10, 15 ... 100. You can base it on the code from the effectively infinite loop above.",
+            "text": "Write a while loop that prints out the multiples of 5 between 5 and 100, inclusive, that is, 5, 10, 15 ... 100. You can base it on the code from the effectively infinite loop above.",
+            "type": "paragraph"
+          }
+        ],
+        "scaffold": {
+          "content": "",
+          "file": "solution.py",
+          "language": "python"
+        },
+        "workspace_files": [
+          {
+            "content": "",
+            "language": "python",
+            "name": "solution.py",
+            "role": "Ed staff-visible workspace file"
+          }
+        ],
+        "reference_solution_status": "present",
+        "reference_solution_provenance": "Ed staff edit view sample solution"
+      },
+      "activity_mapping": {
+        "question_path": "questions/InClassExercises/CS1/Week04Lecture05/AWhileLoop/Base",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week04Lecture05AWhileLoop",
+        "deployment_status": "pending"
+      }
+    },
+    {
+      "slide_id": "656815",
+      "slide_type": "quiz",
+      "title": "Quiz",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118177/slides/656815",
+      "segments": [
+        {
+          "html": "Which of the following is not true of an infinite loop?",
+          "text": "Which of the following is not true of an infinite loop?",
+          "type": "paragraph"
+        },
+        {
+          "html": "It can cause your computer to become non-responsive.",
+          "text": "It can cause your computer to become non-responsive.",
+          "type": "paragraph"
+        },
+        {
+          "html": "It often is caused by forgetting to do something in the block of the loop that can affect the test condition of the loop.",
+          "text": "It often is caused by forgetting to do something in the block of the loop that can affect the test condition of the loop.",
+          "type": "paragraph"
+        },
+        {
+          "html": "It is frequently useful.",
+          "text": "It is frequently useful.",
+          "type": "paragraph"
+        },
+        {
+          "html": "It is usually a bug in your code.",
+          "text": "It is usually a bug in your code.",
+          "type": "paragraph"
+        }
+      ],
+      "code_blocks": [],
+      "links": [],
+      "assets": [],
+      "quiz": {
+        "prompt": "Which of the following is not true of an infinite loop?",
+        "choices": [
+          "It can cause your computer to become non-responsive.",
+          "It often is caused by forgetting to do something in the block of the loop that can affect the test condition of the loop.",
+          "It is frequently useful.",
+          "It is usually a bug in your code."
+        ],
+        "correct_answer_status": "present",
+        "correct_answer_provenance": "Ed staff edit view"
+      },
+      "activity_mapping": {
+        "question_path": "questions/InClassExercises/CS1/Week04Lecture05/Quiz656815/Base",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week04Lecture05Quiz656815",
+        "deployment_status": "pending"
+      }
+    },
+    {
+      "slide_id": "656816",
+      "slide_type": "document",
+      "title": "Sentinel Values",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118177/slides/656816",
+      "segments": [
+        {
+          "html": "Sentinel values are special input values that are used as a \"sentinel\" or signal to indicate that the user wants to exit a loop.",
+          "text": "Sentinel values are special input values that are used as a \"sentinel\" or signal to indicate that the user wants to exit a loop.",
+          "type": "paragraph"
+        },
+        {
+          "html": "For instance, suppose we are simulating a cash register. We collect product prices until the user enters a zero price as the sentinel. Then we output the total before and after tax.",
+          "text": "For instance, suppose we are simulating a cash register. We collect product prices until the user enters a zero price as the sentinel. Then we output the total before and after tax.",
+          "type": "paragraph"
+        },
+        {
+          "language": "",
+          "text": "# set the price something other than zero so that the\n# while loop runs the first time:\nprice=1.0\ntotal=0.0\ni=1\nwhile (price!=0.0):\n  price=float(input(f\"Enter the price of item #{i}; enter zero to stop entering prices:\"))\n  total+=price\n  i+=1\nprint(f\"Your pre-tax total is ${total:,.2f}\")\nprint(f\"Your total after tax is ${total*1.08875:,.2f}\")\n\n",
+          "type": "code"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "# set the price something other than zero so that the\n# while loop runs the first time:\nprice=1.0\ntotal=0.0\ni=1\nwhile (price!=0.0):\n  price=float(input(f\"Enter the price of item #{i}; enter zero to stop entering prices:\"))\n  total+=price\n  i+=1\nprint(f\"Your pre-tax total is ${total:,.2f}\")\nprint(f\"Your total after tax is ${total*1.08875:,.2f}\")\n\n",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "656817",
+      "slide_type": "document",
+      "title": "The break statement",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118177/slides/656817",
+      "segments": [
+        {
+          "html": "The break statement allows you to break out of a loop early. The execution of the loop stops and execution continues with the next statement after the loop.",
+          "text": "The break statement allows you to break out of a loop early. The execution of the loop stops and execution continues with the next statement after the loop.",
+          "type": "paragraph"
+        },
+        {
+          "html": "Here's a program that adds up numbers in succession and then stops when the sum is greater than or equal to 1000.",
+          "text": "Here's a program that adds up numbers in succession and then stops when the sum is greater than or equal to 1000.",
+          "type": "paragraph"
+        },
+        {
+          "language": "",
+          "text": "i=0\ntotal=0\n# infinite loop?\nwhile True:\n  i+=1\n  total+=i\n  # not an infinite loop because this gets us out\n  if total>1000: break\nprint(f\"Ended after adding the numbers from 1 to {i}; total is {total}.\")",
+          "type": "code"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "i=0\ntotal=0\n# infinite loop?\nwhile True:\n  i+=1\n  total+=i\n  # not an infinite loop because this gets us out\n  if total>1000: break\nprint(f\"Ended after adding the numbers from 1 to {i}; total is {total}.\")",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "656818",
+      "slide_type": "code_challenge",
+      "title": "Exercise: Testing if a Number is Prime",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118177/slides/656818",
+      "segments": [
+        {
+          "html": "A prime number is a number that is only evenly divisible by itself and one. Write a program that asks the user for an integer and then figures out if it is prime and tells the user whether it is or not.",
+          "text": "A prime number is a number that is only evenly divisible by itself and one. Write a program that asks the user for an integer and then figures out if it is prime and tells the user whether it is or not.",
+          "type": "paragraph"
+        },
+        {
+          "html": "If it is not prime, also tell the user what its smallest factor greater than one is.",
+          "text": "If it is not prime, also tell the user what its smallest factor greater than one is.",
+          "type": "paragraph"
+        },
+        {
+          "html": "Use a while loop, and break out of the loop right away if you find a factor.",
+          "text": "Use a while loop, and break out of the loop right away if you find a factor.",
+          "type": "paragraph"
+        }
+      ],
+      "code_blocks": [],
+      "links": [],
+      "assets": [],
+      "exercise": {
+        "prompt": "A prime number is a number that is only evenly divisible by itself and one. Write a program that asks the user for an integer and then figures out if it is prime and tells the user whether it is or not.\n\nIf it is not prime, also tell the user what its smallest factor greater than one is.\n\nUse a while loop, and break out of the loop right away if you find a factor.",
+        "prompt_segments": [
+          {
+            "html": "A prime number is a number that is only evenly divisible by itself and one. Write a program that asks the user for an integer and then figures out if it is prime and tells the user whether it is or not.",
+            "text": "A prime number is a number that is only evenly divisible by itself and one. Write a program that asks the user for an integer and then figures out if it is prime and tells the user whether it is or not.",
+            "type": "paragraph"
+          },
+          {
+            "html": "If it is not prime, also tell the user what its smallest factor greater than one is.",
+            "text": "If it is not prime, also tell the user what its smallest factor greater than one is.",
+            "type": "paragraph"
+          },
+          {
+            "html": "Use a while loop, and break out of the loop right away if you find a factor.",
+            "text": "Use a while loop, and break out of the loop right away if you find a factor.",
+            "type": "paragraph"
+          }
+        ],
+        "scaffold": {
+          "content": "",
+          "file": "solution.py",
+          "language": "python"
+        },
+        "workspace_files": [
+          {
+            "content": "",
+            "language": "python",
+            "name": "solution.py",
+            "role": "Ed staff-visible workspace file"
+          }
+        ],
+        "reference_solution_status": "present",
+        "reference_solution_provenance": "Ed staff edit view sample solution"
+      },
+      "activity_mapping": {
+        "question_path": "questions/InClassExercises/CS1/Week04Lecture05/TestingIfANumberIsPrime/Base",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week04Lecture05TestingIfANumberIsPrime",
+        "deployment_status": "pending"
+      }
+    },
+    {
+      "slide_id": "656819",
+      "slide_type": "document",
+      "title": "The continue statement",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118177/slides/656819",
+      "segments": [
+        {
+          "html": "The continue statement allows you to go to the next iteration of the loop in the middle of the block of statements in the loop.",
+          "text": "The continue statement allows you to go to the next iteration of the loop in the middle of the block of statements in the loop.",
+          "type": "paragraph"
+        },
+        {
+          "html": "For instance, suppose we want to print all of the numbers from 1 to 5, but we want to skip 3. Here's how we can use continue to do that:",
+          "text": "For instance, suppose we want to print all of the numbers from 1 to 5, but we want to skip 3. Here's how we can use continue to do that:",
+          "type": "paragraph"
+        },
+        {
+          "language": "",
+          "text": "i=0\n# note the last iteration is when i is initially 4,\n# since it then adds one to i to make it 5\n# and then\nwhile (i<=4):\n  i+=1\n  # if i is 3, go back to the top of the loop\n  if i==3: continue\n  print(i)",
+          "type": "code"
+        },
+        {
+          "html": "The following shows two ways to print just the even numbers from 2 to 10.",
+          "text": "The following shows two ways to print just the even numbers from 2 to 10.",
+          "type": "paragraph"
+        },
+        {
+          "language": "",
+          "text": "# printing just the even numbers from two to ten\n# method 1\ni=0\nwhile (i<10):\n  i+=2\n  print(i)",
+          "type": "code"
+        },
+        {
+          "language": "",
+          "text": "# printing just the even numbers from two to ten\n# method 2\ni=0\nwhile (i<10):\n  i+=1\n  # this allows you to skip the odd numbers using continue\n  if (i%2)==1: continue\n  print(i)",
+          "type": "code"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "i=0\n# note the last iteration is when i is initially 4,\n# since it then adds one to i to make it 5\n# and then\nwhile (i<=4):\n  i+=1\n  # if i is 3, go back to the top of the loop\n  if i==3: continue\n  print(i)",
+          "language": ""
+        },
+        {
+          "content": "# printing just the even numbers from two to ten\n# method 1\ni=0\nwhile (i<10):\n  i+=2\n  print(i)",
+          "language": ""
+        },
+        {
+          "content": "# printing just the even numbers from two to ten\n# method 2\ni=0\nwhile (i<10):\n  i+=1\n  # this allows you to skip the odd numbers using continue\n  if (i%2)==1: continue\n  print(i)",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "656820",
+      "slide_type": "code_challenge",
+      "title": "Exercise: Total Positive Numbers Entered While Ignoring Negative Numbers",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118177/slides/656820",
+      "segments": [
+        {
+          "html": "Use a while loop to repeatedly ask the user for an integer. If the integer is negative, call continue to restart the loop. If the integer is positive, add it onto a total. If the integer is zero, exit the while loop and print the total of the positive numbers entered.",
+          "text": "Use a while loop to repeatedly ask the user for an integer. If the integer is negative, call continue to restart the loop. If the integer is positive, add it onto a total. If the integer is zero, exit the while loop and print the total of the positive numbers entered.",
+          "type": "paragraph"
+        }
+      ],
+      "code_blocks": [],
+      "links": [],
+      "assets": [],
+      "exercise": {
+        "prompt": "Use a while loop to repeatedly ask the user for an integer. If the integer is negative, call continue to restart the loop. If the integer is positive, add it onto a total. If the integer is zero, exit the while loop and print the total of the positive numbers entered.",
+        "prompt_segments": [
+          {
+            "html": "Use a while loop to repeatedly ask the user for an integer. If the integer is negative, call continue to restart the loop. If the integer is positive, add it onto a total. If the integer is zero, exit the while loop and print the total of the positive numbers entered.",
+            "text": "Use a while loop to repeatedly ask the user for an integer. If the integer is negative, call continue to restart the loop. If the integer is positive, add it onto a total. If the integer is zero, exit the while loop and print the total of the positive numbers entered.",
+            "type": "paragraph"
+          }
+        ],
+        "scaffold": {
+          "content": "",
+          "file": "solution.py",
+          "language": "python"
+        },
+        "workspace_files": [
+          {
+            "content": "",
+            "language": "python",
+            "name": "solution.py",
+            "role": "Ed staff-visible workspace file"
+          }
+        ],
+        "reference_solution_status": "present",
+        "reference_solution_provenance": "Ed staff edit view sample solution"
+      },
+      "activity_mapping": {
+        "question_path": "questions/InClassExercises/CS1/Week04Lecture05/TotalPositiveNumbersEnteredWhileIgnoringNegativeNumbers/Base",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week04Lecture05TotalPositiveNumbersEnteredWhileIgnoringNegativeNumbers",
+        "deployment_status": "pending"
+      }
+    },
+    {
+      "slide_id": "656821",
+      "slide_type": "document",
+      "title": "A Rock, Paper, Scissors Tournament",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118177/slides/656821",
+      "segments": [
+        {
+          "html": "The following simulates a rock/paper/scissors tournament between you and the computer. The game ends when either side gets three wins.",
+          "text": "The following simulates a rock/paper/scissors tournament between you and the computer. The game ends when either side gets three wins.",
+          "type": "paragraph"
+        },
+        {
+          "language": "",
+          "text": "import random\ncomputerWins=0\nuserWins=0\nwhile (computerWins<3) and (userWins<3):\n  computerChoice=random.randint(1,3)\n  userChoice=int(input(\"Enter your choice: rock (1), paper (2), or scissors (3)\"))\n  print(\"Computer chose \",end='')\n  if computerChoice==1:\n    print(\"rock.\")\n  elif computerChoice==2:\n    print(\"paper.\")\n  else:\n    print(\"scissors.\")\n  difference=computerChoice-userChoice\n  if difference==0:\n    print(\"It's a tie.\")\n  # computer win scenarios\n  # either choice is one greater than user choice\n  # scissors cuts paper, paper wraps rock\n  # or computer chose rock, user scissors\n  # which means the difference is -2\n  elif (difference==1) or (difference==-2):\n    print(\"The computer won.\")\n    computerWins+=1\n  # otherwise user won\n  else:\n    print(\"You won.\")\n    userWins+=1\nprint(\"\\nTournament Results:\")\nprint(f\"You won {userWins} times.\")\nprint(f\"The computer won {computerWins} times.\")",
+          "type": "code"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "import random\ncomputerWins=0\nuserWins=0\nwhile (computerWins<3) and (userWins<3):\n  computerChoice=random.randint(1,3)\n  userChoice=int(input(\"Enter your choice: rock (1), paper (2), or scissors (3)\"))\n  print(\"Computer chose \",end='')\n  if computerChoice==1:\n    print(\"rock.\")\n  elif computerChoice==2:\n    print(\"paper.\")\n  else:\n    print(\"scissors.\")\n  difference=computerChoice-userChoice\n  if difference==0:\n    print(\"It's a tie.\")\n  # computer win scenarios\n  # either choice is one greater than user choice\n  # scissors cuts paper, paper wraps rock\n  # or computer chose rock, user scissors\n  # which means the difference is -2\n  elif (difference==1) or (difference==-2):\n    print(\"The computer won.\")\n    computerWins+=1\n  # otherwise user won\n  else:\n    print(\"You won.\")\n    userWins+=1\nprint(\"\\nTournament Results:\")\nprint(f\"You won {userWins} times.\")\nprint(f\"The computer won {computerWins} times.\")",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "656822",
+      "slide_type": "quiz",
+      "title": "Quiz",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118177/slides/656822",
+      "segments": [
+        {
+          "html": "The set of statements that are executed by a while loop are:",
+          "text": "The set of statements that are executed by a while loop are:",
+          "type": "paragraph"
+        },
+        {
+          "html": "Not indented relative to the while statement and referred to as the while statement's group",
+          "text": "Not indented relative to the while statement and referred to as the while statement's group",
+          "type": "paragraph"
+        },
+        {
+          "html": "Indented relative to the while statement and referred to as the while statement's block or code block",
+          "text": "Indented relative to the while statement and referred to as the while statement's block or code block",
+          "type": "paragraph"
+        },
+        {
+          "html": "Indented relative to the while statement and executed only once",
+          "text": "Indented relative to the while statement and executed only once",
+          "type": "paragraph"
+        },
+        {
+          "html": "Indented relative to the while statement and executed repeatedly while the while loop's condition is False",
+          "text": "Indented relative to the while statement and executed repeatedly while the while loop's condition is False",
+          "type": "paragraph"
+        }
+      ],
+      "code_blocks": [],
+      "links": [],
+      "assets": [],
+      "quiz": {
+        "prompt": "The set of statements that are executed by a while loop are:",
+        "choices": [
+          "Not indented relative to the while statement and referred to as the while statement's group",
+          "Indented relative to the while statement and referred to as the while statement's block or code block",
+          "Indented relative to the while statement and executed only once",
+          "Indented relative to the while statement and executed repeatedly while the while loop's condition is False"
+        ],
+        "correct_answer_status": "present",
+        "correct_answer_provenance": "Ed staff edit view"
+      },
+      "activity_mapping": {
+        "question_path": "questions/InClassExercises/CS1/Week04Lecture05/Quiz656822/Base",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week04Lecture05Quiz656822",
+        "deployment_status": "pending"
+      }
+    },
+    {
+      "slide_id": "656823",
+      "slide_type": "document",
+      "title": "Flipping a Coin Until You Get Five Heads in a Row",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118177/slides/656823",
+      "segments": [
+        {
+          "html": "How many coin flips does it take until you get five heads in a row? Well, it varies!",
+          "text": "How many coin flips does it take until you get five heads in a row? Well, it varies!",
+          "type": "paragraph"
+        },
+        {
+          "language": "",
+          "text": "import random\nheadsInARow=0\nnFlips=0\nheadsRequired=5\nwhile headsInARow<headsRequired:\n  nFlips+=1\n  if random.randint(1,2)==1: # consider a one a head\n    headsInARow+=1\n    print(\"H\",end=\"\")\n  else:\n    print(\"T\",end=\"\")\n    headsInARow=0\n  if (nFlips%30==0): print()\nprint(f\"\\nIt took {nFlips} flips to get {headsRequired} heads in a row.\")\n",
+          "type": "code"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "import random\nheadsInARow=0\nnFlips=0\nheadsRequired=5\nwhile headsInARow<headsRequired:\n  nFlips+=1\n  if random.randint(1,2)==1: # consider a one a head\n    headsInARow+=1\n    print(\"H\",end=\"\")\n  else:\n    print(\"T\",end=\"\")\n    headsInARow=0\n  if (nFlips%30==0): print()\nprint(f\"\\nIt took {nFlips} flips to get {headsRequired} heads in a row.\")\n",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "656824",
+      "slide_type": "code_challenge",
+      "title": "Exercise: Flipping a Coin",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118177/slides/656824",
+      "segments": [
+        {
+          "html": "Simulate flipping a coin one million times. Print out the percentage of heads using the \"%\" format specifier with four places after the decimal point. The \"%\" format specifier works like the \"f\" format specifier except that it automatically converts a number between 0 and 1 to a percentage.",
+          "text": "Simulate flipping a coin one million times. Print out the percentage of heads using the \"%\" format specifier with four places after the decimal point. The \"%\" format specifier works like the \"f\" format specifier except that it automatically converts a number between 0 and 1 to a percentage.",
+          "type": "paragraph"
+        },
+        {
+          "html": "You can code a head as the random integer 1 and a tail as the random integer 2. Import the random module and then use random.randint.",
+          "text": "You can code a head as the random integer 1 and a tail as the random integer 2. Import the random module and then use random.randint.",
+          "type": "paragraph"
+        }
+      ],
+      "code_blocks": [],
+      "links": [],
+      "assets": [],
+      "exercise": {
+        "prompt": "Simulate flipping a coin one million times. Print out the percentage of heads using the \"%\" format specifier with four places after the decimal point. The \"%\" format specifier works like the \"f\" format specifier except that it automatically converts a number between 0 and 1 to a percentage.\n\nYou can code a head as the random integer 1 and a tail as the random integer 2. Import the random module and then use random.randint.",
+        "prompt_segments": [
+          {
+            "html": "Simulate flipping a coin one million times. Print out the percentage of heads using the \"%\" format specifier with four places after the decimal point. The \"%\" format specifier works like the \"f\" format specifier except that it automatically converts a number between 0 and 1 to a percentage.",
+            "text": "Simulate flipping a coin one million times. Print out the percentage of heads using the \"%\" format specifier with four places after the decimal point. The \"%\" format specifier works like the \"f\" format specifier except that it automatically converts a number between 0 and 1 to a percentage.",
+            "type": "paragraph"
+          },
+          {
+            "html": "You can code a head as the random integer 1 and a tail as the random integer 2. Import the random module and then use random.randint.",
+            "text": "You can code a head as the random integer 1 and a tail as the random integer 2. Import the random module and then use random.randint.",
+            "type": "paragraph"
+          }
+        ],
+        "scaffold": {
+          "content": "",
+          "file": "solution.py",
+          "language": "python"
+        },
+        "workspace_files": [
+          {
+            "content": "",
+            "language": "python",
+            "name": "solution.py",
+            "role": "Ed staff-visible workspace file"
+          }
+        ],
+        "reference_solution_status": "present",
+        "reference_solution_provenance": "Ed staff edit view sample solution"
+      },
+      "activity_mapping": {
+        "question_path": "questions/InClassExercises/CS1/Week04Lecture05/FlippingACoin/Base",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week04Lecture05FlippingACoin",
+        "deployment_status": "pending"
+      }
+    },
+    {
+      "slide_id": "656825",
+      "slide_type": "quiz",
+      "title": "Quiz",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118177/slides/656825",
+      "segments": [
+        {
+          "html": "Input validation is done by a while loop by ...",
+          "text": "Input validation is done by a while loop by ...",
+          "type": "paragraph"
+        },
+        {
+          "html": "Setting up a test condition for the while loop that doesn't match the valid input values",
+          "text": "Setting up a test condition for the while loop that doesn't match the valid input values",
+          "type": "paragraph"
+        },
+        {
+          "html": "Making sure the user knows what the valid values are and counting on them to enter one of them.",
+          "text": "Making sure the user knows what the valid values are and counting on them to enter one of them.",
+          "type": "paragraph"
+        },
+        {
+          "html": "Setting up a test condition for the while loop that matches the valid input values",
+          "text": "Setting up a test condition for the while loop that matches the valid input values",
+          "type": "paragraph"
+        },
+        {
+          "html": "None of these",
+          "text": "None of these",
+          "type": "paragraph"
+        }
+      ],
+      "code_blocks": [],
+      "links": [],
+      "assets": [],
+      "quiz": {
+        "prompt": "Input validation is done by a while loop by ...",
+        "choices": [
+          "Setting up a test condition for the while loop that doesn't match the valid input values",
+          "Making sure the user knows what the valid values are and counting on them to enter one of them.",
+          "Setting up a test condition for the while loop that matches the valid input values",
+          "None of these"
+        ],
+        "correct_answer_status": "present",
+        "correct_answer_provenance": "Ed staff edit view"
+      },
+      "activity_mapping": {
+        "question_path": "questions/InClassExercises/CS1/Week04Lecture05/Quiz656825/Base",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week04Lecture05Quiz656825",
+        "deployment_status": "pending"
+      }
+    },
+    {
+      "slide_id": "656827",
+      "slide_type": "code_challenge",
+      "title": "Another Example of Validation",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118177/slides/656827",
+      "segments": [
+        {
+          "html": "Here is another example of validating input.",
+          "text": "Here is another example of validating input.",
+          "type": "paragraph"
+        }
+      ],
+      "code_blocks": [],
+      "links": [],
+      "assets": [],
+      "exercise": {
+        "prompt": "Here is another example of validating input.",
+        "prompt_segments": [
+          {
+            "html": "Here is another example of validating input.",
+            "text": "Here is another example of validating input.",
+            "type": "paragraph"
+          }
+        ],
+        "scaffold": {
+          "content": "prompt=\"Enter a number between 1 and 3:\"\nn=int(input(prompt))\nwhile (n<1) or (n>3):\n  print(\"Not valid.\")\n  n=int(input(prompt))\nprint(f\"Your number was {n}\")",
+          "file": "Validation.ipynb",
+          "language": "python"
+        },
+        "workspace_files": [
+          {
+            "content": "",
+            "language": "python",
+            "name": "Validation.ipynb",
+            "role": "Ed staff-visible workspace file"
+          }
+        ],
+        "reference_solution_status": "present",
+        "reference_solution_provenance": "Ed staff edit view sample solution"
+      }
+    },
+    {
+      "slide_id": "656828",
+      "slide_type": "document",
+      "title": "An Updated Secret Number Guesser",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118177/slides/656828",
+      "segments": [
+        {
+          "html": "Guess a number between 1 and 1000 that the computer has picked at random. The computer gives you a hint by telling you if you are too high or too low and keeps track of your highest low guess and your lowest high guess, so you can hone in on it using that range.",
+          "text": "Guess a number between 1 and 1000 that the computer has picked at random. The computer gives you a hint by telling you if you are too high or too low and keeps track of your highest low guess and your lowest high guess, so you can hone in on it using that range.",
+          "type": "paragraph"
+        },
+        {
+          "html": "Approximately how many guesses will it take?",
+          "text": "Approximately how many guesses will it take?",
+          "type": "paragraph"
+        },
+        {
+          "language": "",
+          "text": "import random\nsecret=random.randint(1,1000)\nlowGuess=0\nhighGuess=1001\nGuessNumber=0\n# infinite loop, but exits with a break\n# when you guess it\nwhile True:\n  GuessNumber+=1\n  print(\"Guess number\",GuessNumber)\n  print(\"Current maximum low guess:\",lowGuess)\n  print(\"Current minimum high guess:\",highGuess)\n  guess=int(input(\"What's your guess?\"))\n  if guess==secret:\n    print(\"You got it!\")\n    break\n  elif guess<secret:\n    print(\"Too low.\")\n    lowGuess=max(lowGuess,guess)\n  else:\n    print(\"Too high.\")\n    highGuess=min(highGuess,guess)\n",
+          "type": "code"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "import random\nsecret=random.randint(1,1000)\nlowGuess=0\nhighGuess=1001\nGuessNumber=0\n# infinite loop, but exits with a break\n# when you guess it\nwhile True:\n  GuessNumber+=1\n  print(\"Guess number\",GuessNumber)\n  print(\"Current maximum low guess:\",lowGuess)\n  print(\"Current minimum high guess:\",highGuess)\n  guess=int(input(\"What's your guess?\"))\n  if guess==secret:\n    print(\"You got it!\")\n    break\n  elif guess<secret:\n    print(\"Too low.\")\n    lowGuess=max(lowGuess,guess)\n  else:\n    print(\"Too high.\")\n    highGuess=min(highGuess,guess)\n",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "656829",
+      "slide_type": "code_challenge",
+      "title": "Exercise: Math Quiz",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118177/slides/656829",
+      "segments": [
+        {
+          "html": "Do the following five times:",
+          "text": "Do the following five times:",
+          "type": "paragraph"
+        },
+        {
+          "html": "Generate a random 1 or 2 to select addition or multiplication. Then generate two random numbers each between 1 and 10. Then create a math problem. For instance, if you select multiplication, a 7, and a 5, present the problem \"What is 7*5?\". Ask the user for their answer and check if it is correct.",
+          "text": "Generate a random 1 or 2 to select addition or multiplication. Then generate two random numbers each between 1 and 10. Then create a math problem. For instance, if you select multiplication, a 7, and a 5, present the problem \"What is 7*5?\". Ask the user for their answer and check if it is correct.",
+          "type": "paragraph"
+        },
+        {
+          "html": "Afterward, print their score as a percentage.",
+          "text": "Afterward, print their score as a percentage.",
+          "type": "paragraph"
+        }
+      ],
+      "code_blocks": [],
+      "links": [],
+      "assets": [],
+      "exercise": {
+        "prompt": "Do the following five times:\n\nGenerate a random 1 or 2 to select addition or multiplication. Then generate two random numbers each between 1 and 10. Then create a math problem. For instance, if you select multiplication, a 7, and a 5, present the problem \"What is 7*5?\". Ask the user for their answer and check if it is correct.\n\nAfterward, print their score as a percentage.",
+        "prompt_segments": [
+          {
+            "html": "Do the following five times:",
+            "text": "Do the following five times:",
+            "type": "paragraph"
+          },
+          {
+            "html": "Generate a random 1 or 2 to select addition or multiplication. Then generate two random numbers each between 1 and 10. Then create a math problem. For instance, if you select multiplication, a 7, and a 5, present the problem \"What is 7*5?\". Ask the user for their answer and check if it is correct.",
+            "text": "Generate a random 1 or 2 to select addition or multiplication. Then generate two random numbers each between 1 and 10. Then create a math problem. For instance, if you select multiplication, a 7, and a 5, present the problem \"What is 7*5?\". Ask the user for their answer and check if it is correct.",
+            "type": "paragraph"
+          },
+          {
+            "html": "Afterward, print their score as a percentage.",
+            "text": "Afterward, print their score as a percentage.",
+            "type": "paragraph"
+          }
+        ],
+        "scaffold": {
+          "content": "",
+          "file": "solution.py",
+          "language": "python"
+        },
+        "workspace_files": [
+          {
+            "content": "",
+            "language": "python",
+            "name": "solution.py",
+            "role": "Ed staff-visible workspace file"
+          }
+        ],
+        "reference_solution_status": "present",
+        "reference_solution_provenance": "Ed staff edit view sample solution"
+      },
+      "activity_mapping": {
+        "question_path": "questions/InClassExercises/CS1/Week04Lecture05/MathQuiz/Base",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week04Lecture05MathQuiz",
+        "deployment_status": "pending"
+      }
+    },
+    {
+      "slide_id": "656830",
+      "slide_type": "document",
+      "title": "The Game of Nim",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118177/slides/656830",
+      "segments": [
+        {
+          "html": "In the game of Nim, there are two players and initially seven sticks. On each player's turn, they may pick up up to three sticks. The player who picks up the final stick loses.",
+          "text": "In the game of Nim, there are two players and initially seven sticks. On each player's turn, they may pick up up to three sticks. The player who picks up the final stick loses.",
+          "type": "paragraph"
+        },
+        {
+          "html": "This can be implemented by a nested while loop as follows.",
+          "text": "This can be implemented by a nested while loop as follows.",
+          "type": "paragraph"
+        },
+        {
+          "language": "",
+          "text": "# initially there are seven sticks\nsticksLeft=7\nwhile (sticksLeft>0):\n  # start with player 1\n  player=1\n  while True: # outer infinite while loop that we will break out of\n    # print out the number of sticks left\n    print(f\"There are {sticksLeft} sticks left.\")\n    # inner while loop- one player's turn\n    while True: # inner infinite while loop that we will break out of\n      sticksTaken=int(input(f\"Player {player}, how many sticks do you want to pick up?\"))\n      # if they selected a valid number of sticks, 1-3 and no more than the number left\n      if (sticksTaken<=sticksLeft) and (sticksTaken>=1) and (sticksTaken<=3):\n        # take away the sticks they selected\n        sticksLeft-=sticksTaken\n        # check if the game is over: if so, set a flag that it is.\n        gameOver=(sticksLeft==0)\n        # if the game is over print out who lost by taking the last stick\n        if gameOver:\n          print(f\"No sticks left. Player {player} lost.\")\n        # end the turn of this player by breaking out of the inner while loop\n        break\n      # otherwise get them to enter their choice again\n      else:\n       print(\"Invalid entry. Try again.\")\n    #change player\n    if player==1:\n      player=2\n    else:\n      player=1\n    #  if the game is over break out of the outer while loop as well\n    if gameOver: break\n",
+          "type": "code"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "# initially there are seven sticks\nsticksLeft=7\nwhile (sticksLeft>0):\n  # start with player 1\n  player=1\n  while True: # outer infinite while loop that we will break out of\n    # print out the number of sticks left\n    print(f\"There are {sticksLeft} sticks left.\")\n    # inner while loop- one player's turn\n    while True: # inner infinite while loop that we will break out of\n      sticksTaken=int(input(f\"Player {player}, how many sticks do you want to pick up?\"))\n      # if they selected a valid number of sticks, 1-3 and no more than the number left\n      if (sticksTaken<=sticksLeft) and (sticksTaken>=1) and (sticksTaken<=3):\n        # take away the sticks they selected\n        sticksLeft-=sticksTaken\n        # check if the game is over: if so, set a flag that it is.\n        gameOver=(sticksLeft==0)\n        # if the game is over print out who lost by taking the last stick\n        if gameOver:\n          print(f\"No sticks left. Player {player} lost.\")\n        # end the turn of this player by breaking out of the inner while loop\n        break\n      # otherwise get them to enter their choice again\n      else:\n       print(\"Invalid entry. Try again.\")\n    #change player\n    if player==1:\n      player=2\n    else:\n      player=1\n    #  if the game is over break out of the outer while loop as well\n    if gameOver: break\n",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "656831",
+      "slide_type": "code_challenge",
+      "title": "Exercise: Cumulative Sum",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118177/slides/656831",
+      "segments": [
+        {
+          "html": "Write a program that asks the user for an integer greater than 1 and prints out the sum of all of the integers up to and including that integer. For instance, if they enter 5, the program should calculate the sum 1+2+3+4+5, which is 15, so it would print 15.",
+          "text": "Write a program that asks the user for an integer greater than 1 and prints out the sum of all of the integers up to and including that integer. For instance, if they enter 5, the program should calculate the sum 1+2+3+4+5, which is 15, so it would print 15.",
+          "type": "paragraph"
+        },
+        {
+          "html": "If the user doesn't enter an integer greater than one, you should ask them to enter it again.",
+          "text": "If the user doesn't enter an integer greater than one, you should ask them to enter it again.",
+          "type": "paragraph"
+        }
+      ],
+      "code_blocks": [],
+      "links": [],
+      "assets": [],
+      "exercise": {
+        "prompt": "Write a program that asks the user for an integer greater than 1 and prints out the sum of all of the integers up to and including that integer. For instance, if they enter 5, the program should calculate the sum 1+2+3+4+5, which is 15, so it would print 15.\n\nIf the user doesn't enter an integer greater than one, you should ask them to enter it again.",
+        "prompt_segments": [
+          {
+            "html": "Write a program that asks the user for an integer greater than 1 and prints out the sum of all of the integers up to and including that integer. For instance, if they enter 5, the program should calculate the sum 1+2+3+4+5, which is 15, so it would print 15.",
+            "text": "Write a program that asks the user for an integer greater than 1 and prints out the sum of all of the integers up to and including that integer. For instance, if they enter 5, the program should calculate the sum 1+2+3+4+5, which is 15, so it would print 15.",
+            "type": "paragraph"
+          },
+          {
+            "html": "If the user doesn't enter an integer greater than one, you should ask them to enter it again.",
+            "text": "If the user doesn't enter an integer greater than one, you should ask them to enter it again.",
+            "type": "paragraph"
+          }
+        ],
+        "scaffold": {
+          "content": "",
+          "file": "solution.py",
+          "language": "python"
+        },
+        "workspace_files": [
+          {
+            "content": "",
+            "language": "python",
+            "name": "solution.py",
+            "role": "Ed staff-visible workspace file"
+          }
+        ],
+        "reference_solution_status": "present",
+        "reference_solution_provenance": "Ed staff edit view sample solution"
+      },
+      "activity_mapping": {
+        "question_path": "questions/InClassExercises/CS1/Week04Lecture05/CumulativeSum/Base",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week04Lecture05CumulativeSum",
+        "deployment_status": "pending"
+      }
+    },
+    {
+      "slide_id": "656832",
+      "slide_type": "document",
+      "title": "Leibniz's formula",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118177/slides/656832",
+      "segments": [
+        {
+          "html": "Leibniz's formula for pi is the following:",
+          "text": "Leibniz's formula for pi is the following:",
+          "type": "paragraph"
+        },
+        {
+          "html": "4−4/3+4/5−4/7+4/9...",
+          "text": "4−4/3+4/5−4/7+4/9...",
+          "type": "paragraph"
+        },
+        {
+          "html": "Let's implement this with a while loop up to 1,000,001. And see what the difference is with the value of pi provided by the Python math package.",
+          "text": "Let's implement this with a while loop up to 1,000,001. And see what the difference is with the value of pi provided by the Python math package.",
+          "type": "paragraph"
+        },
+        {
+          "level": 3,
+          "text": "Approximating Pi:",
+          "type": "heading"
+        },
+        {
+          "language": "",
+          "text": "import math\nlimit=10000001\ni=1\npiApprox=0\nsign=1\nwhile (i<=limit):\n  piApprox+=(4*sign/i)\n  sign=-sign\n  i+=2\nprint(piApprox)\nprint(f\"{piApprox-math.pi:.7f}\")",
+          "type": "code"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "import math\nlimit=10000001\ni=1\npiApprox=0\nsign=1\nwhile (i<=limit):\n  piApprox+=(4*sign/i)\n  sign=-sign\n  i+=2\nprint(piApprox)\nprint(f\"{piApprox-math.pi:.7f}\")",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "656833",
+      "slide_type": "code_challenge",
+      "title": "Exercise: Approximating 𝑒",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118177/slides/656833",
+      "segments": [
+        {
+          "html": "The mathematical constant 𝑒 can be approximated by the following series:",
+          "text": "The mathematical constant 𝑒 can be approximated by the following series:",
+          "type": "paragraph"
+        },
+        {
+          "html": "1+1/1+1/(1*2)+1/(1*2*3)...",
+          "text": "1+1/1+1/(1*2)+1/(1*2*3)...",
+          "type": "paragraph"
+        },
+        {
+          "html": "Implement this with a 10,001 terms in a while loop and see what the difference is with the value of e provided by the python math package as shown in the following cell.",
+          "text": "Implement this with a 10,001 terms in a while loop and see what the difference is with the value of e provided by the python math package as shown in the following cell.",
+          "type": "paragraph"
+        }
+      ],
+      "code_blocks": [],
+      "links": [],
+      "assets": [],
+      "exercise": {
+        "prompt": "The mathematical constant 𝑒 can be approximated by the following series:\n\n1+1/1+1/(1*2)+1/(1*2*3)...\n\nImplement this with a 10,001 terms in a while loop and see what the difference is with the value of e provided by the python math package as shown in the following cell.",
+        "prompt_segments": [
+          {
+            "html": "The mathematical constant 𝑒 can be approximated by the following series:",
+            "text": "The mathematical constant 𝑒 can be approximated by the following series:",
+            "type": "paragraph"
+          },
+          {
+            "html": "1+1/1+1/(1*2)+1/(1*2*3)...",
+            "text": "1+1/1+1/(1*2)+1/(1*2*3)...",
+            "type": "paragraph"
+          },
+          {
+            "html": "Implement this with a 10,001 terms in a while loop and see what the difference is with the value of e provided by the python math package as shown in the following cell.",
+            "text": "Implement this with a 10,001 terms in a while loop and see what the difference is with the value of e provided by the python math package as shown in the following cell.",
+            "type": "paragraph"
+          }
+        ],
+        "scaffold": {
+          "content": "",
+          "file": "solution.py",
+          "language": "python"
+        },
+        "workspace_files": [
+          {
+            "content": "",
+            "language": "python",
+            "name": "solution.py",
+            "role": "Ed staff-visible workspace file"
+          }
+        ],
+        "reference_solution_status": "present",
+        "reference_solution_provenance": "Ed staff edit view sample solution"
+      },
+      "activity_mapping": {
+        "question_path": "questions/InClassExercises/CS1/Week04Lecture05/ApproximatingE/Base",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week04Lecture05ApproximatingE",
+        "deployment_status": "pending"
+      }
+    },
+    {
+      "slide_id": "656834",
+      "slide_type": "document",
+      "title": "Another way to look at 𝑒",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118177/slides/656834",
+      "segments": [
+        {
+          "html": "Another way to look at 𝑒 is as the result of compounding interest. If you have one dollar invested at 100% interest for a year, then after a year you have two dollars. However, if this is compounded twice (50% after six months and another 50% after a year), you get 1.5 squared or $2.25. If it is compounded four times, you get 1.25 to the fourth power, or about $2.44. In the limit, when it is compounded continously (an infinite number of times) you get 𝑒 dollars; 𝑒 is about 2.718 (but is an irrational number with an infinite number of non-repeating digits after the decimal point.)",
+          "text": "Another way to look at 𝑒 is as the result of compounding interest. If you have one dollar invested at 100% interest for a year, then after a year you have two dollars. However, if this is compounded twice (50% after six months and another 50% after a year), you get 1.5 squared or $2.25. If it is compounded four times, you get 1.25 to the fourth power, or about $2.44. In the limit, when it is compounded continously (an infinite number of times) you get 𝑒 dollars; 𝑒 is about 2.718 (but is an irrational number with an infinite number of non-repeating digits after the decimal point.)",
+          "type": "paragraph"
+        },
+        {
+          "language": "",
+          "text": "import math\nnumberCompounds=int(input(\"Compound how many times?\"))\n# 100 percent interest\ninterestRate=1\n# divide the rate by the number of compounds\ncompoundingRate=1+(interestRate/(numberCompounds))\ni=0\n# initially we have one (dollar)\ninitialAmount=1\nresultingAmount=initialAmount\n# compound numberCompounds times\nwhile (i<numberCompounds):\n  resultingAmount*=compoundingRate\n  i+=1\nprint(resultingAmount)\nprint(math.e)",
+          "type": "code"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "import math\nnumberCompounds=int(input(\"Compound how many times?\"))\n# 100 percent interest\ninterestRate=1\n# divide the rate by the number of compounds\ncompoundingRate=1+(interestRate/(numberCompounds))\ni=0\n# initially we have one (dollar)\ninitialAmount=1\nresultingAmount=initialAmount\n# compound numberCompounds times\nwhile (i<numberCompounds):\n  resultingAmount*=compoundingRate\n  i+=1\nprint(resultingAmount)\nprint(math.e)",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "656835",
+      "slide_type": "code_challenge",
+      "title": "Exercise: Factors of a Number",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118177/slides/656835",
+      "segments": [
+        {
+          "html": "Write a program that asks the user for a number and then finds, and prints out, all of the factors of that number including 1 but excluding itself.",
+          "text": "Write a program that asks the user for a number and then finds, and prints out, all of the factors of that number including 1 but excluding itself.",
+          "type": "paragraph"
+        }
+      ],
+      "code_blocks": [],
+      "links": [],
+      "assets": [],
+      "exercise": {
+        "prompt": "Write a program that asks the user for a number and then finds, and prints out, all of the factors of that number including 1 but excluding itself.",
+        "prompt_segments": [
+          {
+            "html": "Write a program that asks the user for a number and then finds, and prints out, all of the factors of that number including 1 but excluding itself.",
+            "text": "Write a program that asks the user for a number and then finds, and prints out, all of the factors of that number including 1 but excluding itself.",
+            "type": "paragraph"
+          }
+        ],
+        "scaffold": {
+          "content": "",
+          "file": "solution.py",
+          "language": "python"
+        },
+        "workspace_files": [
+          {
+            "content": "",
+            "language": "python",
+            "name": "solution.py",
+            "role": "Ed staff-visible workspace file"
+          }
+        ],
+        "reference_solution_status": "present",
+        "reference_solution_provenance": "Ed staff edit view sample solution"
+      },
+      "activity_mapping": {
+        "question_path": "questions/InClassExercises/CS1/Week04Lecture05/FactorsOfANumber/Base",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week04Lecture05FactorsOfANumber",
+        "deployment_status": "pending"
+      }
+    },
+    {
+      "slide_id": "656836",
+      "slide_type": "code_challenge",
+      "title": "Exercise: Finding Perfect Numbers",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118177/slides/656836",
+      "segments": [
+        {
+          "html": "A perfect number is a number that is the sum of its own factors including 1 but excluding itself. Print all of the perfect numbers under 10,000.",
+          "text": "A perfect number is a number that is the sum of its own factors including 1 but excluding itself. Print all of the perfect numbers under 10,000.",
+          "type": "paragraph"
+        }
+      ],
+      "code_blocks": [],
+      "links": [],
+      "assets": [],
+      "exercise": {
+        "prompt": "A perfect number is a number that is the sum of its own factors including 1 but excluding itself. Print all of the perfect numbers under 10,000.",
+        "prompt_segments": [
+          {
+            "html": "A perfect number is a number that is the sum of its own factors including 1 but excluding itself. Print all of the perfect numbers under 10,000.",
+            "text": "A perfect number is a number that is the sum of its own factors including 1 but excluding itself. Print all of the perfect numbers under 10,000.",
+            "type": "paragraph"
+          }
+        ],
+        "scaffold": {
+          "content": "",
+          "file": "solution.py",
+          "language": "python"
+        },
+        "workspace_files": [
+          {
+            "content": "",
+            "language": "python",
+            "name": "solution.py",
+            "role": "Ed staff-visible workspace file"
+          }
+        ],
+        "reference_solution_status": "present",
+        "reference_solution_provenance": "Ed staff edit view sample solution"
+      },
+      "activity_mapping": {
+        "question_path": "questions/InClassExercises/CS1/Week04Lecture05/FindingPerfectNumbers/Base",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week04Lecture05FindingPerfectNumbers",
+        "deployment_status": "pending"
+      }
+    },
+    {
+      "slide_id": "656838",
+      "slide_type": "document",
+      "title": "Finding the Square Root of 2",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118177/slides/656838",
+      "segments": [
+        {
+          "html": "Consider the following code which computes the square root of 2.",
+          "text": "Consider the following code which computes the square root of 2.",
+          "type": "paragraph"
+        },
+        {
+          "language": "",
+          "text": "import math\nx=2\ny=math.sqrt(x)\nz=1\nprint(y)\n",
+          "type": "code"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "import math\nx=2\ny=math.sqrt(x)\nz=1\nprint(y)\n",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "656837",
+      "slide_type": "code_challenge",
+      "title": "Exercise: Approximating a Square Root",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118177/slides/656837",
+      "segments": [
+        {
+          "html": "The update formula",
+          "text": "The update formula",
+          "type": "paragraph"
+        },
+        {
+          "html": "z=(z+x/z)/2",
+          "text": "z=(z+x/z)/2",
+          "type": "paragraph"
+        },
+        {
+          "html": "if executed repeatedly in a while loop will result in z getting closer and closer to the square root of x, which is computed as y in the previous slide.",
+          "text": "if executed repeatedly in a while loop will result in z getting closer and closer to the square root of x, which is computed as y in the previous slide.",
+          "type": "paragraph"
+        },
+        {
+          "html": "Set x to 2 and z (initially) to 1.",
+          "text": "Set x to 2 and z (initially) to 1.",
+          "type": "paragraph"
+        },
+        {
+          "html": "Write a while loop that runs until the absolute value of z-y is less than 0.000001. Python has an abs() function that will allow you to compute this. How many iterations does this take?",
+          "text": "Write a while loop that runs until the absolute value of z-y is less than 0.000001. Python has an abs() function that will allow you to compute this. How many iterations does this take?",
+          "type": "paragraph"
+        }
+      ],
+      "code_blocks": [],
+      "links": [],
+      "assets": [],
+      "exercise": {
+        "prompt": "The update formula\n\nz=(z+x/z)/2\n\nif executed repeatedly in a while loop will result in z getting closer and closer to the square root of x, which is computed as y in the previous slide.\n\nSet x to 2 and z (initially) to 1.\n\nWrite a while loop that runs until the absolute value of z-y is less than 0.000001. Python has an abs() function that will allow you to compute this. How many iterations does this take?",
+        "prompt_segments": [
+          {
+            "html": "The update formula",
+            "text": "The update formula",
+            "type": "paragraph"
+          },
+          {
+            "html": "z=(z+x/z)/2",
+            "text": "z=(z+x/z)/2",
+            "type": "paragraph"
+          },
+          {
+            "html": "if executed repeatedly in a while loop will result in z getting closer and closer to the square root of x, which is computed as y in the previous slide.",
+            "text": "if executed repeatedly in a while loop will result in z getting closer and closer to the square root of x, which is computed as y in the previous slide.",
+            "type": "paragraph"
+          },
+          {
+            "html": "Set x to 2 and z (initially) to 1.",
+            "text": "Set x to 2 and z (initially) to 1.",
+            "type": "paragraph"
+          },
+          {
+            "html": "Write a while loop that runs until the absolute value of z-y is less than 0.000001. Python has an abs() function that will allow you to compute this. How many iterations does this take?",
+            "text": "Write a while loop that runs until the absolute value of z-y is less than 0.000001. Python has an abs() function that will allow you to compute this. How many iterations does this take?",
+            "type": "paragraph"
+          }
+        ],
+        "scaffold": {
+          "content": "",
+          "file": "solution.py",
+          "language": "python"
+        },
+        "workspace_files": [
+          {
+            "content": "",
+            "language": "python",
+            "name": "solution.py",
+            "role": "Ed staff-visible workspace file"
+          }
+        ],
+        "reference_solution_status": "present",
+        "reference_solution_provenance": "Ed staff edit view sample solution"
+      },
+      "activity_mapping": {
+        "question_path": "questions/InClassExercises/CS1/Week04Lecture05/ApproximatingASquareRoot/Base",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week04Lecture05ApproximatingASquareRoot",
+        "deployment_status": "pending"
+      }
+    },
+    {
+      "slide_id": "656839",
+      "slide_type": "code_challenge",
+      "title": "Exercise: Raising a Number to a Power",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118177/slides/656839",
+      "segments": [
+        {
+          "html": "Write a program that asks the user for two integers, m and n. Then use a while loop to compute and print m to the nth power. Do not use the exponentiation operator except to check your work.",
+          "text": "Write a program that asks the user for two integers, m and n. Then use a while loop to compute and print m to the nth power. Do not use the exponentiation operator except to check your work.",
+          "type": "paragraph"
+        }
+      ],
+      "code_blocks": [],
+      "links": [],
+      "assets": [],
+      "exercise": {
+        "prompt": "Write a program that asks the user for two integers, m and n. Then use a while loop to compute and print m to the nth power. Do not use the exponentiation operator except to check your work.",
+        "prompt_segments": [
+          {
+            "html": "Write a program that asks the user for two integers, m and n. Then use a while loop to compute and print m to the nth power. Do not use the exponentiation operator except to check your work.",
+            "text": "Write a program that asks the user for two integers, m and n. Then use a while loop to compute and print m to the nth power. Do not use the exponentiation operator except to check your work.",
+            "type": "paragraph"
+          }
+        ],
+        "scaffold": {
+          "content": "",
+          "file": "solution.py",
+          "language": "python"
+        },
+        "workspace_files": [
+          {
+            "content": "",
+            "language": "python",
+            "name": "solution.py",
+            "role": "Ed staff-visible workspace file"
+          }
+        ],
+        "reference_solution_status": "present",
+        "reference_solution_provenance": "Ed staff edit view sample solution"
+      },
+      "activity_mapping": {
+        "question_path": "questions/InClassExercises/CS1/Week04Lecture05/RaisingANumberToAPower/Base",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week04Lecture05RaisingANumberToAPower",
+        "deployment_status": "pending"
+      }
+    }
+  ]
+}

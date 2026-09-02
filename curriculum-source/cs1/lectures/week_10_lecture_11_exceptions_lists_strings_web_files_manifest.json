@@ -1,0 +1,852 @@
+{
+  "id": "cs1_week_10_lecture_11_exceptions_lists_strings_web_files",
+  "course": "CS 1",
+  "title": "Week 10, Lecture 11: Exceptions, Lists, Strings, the Web and Files",
+  "source": {
+    "platform": "ed",
+    "lesson_id": "119219",
+    "course_id": "62123",
+    "inventory": "curriculum-source/cs1/ed/lessons/week_10_lecture_11_exceptions_lists_strings_web_files_ed_source.json"
+  },
+  "targets": [
+    "codespaces",
+    "prairielearn"
+  ],
+  "presentation": {
+    "ui": "semantic-callouts-v1",
+    "include_title": false,
+    "include_exercise_index": false,
+    "rise": {
+      "theme": "simple",
+      "transition": "slide",
+      "start_slideshow_at": "selected"
+    }
+  },
+  "lecture_blocks": [
+    {
+      "id": "ed-slide-662519",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662519",
+      "ed_slide_type": "document",
+      "title": "Exceptions",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "An exception is any error that that causes a program to stop while it is running."
+        },
+        {
+          "type": "paragraph",
+          "text": "For instance, converting a string not containing digits to an integer will generate an error, because it can't be done (it doesn't make sense if the string isn't all digits.)"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "When an exception occurs Python will generate a “traceback,\" as it did above",
+            "Tracebacks give information about the exception that occurred, including the line number that caused the issue and the name of the exception",
+            "Programmers generally say that an exception has been “raised” by the program"
+          ]
+        }
+      ],
+      "code_cells": [
+        {
+          "content": "x=\"Hello\"\n#x=\"123\"\ny=int(x)\nprint(y)\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-662520",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662520",
+      "ed_slide_type": "document",
+      "title": "Preventing Exceptions",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "Many times, you can avoid exceptions by changing our code. For example, the following code will raise an exception if x is zero."
+        },
+        {
+          "type": "paragraph",
+          "text": "However, we can avoid the issue by wrapping the potentially dangerous code inside a conditional statement:"
+        }
+      ],
+      "code_cells": [
+        {
+          "content": "x=int(input(\"Please enter a number:\"))\nprint(100/x)\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        },
+        {
+          "content": "x=int(input(\"Please enter a number:\"))\nif x!=0: print(100/x)\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-662521",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662521",
+      "ed_slide_type": "document",
+      "title": "Catching Exceptions",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "Python has an exception handling statement that may be used to \"catch\" exceptions and prevent them from crashing your program.",
+            "It uses the following syntax:"
+          ]
+        }
+      ],
+      "code_cells": [
+        {
+          "content": "try:  # questionable code goes hereexcept:  # this block will run if the code in the \"try\"  # block above raised an exceptionelse: # optional  # this block will run if the code in the \"try\"  # block above was successful\n",
+          "tags": [
+            "nyu-short-code",
+            "expected-error",
+            "skip-auto-run"
+          ]
+        },
+        {
+          "content": "try:  # questionable code goes hereexcept:  # this block will run if the code in the \"try\"  # block above raised an exceptionelse: # optional  # this block will run if the code in the \"try\"  # block above was successful\n",
+          "tags": [
+            "nyu-short-code",
+            "expected-error",
+            "skip-auto-run"
+          ]
+        },
+        {
+          "content": "# catch the division by zero error\nx=int(input(\"Please enter a number:\"))\ntry:\n  print(100/x)\nexcept:\n  print(\"Can't divide by zero.\")\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-662522",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662522",
+      "ed_slide_type": "code_challenge",
+      "title": "Exercise: Try, Except",
+      "layout": "nyu-activity-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "Use try ... except ... else to write a loop that validates the user's input of an integer. Wrap the try ... except ... else in an infinite loop and break out of the loop when an integer is correctly input."
+        }
+      ],
+      "prairielearn_signpost": {
+        "status": "deployment_pending",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week10Lecture11TryExcept",
+        "question_path": "questions/InClassExercises/CS1/Week10Lecture11/TryExcept/Base"
+      }
+    },
+    {
+      "id": "ed-slide-662523",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662523",
+      "ed_slide_type": "document",
+      "title": "Splitting a String",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "Sometimes you are given long strings of information that need to be \"parsed\" in a particular way",
+            "For example, consider the following string:"
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "This string contains three pieces of data: a name, a title and an employer. The data has been \"packaged\" into a single string by using a comma to separate the different data items.",
+            "We can use a technique called \"splitting\" to \"unpack\" a string and extract its individual values. The trick is to use a separator value, a \"delimiter\".",
+            "The split method splits a string into a list of strings using a delimiter."
+          ]
+        }
+      ],
+      "code_cells": [
+        {
+          "content": "x = \"Adams,Mayor,NYC\"\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        },
+        {
+          "content": "x = \"Adams,Mayor,NYC\"\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        },
+        {
+          "content": "x = \"Adams,Mayor,NYC\"\nsplitstring=x.split(\",\")\nprint(splitstring)\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-662524",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662524",
+      "ed_slide_type": "code_challenge",
+      "title": "Exercise: Golf Scores",
+      "layout": "nyu-activity-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "The following string represents the scores of a golfer on a series of rounds of golf."
+        },
+        {
+          "type": "paragraph",
+          "text": "scores=\"72,70,68,79,71\""
+        },
+        {
+          "type": "paragraph",
+          "text": "Split this string into a list of scores and find the maximum, minimum, and average score. To do this, you can use the max, min, sum, and len functions."
+        }
+      ],
+      "prairielearn_signpost": {
+        "status": "deployment_pending",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week10Lecture11GolfScores",
+        "question_path": "questions/InClassExercises/CS1/Week10Lecture11/GolfScores/Base"
+      }
+    },
+    {
+      "id": "ed-slide-662525",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662525",
+      "ed_slide_type": "document",
+      "title": "Obtaining Data from the Web",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "You generally won't be \"hard coding\" data into your programs. You will usually be processing information that comes to you in the form of user input or via an external data source.",
+            "One way to easily to get information into Python from the \"outside world\" is to initiate a connection to the Web and obtain data via a URL."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Method:"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "Initiate a web connection to an external data source",
+            "Obtain the data that exists at that location as a String",
+            "\"Clean up\" the string into a meaningful form that your program can understand. This usually involves making sure that the character set used in the external file is one that your computer can handle",
+            "Parse your string into a list",
+            "Process this list and generate output"
+          ]
+        }
+      ],
+      "code_cells": [
+        {
+          "content": "# an example: getting a web page from CNN using the urllib module\nimport urllib.request\n# source of data:\nurl = 'http://www.cnn.com'\n\nresponse = urllib.request.urlopen(url)\n\ndata = response.read().decode('utf-8')\n\nprint(data[:2000])\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-662526",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662526",
+      "ed_slide_type": "document",
+      "title": "Be Careful!",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "The web is a volatile place: servers can go up and down at a moment's notice, and your connection to the network may not always be available.",
+            "You need to be prepared to deal with connection errors in your programs.",
+            "You can use the try/except/else statement to help catch errors before they crash your program"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-662527",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662527",
+      "ed_slide_type": "document",
+      "title": "Programs and Memory",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "All of the programs that you have been writing so far have reset themselves each time they run",
+            "This is because the data associated with the program (i.e. your variables) are stored in your computer’s memory (RAM)",
+            "RAM is a volatile place – it serves as a computer’s short term memory. RAM that is being used by a program is cleared when the program stops running.",
+            "If programs are to retain data between executions then we must find a more permanent way to store and save information for future use."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-662528",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662528",
+      "ed_slide_type": "document",
+      "title": "Long Term Storage",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "A computer almost always has at least one type of long-term storage device at its disposal (usually some kind of hard drive, SSD, or cloud storage)",
+            "We can use the long term storage capabilities of a computer to store data in the form of a file.",
+            "Once we save a file it will remain on the long term storage device after the program is finished running, and can be accessed and retrieved later on.",
+            "Many applications use long term storage: e.g. word processors, spreadsheets, Adobe Acrobat for PDFs, photo display programs, etc."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-662529",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662529",
+      "ed_slide_type": "document",
+      "title": "File Types",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "There are two main file types:"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "Text files (human readable) (this notebook is a text file)",
+            "Binary files (readable only by the machine, like photo files)"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-662530",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662530",
+      "ed_slide_type": "document",
+      "title": "Text Files",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "Text files are files that contain data that is encoded as text (i.e. ASCII or Unicode characters)",
+            "Data stored in a text file is visible and can be read by a program that is designed to view / edit textual data (i.e. a word processing program)",
+            "Examples:\n\nNotepad documents\n\nCookies\n\nHTML files\n\nXML files"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "We will be working with text files exclusively in this class"
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-662531",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662531",
+      "ed_slide_type": "document",
+      "title": "Binary Files",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "Binary files contain data that is not encoded in a text format",
+            "Binary files are intended to be read by other programs and not by humans directly",
+            "Binary files appear as “gibberish” when viewed via a word processing program",
+            "Examples\n\nImage files (PNG / GIF / JPG files)\n\nMovie Files (MOV / MP4 / AVI files)\n\nApplication files (EXE / APP files)"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-662532",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662532",
+      "ed_slide_type": "document",
+      "title": "Working with Files",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "Step 1: Open up a connection between your program and the operating system. Define the name and location of the file you wish to work with as well as what you want to do to that file (read or write)",
+            "Step 2: Process the data\n\nWriting: send information in the form of variables from your program into the file to be written\n\nReading: extract information into variables in your program",
+            "Step 3: Close the file, telling the OS to release the file for use by other programs"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-662533",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662533",
+      "ed_slide_type": "document",
+      "title": "File Access Methods",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "Sequential Access: You must read a file starting at the beginning and continue until you reach the data you are looking for (similar to how a cassette tape works) – this is the method we will be focusing on in this class",
+            "Random Access: You can skip from point to point in a file, allowing you to jump over data until you find what you are looking for (similar to how a CD works)"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-662534",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662534",
+      "ed_slide_type": "document",
+      "title": "Filenames",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "Filenames are nothing more than labels that allow us to uniquely identify groupings of data that exist on a long term storage device",
+            "Every file must have a filename",
+            "On most operating systems a filename comes with a “file extension” which allows you to quickly tell what kind of data is stored inside that file. Extensions come after the last period in a file (i.e. “mydocument.doc” – “doc” is the file extension)",
+            "File extensions tell the operating system what kind of data is stored in the file and allows the OS to select an appropriate program to open a particular file"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-662535",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662535",
+      "ed_slide_type": "document",
+      "title": "File Objects",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "A file object is a special variable that you must create in a programming language that serves as a connection between your program and the operating system (OS)",
+            "File objects tell the OS the name of a file that you wish to work with along with what you want to do to that file (write, read, append, etc)"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-662537",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662537",
+      "ed_slide_type": "document",
+      "title": "Opening a File in Python",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "Filenames are expressed as strings",
+            "If you type in a simple filename (i.e. “myfile.txt”) you are telling Python to open up a file with that name in the current directory",
+            "You can ask Python to open up a file that exists outside of the current directory by typing in an absolute path. For example:\n\nWindows: ‘C:\\temp\\testfile.txt’\n\nMac or Linux/Unix: ‘/var/local/testfile.txt’",
+            "When providing an absolute path you should preface the string with the ‘r’ directive – this tells Python to treat the text in the string as “raw” text and not try and add in any escape characters. Example:\n\nfile_object = open(r’C:\\temp\\testfile.txt’, ‘w’)"
+          ]
+        }
+      ],
+      "code_cells": [
+        {
+          "content": "file_object = open(filename, mode)# File Modes# 'r' = read# 'w' = write - if the file does not exist, create it#               if the file does not exist, overwrite it# 'a' = append - if the file does not exist, create it#               if the file does exist, append data to the end of it\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        },
+        {
+          "content": "file_object = open(filename, mode)# File Modes# 'r' = read# 'w' = write - if the file does not exist, create it#               if the file does not exist, overwrite it# 'a' = append - if the file does not exist, create it#               if the file does exist, append data to the end of it\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-662538",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662538",
+      "ed_slide_type": "document",
+      "title": "Writing data to a file",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "You can write data into a file once you have created a file object and have opened a file for writing using the write() function. Here’s an example:"
+        }
+      ],
+      "code_cells": [
+        {
+          "content": "# since this is in Colab, this file is actually written on one of Google's computers\n# that is, the computer that is running this notebook\nfile_object = open('myfile.txt', 'w')\nfile_object.write(\"good morning\\n\")\nfile_object.write(\"how are you?\\n\")\n# close the file when you’re done\nfile_object.close()\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-662540",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662540",
+      "ed_slide_type": "code_challenge",
+      "title": "Exercise: File",
+      "layout": "nyu-activity-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "Prompt the user for a user name and a password. Then store them in a file called \"security.txt\"."
+        },
+        {
+          "type": "paragraph",
+          "text": "(Ed can't read or write files so you may want to do this in Colab, IDLE, or another IDE)"
+        }
+      ],
+      "prairielearn_signpost": {
+        "status": "deployment_pending",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week10Lecture11File",
+        "question_path": "questions/InClassExercises/CS1/Week10Lecture11/File/Base"
+      }
+    },
+    {
+      "id": "ed-slide-662541",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662541",
+      "ed_slide_type": "document",
+      "title": "Delimiters and Files",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "You want to try and avoid writing files that concatenate all your data into one long line of unintelligible text",
+            "This is bad practice since it can be very difficult – or impossible – to extract out your data later on",
+            "One way to separate data in a text file is by separating your data into multiple lines using the “\\n” escape character. This allows you to store a single value on each line of your text file, which will make things a lot easier for you later, when you need to read your file and perform an operation on the data contained within"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-662542",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662542",
+      "ed_slide_type": "document",
+      "title": "Reading Data from a File",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "You can read data contained inside a file once you have created a file object and have opened a file for reading using the read() function. Here’s an example where we read the file we created above."
+        },
+        {
+          "type": "paragraph",
+          "text": "The file worldseries.txt can be found here.",
+          "html": "The file worldseries.txt can be found <a class=\"amber-el amber-link amber-el ed-focus-outline\" href=\"https://www.google.com/url?q=https%3A%2F%2Fdocs.google.com%2Fdocument%2Fd%2F1jaZrFGI-xXAD_NAiz9x6iha3supuuIgI60k0t12IPH4%2Fedit%3Fusp%3Dsharing\" target=\"_blank\" rel=\"noopener noreferrer\">here</a>."
+        },
+        {
+          "type": "paragraph",
+          "text": "It has one line for each year for each winner of the World Series in baseball up to a few years ago. Let's determine what team won the World Series the most times."
+        },
+        {
+          "type": "paragraph",
+          "text": "It uses my Google Drive. If you want to run it, you will need to copy the file into your own Google Drive and mount your Google Drive into Colab. Or you can just download the file into a directory on your computer and run the program using IDLE or another IDE.",
+          "html": "It uses my Google Drive. If you want to run it, you will need to copy the file into your own Google Drive and <a class=\"amber-el amber-link amber-el ed-focus-outline\" href=\"https://colab.research.google.com/notebooks/io.ipynb#scrollTo=u22w3BFiOveA\" target=\"_blank\" rel=\"noopener noreferrer\">mount your Google Drive into Colab</a>. Or you can just download the file into a directory on your computer and run the program using IDLE or another IDE."
+        }
+      ],
+      "code_cells": [
+        {
+          "content": "f=open(\"myfile.txt\",\"r\")\nalldata=f.read()\nprint(alldata)\nf.close()\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        },
+        {
+          "content": "# open the file\n# note this references my Google Drive (and a subdirectory of a directory of it)\n# to run this, you will have to copy the file to your Google Drive as\n# you won't be able to access mine\n# you will also have to mount your Google Drive into Colab\nf=open(\"/content/drive/MyDrive/0002/Data/worldseries.txt\",\"r\")\n# read the entire file\nallLines=f.read()\nf.close()\n# split into lines\nteamList=allLines.split(\"\\n\")\n# following is list of unique teams\ntl2=[]\n# following is the win count as a list\ncounts=[]\nfor team in teamList:\n  # if the team is not in the list\n  if team not in tl2:\n    tl2.append(team) # add it\n    counts.append(1) # set the win count to one\n  else:\n    i=tl2.index(team) # otherwise find its position in the list\n    counts[i]+=1 # and increment its count\nm=max(counts) # find maximum wins\ni=counts.index(m) # find index of maximum wins\nprint(f\"The {tl2[i]} won {m} times.\")# print corresponding team and number of wins\nprint(tl2) # print the list of teams\nprint(counts) # print all of the counts\n",
+          "tags": [
+            "nyu-long-code"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-662543",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662543",
+      "ed_slide_type": "document",
+      "title": "Writing Numeric Data to a File",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "The write() function only accepts strings – the following code will generate a runtime error:"
+        },
+        {
+          "type": "paragraph",
+          "text": "You need to convert any data that will be stored in a file into a string by using the str() conversion function. For example:"
+        }
+      ],
+      "code_cells": [
+        {
+          "content": "myvar = open(\"test2.txt\", \"w”)myvar.write(55)myvar.close()\n",
+          "tags": [
+            "nyu-short-code",
+            "expected-error",
+            "skip-auto-run"
+          ]
+        },
+        {
+          "content": "myvar = open(\"test2.txt\", \"w”)myvar.write(55)myvar.close()\n",
+          "tags": [
+            "nyu-short-code",
+            "expected-error",
+            "skip-auto-run"
+          ]
+        },
+        {
+          "content": "myvar = open(\"test2.txt\", \"w”)myvar.write(str(55))myvar.close()\n",
+          "tags": [
+            "nyu-short-code",
+            "expected-error",
+            "skip-auto-run"
+          ]
+        },
+        {
+          "content": "myvar = open(\"test2.txt\", \"w”)myvar.write(str(55))myvar.close()\n",
+          "tags": [
+            "nyu-short-code",
+            "expected-error",
+            "skip-auto-run"
+          ]
+        },
+        {
+          "content": "myvar = open(\"test2.txt\", \"w\")\nmyvar.write(str(55))\nmyvar.close()\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-662544",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662544",
+      "ed_slide_type": "document",
+      "title": "Reading Numeric Data from a file",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "When you are reading data from a file you will need to convert strings to ints or floats if you want to perform calculations on them",
+            "This is identical to what we have to do when using the input() function to ask the user to enter a string",
+            "Note: The int() and float() functions automatically remove line break characters for you!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-662545",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662545",
+      "ed_slide_type": "code_challenge",
+      "title": "Exercise: Appending to a File",
+      "layout": "nyu-activity-slide",
+      "segments": [
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "Continually prompt a user for a series of price values",
+            "Store these values in a text file called “prices.txt”",
+            "When the user enters a price value of 0 or less you can assume they want to end the program",
+            "If the user runs the program more than once you should not overwrite the previous text file – simply append the new price values to the end of the file",
+            "Hint: open the file using the ‘a’ flag"
+          ]
+        }
+      ],
+      "prairielearn_signpost": {
+        "status": "deployment_pending",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week10Lecture11AppendingToAFile",
+        "question_path": "questions/InClassExercises/CS1/Week10Lecture11/AppendingToAFile/Base"
+      },
+      "include_source_with_signpost": true
+    },
+    {
+      "id": "ed-slide-662546",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662546",
+      "ed_slide_type": "code_challenge",
+      "title": "Exercise: Read Values",
+      "layout": "nyu-activity-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "Open your ‘prices.txt’ file for reading. Read in all values and calculate the average price based on the values that are contained in the file. Print it out."
+        }
+      ],
+      "prairielearn_signpost": {
+        "status": "deployment_pending",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week10Lecture11ReadValues",
+        "question_path": "questions/InClassExercises/CS1/Week10Lecture11/ReadValues/Base"
+      }
+    },
+    {
+      "id": "ed-slide-662547",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662547",
+      "ed_slide_type": "document",
+      "title": "Storing Lists in Files",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "You can store list data in a file by doing the following:"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "Open up a file",
+            "Iterate through your list",
+            "Write each value to the file, making sure to convert each value to a string and append a line break character to each item"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-662548",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662548",
+      "ed_slide_type": "code_challenge",
+      "title": "Exercise: Create Files",
+      "layout": "nyu-activity-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "Write a program that asks the user for a first name and appends it to a list. Repeat this until the user enters \"stop\"."
+        },
+        {
+          "type": "paragraph",
+          "text": "Then write the list to a file."
+        }
+      ],
+      "prairielearn_signpost": {
+        "status": "deployment_pending",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week10Lecture11CreateFiles",
+        "question_path": "questions/InClassExercises/CS1/Week10Lecture11/CreateFiles/Base"
+      }
+    },
+    {
+      "id": "ed-slide-662549",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662549",
+      "ed_slide_type": "code_challenge",
+      "title": "Exercise: Counting",
+      "layout": "nyu-activity-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "A file containing the text of the American Declaration of Independence can be found here. Count how many alphabetic characters are in that file.",
+          "html": "A file containing the text of the American Declaration of Independence can be found <a href=\"https://www.google.com/url?q=https%3A%2F%2Fdrive.google.com%2Ffile%2Fd%2F1pRvhL9uL-mVO02aazpmYZ9mXCf6aMteY%2Fview%3Fusp%3Dsharing\">here</a>. Count how many alphabetic characters are in that file."
+        }
+      ],
+      "prairielearn_signpost": {
+        "status": "deployment_pending",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week10Lecture11Counting",
+        "question_path": "questions/InClassExercises/CS1/Week10Lecture11/Counting/Base"
+      },
+      "include_source_with_signpost": true
+    },
+    {
+      "id": "ed-slide-662550",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662550",
+      "ed_slide_type": "code_challenge",
+      "title": "Exercise: Stop",
+      "layout": "nyu-activity-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "Have the user input a series of lines of text and write them in turn to a file. Stop and close the file when the user types \"stop\"."
+        },
+        {
+          "type": "paragraph",
+          "text": "Then ask the user for a string to replace and the string to replace it with. Then search for all of the instances of the string in the file you wrote above and replace them. Then write the result out to a second file."
+        }
+      ],
+      "prairielearn_signpost": {
+        "status": "deployment_pending",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week10Lecture11Stop",
+        "question_path": "questions/InClassExercises/CS1/Week10Lecture11/Stop/Base"
+      }
+    }
+  ]
+}

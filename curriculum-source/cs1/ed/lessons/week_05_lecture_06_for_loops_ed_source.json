@@ -1,0 +1,1098 @@
+{
+  "schema_version": 1,
+  "course_id": "62123",
+  "source_course": "CS 0002, Section 10, Fall 2024",
+  "target_course": "CS0001",
+  "lesson_id": "118178",
+  "lesson_title": "Week 5, Lecture 6: \"For\" Loops",
+  "target_lecture": 6,
+  "week": 5,
+  "slide_count": 24,
+  "slides": [
+    {
+      "slide_id": "656840",
+      "slide_type": "document",
+      "title": "Count-Controlled (\"For\") Loops",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118178/slides/656840",
+      "segments": [
+        {
+          "html": "So far, we have seen condition-controlled or \"while\" loops that repeat the code in their block while a Boolean condition remains true.",
+          "text": "So far, we have seen condition-controlled or \"while\" loops that repeat the code in their block while a Boolean condition remains true.",
+          "type": "paragraph"
+        },
+        {
+          "html": "We also have count-controlled or \"for\" loops that repeat the code in their block a predetermined and fixed number of times.",
+          "text": "We also have count-controlled or \"for\" loops that repeat the code in their block a predetermined and fixed number of times.",
+          "type": "paragraph"
+        },
+        {
+          "html": "The following while loop will print the numbers from 1 to 10 on a single line.",
+          "text": "The following while loop will print the numbers from 1 to 10 on a single line.",
+          "type": "paragraph"
+        },
+        {
+          "language": "",
+          "text": "i=1\nwhile (i<=10):\n  print(i,\"\",end=\"\")\n  i+=1\nprint()",
+          "type": "code"
+        },
+        {
+          "html": "The following is the equivalent for loop. Note that anything you can do with a for loop you can do with a while loop, but the syntax of a for loop is more concise when you are iterating a fixed number of times as in this case.",
+          "text": "The following is the equivalent for loop. Note that anything you can do with a for loop you can do with a while loop, but the syntax of a for loop is more concise when you are iterating a fixed number of times as in this case.",
+          "type": "paragraph"
+        },
+        {
+          "html": "It makes use of the range function range(start,stop,step) which generates a range of numbers starting at and including start and ending at but not including stop, in intervals of step. If step is omitted, it is one.",
+          "text": "It makes use of the range function range(start,stop,step) which generates a range of numbers starting at and including start and ending at but not including stop, in intervals of step. If step is omitted, it is one.",
+          "type": "paragraph"
+        },
+        {
+          "html": "So range(1,11) gives the numbers from 1 to 10 (since 1 is included but 11 is omitted). It is the same as saying range(1,11,1).",
+          "text": "So range(1,11) gives the numbers from 1 to 10 (since 1 is included but 11 is omitted). It is the same as saying range(1,11,1).",
+          "type": "paragraph"
+        },
+        {
+          "language": "",
+          "text": "# note that the first element of the range is included but the second isn't.\nfor i in range(1,11):\n  print(i,\"\",end=\"\")\nprint()",
+          "type": "code"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "i=1\nwhile (i<=10):\n  print(i,\"\",end=\"\")\n  i+=1\nprint()",
+          "language": ""
+        },
+        {
+          "content": "# note that the first element of the range is included but the second isn't.\nfor i in range(1,11):\n  print(i,\"\",end=\"\")\nprint()",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "656841",
+      "slide_type": "code_challenge",
+      "title": "More examples",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118178/slides/656841",
+      "segments": [],
+      "code_blocks": [],
+      "links": [],
+      "assets": [],
+      "exercise": {
+        "prompt": "",
+        "prompt_segments": [],
+        "scaffold": {
+          "content": "# even numbers from 2 to 20 (22 is not included)\nfor i in range(2,22,2):\n  print(i,\"\",end=\"\")\nprint()",
+          "file": "ForLoops.ipynb",
+          "language": "python"
+        },
+        "workspace_files": [
+          {
+            "content": "",
+            "language": "python",
+            "name": "ForLoops.ipynb",
+            "role": "Ed staff-visible workspace file"
+          }
+        ],
+        "reference_solution_status": "present",
+        "reference_solution_provenance": "Ed staff edit view sample solution"
+      }
+    },
+    {
+      "slide_id": "656842",
+      "slide_type": "document",
+      "title": "The range() function",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118178/slides/656842",
+      "segments": [
+        {
+          "items": [
+            "The range() function takes at least one argument. In its simplest form, it takes a single integer.",
+            "The range() function returns an \"iterable\" which is a sequence that can be looped over. An iterable is not a list but is similar to one.",
+            "When passed a single integer n, the range() function will generate an iterable that will cause the loop variable of a for loop to go from 0 to n-1 in steps of 1. So for instance, range(5) generates the numbers 0, 1, 2, 3, and 4 in sequence.",
+            "you can also call range() with two or three arguments. For instance, range(5,10) gives the numbers 5, 6, 7, 8 and 9 and range(2,8,2) gives the three numbers 2, 4, and 6. The first argument is where you start and the third argument is the \"step.\""
+          ],
+          "ordered": false,
+          "type": "list"
+        },
+        {
+          "language": "",
+          "text": "# Range examples\n# 0 to 4\nprint(list(range(5)))\n# 5 to 9\nprint(list(range(5,10)))",
+          "type": "code"
+        },
+        {
+          "language": "",
+          "text": "# More range examples\n# 0 to 9\nprint(list(range(10)))\n# 1 to 4\nprint(list(range(1,5)))",
+          "type": "code"
+        },
+        {
+          "language": "",
+          "text": "# More range examples\n# 0 to 8 by 2\nprint(list(range(0,10,2)))\n# 1 to 9 by 2\nprint(list(range(1,10,2)))",
+          "type": "code"
+        },
+        {
+          "language": "",
+          "text": "# using range for reverse counting!\n# from 10 to 2 by -2\nprint(list(range(10,0,-2)))",
+          "type": "code"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "# Range examples\n# 0 to 4\nprint(list(range(5)))\n# 5 to 9\nprint(list(range(5,10)))",
+          "language": ""
+        },
+        {
+          "content": "# More range examples\n# 0 to 9\nprint(list(range(10)))\n# 1 to 4\nprint(list(range(1,5)))",
+          "language": ""
+        },
+        {
+          "content": "# More range examples\n# 0 to 8 by 2\nprint(list(range(0,10,2)))\n# 1 to 9 by 2\nprint(list(range(1,10,2)))",
+          "language": ""
+        },
+        {
+          "content": "# using range for reverse counting!\n# from 10 to 2 by -2\nprint(list(range(10,0,-2)))",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "656844",
+      "slide_type": "document",
+      "title": "Structure of a \"for\" loop",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118178/slides/656844",
+      "segments": [
+        {
+          "html": "Note that the list shown below can be replaced by a range. The statements to be executed are the code block of the loop and are indented.",
+          "text": "Note that the list shown below can be replaced by a range. The statements to be executed are the code block of the loop and are indented.",
+          "type": "paragraph"
+        },
+        {
+          "alt": "",
+          "height": 323,
+          "src": "https://static.us.edusercontent.com/files/b3HAfRgaShRxKQsORyES4hPH",
+          "type": "image",
+          "width": 776
+        }
+      ],
+      "code_blocks": [],
+      "links": [],
+      "assets": [
+        {
+          "source_url": "https://static.us.edusercontent.com/files/b3HAfRgaShRxKQsORyES4hPH",
+          "width": 776,
+          "height": 323,
+          "local_path": "notebooks/cs1/images/lecture_06/656844_for_loop_structure.png"
+        }
+      ]
+    },
+    {
+      "slide_id": "656845",
+      "slide_type": "document",
+      "title": "Behavior of the \"for\" loop",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118178/slides/656845",
+      "segments": [
+        {
+          "items": [
+            "The \"for\" loop will iterate once for each item in the list it is passed, or once for each value generated by the range function.",
+            "Lists in Python are defined by square brackets; items are separated by a comma. They may contain the same type of objects or a mix of different types of objects.",
+            "The first time through the loop, the loop variable, which is the variable following the keyword \"for\", will take on the first item in the list or the first value generated by the range function.",
+            "The second time it will take the second value.",
+            "This continues until you finish the list or the end of the numbers generated by the range function. (Note range does not generate a list but it generates something that behaves similarly.)"
+          ],
+          "ordered": false,
+          "type": "list"
+        },
+        {
+          "html": "Lists contain ordered collections of data which can be of the same type or different types. We will be talking about lists more later.",
+          "text": "Lists contain ordered collections of data which can be of the same type or different types. We will be talking about lists more later.",
+          "type": "paragraph"
+        },
+        {
+          "html": "The following loops through the three states in the tri-state area around New York City and prints them out. It uses a list of the states.",
+          "text": "The following loops through the three states in the tri-state area around New York City and prints them out. It uses a list of the states.",
+          "type": "paragraph"
+        },
+        {
+          "language": "",
+          "text": "# create a list of three strings called \"tristate\"\ntriState=[\"New York\",\"New Jersey\",\"Connecticut\"]\nfor state in triState:\n  print(state)",
+          "type": "code"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "# create a list of three strings called \"tristate\"\ntriState=[\"New York\",\"New Jersey\",\"Connecticut\"]\nfor state in triState:\n  print(state)",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "656846",
+      "slide_type": "code_challenge",
+      "title": "Exercise: Rainfall Data",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118178/slides/656846",
+      "segments": [
+        {
+          "html": "You put a rainfall collector outside your house. Each night at midnight for a week (seven days) you go outside, measure the rainfall in inches, and write it down. Write a program that allows you to enter this data for the week and prints out the total rainfall and average rainfall per day.",
+          "text": "You put a rainfall collector outside your house. Each night at midnight for a week (seven days) you go outside, measure the rainfall in inches, and write it down. Write a program that allows you to enter this data for the week and prints out the total rainfall and average rainfall per day.",
+          "type": "paragraph"
+        }
+      ],
+      "code_blocks": [],
+      "links": [],
+      "assets": [],
+      "exercise": {
+        "prompt": "You put a rainfall collector outside your house. Each night at midnight for a week (seven days) you go outside, measure the rainfall in inches, and write it down. Write a program that allows you to enter this data for the week and prints out the total rainfall and average rainfall per day.",
+        "prompt_segments": [
+          {
+            "html": "You put a rainfall collector outside your house. Each night at midnight for a week (seven days) you go outside, measure the rainfall in inches, and write it down. Write a program that allows you to enter this data for the week and prints out the total rainfall and average rainfall per day.",
+            "text": "You put a rainfall collector outside your house. Each night at midnight for a week (seven days) you go outside, measure the rainfall in inches, and write it down. Write a program that allows you to enter this data for the week and prints out the total rainfall and average rainfall per day.",
+            "type": "paragraph"
+          }
+        ],
+        "scaffold": {
+          "content": "",
+          "file": "solution.py",
+          "language": "python"
+        },
+        "workspace_files": [
+          {
+            "content": "",
+            "language": "python",
+            "name": "solution.py",
+            "role": "Ed staff-visible workspace file"
+          }
+        ],
+        "reference_solution_status": "present",
+        "reference_solution_provenance": "Ed staff edit view sample solution"
+      },
+      "activity_mapping": {
+        "question_path": "questions/InClassExercises/CS1/Week05Lecture06/RainfallData/Base",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week05Lecture06RainfallData",
+        "deployment_status": "pending"
+      }
+    },
+    {
+      "slide_id": "657626",
+      "slide_type": "quiz",
+      "title": "Quiz",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118178/slides/657626",
+      "segments": [
+        {
+          "html": "What sequence of numbers is produced by the following function call? range(1,13,3)",
+          "text": "What sequence of numbers is produced by the following function call? range(1,13,3)",
+          "type": "paragraph"
+        },
+        {
+          "html": "1, 4, 7, 10, 13",
+          "text": "1, 4, 7, 10, 13",
+          "type": "paragraph"
+        },
+        {
+          "html": "1, 4, 7, 10",
+          "text": "1, 4, 7, 10",
+          "type": "paragraph"
+        },
+        {
+          "html": "4, 7, 10, 13",
+          "text": "4, 7, 10, 13",
+          "type": "paragraph"
+        },
+        {
+          "html": "1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12",
+          "text": "1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12",
+          "type": "paragraph"
+        }
+      ],
+      "code_blocks": [],
+      "links": [],
+      "assets": [],
+      "quiz": {
+        "prompt": "What sequence of numbers is produced by the following function call? range(1,13,3)",
+        "choices": [
+          "1, 4, 7, 10, 13",
+          "1, 4, 7, 10",
+          "4, 7, 10, 13",
+          "1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12"
+        ],
+        "correct_answer_status": "present",
+        "correct_answer_provenance": "Ed staff edit view"
+      },
+      "activity_mapping": {
+        "question_path": "questions/InClassExercises/CS1/Week05Lecture06/Quiz657626/Base",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week05Lecture06Quiz657626",
+        "deployment_status": "pending"
+      }
+    },
+    {
+      "slide_id": "657627",
+      "slide_type": "code_challenge",
+      "title": "Exercise: Seinfeld Ratings",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118178/slides/657627",
+      "segments": [
+        {
+          "html": "You have five friends: Jerry, Newman, Elaine, Kramer, and George. Write a program that asks each of them (by name) their opinion of the show \"Seinfeld\" on a scale from 1 to 10. Then print out the average rating.",
+          "text": "You have five friends: Jerry, Newman, Elaine, Kramer, and George. Write a program that asks each of them (by name) their opinion of the show \"Seinfeld\" on a scale from 1 to 10. Then print out the average rating.",
+          "type": "paragraph"
+        }
+      ],
+      "code_blocks": [],
+      "links": [],
+      "assets": [],
+      "exercise": {
+        "prompt": "You have five friends: Jerry, Newman, Elaine, Kramer, and George. Write a program that asks each of them (by name) their opinion of the show \"Seinfeld\" on a scale from 1 to 10. Then print out the average rating.",
+        "prompt_segments": [
+          {
+            "html": "You have five friends: Jerry, Newman, Elaine, Kramer, and George. Write a program that asks each of them (by name) their opinion of the show \"Seinfeld\" on a scale from 1 to 10. Then print out the average rating.",
+            "text": "You have five friends: Jerry, Newman, Elaine, Kramer, and George. Write a program that asks each of them (by name) their opinion of the show \"Seinfeld\" on a scale from 1 to 10. Then print out the average rating.",
+            "type": "paragraph"
+          }
+        ],
+        "scaffold": {
+          "content": "",
+          "file": "solution.py",
+          "language": "python"
+        },
+        "workspace_files": [
+          {
+            "content": "",
+            "language": "python",
+            "name": "solution.py",
+            "role": "Ed staff-visible workspace file"
+          }
+        ],
+        "reference_solution_status": "present",
+        "reference_solution_provenance": "Ed staff edit view sample solution"
+      },
+      "activity_mapping": {
+        "question_path": "questions/InClassExercises/CS1/Week05Lecture06/SeinfeldRatings/Base",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week05Lecture06SeinfeldRatings",
+        "deployment_status": "pending"
+      }
+    },
+    {
+      "slide_id": "657628",
+      "slide_type": "code_challenge",
+      "title": "Exercise: Rewrite a while loop as a for loop",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118178/slides/657628",
+      "segments": [
+        {
+          "html": "Rewrite the following \"while\" loop as a \"for\" loop. Use the range function.",
+          "text": "Rewrite the following \"while\" loop as a \"for\" loop. Use the range function.",
+          "type": "paragraph"
+        },
+        {
+          "language": "",
+          "text": "x=0\nwhile x<5:\n  print(\"The rain in Spain falls mainly on the plain.\")\n  x+=1\n",
+          "type": "code"
+        },
+        {
+          "language": "",
+          "text": "x=0\nwhile x<5:\n  print(\"The rain in Spain falls mainly on the plain.\")\n  x+=1\n",
+          "type": "code"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "x=0\nwhile x<5:\n  print(\"The rain in Spain falls mainly on the plain.\")\n  x+=1\n",
+          "language": ""
+        },
+        {
+          "content": "x=0\nwhile x<5:\n  print(\"The rain in Spain falls mainly on the plain.\")\n  x+=1\n",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": [],
+      "exercise": {
+        "prompt": "Rewrite the following \"while\" loop as a \"for\" loop. Use the range function.\n\nx=0\nwhile x<5:\n  print(\"The rain in Spain falls mainly on the plain.\")\n  x+=1",
+        "prompt_segments": [
+          {
+            "html": "Rewrite the following \"while\" loop as a \"for\" loop. Use the range function.",
+            "text": "Rewrite the following \"while\" loop as a \"for\" loop. Use the range function.",
+            "type": "paragraph"
+          },
+          {
+            "language": "",
+            "text": "x=0\nwhile x<5:\n  print(\"The rain in Spain falls mainly on the plain.\")\n  x+=1\n",
+            "type": "code"
+          },
+          {
+            "language": "",
+            "text": "x=0\nwhile x<5:\n  print(\"The rain in Spain falls mainly on the plain.\")\n  x+=1\n",
+            "type": "code"
+          }
+        ],
+        "scaffold": {
+          "content": "",
+          "file": "solution.py",
+          "language": "python"
+        },
+        "workspace_files": [
+          {
+            "content": "",
+            "language": "python",
+            "name": "solution.py",
+            "role": "Ed staff-visible workspace file"
+          }
+        ],
+        "reference_solution_status": "present",
+        "reference_solution_provenance": "Ed staff edit view sample solution"
+      },
+      "activity_mapping": {
+        "question_path": "questions/InClassExercises/CS1/Week05Lecture06/RewriteAWhileLoopAsAForLoop/Base",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week05Lecture06RewriteAWhileLoopAsAForLoop",
+        "deployment_status": "pending"
+      }
+    },
+    {
+      "slide_id": "657629",
+      "slide_type": "document",
+      "title": "Prime Number Detector",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118178/slides/657629",
+      "segments": [
+        {
+          "html": "The variable after \"for\" in the loop is called the target variable or the loop variable. This is often used inside the loop. For instance, the following code finds all of the prime numbers below 50 and prints them.",
+          "text": "The variable after \"for\" in the loop is called the target variable or the loop variable. This is often used inside the loop. For instance, the following code finds all of the prime numbers below 50 and prints them.",
+          "type": "paragraph"
+        },
+        {
+          "language": "",
+          "text": "# print 2, it is prime\nprint(2,\"\",end=\"\")\niterations=0\n# check odd numbers from 3 to 49\nfor i in range(3,50,2):\n  # assume prime to start\n  prime=True\n  # divide up to the square root\n  # since factors come in pairs where one is less than or equal to the square\n  # and one is greater than or equal to it\n  for divisor in range(2,int(i**0.5)+1):\n    # if it divides evenly it isn't prime\n    # we can break out of the inner loop\n    iterations+=1\n    if (i%divisor==0):\n      prime=False\n      break\n  if prime: print(i,\"\",end=\"\")\nprint()\nprint(iterations)",
+          "type": "code"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "# print 2, it is prime\nprint(2,\"\",end=\"\")\niterations=0\n# check odd numbers from 3 to 49\nfor i in range(3,50,2):\n  # assume prime to start\n  prime=True\n  # divide up to the square root\n  # since factors come in pairs where one is less than or equal to the square\n  # and one is greater than or equal to it\n  for divisor in range(2,int(i**0.5)+1):\n    # if it divides evenly it isn't prime\n    # we can break out of the inner loop\n    iterations+=1\n    if (i%divisor==0):\n      prime=False\n      break\n  if prime: print(i,\"\",end=\"\")\nprint()\nprint(iterations)",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "657630",
+      "slide_type": "document",
+      "title": "Notes on Nested Loops",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118178/slides/657630",
+      "segments": [
+        {
+          "items": [
+            "An inner loop will do all of iterations for every single iteration of an outer loop.",
+            "Each inner loop completes before the outer loop.",
+            "The total number of iterations is the product of the number of iterations of the outer and inner loops."
+          ],
+          "ordered": false,
+          "type": "list"
+        }
+      ],
+      "code_blocks": [],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "657631",
+      "slide_type": "code_challenge",
+      "title": "Exercise: Cubes",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118178/slides/657631",
+      "segments": [
+        {
+          "html": "Write a program that finds the cubes of all of the numbers from 1 to 10. Print out the original number and the cube, one per line. Use a \"for\" loop.",
+          "text": "Write a program that finds the cubes of all of the numbers from 1 to 10. Print out the original number and the cube, one per line. Use a \"for\" loop.",
+          "type": "paragraph"
+        }
+      ],
+      "code_blocks": [],
+      "links": [],
+      "assets": [],
+      "exercise": {
+        "prompt": "Write a program that finds the cubes of all of the numbers from 1 to 10. Print out the original number and the cube, one per line. Use a \"for\" loop.",
+        "prompt_segments": [
+          {
+            "html": "Write a program that finds the cubes of all of the numbers from 1 to 10. Print out the original number and the cube, one per line. Use a \"for\" loop.",
+            "text": "Write a program that finds the cubes of all of the numbers from 1 to 10. Print out the original number and the cube, one per line. Use a \"for\" loop.",
+            "type": "paragraph"
+          }
+        ],
+        "scaffold": {
+          "content": "",
+          "file": "solution.py",
+          "language": "python"
+        },
+        "workspace_files": [
+          {
+            "content": "",
+            "language": "python",
+            "name": "solution.py",
+            "role": "Ed staff-visible workspace file"
+          }
+        ],
+        "reference_solution_status": "present",
+        "reference_solution_provenance": "Ed staff edit view sample solution"
+      },
+      "activity_mapping": {
+        "question_path": "questions/InClassExercises/CS1/Week05Lecture06/Cubes/Base",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week05Lecture06Cubes",
+        "deployment_status": "pending"
+      }
+    },
+    {
+      "slide_id": "657632",
+      "slide_type": "code_challenge",
+      "title": "Exercise: Making a Figure",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118178/slides/657632",
+      "segments": [
+        {
+          "html": "Print out the following figure. Use two for loops one after the other, each of which uses a range. The second for loop should use a negative step.",
+          "text": "Print out the following figure. Use two for loops one after the other, each of which uses a range. The second for loop should use a negative step.",
+          "type": "paragraph"
+        },
+        {
+          "html": "Hint: the statement print(\"*\"*4) will print out four asterisks.",
+          "text": "Hint: the statement print(\"*\"*4) will print out four asterisks.",
+          "type": "paragraph"
+        },
+        {
+          "language": "",
+          "text": "*\n**\n***\n****\n***\n**\n*\n",
+          "type": "code"
+        },
+        {
+          "language": "",
+          "text": "*\n**\n***\n****\n***\n**\n*\n",
+          "type": "code"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "*\n**\n***\n****\n***\n**\n*\n",
+          "language": ""
+        },
+        {
+          "content": "*\n**\n***\n****\n***\n**\n*\n",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": [],
+      "exercise": {
+        "prompt": "Print out the following figure. Use two for loops one after the other, each of which uses a range. The second for loop should use a negative step.\n\nHint: the statement print(\"*\"*4) will print out four asterisks.\n\n*\n**\n***\n****\n***\n**\n*",
+        "prompt_segments": [
+          {
+            "html": "Print out the following figure. Use two for loops one after the other, each of which uses a range. The second for loop should use a negative step.",
+            "text": "Print out the following figure. Use two for loops one after the other, each of which uses a range. The second for loop should use a negative step.",
+            "type": "paragraph"
+          },
+          {
+            "html": "Hint: the statement print(\"*\"*4) will print out four asterisks.",
+            "text": "Hint: the statement print(\"*\"*4) will print out four asterisks.",
+            "type": "paragraph"
+          },
+          {
+            "language": "",
+            "text": "*\n**\n***\n****\n***\n**\n*\n",
+            "type": "code"
+          },
+          {
+            "language": "",
+            "text": "*\n**\n***\n****\n***\n**\n*\n",
+            "type": "code"
+          }
+        ],
+        "scaffold": {
+          "content": "",
+          "file": "solution.py",
+          "language": "python"
+        },
+        "workspace_files": [
+          {
+            "content": "",
+            "language": "python",
+            "name": "solution.py",
+            "role": "Ed staff-visible workspace file"
+          }
+        ],
+        "reference_solution_status": "present",
+        "reference_solution_provenance": "Ed staff edit view sample solution"
+      },
+      "activity_mapping": {
+        "question_path": "questions/InClassExercises/CS1/Week05Lecture06/MakingAFigure/Base",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week05Lecture06MakingAFigure",
+        "deployment_status": "pending"
+      }
+    },
+    {
+      "slide_id": "657633",
+      "slide_type": "code_challenge",
+      "title": "Exercise: Multiples of a Number",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118178/slides/657633",
+      "segments": [
+        {
+          "html": "Ask the user to enter an integer. Then print all of the numbers between 1 and 50 that are divisible by that number.",
+          "text": "Ask the user to enter an integer. Then print all of the numbers between 1 and 50 that are divisible by that number.",
+          "type": "paragraph"
+        }
+      ],
+      "code_blocks": [],
+      "links": [],
+      "assets": [],
+      "exercise": {
+        "prompt": "Ask the user to enter an integer. Then print all of the numbers between 1 and 50 that are divisible by that number.",
+        "prompt_segments": [
+          {
+            "html": "Ask the user to enter an integer. Then print all of the numbers between 1 and 50 that are divisible by that number.",
+            "text": "Ask the user to enter an integer. Then print all of the numbers between 1 and 50 that are divisible by that number.",
+            "type": "paragraph"
+          }
+        ],
+        "scaffold": {
+          "content": "",
+          "file": "solution.py",
+          "language": "python"
+        },
+        "workspace_files": [
+          {
+            "content": "",
+            "language": "python",
+            "name": "solution.py",
+            "role": "Ed staff-visible workspace file"
+          }
+        ],
+        "reference_solution_status": "present",
+        "reference_solution_provenance": "Ed staff edit view sample solution"
+      },
+      "activity_mapping": {
+        "question_path": "questions/InClassExercises/CS1/Week05Lecture06/MultiplesOfANumber/Base",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week05Lecture06MultiplesOfANumber",
+        "deployment_status": "pending"
+      }
+    },
+    {
+      "slide_id": "657634",
+      "slide_type": "code_challenge",
+      "title": "Exercise: Numbers Divisible by Two Numbers",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118178/slides/657634",
+      "segments": [
+        {
+          "html": "Ask the user to enter two integers. Then print all of the numbers between 1 and 1000 that are divisible by both integers, 10 per line.",
+          "text": "Ask the user to enter two integers. Then print all of the numbers between 1 and 1000 that are divisible by both integers, 10 per line.",
+          "type": "paragraph"
+        }
+      ],
+      "code_blocks": [],
+      "links": [],
+      "assets": [],
+      "exercise": {
+        "prompt": "Ask the user to enter two integers. Then print all of the numbers between 1 and 1000 that are divisible by both integers, 10 per line.",
+        "prompt_segments": [
+          {
+            "html": "Ask the user to enter two integers. Then print all of the numbers between 1 and 1000 that are divisible by both integers, 10 per line.",
+            "text": "Ask the user to enter two integers. Then print all of the numbers between 1 and 1000 that are divisible by both integers, 10 per line.",
+            "type": "paragraph"
+          }
+        ],
+        "scaffold": {
+          "content": "",
+          "file": "solution.py",
+          "language": "python"
+        },
+        "workspace_files": [
+          {
+            "content": "",
+            "language": "python",
+            "name": "solution.py",
+            "role": "Ed staff-visible workspace file"
+          }
+        ],
+        "reference_solution_status": "present",
+        "reference_solution_provenance": "Ed staff edit view sample solution"
+      },
+      "activity_mapping": {
+        "question_path": "questions/InClassExercises/CS1/Week05Lecture06/NumbersDivisibleByTwoNumbers/Base",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week05Lecture06NumbersDivisibleByTwoNumbers",
+        "deployment_status": "pending"
+      }
+    },
+    {
+      "slide_id": "657635",
+      "slide_type": "document",
+      "title": "A Multiplication Table",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118178/slides/657635",
+      "segments": [
+        {
+          "html": "Here's an example that uses a nested for loop to print out the multiplication table up to 20. Note that the total number of steps in the nested loop is 20*20 or 400.",
+          "text": "Here's an example that uses a nested for loop to print out the multiplication table up to 20. Note that the total number of steps in the nested loop is 20*20 or 400.",
+          "type": "paragraph"
+        },
+        {
+          "language": "",
+          "text": "# print header\nprint(\" \"*4,end=\"\")\nfor j in range(1,21):\n  print(f\"{j:4d}\",end=\"\")\nprint()\n\nfor i in range(1,21):\n  print(f\"{i:4d}\",end=\"\")\n  for j in range(1,21):\n    print(f\"{i*j:4d}\",end=\"\")\n  print()",
+          "type": "code"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "# print header\nprint(\" \"*4,end=\"\")\nfor j in range(1,21):\n  print(f\"{j:4d}\",end=\"\")\nprint()\n\nfor i in range(1,21):\n  print(f\"{i:4d}\",end=\"\")\n  for j in range(1,21):\n    print(f\"{i*j:4d}\",end=\"\")\n  print()",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "657636",
+      "slide_type": "code_challenge",
+      "title": "Exercise: Addition Table for Multiples of 5",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118178/slides/657636",
+      "segments": [
+        {
+          "html": "Modify the code for the multiplication table so that it creates an addition table for the multiples of 5 between 5 and 125, e.g. 5+5, 5+10, 5+15, etc. up to 125+125. Put headers on the rows and columns.",
+          "text": "Modify the code for the multiplication table so that it creates an addition table for the multiples of 5 between 5 and 125, e.g. 5+5, 5+10, 5+15, etc. up to 125+125. Put headers on the rows and columns.",
+          "type": "paragraph"
+        }
+      ],
+      "code_blocks": [],
+      "links": [],
+      "assets": [],
+      "exercise": {
+        "prompt": "Modify the code for the multiplication table so that it creates an addition table for the multiples of 5 between 5 and 125, e.g. 5+5, 5+10, 5+15, etc. up to 125+125. Put headers on the rows and columns.",
+        "prompt_segments": [
+          {
+            "html": "Modify the code for the multiplication table so that it creates an addition table for the multiples of 5 between 5 and 125, e.g. 5+5, 5+10, 5+15, etc. up to 125+125. Put headers on the rows and columns.",
+            "text": "Modify the code for the multiplication table so that it creates an addition table for the multiples of 5 between 5 and 125, e.g. 5+5, 5+10, 5+15, etc. up to 125+125. Put headers on the rows and columns.",
+            "type": "paragraph"
+          }
+        ],
+        "scaffold": {
+          "content": "",
+          "file": "solution.py",
+          "language": "python"
+        },
+        "workspace_files": [
+          {
+            "content": "",
+            "language": "python",
+            "name": "solution.py",
+            "role": "Ed staff-visible workspace file"
+          }
+        ],
+        "reference_solution_status": "present",
+        "reference_solution_provenance": "Ed staff edit view sample solution"
+      },
+      "activity_mapping": {
+        "question_path": "questions/InClassExercises/CS1/Week05Lecture06/AdditionTableForMultiplesOf5/Base",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week05Lecture06AdditionTableForMultiplesOf5",
+        "deployment_status": "pending"
+      }
+    },
+    {
+      "slide_id": "657637",
+      "slide_type": "document",
+      "title": "A Grid of Circles",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118178/slides/657637",
+      "segments": [
+        {
+          "html": "This Python Turtle <a class=\"amber-el amber-link amber-el ed-focus-outline\" href=\"https://replit.com/@MatthewZeidenbe/TurtleCircleGrid\" target=\"_blank\" rel=\"noopener noreferrer\">example</a> on Replit uses a pair of nested loops to generate a grid of colored circles.",
+          "text": "This Python Turtle example on Replit uses a pair of nested loops to generate a grid of colored circles.",
+          "type": "paragraph"
+        }
+      ],
+      "code_blocks": [],
+      "links": [
+        {
+          "href": "https://replit.com/@MatthewZeidenbe/TurtleCircleGrid",
+          "text": "example"
+        }
+      ],
+      "assets": []
+    },
+    {
+      "slide_id": "657638",
+      "slide_type": "document",
+      "title": "A Parabola",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118178/slides/657638",
+      "segments": [
+        {
+          "html": "This Python Turtle <a class=\"amber-el amber-link amber-el ed-focus-outline\" href=\"https://replit.com/@MatthewZeidenbe/TurtleParabola\" target=\"_blank\" rel=\"noopener noreferrer\">example</a> on Replit uses a for loop to draw a parabola. It also draws the x and y axes.",
+          "text": "This Python Turtle example on Replit uses a for loop to draw a parabola. It also draws the x and y axes.",
+          "type": "paragraph"
+        },
+        {
+          "html": "There are many possible <a class=\"amber-el amber-link amber-el ed-focus-outline\" href=\"https://en.wikipedia.org/wiki/Pentagonal_tiling#/media/File:P5-type15-chiral_coloring.png\" target=\"_blank\" rel=\"noopener noreferrer\">tesselations</a>; make your own!",
+          "text": "There are many possible tesselations; make your own!",
+          "type": "paragraph"
+        }
+      ],
+      "code_blocks": [],
+      "links": [
+        {
+          "href": "https://replit.com/@MatthewZeidenbe/TurtleParabola",
+          "text": "example"
+        },
+        {
+          "href": "https://en.wikipedia.org/wiki/Pentagonal_tiling#/media/File:P5-type15-chiral_coloring.png",
+          "text": "tesselations"
+        }
+      ],
+      "assets": []
+    },
+    {
+      "slide_id": "657639",
+      "slide_type": "quiz",
+      "title": "Quiz",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118178/slides/657639",
+      "segments": [
+        {
+          "html": "What is the advantage over a \"for\" loop over a \"while\" loop when you want to repeat some code a fixed number of times?",
+          "text": "What is the advantage over a \"for\" loop over a \"while\" loop when you want to repeat some code a fixed number of times?",
+          "type": "paragraph"
+        },
+        {
+          "html": "You can't do a fixed number of repeats with a \"while\" loop; you need to use a \"for\" loop.",
+          "text": "You can't do a fixed number of repeats with a \"while\" loop; you need to use a \"for\" loop.",
+          "type": "paragraph"
+        },
+        {
+          "html": "The \"for\" loop syntax is usually simpler.",
+          "text": "The \"for\" loop syntax is usually simpler.",
+          "type": "paragraph"
+        },
+        {
+          "html": "There is no advantage.",
+          "text": "There is no advantage.",
+          "type": "paragraph"
+        },
+        {
+          "html": "None of the above.",
+          "text": "None of the above.",
+          "type": "paragraph"
+        }
+      ],
+      "code_blocks": [],
+      "links": [],
+      "assets": [],
+      "quiz": {
+        "prompt": "What is the advantage over a \"for\" loop over a \"while\" loop when you want to repeat some code a fixed number of times?",
+        "choices": [
+          "You can't do a fixed number of repeats with a \"while\" loop; you need to use a \"for\" loop.",
+          "The \"for\" loop syntax is usually simpler.",
+          "There is no advantage.",
+          "None of the above."
+        ],
+        "correct_answer_status": "present",
+        "correct_answer_provenance": "Ed staff edit view"
+      },
+      "activity_mapping": {
+        "question_path": "questions/InClassExercises/CS1/Week05Lecture06/Quiz657639/Base",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week05Lecture06Quiz657639",
+        "deployment_status": "pending"
+      }
+    },
+    {
+      "slide_id": "657640",
+      "slide_type": "document",
+      "title": "Summing Up the Digits of a Number",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118178/slides/657640",
+      "segments": [
+        {
+          "html": "The following code uses a \"for\" loop to sum up the digits of a number.",
+          "text": "The following code uses a \"for\" loop to sum up the digits of a number.",
+          "type": "paragraph"
+        },
+        {
+          "language": "",
+          "text": "# sum up the digits of a number\nn=int(input(\"Enter a number:\"))\nsum=0\nk=0\n# convert the number to a string\n# and loop through its digits\nfor c in str(n):\n  k+=1\n  print(f\"Digit #{k} is {c}.\")\n  # to calculate the sum, convert the character back to an integer\n  sum+=int(c)\nprint(f\"The sum of the digits is {sum}.\")",
+          "type": "code"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "# sum up the digits of a number\nn=int(input(\"Enter a number:\"))\nsum=0\nk=0\n# convert the number to a string\n# and loop through its digits\nfor c in str(n):\n  k+=1\n  print(f\"Digit #{k} is {c}.\")\n  # to calculate the sum, convert the character back to an integer\n  sum+=int(c)\nprint(f\"The sum of the digits is {sum}.\")",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "657641",
+      "slide_type": "code_challenge",
+      "title": "Exercise: State Populations",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118178/slides/657641",
+      "segments": [
+        {
+          "html": "The top six states ranked by population are California, Texas, Florida, New York, Pennsylvania, and Illinois.",
+          "text": "The top six states ranked by population are California, Texas, Florida, New York, Pennsylvania, and Illinois.",
+          "type": "paragraph"
+        },
+        {
+          "html": "Print out these states and their ranks, one per line, e.g.",
+          "text": "Print out these states and their ranks, one per line, e.g.",
+          "type": "paragraph"
+        },
+        {
+          "language": "",
+          "text": "1 California2 Texas",
+          "type": "code"
+        },
+        {
+          "language": "",
+          "text": "1 California2 Texas",
+          "type": "code"
+        },
+        {
+          "html": "etc. Use a list (of strings) and a \"for\" loop.",
+          "text": "etc. Use a list (of strings) and a \"for\" loop.",
+          "type": "paragraph"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "1 California2 Texas",
+          "language": ""
+        },
+        {
+          "content": "1 California2 Texas",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": [],
+      "exercise": {
+        "prompt": "The top six states ranked by population are California, Texas, Florida, New York, Pennsylvania, and Illinois.\n\nPrint out these states and their ranks, one per line, e.g.\n\n1 California\n2 Texas\n\netc. Use a list (of strings) and a \"for\" loop.",
+        "prompt_segments": [
+          {
+            "html": "The top six states ranked by population are California, Texas, Florida, New York, Pennsylvania, and Illinois.",
+            "text": "The top six states ranked by population are California, Texas, Florida, New York, Pennsylvania, and Illinois.",
+            "type": "paragraph"
+          },
+          {
+            "html": "Print out these states and their ranks, one per line, e.g.",
+            "text": "Print out these states and their ranks, one per line, e.g.",
+            "type": "paragraph"
+          },
+          {
+            "language": "",
+            "text": "1 California2 Texas",
+            "type": "code"
+          },
+          {
+            "language": "",
+            "text": "1 California2 Texas",
+            "type": "code"
+          },
+          {
+            "html": "etc. Use a list (of strings) and a \"for\" loop.",
+            "text": "etc. Use a list (of strings) and a \"for\" loop.",
+            "type": "paragraph"
+          }
+        ],
+        "scaffold": {
+          "content": "",
+          "file": "solution.py",
+          "language": "python"
+        },
+        "workspace_files": [
+          {
+            "content": "",
+            "language": "python",
+            "name": "solution.py",
+            "role": "Ed staff-visible workspace file"
+          }
+        ],
+        "reference_solution_status": "present",
+        "reference_solution_provenance": "Ed staff edit view sample solution"
+      },
+      "activity_mapping": {
+        "question_path": "questions/InClassExercises/CS1/Week05Lecture06/StatePopulations/Base",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week05Lecture06StatePopulations",
+        "deployment_status": "pending"
+      }
+    },
+    {
+      "slide_id": "657642",
+      "slide_type": "document",
+      "title": "Factors of a Number",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118178/slides/657642",
+      "segments": [
+        {
+          "html": "The following code finds all the factors of all of the numbers up to 30. It uses a nested \"for\" loop.",
+          "text": "The following code finds all the factors of all of the numbers up to 30. It uses a nested \"for\" loop.",
+          "type": "paragraph"
+        },
+        {
+          "language": "",
+          "text": "for i in range(1,31):\n  print(f\"Factors of {i}: \",end=\"\")\n  # inner loop finds factors\n  for j in range(1,i+1):\n    # following tests if it goes in evenly\n    if (i%j==0): print(j,\"\",end=\"\")\n  print()",
+          "type": "code"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "for i in range(1,31):\n  print(f\"Factors of {i}: \",end=\"\")\n  # inner loop finds factors\n  for j in range(1,i+1):\n    # following tests if it goes in evenly\n    if (i%j==0): print(j,\"\",end=\"\")\n  print()",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "657643",
+      "slide_type": "code_challenge",
+      "title": "Exercise: Perfect Numbers",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118178/slides/657643",
+      "segments": [
+        {
+          "html": "A perfect number is a number whose factors, except for itself, add to itself. For instance the factors of 6 are 1, 2, and 3. They add to 6, so 6 is a perfect number.",
+          "text": "A perfect number is a number whose factors, except for itself, add to itself. For instance the factors of 6 are 1, 2, and 3. They add to 6, so 6 is a perfect number.",
+          "type": "paragraph"
+        },
+        {
+          "html": "Adapt the code above that finds the factors of a number to find all of the perfect numbers under 1000.",
+          "text": "Adapt the code above that finds the factors of a number to find all of the perfect numbers under 1000.",
+          "type": "paragraph"
+        }
+      ],
+      "code_blocks": [],
+      "links": [],
+      "assets": [],
+      "exercise": {
+        "prompt": "A perfect number is a number whose factors, except for itself, add to itself. For instance the factors of 6 are 1, 2, and 3. They add to 6, so 6 is a perfect number.\n\nAdapt the code above that finds the factors of a number to find all of the perfect numbers under 1000.",
+        "prompt_segments": [
+          {
+            "html": "A perfect number is a number whose factors, except for itself, add to itself. For instance the factors of 6 are 1, 2, and 3. They add to 6, so 6 is a perfect number.",
+            "text": "A perfect number is a number whose factors, except for itself, add to itself. For instance the factors of 6 are 1, 2, and 3. They add to 6, so 6 is a perfect number.",
+            "type": "paragraph"
+          },
+          {
+            "html": "Adapt the code above that finds the factors of a number to find all of the perfect numbers under 1000.",
+            "text": "Adapt the code above that finds the factors of a number to find all of the perfect numbers under 1000.",
+            "type": "paragraph"
+          }
+        ],
+        "scaffold": {
+          "content": "",
+          "file": "solution.py",
+          "language": "python"
+        },
+        "workspace_files": [
+          {
+            "content": "",
+            "language": "python",
+            "name": "solution.py",
+            "role": "Ed staff-visible workspace file"
+          }
+        ],
+        "reference_solution_status": "empty",
+        "reference_solution_provenance": "Ed source contains no reference solution."
+      },
+      "activity_mapping": {
+        "question_path": "questions/InClassExercises/CS1/Week05Lecture06/PerfectNumbers/Base",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week05Lecture06PerfectNumbers",
+        "deployment_status": "pending"
+      }
+    }
+  ]
+}

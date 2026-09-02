@@ -1,0 +1,1088 @@
+{
+  "schema_version": 1,
+  "course_id": "62123",
+  "source_course": "CS 0002, Section 10, Fall 2024",
+  "target_course": "CS0001",
+  "lesson_id": "119154",
+  "lesson_title": "Week 8, Lecture 9: String Manipulation",
+  "target_lecture": 9,
+  "week": 8,
+  "slide_count": 28,
+  "slides": [
+    {
+      "slide_id": "662250",
+      "slide_type": "document",
+      "title": "Strings and String Manipulation",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/119154/slides/662250",
+      "segments": [
+        {
+          "level": 2,
+          "text": "What is a String?",
+          "type": "heading"
+        },
+        {
+          "items": [
+            "A String is a Python data type",
+            "A String is a sequence of individual characters, like \"c\" or \"?\"",
+            "Characters are arranged in a particular order in a string",
+            "For instance, \"tale\" and \"teal\" are different strings, although they contain the same four characters"
+          ],
+          "ordered": false,
+          "type": "list"
+        },
+        {
+          "language": "",
+          "text": "w1=\"tale\"\nw2=\"teal\"\nif w1!=w2: print(f\"'{w1}' is different than '{w2}'\")",
+          "type": "code"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "w1=\"tale\"\nw2=\"teal\"\nif w1!=w2: print(f\"'{w1}' is different than '{w2}'\")",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "662251",
+      "slide_type": "document",
+      "title": "Accessing the Individual Characters in a String",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/119154/slides/662251",
+      "segments": [
+        {
+          "items": [
+            "Some programming tasks require you to access the individual characters that are contained within a string.",
+            "You can isolate individual characters within a string by using a \"for\" loop. The target variable in your loop will assume each character in your string one at a time.",
+            "The following loop prints out each of the characters in \"tale\" on its own line."
+          ],
+          "ordered": false,
+          "type": "list"
+        },
+        {
+          "language": "",
+          "text": "for c in \"tale\":\n  print(c)",
+          "type": "code"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "for c in \"tale\":\n  print(c)",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "662252",
+      "slide_type": "code_challenge",
+      "title": "Exercise: Counting",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/119154/slides/662252",
+      "segments": [
+        {
+          "html": "Use a loop like the one above to count how many times the letter \"s\" appears in the string \"sally sells sea shells by the sea shore.\"",
+          "text": "Use a loop like the one above to count how many times the letter \"s\" appears in the string \"sally sells sea shells by the sea shore.\"",
+          "type": "paragraph"
+        }
+      ],
+      "code_blocks": [],
+      "links": [],
+      "assets": [],
+      "exercise": {
+        "prompt": "Use a loop like the one above to count how many times the letter \"s\" appears in the string \"sally sells sea shells by the sea shore.\"",
+        "prompt_segments": [
+          {
+            "html": "Use a loop like the one above to count how many times the letter \"s\" appears in the string \"sally sells sea shells by the sea shore.\"",
+            "text": "Use a loop like the one above to count how many times the letter \"s\" appears in the string \"sally sells sea shells by the sea shore.\"",
+            "type": "paragraph"
+          }
+        ],
+        "scaffold": {
+          "content": "s=\"sally sells sea shells by the sea shore\"",
+          "file": "solution.py",
+          "language": "python"
+        },
+        "workspace_files": [
+          {
+            "content": "s=\"sally sells sea shells by the sea shore\"",
+            "language": "python",
+            "name": "solution.py",
+            "role": "Ed staff-visible workspace file"
+          }
+        ],
+        "reference_solution_status": "present",
+        "reference_solution_provenance": "Ed staff edit view sample solution"
+      },
+      "activity_mapping": {
+        "question_path": "questions/InClassExercises/CS1/Week08Lecture09/Counting/Base",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week08Lecture09Counting",
+        "deployment_status": "pending"
+      }
+    },
+    {
+      "slide_id": "662253",
+      "slide_type": "document",
+      "title": "Indexing into Strings",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/119154/slides/662253",
+      "segments": [
+        {
+          "items": [
+            "Another way to access a string is to use an index value.",
+            "Index values refer to individual characters",
+            "You use square brackets to index into strings, with the numerical index value inside the brackets",
+            "Index values start at zero for the first character, one for the second, etc.",
+            "You can use negative values to count back from the end"
+          ],
+          "ordered": false,
+          "type": "list"
+        },
+        {
+          "language": "",
+          "text": "s=\"Superman\"\nprint(s[0]) # first character \"S\"\nprint(s[2]) # third character \"p\"\nprint(s[4]) # fifth character \"r\"\nprint(s[-2]) # second to last character \"a\"\nprint(s[-1]) # last character \"n\"\nprint(s[-8]) # first character \"S\"\n# print(s[8]) # this will be out of range",
+          "type": "code"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "s=\"Superman\"\nprint(s[0]) # first character \"S\"\nprint(s[2]) # third character \"p\"\nprint(s[4]) # fifth character \"r\"\nprint(s[-2]) # second to last character \"a\"\nprint(s[-1]) # last character \"n\"\nprint(s[-8]) # first character \"S\"\n# print(s[8]) # this will be out of range",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "662254",
+      "slide_type": "document",
+      "title": "The \"len\" function",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/119154/slides/662254",
+      "segments": [
+        {
+          "html": "The \"len\" function will tell us the length of a string.",
+          "text": "The \"len\" function will tell us the length of a string.",
+          "type": "paragraph"
+        },
+        {
+          "language": "",
+          "text": "s=\"Superman\"\nprint(len(s))",
+          "type": "code"
+        },
+        {
+          "html": "If you index into a string with an index more than one minus the length, it will generate an error.",
+          "text": "If you index into a string with an index more than one minus the length, it will generate an error.",
+          "type": "paragraph"
+        },
+        {
+          "language": "",
+          "text": "s=\"Superman\"\ntry:\n  print(s[8]) # index should be between 0 and 7, generates an error\nexcept:\n  print(\"indexing error\")",
+          "type": "code"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "s=\"Superman\"\nprint(len(s))",
+          "language": ""
+        },
+        {
+          "content": "s=\"Superman\"\ntry:\n  print(s[8]) # index should be between 0 and 7, generates an error\nexcept:\n  print(\"indexing error\")",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "662255",
+      "slide_type": "document",
+      "title": "Iterating Over a String Using Indexing",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/119154/slides/662255",
+      "segments": [
+        {
+          "html": "As we have seen, you can iterate over a string using the \"in\" statement and a \"for\" loop",
+          "text": "As we have seen, you can iterate over a string using the \"in\" statement and a \"for\" loop",
+          "type": "paragraph"
+        },
+        {
+          "html": "You can also loop using the index, but you will need to specify a range using the \"len\" function.",
+          "text": "You can also loop using the index, but you will need to specify a range using the \"len\" function.",
+          "type": "paragraph"
+        },
+        {
+          "language": "",
+          "text": "# looping using \"in\"\nword=\"teal\"\nfor c in word:\n  print(c)",
+          "type": "code"
+        },
+        {
+          "language": "",
+          "text": "# looping using \"range\" and \"len\" and indexing\n# works out the same.\nword=\"teal\"\n# note if given one parameter, range gives values between\n# zero and one minus that parameter\nfor i in range(len(word)):\n  print(i, word[i])",
+          "type": "code"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "# looping using \"in\"\nword=\"teal\"\nfor c in word:\n  print(c)",
+          "language": ""
+        },
+        {
+          "content": "# looping using \"range\" and \"len\" and indexing\n# works out the same.\nword=\"teal\"\n# note if given one parameter, range gives values between\n# zero and one minus that parameter\nfor i in range(len(word)):\n  print(i, word[i])",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "662256",
+      "slide_type": "code_challenge",
+      "title": "Exercise: Counting, Again",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/119154/slides/662256",
+      "segments": [
+        {
+          "html": "Use string indexing and the len and range functions to count the combined number of \"S\" and \"s\" characters in the string \"Superman sings soulfully in the shower.\" Use a \"for\" loop.",
+          "text": "Use string indexing and the len and range functions to count the combined number of \"S\" and \"s\" characters in the string \"Superman sings soulfully in the shower.\" Use a \"for\" loop.",
+          "type": "paragraph"
+        }
+      ],
+      "code_blocks": [],
+      "links": [],
+      "assets": [],
+      "exercise": {
+        "prompt": "Use string indexing and the len and range functions to count the combined number of \"S\" and \"s\" characters in the string \"Superman sings soulfully in the shower.\" Use a \"for\" loop.",
+        "prompt_segments": [
+          {
+            "html": "Use string indexing and the len and range functions to count the combined number of \"S\" and \"s\" characters in the string \"Superman sings soulfully in the shower.\" Use a \"for\" loop.",
+            "text": "Use string indexing and the len and range functions to count the combined number of \"S\" and \"s\" characters in the string \"Superman sings soulfully in the shower.\" Use a \"for\" loop.",
+            "type": "paragraph"
+          }
+        ],
+        "scaffold": {
+          "content": "",
+          "file": "solution.py",
+          "language": "python"
+        },
+        "workspace_files": [
+          {
+            "content": "",
+            "language": "python",
+            "name": "solution.py",
+            "role": "Ed staff-visible workspace file"
+          }
+        ],
+        "reference_solution_status": "present",
+        "reference_solution_provenance": "Ed staff edit view sample solution"
+      },
+      "activity_mapping": {
+        "question_path": "questions/InClassExercises/CS1/Week08Lecture09/CountingAgain/Base",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week08Lecture09CountingAgain",
+        "deployment_status": "pending"
+      }
+    },
+    {
+      "slide_id": "662257",
+      "slide_type": "code_challenge",
+      "title": "Exercise: Reverse",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/119154/slides/662257",
+      "segments": [
+        {
+          "html": "Use string indexing to print out the string \"Superman sings soulfully in the shower\" in reverse. Print the reversed version on a single line.",
+          "text": "Use string indexing to print out the string \"Superman sings soulfully in the shower\" in reverse. Print the reversed version on a single line.",
+          "type": "paragraph"
+        }
+      ],
+      "code_blocks": [],
+      "links": [],
+      "assets": [],
+      "exercise": {
+        "prompt": "Use string indexing to print out the string \"Superman sings soulfully in the shower\" in reverse. Print the reversed version on a single line.",
+        "prompt_segments": [
+          {
+            "html": "Use string indexing to print out the string \"Superman sings soulfully in the shower\" in reverse. Print the reversed version on a single line.",
+            "text": "Use string indexing to print out the string \"Superman sings soulfully in the shower\" in reverse. Print the reversed version on a single line.",
+            "type": "paragraph"
+          }
+        ],
+        "scaffold": {
+          "content": "",
+          "file": "solution.py",
+          "language": "python"
+        },
+        "workspace_files": [
+          {
+            "content": "",
+            "language": "python",
+            "name": "solution.py",
+            "role": "Ed staff-visible workspace file"
+          }
+        ],
+        "reference_solution_status": "present",
+        "reference_solution_provenance": "Ed staff edit view sample solution"
+      },
+      "activity_mapping": {
+        "question_path": "questions/InClassExercises/CS1/Week08Lecture09/Reverse/Base",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week08Lecture09Reverse",
+        "deployment_status": "pending"
+      }
+    },
+    {
+      "slide_id": "662258",
+      "slide_type": "document",
+      "title": "Strings are Immutable",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/119154/slides/662258",
+      "segments": [
+        {
+          "items": [
+            "Strings are an immutable data type. This means that they cannot be changed once they are created.",
+            "This may seem counter-intuitive, since we can (and have) been doing things like the following:"
+          ],
+          "ordered": false,
+          "type": "list"
+        },
+        {
+          "language": "",
+          "text": "cheese=\"Cheddar\"\nprint(f\"The cheese is {cheese}\")\ncheese=\"Brie\"\nprint(f\"The cheese is {cheese}\")\n",
+          "type": "code"
+        },
+        {
+          "html": "However, what happens in the code above is that Python creates a string \"Cheddar\" and sets the variable \"cheese\" to point to it. Then it creates another string \"Brie\" and changes the variable so it now points to \"Brie\". The original string \"Cheddar\" is still in memory but no variable points to it any more.",
+          "text": "However, what happens in the code above is that Python creates a string \"Cheddar\" and sets the variable \"cheese\" to point to it. Then it creates another string \"Brie\" and changes the variable so it now points to \"Brie\". The original string \"Cheddar\" is still in memory but no variable points to it any more.",
+          "type": "paragraph"
+        },
+        {
+          "html": "Since strings are immutable, you can't change the characters in them. The following won't work:",
+          "text": "Since strings are immutable, you can't change the characters in them. The following won't work:",
+          "type": "paragraph"
+        },
+        {
+          "language": "",
+          "text": "name=\"Mary\"\n# try to change it to \"Gary\"\nname[0]=\"G\"",
+          "type": "code"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "cheese=\"Cheddar\"\nprint(f\"The cheese is {cheese}\")\ncheese=\"Brie\"\nprint(f\"The cheese is {cheese}\")\n",
+          "language": ""
+        },
+        {
+          "content": "name=\"Mary\"\n# try to change it to \"Gary\"\nname[0]=\"G\"",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "662259",
+      "slide_type": "document",
+      "title": "Changing a String",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/119154/slides/662259",
+      "segments": [
+        {
+          "html": "Because strings are immutable, you can't change them by changing the characters in them. You need to construct a new string.",
+          "text": "Because strings are immutable, you can't change them by changing the characters in them. You need to construct a new string.",
+          "type": "paragraph"
+        },
+        {
+          "html": "Suppose you want to change every vowel in a word to an underscore. Suppose the word is \"hello\". You could try to do the following, but it won't work.",
+          "text": "Suppose you want to change every vowel in a word to an underscore. Suppose the word is \"hello\". You could try to do the following, but it won't work.",
+          "type": "paragraph"
+        },
+        {
+          "language": "",
+          "text": "word=\"hello\"\nword[1]=\"_\"\nword[4]=\"_\"",
+          "type": "code"
+        },
+        {
+          "html": "Instead, you have to do something like the following:",
+          "text": "Instead, you have to do something like the following:",
+          "type": "paragraph"
+        },
+        {
+          "language": "",
+          "text": "word=\"hello\"\nnew_word=\"\"\nfor c in word:\n    if c.lower() in \"aeiou\": # if is a vowel\n      new_word+=\"_\" # put an underscore at the end\n    else:\n      new_word+=c # put the non-vowel at the end\n# we can then set the old variable to the same\n# value as the new one\n# it now points to the new string\nword=new_word\nprint(word)",
+          "type": "code"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "word=\"hello\"\nword[1]=\"_\"\nword[4]=\"_\"",
+          "language": ""
+        },
+        {
+          "content": "word=\"hello\"\nnew_word=\"\"\nfor c in word:\n    if c.lower() in \"aeiou\": # if is a vowel\n      new_word+=\"_\" # put an underscore at the end\n    else:\n      new_word+=c # put the non-vowel at the end\n# we can then set the old variable to the same\n# value as the new one\n# it now points to the new string\nword=new_word\nprint(word)",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "662260",
+      "slide_type": "code_challenge",
+      "title": "Exercise: Replacement",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/119154/slides/662260",
+      "segments": [
+        {
+          "html": "Write a function that accepts three arguments: a string, a character to search for, and a replacement character. Have your function search the string for all occurrences of the first character and replace it with the replacement character. Return the new string.",
+          "text": "Write a function that accepts three arguments: a string, a character to search for, and a replacement character. Have your function search the string for all occurrences of the first character and replace it with the replacement character. Return the new string.",
+          "type": "paragraph"
+        }
+      ],
+      "code_blocks": [],
+      "links": [],
+      "assets": [],
+      "exercise": {
+        "prompt": "Write a function that accepts three arguments: a string, a character to search for, and a replacement character. Have your function search the string for all occurrences of the first character and replace it with the replacement character. Return the new string.",
+        "prompt_segments": [
+          {
+            "html": "Write a function that accepts three arguments: a string, a character to search for, and a replacement character. Have your function search the string for all occurrences of the first character and replace it with the replacement character. Return the new string.",
+            "text": "Write a function that accepts three arguments: a string, a character to search for, and a replacement character. Have your function search the string for all occurrences of the first character and replace it with the replacement character. Return the new string.",
+            "type": "paragraph"
+          }
+        ],
+        "scaffold": {
+          "content": "",
+          "file": "solution.py",
+          "language": "python"
+        },
+        "workspace_files": [
+          {
+            "content": "",
+            "language": "python",
+            "name": "solution.py",
+            "role": "Ed staff-visible workspace file"
+          }
+        ],
+        "reference_solution_status": "present",
+        "reference_solution_provenance": "Ed staff edit view sample solution"
+      },
+      "activity_mapping": {
+        "question_path": "questions/InClassExercises/CS1/Week08Lecture09/Replacement/Base",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week08Lecture09Replacement",
+        "deployment_status": "pending"
+      }
+    },
+    {
+      "slide_id": "662261",
+      "slide_type": "document",
+      "title": "The ord Function: Getting the ASCII Value of a Character",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/119154/slides/662261",
+      "segments": [
+        {
+          "items": [
+            "If you recall, Python uses the ASCII coding scheme to store characters.",
+            "The ord() function gives you the ascii value of a character given as its argument",
+            "for instance, ord(\"A\") returns 65"
+          ],
+          "ordered": false,
+          "type": "list"
+        },
+        {
+          "language": "",
+          "text": "print(ord(\"A\"))",
+          "type": "code"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "print(ord(\"A\"))",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "662262",
+      "slide_type": "document",
+      "title": "The chr() function: Gets a Character from an ASCII Code",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/119154/slides/662262",
+      "segments": [
+        {
+          "items": [
+            "The chr() function is the reverse of the ORD function",
+            "Given an ASCII code, it returns a character",
+            "For instance, chr(65) returns \"A\""
+          ],
+          "ordered": false,
+          "type": "list"
+        },
+        {
+          "language": "",
+          "text": "print(chr(65))\nprint(chr(ord(\"A\")))",
+          "type": "code"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "print(chr(65))\nprint(chr(ord(\"A\")))",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "662263",
+      "slide_type": "document",
+      "title": "String Functions",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/119154/slides/662263",
+      "segments": [
+        {
+          "items": [
+            "We already know a few string functions: len, chr, and ord",
+            "There are many more useful string functions"
+          ],
+          "ordered": false,
+          "type": "list"
+        }
+      ],
+      "code_blocks": [],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "662264",
+      "slide_type": "document",
+      "title": "The min and max Functions",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/119154/slides/662264",
+      "segments": [
+        {
+          "items": [
+            "The min and max functions get the smallest and largest characters in a string, based on their ASCII codes."
+          ],
+          "ordered": false,
+          "type": "list"
+        },
+        {
+          "language": "",
+          "text": "print(max(\"python\"))\nprint(min(\"python\"))\nprint(max(\"123\"))\nprint(min(\"123\"))",
+          "type": "code"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "print(max(\"python\"))\nprint(min(\"python\"))\nprint(max(\"123\"))\nprint(min(\"123\"))",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "662265",
+      "slide_type": "document",
+      "title": "Extracting Substrings Using \"Slicing\" Notation",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/119154/slides/662265",
+      "segments": [
+        {
+          "items": [
+            "You can extract substrings of a string by giving the first index and the last index (plus one) desired separated by a colon"
+          ],
+          "ordered": false,
+          "type": "list"
+        },
+        {
+          "language": "",
+          "text": "full_name=\"Mirabel Madrigal\"\nfirst_name=full_name[:7]\nlast_name=full_name[8:]\nprint(first_name)\nprint(last_name)\ns=full_name[8:11:2]\nprint(s)\n\nl=full_name.split()\nprint(l)\nl=\"James Earl Jones\".split()\nprint(l)",
+          "type": "code"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "full_name=\"Mirabel Madrigal\"\nfirst_name=full_name[:7]\nlast_name=full_name[8:]\nprint(first_name)\nprint(last_name)\ns=full_name[8:11:2]\nprint(s)\n\nl=full_name.split()\nprint(l)\nl=\"James Earl Jones\".split()\nprint(l)",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "662266",
+      "slide_type": "document",
+      "title": "String Slicing Syntax",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/119154/slides/662266",
+      "segments": [
+        {
+          "items": [
+            "You use brackets to slice a string",
+            "The syntax is as follows:"
+          ],
+          "ordered": false,
+          "type": "list"
+        },
+        {
+          "language": "",
+          "text": "substring=bigstring[start:end:step]",
+          "type": "code"
+        },
+        {
+          "language": "",
+          "text": "substring=bigstring[start:end:step]",
+          "type": "code"
+        },
+        {
+          "items": [
+            "You must supply at least a starting or ending value",
+            "Substrings start at the start value specified and end at one minus the end value",
+            "Omitting a start value means you start at the beginning",
+            "Omitting a end value means you go all the way to the end",
+            "The syntax is similar to the range() function"
+          ],
+          "ordered": false,
+          "type": "list"
+        },
+        {
+          "language": "",
+          "text": "# Slicing Examples\ns=\"Superman sings in the shower.\"\nprint(s[0:8]) # Superman\nprint(s[:8]) # Superman\nprint(s[9:14]) # sings\nprint(s[:5]) # Super\nprint(s[9:]) # sings in the shower.\nprint(s[-7:]) # shower.\nprint(s[0:len(s):3]) # Seasgit or",
+          "type": "code"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "substring=bigstring[start:end:step]",
+          "language": ""
+        },
+        {
+          "content": "substring=bigstring[start:end:step]",
+          "language": ""
+        },
+        {
+          "content": "# Slicing Examples\ns=\"Superman sings in the shower.\"\nprint(s[0:8]) # Superman\nprint(s[:8]) # Superman\nprint(s[9:14]) # sings\nprint(s[:5]) # Super\nprint(s[9:]) # sings in the shower.\nprint(s[-7:]) # shower.\nprint(s[0:len(s):3]) # Seasgit or",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "662267",
+      "slide_type": "document",
+      "title": "String Operators",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/119154/slides/662267",
+      "segments": [
+        {
+          "items": [
+            "We already know about two string operators, \"+\" and \"*\"",
+            "The \"+\" operator concanenates two strings, that is, puts the second at the end of the first",
+            "The \"*\" operator repeats a string a number of times (specified as an integer)"
+          ],
+          "ordered": false,
+          "type": "list"
+        },
+        {
+          "language": "",
+          "text": "a=\"Hello\"\nb=\", \"\nc=\"World\"\nd=\"!\"\ne=a+b+c+d\nprint(e)",
+          "type": "code"
+        },
+        {
+          "language": "",
+          "text": "print(\"Repeat Me \"*5)",
+          "type": "code"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "a=\"Hello\"\nb=\", \"\nc=\"World\"\nd=\"!\"\ne=a+b+c+d\nprint(e)",
+          "language": ""
+        },
+        {
+          "content": "print(\"Repeat Me \"*5)",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "662268",
+      "slide_type": "document",
+      "title": "Testing for Substrings Using \"in\" and \"not in\"",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/119154/slides/662268",
+      "segments": [
+        {
+          "items": [
+            "a in b tests if string a is found inside string b",
+            "a not in b tests for the opposite"
+          ],
+          "ordered": false,
+          "type": "list"
+        },
+        {
+          "language": "",
+          "text": "names=\"Pedro Alma Julieta Papa Bruno Augustin Felix Isabela Luisa Mirabel\"\nprint(\"Luisa\" in names) # True\nprint(\"Louisa\" in names) # False\nprint(\"Alma\" not in names) # False\nprint(\"Ann\" not in names) # True",
+          "type": "code"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "names=\"Pedro Alma Julieta Papa Bruno Augustin Felix Isabela Luisa Mirabel\"\nprint(\"Luisa\" in names) # True\nprint(\"Louisa\" in names) # False\nprint(\"Alma\" not in names) # False\nprint(\"Ann\" not in names) # True",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "662269",
+      "slide_type": "code_challenge",
+      "title": "Exercise: Password",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/119154/slides/662269",
+      "segments": [
+        {
+          "html": "Write a program that asks the user for their user name and password. Then make sure that the user name is not part of the password. If it is part of it, print \"bad password\" otherwise print \"OK\".",
+          "text": "Write a program that asks the user for their user name and password. Then make sure that the user name is not part of the password. If it is part of it, print \"bad password\" otherwise print \"OK\".",
+          "type": "paragraph"
+        }
+      ],
+      "code_blocks": [],
+      "links": [],
+      "assets": [],
+      "exercise": {
+        "prompt": "Write a program that asks the user for their user name and password. Then make sure that the user name is not part of the password. If it is part of it, print \"bad password\" otherwise print \"OK\".",
+        "prompt_segments": [
+          {
+            "html": "Write a program that asks the user for their user name and password. Then make sure that the user name is not part of the password. If it is part of it, print \"bad password\" otherwise print \"OK\".",
+            "text": "Write a program that asks the user for their user name and password. Then make sure that the user name is not part of the password. If it is part of it, print \"bad password\" otherwise print \"OK\".",
+            "type": "paragraph"
+          }
+        ],
+        "scaffold": {
+          "content": "",
+          "file": "solution.py",
+          "language": "python"
+        },
+        "workspace_files": [
+          {
+            "content": "",
+            "language": "python",
+            "name": "solution.py",
+            "role": "Ed staff-visible workspace file"
+          }
+        ],
+        "reference_solution_status": "present",
+        "reference_solution_provenance": "Ed staff edit view sample solution"
+      },
+      "activity_mapping": {
+        "question_path": "questions/InClassExercises/CS1/Week08Lecture09/Password/Base",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week08Lecture09Password",
+        "deployment_status": "pending"
+      }
+    },
+    {
+      "slide_id": "662270",
+      "slide_type": "document",
+      "title": "String Methods",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/119154/slides/662270",
+      "segments": [
+        {
+          "items": [
+            "A method is a function that belongs to a Python object.",
+            "We will be covering objects more later",
+            "Strings are objects and have methods",
+            "The syntax to call methods uses dot notation similar to that we have seen with modules, as follows:"
+          ],
+          "ordered": false,
+          "type": "list"
+        },
+        {
+          "language": "",
+          "text": "stringvariable.method(arguments)",
+          "type": "code"
+        },
+        {
+          "language": "",
+          "text": "stringvariable.method(arguments)",
+          "type": "code"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "stringvariable.method(arguments)",
+          "language": ""
+        },
+        {
+          "content": "stringvariable.method(arguments)",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "662271",
+      "slide_type": "document",
+      "title": "String Testing Methods",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/119154/slides/662271",
+      "segments": [
+        {
+          "items": [
+            "String testing methods allow you to test patterns in a string",
+            "For instance, the \"isdigit\" method, if given a character, returns True if it is a numeric digit and False otherwise",
+            "If \"isdigit\" is given a string, it returns true if all of the characters in that string are digits"
+          ],
+          "ordered": false,
+          "type": "list"
+        },
+        {
+          "language": "",
+          "text": "print(\"5\".isdigit())\nprint(\"a\".isdigit())\nprint(\"1234\".isdigit())\nprint(\"a123\".isdigit())",
+          "type": "code"
+        },
+        {
+          "language": "",
+          "text": "x=\"3\"\ny=\"a3\"\nprint(x.isdigit())\nprint(y.isdigit())",
+          "type": "code"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "print(\"5\".isdigit())\nprint(\"a\".isdigit())\nprint(\"1234\".isdigit())\nprint(\"a123\".isdigit())",
+          "language": ""
+        },
+        {
+          "content": "x=\"3\"\ny=\"a3\"\nprint(x.isdigit())\nprint(y.isdigit())",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "662272",
+      "slide_type": "document",
+      "title": "Some String Testing Methods",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/119154/slides/662272",
+      "segments": [
+        {
+          "items": [
+            "isalnum(): True if all characters are alphanumeric",
+            "isalpha(): True if all characters are alphabetic",
+            "isdigit(): True if all characters are digits",
+            "islower(): True if all alphabetic characters are lower case",
+            "isupper(): True if all alphabetic characters are upper case",
+            "isspace(): True if all characters are \"whitespace\""
+          ],
+          "ordered": false,
+          "type": "list"
+        },
+        {
+          "language": "",
+          "text": "print(ord(\"\\n\"))\nprint(\"\\n\".isspace())\nprint(\" \".isspace())\nprint(\"\\t\".isspace())\nprint(\"\\n\\n\\n\")\ns=\"Hello\\nThere\\nWorld!\"\nprint(s)",
+          "type": "code"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "print(ord(\"\\n\"))\nprint(\"\\n\".isspace())\nprint(\" \".isspace())\nprint(\"\\t\".isspace())\nprint(\"\\n\\n\\n\")\ns=\"Hello\\nThere\\nWorld!\"\nprint(s)",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "662273",
+      "slide_type": "code_challenge",
+      "title": "A Third Counting Exercise",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/119154/slides/662273",
+      "segments": [
+        {
+          "html": "Write a program that counts the numbers of spaces, digits, vowels and consonants in a string that the user inputs. Print the counts of each.",
+          "text": "Write a program that counts the numbers of spaces, digits, vowels and consonants in a string that the user inputs. Print the counts of each.",
+          "type": "paragraph"
+        }
+      ],
+      "code_blocks": [],
+      "links": [],
+      "assets": [],
+      "exercise": {
+        "prompt": "Write a program that counts the numbers of spaces, digits, vowels and consonants in a string that the user inputs. Print the counts of each.",
+        "prompt_segments": [
+          {
+            "html": "Write a program that counts the numbers of spaces, digits, vowels and consonants in a string that the user inputs. Print the counts of each.",
+            "text": "Write a program that counts the numbers of spaces, digits, vowels and consonants in a string that the user inputs. Print the counts of each.",
+            "type": "paragraph"
+          }
+        ],
+        "scaffold": {
+          "content": "",
+          "file": "solution.py",
+          "language": "python"
+        },
+        "workspace_files": [
+          {
+            "content": "",
+            "language": "python",
+            "name": "solution.py",
+            "role": "Ed staff-visible workspace file"
+          }
+        ],
+        "reference_solution_status": "present",
+        "reference_solution_provenance": "Ed staff edit view sample solution"
+      },
+      "activity_mapping": {
+        "question_path": "questions/InClassExercises/CS1/Week08Lecture09/AThirdCountingExercise/Base",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week08Lecture09AThirdCountingExercise",
+        "deployment_status": "pending"
+      }
+    },
+    {
+      "slide_id": "662274",
+      "slide_type": "document",
+      "title": "String Modification Methods",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/119154/slides/662274",
+      "segments": [
+        {
+          "items": [
+            "lower(): returns a lowercase version of a string",
+            "upper(): returns an uppercase version of a string",
+            "rstrip(): removes whitespace at the end of a string",
+            "lstrip(): removes whitespace at the beginning of a string",
+            "strip(): removes whitespace at both the beginning and end of a string",
+            "capitalize(): capitalizes a string (first character upper case)",
+            "title(): capitalizes the first character of each word in a string",
+            "swapcase(): turns lower case to upper and vice versa in a string"
+          ],
+          "ordered": false,
+          "type": "list"
+        },
+        {
+          "language": "",
+          "text": "print(\"HELLO\".lower()) # hello\nprint(\"hello\".upper()) # HELLO\nprint(\"hello   \".rstrip())\nprint(\"  hello\".lstrip())\nprint(\"  hello  \".strip())\nprint(\"hello\".capitalize()) # Hello\nprint(\"hello there\".title()) # \"Hello There\"\nprint(\"Hello There\".title().swapcase()) #  \"hELLO tHERE\"",
+          "type": "code"
+        },
+        {
+          "language": "",
+          "text": "x=\"HELLO\"\nx=x.lower()\nprint(x)",
+          "type": "code"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "print(\"HELLO\".lower()) # hello\nprint(\"hello\".upper()) # HELLO\nprint(\"hello   \".rstrip())\nprint(\"  hello\".lstrip())\nprint(\"  hello  \".strip())\nprint(\"hello\".capitalize()) # Hello\nprint(\"hello there\".title()) # \"Hello There\"\nprint(\"Hello There\".title().swapcase()) #  \"hELLO tHERE\"",
+          "language": ""
+        },
+        {
+          "content": "x=\"HELLO\"\nx=x.lower()\nprint(x)",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "662275",
+      "slide_type": "document",
+      "title": "Finding Substrings",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/119154/slides/662275",
+      "segments": [
+        {
+          "items": [
+            "You can find the location of a string inside another string using the find() method",
+            "It will return the index of the first occurence of the substring within a string.",
+            "If it isn't found, it will return -1"
+          ],
+          "ordered": false,
+          "type": "list"
+        },
+        {
+          "language": "",
+          "text": "sentence=\"Like finding a needle in a haystack!\"\nlocation=sentence.find(\"needle\")\nprint(location)\nl2=sentence.find(\"sword\")\nprint(l2)",
+          "type": "code"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "sentence=\"Like finding a needle in a haystack!\"\nlocation=sentence.find(\"needle\")\nprint(location)\nl2=sentence.find(\"sword\")\nprint(l2)",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "662276",
+      "slide_type": "document",
+      "title": "Replacing Substrings",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/119154/slides/662276",
+      "segments": [
+        {
+          "items": [
+            "The replace() method will replace all occurences of a substring in a string with a new string",
+            "An example is the following:"
+          ],
+          "ordered": false,
+          "type": "list"
+        },
+        {
+          "language": "",
+          "text": "text=\"\"\"Voldemort had one goal in life:\nto kill Harry Potter.\nVoldemort hated Harry.\"\"\"\nprint(text)\nnewtext=text.replace(\"Voldemort\",\"He who should not be named\")\nprint(newtext)",
+          "type": "code"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "text=\"\"\"Voldemort had one goal in life:\nto kill Harry Potter.\nVoldemort hated Harry.\"\"\"\nprint(text)\nnewtext=text.replace(\"Voldemort\",\"He who should not be named\")\nprint(newtext)",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "662277",
+      "slide_type": "code_challenge",
+      "title": "Exercise: Redact",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/119154/slides/662277",
+      "segments": [
+        {
+          "items": [
+            "Write a program that redacts all instances of “Python” from the following string:\n\n“Python is a programming language that is fairly easy to learn. Python is great for beginning and advanced programmers.”",
+            "To produce the following:\n\n“ZZZZZZ is a programming language that is fairly easy to learn. ZZZZZZ is great for beginning and advanced programmers.”"
+          ],
+          "ordered": false,
+          "type": "list"
+        }
+      ],
+      "code_blocks": [],
+      "links": [],
+      "assets": [],
+      "exercise": {
+        "prompt": "Write a program that redacts all instances of “Python” from the following string:\n\n“Python is a programming language that is fairly easy to learn. Python is great for beginning and advanced programmers.”\n\nTo produce the following:\n\n“ZZZZZZ is a programming language that is fairly easy to learn. ZZZZZZ is great for beginning and advanced programmers.”",
+        "prompt_segments": [
+          {
+            "items": [
+              "Write a program that redacts all instances of “Python” from the following string:\n\n“Python is a programming language that is fairly easy to learn. Python is great for beginning and advanced programmers.”",
+              "To produce the following:\n\n“ZZZZZZ is a programming language that is fairly easy to learn. ZZZZZZ is great for beginning and advanced programmers.”"
+            ],
+            "ordered": false,
+            "type": "list"
+          }
+        ],
+        "scaffold": {
+          "content": "",
+          "file": "solution.py",
+          "language": "python"
+        },
+        "workspace_files": [
+          {
+            "content": "",
+            "language": "python",
+            "name": "solution.py",
+            "role": "Ed staff-visible workspace file"
+          }
+        ],
+        "reference_solution_status": "present",
+        "reference_solution_provenance": "Ed staff edit view sample solution"
+      },
+      "activity_mapping": {
+        "question_path": "questions/InClassExercises/CS1/Week08Lecture09/Redact/Base",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week08Lecture09Redact",
+        "deployment_status": "pending"
+      }
+    }
+  ]
+}

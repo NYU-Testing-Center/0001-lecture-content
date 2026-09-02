@@ -1,0 +1,1282 @@
+{
+  "schema_version": 1,
+  "course_id": "62123",
+  "source_course": "CS 0002, Section 10, Fall 2024",
+  "target_course": "CS0001",
+  "lesson_id": "118684",
+  "lesson_title": "Week 6, Lecture 7: Functions",
+  "target_lecture": 7,
+  "week": 6,
+  "slide_count": 32,
+  "slides": [
+    {
+      "slide_id": "659771",
+      "slide_type": "document",
+      "title": "Python Functions",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118684/slides/659771",
+      "segments": [
+        {
+          "items": [
+            "A function is a group of statements that exist within a program for the purpose of performing a specific task",
+            "We have already been using a number of Python's built in functions, including:\n\nrange(): generates a range of integers\n\nprint(): outputs data to the console\n\nlen(): measures the length of an object, like a list or a string\n\nrandom.randint(): generates a random integer within a range"
+          ],
+          "ordered": false,
+          "type": "list"
+        }
+      ],
+      "code_blocks": [],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "659772",
+      "slide_type": "document",
+      "title": "Defining Functions",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118684/slides/659772",
+      "segments": [
+        {
+          "items": [
+            "Functions, like variables, must be named and created before you can use them",
+            "The same naming rules apply to both variables and functions:\n\nYou can't use any of the keywords Python reserves to itself, like \"if\", \"while\", or \"for\"\n\nNo spaces in a name\n\nFirst character must be in the alphabet, or be the underscore character\n\nAfter the first character, you can use alphabetic or numeric digits or the underscore\n\nPython is case-sensitive, which means, for instance, that \"A\" and \"a\" are not the same"
+          ],
+          "ordered": false,
+          "type": "list"
+        },
+        {
+          "html": "The following is an example function definition, \"myfunction\". Note we use the def keyword to define the function; to call it we refer to it by its name.",
+          "text": "The following is an example function definition, \"myfunction\". Note we use the def keyword to define the function; to call it we refer to it by its name.",
+          "type": "paragraph"
+        },
+        {
+          "language": "",
+          "text": "# define a function\ndef myfunction():\n  print(\"Hello, I'm in the function!\")\n\n# call it twice with an intervening print\nmyfunction()\nprint(\"Hi, I'm in the main program.\")\nmyfunction()",
+          "type": "code"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "# define a function\ndef myfunction():\n  print(\"Hello, I'm in the function!\")\n\n# call it twice with an intervening print\nmyfunction()\nprint(\"Hi, I'm in the main program.\")\nmyfunction()",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "659773",
+      "slide_type": "document",
+      "title": "Some Notes on Functions",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118684/slides/659773",
+      "segments": [
+        {
+          "items": [
+            "To run a function, you \"call\" it. This transfers control up to the function and the statements indented under the function are run.",
+            "Once a function has completed, Python continues with the line after the call.",
+            "Functions must be defined before they are called. We generally place all of our functions at the beginning of our programs."
+          ],
+          "ordered": false,
+          "type": "list"
+        },
+        {
+          "html": "The following is an example that calls two functions.",
+          "text": "The following is an example that calls two functions.",
+          "type": "paragraph"
+        },
+        {
+          "language": "",
+          "text": "# note hello doesn't need to be defined first as long as it is defined before it is called.\ndef goodbye():\n  print(\"See ya!\")\ndef hello():\n  print(\"Hello there!\")\n\nhello()\ngoodbye()",
+          "type": "code"
+        },
+        {
+          "html": "The following is an example of a function that calls another function. This is allowed, and is actually common.",
+          "text": "The following is an example of a function that calls another function. This is allowed, and is actually common.",
+          "type": "paragraph"
+        },
+        {
+          "language": "",
+          "text": "def main():\n  print(\"I have a message for you.\")\n  # function calls other function \"message\"\n  message()\n  print(\"Goodbye!\")\ndef message():\n  print(\"The password is 'Open Sesame'.\")\nmain()",
+          "type": "code"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "# note hello doesn't need to be defined first as long as it is defined before it is called.\ndef goodbye():\n  print(\"See ya!\")\ndef hello():\n  print(\"Hello there!\")\n\nhello()\ngoodbye()",
+          "language": ""
+        },
+        {
+          "content": "def main():\n  print(\"I have a message for you.\")\n  # function calls other function \"message\"\n  message()\n  print(\"Goodbye!\")\ndef message():\n  print(\"The password is 'Open Sesame'.\")\nmain()",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "659774",
+      "slide_type": "document",
+      "title": "Local Variables",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118684/slides/659774",
+      "segments": [
+        {
+          "html": "Local variables are variables that exist only inside the function (inside its \"scope,\" which is the code block associated with it) and do not exist outside of it. This is best seen with an example.",
+          "text": "Local variables are variables that exist only inside the function (inside its \"scope,\" which is the code block associated with it) and do not exist outside of it. This is best seen with an example.",
+          "type": "paragraph"
+        },
+        {
+          "language": "",
+          "text": "def bugs():\n  numbugs=int(input(\"How many bugs?\"))\n  print(f\"You entered {numbugs} bugs.\")\n\nbugs()\n# if you try to print the variable numbugs here, it won't work\n# since it is defined only in the function and is local to it\n#print(numbugs)",
+          "type": "code"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "def bugs():\n  numbugs=int(input(\"How many bugs?\"))\n  print(f\"You entered {numbugs} bugs.\")\n\nbugs()\n# if you try to print the variable numbugs here, it won't work\n# since it is defined only in the function and is local to it\n#print(numbugs)",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "659775",
+      "slide_type": "document",
+      "title": "Something Weird",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118684/slides/659775",
+      "segments": [
+        {
+          "html": "The following is a bit weird. There are two variables have the same name, but they are distinct, different variables. One exists inside the function and is local to it, whereas the other is in the main program.",
+          "text": "The following is a bit weird. There are two variables have the same name, but they are distinct, different variables. One exists inside the function and is local to it, whereas the other is in the main program.",
+          "type": "paragraph"
+        },
+        {
+          "language": "",
+          "text": "def bugs():\n  numbugs=int(input(\"How many bugs?\")) # local version\n  print(f\"You entered {numbugs} bugs.\")\n\nnumbugs=\"Forty-one\" # global version\nbugs()\n# now you can print it, but it will be the version from the main program.\n# there are two variables with the same name\n# one is local, and the other is global\nprint(numbugs)",
+          "type": "code"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "def bugs():\n  numbugs=int(input(\"How many bugs?\")) # local version\n  print(f\"You entered {numbugs} bugs.\")\n\nnumbugs=\"Forty-one\" # global version\nbugs()\n# now you can print it, but it will be the version from the main program.\n# there are two variables with the same name\n# one is local, and the other is global\nprint(numbugs)",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "659776",
+      "slide_type": "document",
+      "title": "Something Weirder",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118684/slides/659776",
+      "segments": [
+        {
+          "html": "Here is something even weirder. We have three versions of the variable, all with the same name, but all different.",
+          "text": "Here is something even weirder. We have three versions of the variable, all with the same name, but all different.",
+          "type": "paragraph"
+        },
+        {
+          "language": "",
+          "text": "def bugs():\n  numbugs=int(input(\"How many bugs?\")) # local version\n  print(f\"You entered {numbugs} bugs.\")\n  bugs2()\ndef bugs2():\n  numbugs=int(input(\"What is the bug count?\")) # another local version\n  print(f\"You told me there were {numbugs} bugs.\")\n\nnumbugs=4.0 # global version\nbugs()\nprint(numbugs)",
+          "type": "code"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "def bugs():\n  numbugs=int(input(\"How many bugs?\")) # local version\n  print(f\"You entered {numbugs} bugs.\")\n  bugs2()\ndef bugs2():\n  numbugs=int(input(\"What is the bug count?\")) # another local version\n  print(f\"You told me there were {numbugs} bugs.\")\n\nnumbugs=4.0 # global version\nbugs()\nprint(numbugs)",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "659777",
+      "slide_type": "document",
+      "title": "Don't Re-use the Same Variable Name",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118684/slides/659777",
+      "segments": [
+        {
+          "html": "Don't confuse yourself and others by giving different variables the same name",
+          "text": "Don't confuse yourself and others by giving different variables the same name",
+          "type": "paragraph"
+        },
+        {
+          "html": "While it is technically possible to have a situation as in the prior example, three variables, two local, one global, all distinct, but with the same name, don't do it! You will only confuse yourself and others. Give every variable in your program a different name, and use different names in each function. There are some exceptions to this rule, but it is generally a good one.",
+          "text": "While it is technically possible to have a situation as in the prior example, three variables, two local, one global, all distinct, but with the same name, don't do it! You will only confuse yourself and others. Give every variable in your program a different name, and use different names in each function. There are some exceptions to this rule, but it is generally a good one.",
+          "type": "paragraph"
+        }
+      ],
+      "code_blocks": [],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "659778",
+      "slide_type": "document",
+      "title": "Local and Global Variables",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118684/slides/659778",
+      "segments": [
+        {
+          "items": [
+            "When you create a variable inside a function, we say that the variable is “local” to that function",
+            "This means that it can only be accessed by statements inside the function that created it",
+            "When a variable is created outside all of your functions it is considered a “global variable”",
+            "Global variables can be accessed by any statement in your program file, including by statements in any function",
+            "All of the variables we have been creating so far in class (prior to discussing functions today) have been global variables"
+          ],
+          "ordered": false,
+          "type": "list"
+        },
+        {
+          "language": "",
+          "text": "def myfunc():\n  print(a) # you can access a global variable anywhere\n  b=10\n  print(b)\n\na=5\nmyfunc()\n# this won't work; can't access local b\n# print(b)",
+          "type": "code"
+        },
+        {
+          "html": "You can access a global variable inside a function if you explicitly say that it is global. Look at the difference between the following two examples. However, this is a bad practice in most cases.",
+          "text": "You can access a global variable inside a function if you explicitly say that it is global. Look at the difference between the following two examples. However, this is a bad practice in most cases.",
+          "type": "paragraph"
+        },
+        {
+          "language": "",
+          "text": "def myfunc():\n  x=10 # local variable\n  print(x)\nx=5 # this is a different variable than that in the function\nmyfunc()\nprint(x)",
+          "type": "code"
+        },
+        {
+          "language": "",
+          "text": "def myfunc():\n  global x\n  x=10 # global variable\n  print(x)\nx=5 # this is the same variable as in the function\nmyfunc()\nprint(x)",
+          "type": "code"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "def myfunc():\n  print(a) # you can access a global variable anywhere\n  b=10\n  print(b)\n\na=5\nmyfunc()\n# this won't work; can't access local b\n# print(b)",
+          "language": ""
+        },
+        {
+          "content": "def myfunc():\n  x=10 # local variable\n  print(x)\nx=5 # this is a different variable than that in the function\nmyfunc()\nprint(x)",
+          "language": ""
+        },
+        {
+          "content": "def myfunc():\n  global x\n  x=10 # global variable\n  print(x)\nx=5 # this is the same variable as in the function\nmyfunc()\nprint(x)",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "659779",
+      "slide_type": "document",
+      "title": "Issues with Global Variables",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118684/slides/659779",
+      "segments": [
+        {
+          "items": [
+            "Global variables can make debugging difficult",
+            "Functions that use global variables are generally dependent on those variables, making your functions less reusable in other programs",
+            "However, there are some situations in which using global variables may make sense, although some people think they should never be used."
+          ],
+          "ordered": false,
+          "type": "list"
+        }
+      ],
+      "code_blocks": [],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "659780",
+      "slide_type": "document",
+      "title": "Passing Arguments to a Function",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118684/slides/659780",
+      "segments": [
+        {
+          "items": [
+            "It is often useful to pass data to a function as arguments.",
+            "The data passed is mapped to variables in the function.",
+            "We have been doing this all along. See the following example:"
+          ],
+          "ordered": false,
+          "type": "list"
+        },
+        {
+          "language": "",
+          "text": "import random\nprint(random.randint(1,5)) # parameters are 1 and 5; returns a random integer between 1 and 5\nprint(len('hello')) # parameter is a single string",
+          "type": "code"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "import random\nprint(random.randint(1,5)) # parameters are 1 and 5; returns a random integer between 1 and 5\nprint(len('hello')) # parameter is a single string",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "659781",
+      "slide_type": "document",
+      "title": "Defining a Function with an Argument",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118684/slides/659781",
+      "segments": [
+        {
+          "html": "The following function takes a number as an argument and prints out its square.",
+          "text": "The following function takes a number as an argument and prints out its square.",
+          "type": "paragraph"
+        },
+        {
+          "language": "",
+          "text": "# num is a parameter and is local to the function\ndef square(num):\n  print(num**2)\n# when the function is called as follows, the variable num is set to 9.\nx=9\nsquare(x)\n# this won't work:\n#print(num)",
+          "type": "code"
+        },
+        {
+          "html": "You can define a function with multiple arguments. Here's one with three:",
+          "text": "You can define a function with multiple arguments. Here's one with three:",
+          "type": "paragraph"
+        },
+        {
+          "language": "",
+          "text": "def average(n1,n2,n3):\n  print((n1+n2+n3)/3)\n\naverage(100,90,95)\n",
+          "type": "code"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "# num is a parameter and is local to the function\ndef square(num):\n  print(num**2)\n# when the function is called as follows, the variable num is set to 9.\nx=9\nsquare(x)\n# this won't work:\n#print(num)",
+          "language": ""
+        },
+        {
+          "content": "def average(n1,n2,n3):\n  print((n1+n2+n3)/3)\n\naverage(100,90,95)\n",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "659782",
+      "slide_type": "code_challenge",
+      "title": "Exercise: Product Function",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118684/slides/659782",
+      "segments": [
+        {
+          "html": "Define a function that takes two integers as parameters and prints out their product.",
+          "text": "Define a function that takes two integers as parameters and prints out their product.",
+          "type": "paragraph"
+        }
+      ],
+      "code_blocks": [],
+      "links": [],
+      "assets": [],
+      "exercise": {
+        "prompt": "Define a function that takes two integers as parameters and prints out their product.",
+        "prompt_segments": [
+          {
+            "html": "Define a function that takes two integers as parameters and prints out their product.",
+            "text": "Define a function that takes two integers as parameters and prints out their product.",
+            "type": "paragraph"
+          }
+        ],
+        "scaffold": {
+          "content": "",
+          "file": "solution.py",
+          "language": "python"
+        },
+        "workspace_files": [
+          {
+            "content": "",
+            "language": "python",
+            "name": "solution.py",
+            "role": "Ed staff-visible workspace file"
+          }
+        ],
+        "reference_solution_status": "present",
+        "reference_solution_provenance": "Ed staff edit view sample solution"
+      },
+      "activity_mapping": {
+        "question_path": "questions/InClassExercises/CS1/Week06Lecture07/ProductFunction/Base",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week06Lecture07ProductFunction",
+        "deployment_status": "pending"
+      }
+    },
+    {
+      "slide_id": "659783",
+      "slide_type": "code_challenge",
+      "title": "Exercise: Restaurant Bill Function",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118684/slides/659783",
+      "segments": [
+        {
+          "html": "Define a function that takes a restaurant bill (without the tip) and a tip percentage as parameters. The function should print out the tip and the new bill with the tip. If the tip is less than 15%, you should also print out \"Cheapskate!\"",
+          "text": "Define a function that takes a restaurant bill (without the tip) and a tip percentage as parameters. The function should print out the tip and the new bill with the tip. If the tip is less than 15%, you should also print out \"Cheapskate!\"",
+          "type": "paragraph"
+        }
+      ],
+      "code_blocks": [],
+      "links": [],
+      "assets": [],
+      "exercise": {
+        "prompt": "Define a function that takes a restaurant bill (without the tip) and a tip percentage as parameters. The function should print out the tip and the new bill with the tip. If the tip is less than 15%, you should also print out \"Cheapskate!\"",
+        "prompt_segments": [
+          {
+            "html": "Define a function that takes a restaurant bill (without the tip) and a tip percentage as parameters. The function should print out the tip and the new bill with the tip. If the tip is less than 15%, you should also print out \"Cheapskate!\"",
+            "text": "Define a function that takes a restaurant bill (without the tip) and a tip percentage as parameters. The function should print out the tip and the new bill with the tip. If the tip is less than 15%, you should also print out \"Cheapskate!\"",
+            "type": "paragraph"
+          }
+        ],
+        "scaffold": {
+          "content": "",
+          "file": "solution.py",
+          "language": "python"
+        },
+        "workspace_files": [
+          {
+            "content": "",
+            "language": "python",
+            "name": "solution.py",
+            "role": "Ed staff-visible workspace file"
+          }
+        ],
+        "reference_solution_status": "present",
+        "reference_solution_provenance": "Ed staff edit view sample solution"
+      },
+      "activity_mapping": {
+        "question_path": "questions/InClassExercises/CS1/Week06Lecture07/RestaurantBillFunction/Base",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week06Lecture07RestaurantBillFunction",
+        "deployment_status": "pending"
+      }
+    },
+    {
+      "slide_id": "659784",
+      "slide_type": "document",
+      "title": "One-Way Communication",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118684/slides/659784",
+      "segments": [
+        {
+          "html": "Data that is passed into a function as a parameter may be modified by the function, but since the parameter is local to the function, this is not felt outside the function. See the following:",
+          "text": "Data that is passed into a function as a parameter may be modified by the function, but since the parameter is local to the function, this is not felt outside the function. See the following:",
+          "type": "paragraph"
+        },
+        {
+          "language": "",
+          "text": "def test(x):\n  x+=1 # x is incremented\n  print(x) # and you can see it\n\ny=5\n# the 5 goes into the function\ntest(y)\n# but it doesn't come back out\n# communication is in only one direction\nprint(y) # but the glabel y is not affected",
+          "type": "code"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "def test(x):\n  x+=1 # x is incremented\n  print(x) # and you can see it\n\ny=5\n# the 5 goes into the function\ntest(y)\n# but it doesn't come back out\n# communication is in only one direction\nprint(y) # but the glabel y is not affected",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "659785",
+      "slide_type": "document",
+      "title": "Value-Returning Functions",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118684/slides/659785",
+      "segments": [
+        {
+          "items": [
+            "Value returning functions are functions that return a value to the part of the program that initiated the function call",
+            "They are almost identical to the type of functions we have been writing so far, but they have the added ability to send back information at the end of the function call",
+            "We have been using these all semester, as in the following:"
+          ],
+          "ordered": false,
+          "type": "list"
+        },
+        {
+          "language": "",
+          "text": "# the input function returns a string\nname=input(\"What is your name?\")\nprint(f\"Hello, {name}!\")",
+          "type": "code"
+        },
+        {
+          "language": "",
+          "text": "# the following function returns a random integer in the specified range\nimport random\nn=random.randint(1,5)\nprint(f\"The random number is {n}\")",
+          "type": "code"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "# the input function returns a string\nname=input(\"What is your name?\")\nprint(f\"Hello, {name}!\")",
+          "language": ""
+        },
+        {
+          "content": "# the following function returns a random integer in the specified range\nimport random\nn=random.randint(1,5)\nprint(f\"The random number is {n}\")",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "659786",
+      "slide_type": "document",
+      "title": "Writing Your Own Value-Returning Functions",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118684/slides/659786",
+      "segments": [
+        {
+          "items": [
+            "You use almost the same syntax for writing a value returning function as you would for writing a normal function",
+            "The only difference is that you need to include a \"return\" statement in your function to tell Python that you intend to return a value to the calling program, and you provide the value after the \"return\" keyword.",
+            "The return statement causes a function to end immediately. It’s like the break statement for a loop.",
+            "A function will not proceed past its return statement once encountered. Control of the program is returned back to the caller."
+          ],
+          "ordered": false,
+          "type": "list"
+        },
+        {
+          "language": "",
+          "text": "# find the greatest common factor of two numbers x and y\ndef gcf(x,y):\n  # the gcf can't be more than the smaller of the two numbers\n  # loops from the minimum of the two numbers down to one\n  for i in range(min(x,y),0,-1):\n    # ends up returning the largest number that goes into both\n    # evenly; that number may be one\n    if ((x%i)==0) and ((y%i)==0): return i\nx=gcf(7,14)\ny=gcf(14,25)\nz=gcf(50,75)\nprint(x,y,z)\nprint(gcf(6,9))",
+          "type": "code"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "# find the greatest common factor of two numbers x and y\ndef gcf(x,y):\n  # the gcf can't be more than the smaller of the two numbers\n  # loops from the minimum of the two numbers down to one\n  for i in range(min(x,y),0,-1):\n    # ends up returning the largest number that goes into both\n    # evenly; that number may be one\n    if ((x%i)==0) and ((y%i)==0): return i\nx=gcf(7,14)\ny=gcf(14,25)\nz=gcf(50,75)\nprint(x,y,z)\nprint(gcf(6,9))",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "659787",
+      "slide_type": "code_challenge",
+      "title": "Exercise: Average",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118684/slides/659787",
+      "segments": [
+        {
+          "html": "Write a function that takes three numbers and returns the average of those numbers. From the main program, call the function with 1, 2, and 3 and store the result in a variable x. Then print x.",
+          "text": "Write a function that takes three numbers and returns the average of those numbers. From the main program, call the function with 1, 2, and 3 and store the result in a variable x. Then print x.",
+          "type": "paragraph"
+        }
+      ],
+      "code_blocks": [],
+      "links": [],
+      "assets": [],
+      "exercise": {
+        "prompt": "Write a function that takes three numbers and returns the average of those numbers. From the main program, call the function with 1, 2, and 3 and store the result in a variable x. Then print x.",
+        "prompt_segments": [
+          {
+            "html": "Write a function that takes three numbers and returns the average of those numbers. From the main program, call the function with 1, 2, and 3 and store the result in a variable x. Then print x.",
+            "text": "Write a function that takes three numbers and returns the average of those numbers. From the main program, call the function with 1, 2, and 3 and store the result in a variable x. Then print x.",
+            "type": "paragraph"
+          }
+        ],
+        "scaffold": {
+          "content": "",
+          "file": "solution.py",
+          "language": "python"
+        },
+        "workspace_files": [
+          {
+            "content": "",
+            "language": "python",
+            "name": "solution.py",
+            "role": "Ed staff-visible workspace file"
+          }
+        ],
+        "reference_solution_status": "present",
+        "reference_solution_provenance": "Ed staff edit view sample solution"
+      },
+      "activity_mapping": {
+        "question_path": "questions/InClassExercises/CS1/Week06Lecture07/Average/Base",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week06Lecture07Average",
+        "deployment_status": "pending"
+      }
+    },
+    {
+      "slide_id": "659789",
+      "slide_type": "code_challenge",
+      "title": "Exercise: Compound Interest",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118684/slides/659789",
+      "segments": [
+        {
+          "html": "Write a function compound that takes three parameters, a starting amount, an annual interest percentage, and a number of years, and returns the amount of money you will have after that many years.",
+          "text": "Write a function compound that takes three parameters, a starting amount, an annual interest percentage, and a number of years, and returns the amount of money you will have after that many years.",
+          "type": "paragraph"
+        },
+        {
+          "html": "For instance, if you call compound(100,10,2) you should get $121 back, because you will have $110 after one year, and $121 after two. Call it with these values and print out the result.",
+          "text": "For instance, if you call compound(100,10,2) you should get $121 back, because you will have $110 after one year, and $121 after two. Call it with these values and print out the result.",
+          "type": "paragraph"
+        }
+      ],
+      "code_blocks": [],
+      "links": [],
+      "assets": [],
+      "exercise": {
+        "prompt": "Write a function compound that takes three parameters, a starting amount, an annual interest percentage, and a number of years, and returns the amount of money you will have after that many years.\n\nFor instance, if you call compound(100,10,2) you should get $121 back, because you will have $110 after one year, and $121 after two. Call it with these values and print out the result.",
+        "prompt_segments": [
+          {
+            "html": "Write a function compound that takes three parameters, a starting amount, an annual interest percentage, and a number of years, and returns the amount of money you will have after that many years.",
+            "text": "Write a function compound that takes three parameters, a starting amount, an annual interest percentage, and a number of years, and returns the amount of money you will have after that many years.",
+            "type": "paragraph"
+          },
+          {
+            "html": "For instance, if you call compound(100,10,2) you should get $121 back, because you will have $110 after one year, and $121 after two. Call it with these values and print out the result.",
+            "text": "For instance, if you call compound(100,10,2) you should get $121 back, because you will have $110 after one year, and $121 after two. Call it with these values and print out the result.",
+            "type": "paragraph"
+          }
+        ],
+        "scaffold": {
+          "content": "",
+          "file": "solution.py",
+          "language": "python"
+        },
+        "workspace_files": [
+          {
+            "content": "",
+            "language": "python",
+            "name": "solution.py",
+            "role": "Ed staff-visible workspace file"
+          }
+        ],
+        "reference_solution_status": "present",
+        "reference_solution_provenance": "Ed staff edit view sample solution"
+      },
+      "activity_mapping": {
+        "question_path": "questions/InClassExercises/CS1/Week06Lecture07/CompoundInterest/Base",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week06Lecture07CompoundInterest",
+        "deployment_status": "pending"
+      }
+    },
+    {
+      "slide_id": "659790",
+      "slide_type": "document",
+      "title": "Don't Confuse Printing and Returning",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118684/slides/659790",
+      "segments": [
+        {
+          "html": "Printing a value inside a function is not the same as returning it. If you only print, nothing will be returned.",
+          "text": "Printing a value inside a function is not the same as returning it. If you only print, nothing will be returned.",
+          "type": "paragraph"
+        },
+        {
+          "language": "",
+          "text": "def double(x):\n  print(2*x)\n\ny=double(4)  # nothing is returned here, defined as \"None\"\nprint(y)",
+          "type": "code"
+        },
+        {
+          "language": "",
+          "text": "def double(x):\n  return 2*x\n\ny=double(4) # now something is returned\nprint(y)",
+          "type": "code"
+        },
+        {
+          "language": "",
+          "text": "x=print(\"hello\")\nprint(x)",
+          "type": "code"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "def double(x):\n  print(2*x)\n\ny=double(4)  # nothing is returned here, defined as \"None\"\nprint(y)",
+          "language": ""
+        },
+        {
+          "content": "def double(x):\n  return 2*x\n\ny=double(4) # now something is returned\nprint(y)",
+          "language": ""
+        },
+        {
+          "content": "x=print(\"hello\")\nprint(x)",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "659791",
+      "slide_type": "code_challenge",
+      "title": "Exercise: A Distance Function",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118684/slides/659791",
+      "segments": [
+        {
+          "html": "Write a function dist which takes four parameters, x1, y1, x2, and y2 which represent the locations of two points in the plane, and returns the distance between the points. Use the Pythagorean formula. Call it with dist(0,0,3,4) and print the result.",
+          "text": "Write a function dist which takes four parameters, x1, y1, x2, and y2 which represent the locations of two points in the plane, and returns the distance between the points. Use the Pythagorean formula. Call it with dist(0,0,3,4) and print the result.",
+          "type": "paragraph"
+        },
+        {
+          "html": "Use Input/Processing/Output (IPO) documentation at the top of your program as follows:",
+          "text": "Use Input/Processing/Output (IPO) documentation at the top of your program as follows:",
+          "type": "paragraph"
+        },
+        {
+          "language": "",
+          "text": "# function: dist (distance)# input: two points as four coordinates# processing: uses the Pythagorean formula# output: returns the distance between the points",
+          "type": "code"
+        },
+        {
+          "language": "",
+          "text": "# function: dist (distance)# input: two points as four coordinates# processing: uses the Pythagorean formula# output: returns the distance between the points",
+          "type": "code"
+        },
+        {
+          "html": "I will be asking you to use IPO documentation for all of the functions you write.",
+          "text": "I will be asking you to use IPO documentation for all of the functions you write.",
+          "type": "paragraph"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "# function: dist (distance)# input: two points as four coordinates# processing: uses the Pythagorean formula# output: returns the distance between the points",
+          "language": ""
+        },
+        {
+          "content": "# function: dist (distance)# input: two points as four coordinates# processing: uses the Pythagorean formula# output: returns the distance between the points",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": [],
+      "exercise": {
+        "prompt": "Write a function dist which takes four parameters, x1, y1, x2, and y2 which represent the locations of two points in the plane, and returns the distance between the points. Use the Pythagorean formula. Call it with dist(0,0,3,4) and print the result.\n\nUse Input/Processing/Output (IPO) documentation at the top of your program as follows:\n\n# function: dist (distance)\n# input: two points as four coordinates\n# processing: uses the Pythagorean formula\n# output: returns the distance between the points\n\nI will be asking you to use IPO documentation for all of the functions you write.",
+        "prompt_segments": [
+          {
+            "html": "Write a function dist which takes four parameters, x1, y1, x2, and y2 which represent the locations of two points in the plane, and returns the distance between the points. Use the Pythagorean formula. Call it with dist(0,0,3,4) and print the result.",
+            "text": "Write a function dist which takes four parameters, x1, y1, x2, and y2 which represent the locations of two points in the plane, and returns the distance between the points. Use the Pythagorean formula. Call it with dist(0,0,3,4) and print the result.",
+            "type": "paragraph"
+          },
+          {
+            "html": "Use Input/Processing/Output (IPO) documentation at the top of your program as follows:",
+            "text": "Use Input/Processing/Output (IPO) documentation at the top of your program as follows:",
+            "type": "paragraph"
+          },
+          {
+            "language": "",
+            "text": "# function: dist (distance)# input: two points as four coordinates# processing: uses the Pythagorean formula# output: returns the distance between the points",
+            "type": "code"
+          },
+          {
+            "language": "",
+            "text": "# function: dist (distance)# input: two points as four coordinates# processing: uses the Pythagorean formula# output: returns the distance between the points",
+            "type": "code"
+          },
+          {
+            "html": "I will be asking you to use IPO documentation for all of the functions you write.",
+            "text": "I will be asking you to use IPO documentation for all of the functions you write.",
+            "type": "paragraph"
+          }
+        ],
+        "scaffold": {
+          "content": "",
+          "file": "solution.py",
+          "language": "python"
+        },
+        "workspace_files": [
+          {
+            "content": "",
+            "language": "python",
+            "name": "solution.py",
+            "role": "Ed staff-visible workspace file"
+          }
+        ],
+        "reference_solution_status": "present",
+        "reference_solution_provenance": "Ed staff edit view sample solution"
+      },
+      "activity_mapping": {
+        "question_path": "questions/InClassExercises/CS1/Week06Lecture07/ADistanceFunction/Base",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week06Lecture07ADistanceFunction",
+        "deployment_status": "pending"
+      }
+    },
+    {
+      "slide_id": "659792",
+      "slide_type": "document",
+      "title": "Boolean-Returning Functions",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118684/slides/659792",
+      "segments": [
+        {
+          "html": "Functions can return any type of value.",
+          "text": "Functions can return any type of value.",
+          "type": "paragraph"
+        },
+        {
+          "html": "So you can have Boolean functions, which return a Boolean value, like the following one:",
+          "text": "So you can have Boolean functions, which return a Boolean value, like the following one:",
+          "type": "paragraph"
+        },
+        {
+          "language": "",
+          "text": "def Disney(name):\n  # converts name to lower case and sees if it is in the list\n  # note the \"in\" operator returns a Boolean result\n  return name.lower() in [\"mickey\",\"minnie\",\"donald\",\"daisy\",\"goofy\",\"pluto\",\"pete\"]\n\nprint(Disney(\"Pluto\"))\nprint(Disney(\"Bugs\"))",
+          "type": "code"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "def Disney(name):\n  # converts name to lower case and sees if it is in the list\n  # note the \"in\" operator returns a Boolean result\n  return name.lower() in [\"mickey\",\"minnie\",\"donald\",\"daisy\",\"goofy\",\"pluto\",\"pete\"]\n\nprint(Disney(\"Pluto\"))\nprint(Disney(\"Bugs\"))",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "659793",
+      "slide_type": "code_challenge",
+      "title": "Exercise: Boolean Function",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118684/slides/659793",
+      "segments": [
+        {
+          "html": "Write a Boolean function that takes a single number as an argument and returns whether or not that number is even.",
+          "text": "Write a Boolean function that takes a single number as an argument and returns whether or not that number is even.",
+          "type": "paragraph"
+        }
+      ],
+      "code_blocks": [],
+      "links": [],
+      "assets": [],
+      "exercise": {
+        "prompt": "Write a Boolean function that takes a single number as an argument and returns whether or not that number is even.",
+        "prompt_segments": [
+          {
+            "html": "Write a Boolean function that takes a single number as an argument and returns whether or not that number is even.",
+            "text": "Write a Boolean function that takes a single number as an argument and returns whether or not that number is even.",
+            "type": "paragraph"
+          }
+        ],
+        "scaffold": {
+          "content": "",
+          "file": "solution.py",
+          "language": "python"
+        },
+        "workspace_files": [
+          {
+            "content": "",
+            "language": "python",
+            "name": "solution.py",
+            "role": "Ed staff-visible workspace file"
+          }
+        ],
+        "reference_solution_status": "present",
+        "reference_solution_provenance": "Ed staff edit view sample solution"
+      },
+      "activity_mapping": {
+        "question_path": "questions/InClassExercises/CS1/Week06Lecture07/BooleanFunction/Base",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week06Lecture07BooleanFunction",
+        "deployment_status": "pending"
+      }
+    },
+    {
+      "slide_id": "659794",
+      "slide_type": "document",
+      "title": "Returning Multiple Results from Functions",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118684/slides/659794",
+      "segments": [
+        {
+          "html": "Functions can return more than one result. To do this, separate the results by commas.",
+          "text": "Functions can return more than one result. To do this, separate the results by commas.",
+          "type": "paragraph"
+        },
+        {
+          "html": "For instance, the following function returns the lowest factor of a number and the other factor that it is paired with.",
+          "text": "For instance, the following function returns the lowest factor of a number and the other factor that it is paired with.",
+          "type": "paragraph"
+        },
+        {
+          "language": "",
+          "text": "# a function that returns more than one number\n# return the first pair of factors found of a number n\n# or 1, n if  n is prime\ndef first_factor_pair(n):\n  for i in range(2,int(n**0.5)+1):\n    if ((n%i)==0):\n      return i,n//i\n  return 1, n\n\nprint(first_factor_pair(63))\nprint(first_factor_pair(27))\nprint(first_factor_pair(25))\nprint(first_factor_pair(29))\nprint(first_factor_pair(35))\nx,y =first_factor_pair(35) # note double assignment!\nprint(x)\nprint(y)\na, b, c = 11, 12, 13\nprint(a,b,c)",
+          "type": "code"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "# a function that returns more than one number\n# return the first pair of factors found of a number n\n# or 1, n if  n is prime\ndef first_factor_pair(n):\n  for i in range(2,int(n**0.5)+1):\n    if ((n%i)==0):\n      return i,n//i\n  return 1, n\n\nprint(first_factor_pair(63))\nprint(first_factor_pair(27))\nprint(first_factor_pair(25))\nprint(first_factor_pair(29))\nprint(first_factor_pair(35))\nx,y =first_factor_pair(35) # note double assignment!\nprint(x)\nprint(y)\na, b, c = 11, 12, 13\nprint(a,b,c)",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "659795",
+      "slide_type": "code_challenge",
+      "title": "Exercise: Computing the Area and Perimeter of a Circle",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118684/slides/659795",
+      "segments": [
+        {
+          "html": "Write a function called AreaPerimeter which takes one argument (the radius of a circle r) and returns the area and the perimeter.",
+          "text": "Write a function called AreaPerimeter which takes one argument (the radius of a circle r) and returns the area and the perimeter.",
+          "type": "paragraph"
+        },
+        {
+          "html": "To get pi, you can include the command \"import math\" and then it will be available as math.pi.",
+          "text": "To get pi, you can include the command \"import math\" and then it will be available as math.pi.",
+          "type": "paragraph"
+        }
+      ],
+      "code_blocks": [],
+      "links": [],
+      "assets": [],
+      "exercise": {
+        "prompt": "Write a function called AreaPerimeter which takes one argument (the radius of a circle r) and returns the area and the perimeter.\n\nTo get pi, you can include the command \"import math\" and then it will be available as math.pi.",
+        "prompt_segments": [
+          {
+            "html": "Write a function called AreaPerimeter which takes one argument (the radius of a circle r) and returns the area and the perimeter.",
+            "text": "Write a function called AreaPerimeter which takes one argument (the radius of a circle r) and returns the area and the perimeter.",
+            "type": "paragraph"
+          },
+          {
+            "html": "To get pi, you can include the command \"import math\" and then it will be available as math.pi.",
+            "text": "To get pi, you can include the command \"import math\" and then it will be available as math.pi.",
+            "type": "paragraph"
+          }
+        ],
+        "scaffold": {
+          "content": "",
+          "file": "solution.py",
+          "language": "python"
+        },
+        "workspace_files": [
+          {
+            "content": "",
+            "language": "python",
+            "name": "solution.py",
+            "role": "Ed staff-visible workspace file"
+          }
+        ],
+        "reference_solution_status": "present",
+        "reference_solution_provenance": "Ed staff edit view sample solution"
+      },
+      "activity_mapping": {
+        "question_path": "questions/InClassExercises/CS1/Week06Lecture07/ComputingTheAreaAndPerimeterOfACircle/Base",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week06Lecture07ComputingTheAreaAndPerimeterOfACircle",
+        "deployment_status": "pending"
+      }
+    },
+    {
+      "slide_id": "659796",
+      "slide_type": "code_challenge",
+      "title": "Exercise: Randomly Rolling Two Dice",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118684/slides/659796",
+      "segments": [
+        {
+          "html": "Write a function that takes one parameter, which is the number of sides on a die, and returns the result of rolling two of that type of die as two numbers. So for instance, if the number of sides is 6, your function should return two numbers between 1 and 6, and if it is 4, your function should return two numbers between 1 and 4. Use random.randint()",
+          "text": "Write a function that takes one parameter, which is the number of sides on a die, and returns the result of rolling two of that type of die as two numbers. So for instance, if the number of sides is 6, your function should return two numbers between 1 and 6, and if it is 4, your function should return two numbers between 1 and 4. Use random.randint()",
+          "type": "paragraph"
+        }
+      ],
+      "code_blocks": [],
+      "links": [],
+      "assets": [],
+      "exercise": {
+        "prompt": "Write a function that takes one parameter, which is the number of sides on a die, and returns the result of rolling two of that type of die as two numbers. So for instance, if the number of sides is 6, your function should return two numbers between 1 and 6, and if it is 4, your function should return two numbers between 1 and 4. Use random.randint()",
+        "prompt_segments": [
+          {
+            "html": "Write a function that takes one parameter, which is the number of sides on a die, and returns the result of rolling two of that type of die as two numbers. So for instance, if the number of sides is 6, your function should return two numbers between 1 and 6, and if it is 4, your function should return two numbers between 1 and 4. Use random.randint()",
+            "text": "Write a function that takes one parameter, which is the number of sides on a die, and returns the result of rolling two of that type of die as two numbers. So for instance, if the number of sides is 6, your function should return two numbers between 1 and 6, and if it is 4, your function should return two numbers between 1 and 4. Use random.randint()",
+            "type": "paragraph"
+          }
+        ],
+        "scaffold": {
+          "content": "import random",
+          "file": "solution.py",
+          "language": "python"
+        },
+        "workspace_files": [
+          {
+            "content": "import random",
+            "language": "python",
+            "name": "solution.py",
+            "role": "Ed staff-visible workspace file"
+          }
+        ],
+        "reference_solution_status": "present",
+        "reference_solution_provenance": "Ed staff edit view sample solution"
+      },
+      "activity_mapping": {
+        "question_path": "questions/InClassExercises/CS1/Week06Lecture07/RandomlyRollingTwoDice/Base",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week06Lecture07RandomlyRollingTwoDice",
+        "deployment_status": "pending"
+      }
+    },
+    {
+      "slide_id": "659797",
+      "slide_type": "code_challenge",
+      "title": "Exercise: Converting from Pounds to Kilograms",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118684/slides/659797",
+      "segments": [
+        {
+          "html": "Write a function that takes a weight in kilograms and returns the number of pounds. Note there are 2.20462 pounds in a kilogram.",
+          "text": "Write a function that takes a weight in kilograms and returns the number of pounds. Note there are 2.20462 pounds in a kilogram.",
+          "type": "paragraph"
+        }
+      ],
+      "code_blocks": [],
+      "links": [],
+      "assets": [],
+      "exercise": {
+        "prompt": "Write a function that takes a weight in kilograms and returns the number of pounds. Note there are 2.20462 pounds in a kilogram.",
+        "prompt_segments": [
+          {
+            "html": "Write a function that takes a weight in kilograms and returns the number of pounds. Note there are 2.20462 pounds in a kilogram.",
+            "text": "Write a function that takes a weight in kilograms and returns the number of pounds. Note there are 2.20462 pounds in a kilogram.",
+            "type": "paragraph"
+          }
+        ],
+        "scaffold": {
+          "content": "factor=2.20462",
+          "file": "solution.py",
+          "language": "python"
+        },
+        "workspace_files": [
+          {
+            "content": "factor=2.20462",
+            "language": "python",
+            "name": "solution.py",
+            "role": "Ed staff-visible workspace file"
+          }
+        ],
+        "reference_solution_status": "present",
+        "reference_solution_provenance": "Ed staff edit view sample solution"
+      },
+      "activity_mapping": {
+        "question_path": "questions/InClassExercises/CS1/Week06Lecture07/ConvertingFromPoundsToKilograms/Base",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week06Lecture07ConvertingFromPoundsToKilograms",
+        "deployment_status": "pending"
+      }
+    },
+    {
+      "slide_id": "659798",
+      "slide_type": "document",
+      "title": "Modules",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118684/slides/659798",
+      "segments": [
+        {
+          "items": [
+            "All programming languages come pre-packaged with a standard library of functions that are designed to make your job as a programmer easier",
+            "Some of these functions are built right into the “core” of Python (print, input, range, etc)",
+            "Other more specialized functions are stored in a series of files called “modules” that Python can access upon request by using the “import” statement\n\nimport random\n\nimport time"
+          ],
+          "ordered": false,
+          "type": "list"
+        },
+        {
+          "language": "",
+          "text": "# after you import a module, you can get help on it\n# but it is easier to look online\nimport time\nprint(time.gmtime()) # Time in London (Greenwich Mean Time)\n#help(time)",
+          "type": "code"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "# after you import a module, you can get help on it\n# but it is easier to look online\nimport time\nprint(time.gmtime()) # Time in London (Greenwich Mean Time)\n#help(time)",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "659799",
+      "slide_type": "document",
+      "title": "Modules as \"Black Boxes\"",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118684/slides/659799",
+      "segments": [
+        {
+          "items": [
+            "The import statement tells Python to load the functions that exist within a specific module into memory and make them available in your code",
+            "Because you don’t see the inner workings of a function inside a module we sometimes call them “black boxes”",
+            "A \"black box\" describes a mechanism that accepts input, performs an operation that can’t be seen using that input, and produces some kind of output"
+          ],
+          "ordered": false,
+          "type": "list"
+        }
+      ],
+      "code_blocks": [],
+      "links": [
+        {
+          "href": "https://www.google.com/url?q=https%3A%2F%2Fwww.elderresearch.com%2Fblog%2Fhow-and-why-to-interpret-black-box-models%2F",
+          "text": "“black boxes”"
+        }
+      ],
+      "assets": []
+    },
+    {
+      "slide_id": "659800",
+      "slide_type": "document",
+      "title": "Functions in Modules",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118684/slides/659800",
+      "segments": [
+        {
+          "html": "We call functions that exist within a module by using “dot notation” to tell Python to run a function that exists in that module, as in the following example:",
+          "text": "We call functions that exist within a module by using “dot notation” to tell Python to run a function that exists in that module, as in the following example:",
+          "type": "paragraph"
+        },
+        {
+          "language": "",
+          "text": "import random\n# following function takes a list and gives you a random item in it\nprint(random.choice([\"Rock\",\"Paper\",\"Scissors\"]))",
+          "type": "code"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "import random\n# following function takes a list and gives you a random item in it\nprint(random.choice([\"Rock\",\"Paper\",\"Scissors\"]))",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "659802",
+      "slide_type": "document",
+      "title": "Creating Your Own Modules",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118684/slides/659802",
+      "segments": [
+        {
+          "items": [
+            "You can easily create your own modules that you can populate with your own functions. Here’s how:\n\nCreate a new python script (i.e. “myfunctions.py”)\n\nPlace your function definitions in this script\n\nCreate a second python script (i..e “myprogram.py”)\n\nImport your function module using the import statement:"
+          ],
+          "ordered": false,
+          "type": "list"
+        },
+        {
+          "language": "",
+          "text": "import myfuncttions",
+          "type": "code"
+        },
+        {
+          "language": "",
+          "text": "import myfuncttions",
+          "type": "code"
+        },
+        {
+          "html": "Then call your functions using dot notation:",
+          "text": "Then call your functions using dot notation:",
+          "type": "paragraph"
+        },
+        {
+          "language": "",
+          "text": "myfuncttions.function1()myfuncttions.function2()",
+          "type": "code"
+        },
+        {
+          "language": "",
+          "text": "myfuncttions.function1()myfuncttions.function2()",
+          "type": "code"
+        },
+        {
+          "html": "etc.",
+          "text": "etc.",
+          "type": "paragraph"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "import myfuncttions",
+          "language": ""
+        },
+        {
+          "content": "import myfuncttions",
+          "language": ""
+        },
+        {
+          "content": "myfuncttions.function1()myfuncttions.function2()",
+          "language": ""
+        },
+        {
+          "content": "myfuncttions.function1()myfuncttions.function2()",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "659803",
+      "slide_type": "code_challenge",
+      "title": "Exercise: Module",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118684/slides/659803",
+      "segments": [
+        {
+          "html": "Create a module called \"geometry_helper\". Write two functions in this module: circle_area() and circle_perimeter(). Each will take one parameter (the radius of the circle) and return the area or perimeter of the circle. You can import the value of pi from the math module as shown in the code cell below.",
+          "text": "Create a module called \"geometry_helper\". Write two functions in this module: circle_area() and circle_perimeter(). Each will take one parameter (the radius of the circle) and return the area or perimeter of the circle. You can import the value of pi from the math module as shown in the code cell below.",
+          "type": "paragraph"
+        },
+        {
+          "html": "Ed doesn't support modules. However, I suggest you do the exercise on <a class=\"amber-el amber-link amber-el ed-focus-outline\" href=\"https://www.google.com/url?q=https%3A%2F%2Freplit.com%2F%7E\" target=\"_blank\" rel=\"noopener noreferrer\">replit.com</a>, which does support modules, and then post a link to your solution on Ed.",
+          "text": "Ed doesn't support modules. However, I suggest you do the exercise on replit.com, which does support modules, and then post a link to your solution on Ed.",
+          "type": "paragraph"
+        }
+      ],
+      "code_blocks": [],
+      "links": [
+        {
+          "href": "https://www.google.com/url?q=https%3A%2F%2Freplit.com%2F%7E",
+          "text": "replit.com"
+        }
+      ],
+      "assets": [],
+      "exercise": {
+        "prompt": "Create a module called \"geometry_helper\". Write two functions in this module: circle_area() and circle_perimeter(). Each will take one parameter (the radius of the circle) and return the area or perimeter of the circle. You can import the value of pi from the math module as shown in the code cell below.\n\nEd doesn't support modules. However, I suggest you do the exercise on replit.com, which does support modules, and then post a link to your solution on Ed.",
+        "prompt_segments": [
+          {
+            "html": "Create a module called \"geometry_helper\". Write two functions in this module: circle_area() and circle_perimeter(). Each will take one parameter (the radius of the circle) and return the area or perimeter of the circle. You can import the value of pi from the math module as shown in the code cell below.",
+            "text": "Create a module called \"geometry_helper\". Write two functions in this module: circle_area() and circle_perimeter(). Each will take one parameter (the radius of the circle) and return the area or perimeter of the circle. You can import the value of pi from the math module as shown in the code cell below.",
+            "type": "paragraph"
+          },
+          {
+            "html": "Ed doesn't support modules. However, I suggest you do the exercise on <a class=\"amber-el amber-link amber-el ed-focus-outline\" href=\"https://www.google.com/url?q=https%3A%2F%2Freplit.com%2F%7E\" target=\"_blank\" rel=\"noopener noreferrer\">replit.com</a>, which does support modules, and then post a link to your solution on Ed.",
+            "text": "Ed doesn't support modules. However, I suggest you do the exercise on replit.com, which does support modules, and then post a link to your solution on Ed.",
+            "type": "paragraph"
+          }
+        ],
+        "scaffold": {
+          "content": "",
+          "file": "solution.py",
+          "language": "python"
+        },
+        "workspace_files": [
+          {
+            "content": "",
+            "language": "python",
+            "name": "solution.py",
+            "role": "Ed staff-visible workspace file"
+          }
+        ],
+        "reference_solution_status": "present",
+        "reference_solution_provenance": "Ed staff edit view sample solution"
+      },
+      "activity_mapping": {
+        "question_path": "questions/InClassExercises/CS1/Week06Lecture07/Module/Base",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week06Lecture07Module",
+        "deployment_status": "pending"
+      }
+    },
+    {
+      "slide_id": "659804",
+      "slide_type": "document",
+      "title": "Seeding the Random Number Generator",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/118684/slides/659804",
+      "segments": [
+        {
+          "items": [
+            "As we mentioned in an earlier class, the computer does not have the ability to generate a truly random number",
+            "It uses a series of complicated mathematical formulas that are based on a known value (usually the system clock)",
+            "The seed function in the random module allows you to specify the “seed” value for the pseudo-random numbers that the various random number functions generate",
+            "You can seed the random number generator with whatever value you want – and you can even reproduce a pseudo-random range this way!"
+          ],
+          "ordered": false,
+          "type": "list"
+        },
+        {
+          "language": "",
+          "text": "import random\nprint(random.randint(1,10))\n\n# each time you give the random module a fixed seed\n# it sets it to the same initial state\n# this allows you to get the same \"random\" results every time you run the program\n# this wouldn't be possible with a truly random random number generator\n# but the random module only produces \"pseudo-random\" numbers\nrandom.seed(2)\nprint(random.randint(1,10))\nprint(random.randint(1,10))\nprint(random.randint(1,10))\nfor i in range(100):\n  print(random.randint(1,10),\" \",end=\"\")",
+          "type": "code"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "import random\nprint(random.randint(1,10))\n\n# each time you give the random module a fixed seed\n# it sets it to the same initial state\n# this allows you to get the same \"random\" results every time you run the program\n# this wouldn't be possible with a truly random random number generator\n# but the random module only produces \"pseudo-random\" numbers\nrandom.seed(2)\nprint(random.randint(1,10))\nprint(random.randint(1,10))\nprint(random.randint(1,10))\nfor i in range(100):\n  print(random.randint(1,10),\" \",end=\"\")",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": []
+    }
+  ]
+}

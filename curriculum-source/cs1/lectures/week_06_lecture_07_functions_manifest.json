@@ -1,0 +1,898 @@
+{
+  "id": "cs1_week_06_lecture_07_functions",
+  "course": "CS 1",
+  "title": "Week 6, Lecture 7: Functions",
+  "source": {
+    "platform": "ed",
+    "lesson_id": "118684",
+    "course_id": "62123",
+    "inventory": "curriculum-source/cs1/ed/lessons/week_06_lecture_07_functions_ed_source.json"
+  },
+  "targets": [
+    "codespaces",
+    "prairielearn"
+  ],
+  "presentation": {
+    "ui": "semantic-callouts-v1",
+    "include_title": false,
+    "include_exercise_index": false,
+    "rise": {
+      "theme": "simple",
+      "transition": "slide",
+      "start_slideshow_at": "selected"
+    }
+  },
+  "lecture_blocks": [
+    {
+      "id": "ed-slide-659771",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "659771",
+      "ed_slide_type": "document",
+      "title": "Python Functions",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "A function is a group of statements that exist within a program for the purpose of performing a specific task",
+            "We have already been using a number of Python's built in functions, including:\n\nrange(): generates a range of integers\n\nprint(): outputs data to the console\n\nlen(): measures the length of an object, like a list or a string\n\nrandom.randint(): generates a random integer within a range"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-659772",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "659772",
+      "ed_slide_type": "document",
+      "title": "Defining Functions",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "Functions, like variables, must be named and created before you can use them",
+            "The same naming rules apply to both variables and functions:\n\nYou can't use any of the keywords Python reserves to itself, like \"if\", \"while\", or \"for\"\n\nNo spaces in a name\n\nFirst character must be in the alphabet, or be the underscore character\n\nAfter the first character, you can use alphabetic or numeric digits or the underscore\n\nPython is case-sensitive, which means, for instance, that \"A\" and \"a\" are not the same"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "The following is an example function definition, \"myfunction\". Note we use the def keyword to define the function; to call it we refer to it by its name."
+        }
+      ],
+      "code_cells": [
+        {
+          "content": "# define a function\ndef myfunction():\n  print(\"Hello, I'm in the function!\")\n\n# call it twice with an intervening print\nmyfunction()\nprint(\"Hi, I'm in the main program.\")\nmyfunction()\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-659773",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "659773",
+      "ed_slide_type": "document",
+      "title": "Some Notes on Functions",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "To run a function, you \"call\" it. This transfers control up to the function and the statements indented under the function are run.",
+            "Once a function has completed, Python continues with the line after the call.",
+            "Functions must be defined before they are called. We generally place all of our functions at the beginning of our programs."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "The following is an example that calls two functions."
+        },
+        {
+          "type": "paragraph",
+          "text": "The following is an example of a function that calls another function. This is allowed, and is actually common."
+        }
+      ],
+      "code_cells": [
+        {
+          "content": "# note hello doesn't need to be defined first as long as it is defined before it is called.\ndef goodbye():\n  print(\"See ya!\")\ndef hello():\n  print(\"Hello there!\")\n\nhello()\ngoodbye()\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        },
+        {
+          "content": "def main():\n  print(\"I have a message for you.\")\n  # function calls other function \"message\"\n  message()\n  print(\"Goodbye!\")\ndef message():\n  print(\"The password is 'Open Sesame'.\")\nmain()\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-659774",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "659774",
+      "ed_slide_type": "document",
+      "title": "Local Variables",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "Local variables are variables that exist only inside the function (inside its \"scope,\" which is the code block associated with it) and do not exist outside of it. This is best seen with an example."
+        }
+      ],
+      "code_cells": [
+        {
+          "content": "def bugs():\n  numbugs=int(input(\"How many bugs?\"))\n  print(f\"You entered {numbugs} bugs.\")\n\nbugs()\n# if you try to print the variable numbugs here, it won't work\n# since it is defined only in the function and is local to it\n#print(numbugs)\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-659775",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "659775",
+      "ed_slide_type": "document",
+      "title": "Something Weird",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "The following is a bit weird. There are two variables have the same name, but they are distinct, different variables. One exists inside the function and is local to it, whereas the other is in the main program."
+        }
+      ],
+      "code_cells": [
+        {
+          "content": "def bugs():\n  numbugs=int(input(\"How many bugs?\")) # local version\n  print(f\"You entered {numbugs} bugs.\")\n\nnumbugs=\"Forty-one\" # global version\nbugs()\n# now you can print it, but it will be the version from the main program.\n# there are two variables with the same name\n# one is local, and the other is global\nprint(numbugs)\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-659776",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "659776",
+      "ed_slide_type": "document",
+      "title": "Something Weirder",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "Here is something even weirder. We have three versions of the variable, all with the same name, but all different."
+        }
+      ],
+      "code_cells": [
+        {
+          "content": "def bugs():\n  numbugs=int(input(\"How many bugs?\")) # local version\n  print(f\"You entered {numbugs} bugs.\")\n  bugs2()\ndef bugs2():\n  numbugs=int(input(\"What is the bug count?\")) # another local version\n  print(f\"You told me there were {numbugs} bugs.\")\n\nnumbugs=4.0 # global version\nbugs()\nprint(numbugs)\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-659777",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "659777",
+      "ed_slide_type": "document",
+      "title": "Don't Re-use the Same Variable Name",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "Don't confuse yourself and others by giving different variables the same name"
+        },
+        {
+          "type": "paragraph",
+          "text": "While it is technically possible to have a situation as in the prior example, three variables, two local, one global, all distinct, but with the same name, don't do it! You will only confuse yourself and others. Give every variable in your program a different name, and use different names in each function. There are some exceptions to this rule, but it is generally a good one."
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-659778",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "659778",
+      "ed_slide_type": "document",
+      "title": "Local and Global Variables",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "When you create a variable inside a function, we say that the variable is “local” to that function",
+            "This means that it can only be accessed by statements inside the function that created it",
+            "When a variable is created outside all of your functions it is considered a “global variable”",
+            "Global variables can be accessed by any statement in your program file, including by statements in any function",
+            "All of the variables we have been creating so far in class (prior to discussing functions today) have been global variables"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "You can access a global variable inside a function if you explicitly say that it is global. Look at the difference between the following two examples. However, this is a bad practice in most cases."
+        }
+      ],
+      "code_cells": [
+        {
+          "content": "def myfunc():\n  print(a) # you can access a global variable anywhere\n  b=10\n  print(b)\n\na=5\nmyfunc()\n# this won't work; can't access local b\n# print(b)\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        },
+        {
+          "content": "def myfunc():\n  x=10 # local variable\n  print(x)\nx=5 # this is a different variable than that in the function\nmyfunc()\nprint(x)\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        },
+        {
+          "content": "def myfunc():\n  global x\n  x=10 # global variable\n  print(x)\nx=5 # this is the same variable as in the function\nmyfunc()\nprint(x)\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-659779",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "659779",
+      "ed_slide_type": "document",
+      "title": "Issues with Global Variables",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "Global variables can make debugging difficult",
+            "Functions that use global variables are generally dependent on those variables, making your functions less reusable in other programs",
+            "However, there are some situations in which using global variables may make sense, although some people think they should never be used."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-659780",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "659780",
+      "ed_slide_type": "document",
+      "title": "Passing Arguments to a Function",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "It is often useful to pass data to a function as arguments.",
+            "The data passed is mapped to variables in the function.",
+            "We have been doing this all along. See the following example:"
+          ]
+        }
+      ],
+      "code_cells": [
+        {
+          "content": "import random\nprint(random.randint(1,5)) # parameters are 1 and 5; returns a random integer between 1 and 5\nprint(len('hello')) # parameter is a single string\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-659781",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "659781",
+      "ed_slide_type": "document",
+      "title": "Defining a Function with an Argument",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "The following function takes a number as an argument and prints out its square."
+        },
+        {
+          "type": "paragraph",
+          "text": "You can define a function with multiple arguments. Here's one with three:"
+        }
+      ],
+      "code_cells": [
+        {
+          "content": "# num is a parameter and is local to the function\ndef square(num):\n  print(num**2)\n# when the function is called as follows, the variable num is set to 9.\nx=9\nsquare(x)\n# this won't work:\n#print(num)\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        },
+        {
+          "content": "def average(n1,n2,n3):\n  print((n1+n2+n3)/3)\n\naverage(100,90,95)\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-659782",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "659782",
+      "ed_slide_type": "code_challenge",
+      "title": "Exercise: Product Function",
+      "layout": "nyu-activity-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "Define a function that takes two integers as parameters and prints out their product."
+        }
+      ],
+      "prairielearn_signpost": {
+        "status": "deployment_pending",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week06Lecture07ProductFunction",
+        "question_path": "questions/InClassExercises/CS1/Week06Lecture07/ProductFunction/Base"
+      }
+    },
+    {
+      "id": "ed-slide-659783",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "659783",
+      "ed_slide_type": "code_challenge",
+      "title": "Exercise: Restaurant Bill Function",
+      "layout": "nyu-activity-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "Define a function that takes a restaurant bill (without the tip) and a tip percentage as parameters. The function should print out the tip and the new bill with the tip. If the tip is less than 15%, you should also print out \"Cheapskate!\""
+        }
+      ],
+      "prairielearn_signpost": {
+        "status": "deployment_pending",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week06Lecture07RestaurantBillFunction",
+        "question_path": "questions/InClassExercises/CS1/Week06Lecture07/RestaurantBillFunction/Base"
+      }
+    },
+    {
+      "id": "ed-slide-659784",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "659784",
+      "ed_slide_type": "document",
+      "title": "One-Way Communication",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "Data that is passed into a function as a parameter may be modified by the function, but since the parameter is local to the function, this is not felt outside the function. See the following:"
+        }
+      ],
+      "code_cells": [
+        {
+          "content": "def test(x):\n  x+=1 # x is incremented\n  print(x) # and you can see it\n\ny=5\n# the 5 goes into the function\ntest(y)\n# but it doesn't come back out\n# communication is in only one direction\nprint(y) # but the glabel y is not affected\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-659785",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "659785",
+      "ed_slide_type": "document",
+      "title": "Value-Returning Functions",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "Value returning functions are functions that return a value to the part of the program that initiated the function call",
+            "They are almost identical to the type of functions we have been writing so far, but they have the added ability to send back information at the end of the function call",
+            "We have been using these all semester, as in the following:"
+          ]
+        }
+      ],
+      "code_cells": [
+        {
+          "content": "# the input function returns a string\nname=input(\"What is your name?\")\nprint(f\"Hello, {name}!\")\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        },
+        {
+          "content": "# the following function returns a random integer in the specified range\nimport random\nn=random.randint(1,5)\nprint(f\"The random number is {n}\")\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-659786",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "659786",
+      "ed_slide_type": "document",
+      "title": "Writing Your Own Value-Returning Functions",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "You use almost the same syntax for writing a value returning function as you would for writing a normal function",
+            "The only difference is that you need to include a \"return\" statement in your function to tell Python that you intend to return a value to the calling program, and you provide the value after the \"return\" keyword.",
+            "The return statement causes a function to end immediately. It’s like the break statement for a loop.",
+            "A function will not proceed past its return statement once encountered. Control of the program is returned back to the caller."
+          ]
+        }
+      ],
+      "code_cells": [
+        {
+          "content": "# find the greatest common factor of two numbers x and y\ndef gcf(x,y):\n  # the gcf can't be more than the smaller of the two numbers\n  # loops from the minimum of the two numbers down to one\n  for i in range(min(x,y),0,-1):\n    # ends up returning the largest number that goes into both\n    # evenly; that number may be one\n    if ((x%i)==0) and ((y%i)==0): return i\nx=gcf(7,14)\ny=gcf(14,25)\nz=gcf(50,75)\nprint(x,y,z)\nprint(gcf(6,9))\n",
+          "tags": [
+            "nyu-long-code"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-659787",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "659787",
+      "ed_slide_type": "code_challenge",
+      "title": "Exercise: Average",
+      "layout": "nyu-activity-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "Write a function that takes three numbers and returns the average of those numbers. From the main program, call the function with 1, 2, and 3 and store the result in a variable x. Then print x."
+        }
+      ],
+      "prairielearn_signpost": {
+        "status": "deployment_pending",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week06Lecture07Average",
+        "question_path": "questions/InClassExercises/CS1/Week06Lecture07/Average/Base"
+      }
+    },
+    {
+      "id": "ed-slide-659789",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "659789",
+      "ed_slide_type": "code_challenge",
+      "title": "Exercise: Compound Interest",
+      "layout": "nyu-activity-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "Write a function compound that takes three parameters, a starting amount, an annual interest percentage, and a number of years, and returns the amount of money you will have after that many years."
+        },
+        {
+          "type": "paragraph",
+          "text": "For instance, if you call compound(100,10,2) you should get $121 back, because you will have $110 after one year, and $121 after two. Call it with these values and print out the result."
+        }
+      ],
+      "prairielearn_signpost": {
+        "status": "deployment_pending",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week06Lecture07CompoundInterest",
+        "question_path": "questions/InClassExercises/CS1/Week06Lecture07/CompoundInterest/Base"
+      }
+    },
+    {
+      "id": "ed-slide-659790",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "659790",
+      "ed_slide_type": "document",
+      "title": "Don't Confuse Printing and Returning",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "Printing a value inside a function is not the same as returning it. If you only print, nothing will be returned."
+        }
+      ],
+      "code_cells": [
+        {
+          "content": "def double(x):\n  print(2*x)\n\ny=double(4)  # nothing is returned here, defined as \"None\"\nprint(y)\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        },
+        {
+          "content": "def double(x):\n  return 2*x\n\ny=double(4) # now something is returned\nprint(y)\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        },
+        {
+          "content": "x=print(\"hello\")\nprint(x)\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-659791",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "659791",
+      "ed_slide_type": "code_challenge",
+      "title": "Exercise: A Distance Function",
+      "layout": "nyu-activity-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "Write a function dist which takes four parameters, x1, y1, x2, and y2 which represent the locations of two points in the plane, and returns the distance between the points. Use the Pythagorean formula. Call it with dist(0,0,3,4) and print the result."
+        },
+        {
+          "type": "paragraph",
+          "text": "Use Input/Processing/Output (IPO) documentation at the top of your program as follows:"
+        },
+        {
+          "type": "paragraph",
+          "text": "# function: dist (distance)# input: two points as four coordinates# processing: uses the Pythagorean formula# output: returns the distance between the points"
+        },
+        {
+          "type": "paragraph",
+          "text": "# function: dist (distance)# input: two points as four coordinates# processing: uses the Pythagorean formula# output: returns the distance between the points"
+        },
+        {
+          "type": "paragraph",
+          "text": "I will be asking you to use IPO documentation for all of the functions you write."
+        }
+      ],
+      "prairielearn_signpost": {
+        "status": "deployment_pending",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week06Lecture07ADistanceFunction",
+        "question_path": "questions/InClassExercises/CS1/Week06Lecture07/ADistanceFunction/Base"
+      }
+    },
+    {
+      "id": "ed-slide-659792",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "659792",
+      "ed_slide_type": "document",
+      "title": "Boolean-Returning Functions",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "Functions can return any type of value."
+        },
+        {
+          "type": "paragraph",
+          "text": "So you can have Boolean functions, which return a Boolean value, like the following one:"
+        }
+      ],
+      "code_cells": [
+        {
+          "content": "def Disney(name):\n  # converts name to lower case and sees if it is in the list\n  # note the \"in\" operator returns a Boolean result\n  return name.lower() in [\"mickey\",\"minnie\",\"donald\",\"daisy\",\"goofy\",\"pluto\",\"pete\"]\n\nprint(Disney(\"Pluto\"))\nprint(Disney(\"Bugs\"))\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-659793",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "659793",
+      "ed_slide_type": "code_challenge",
+      "title": "Exercise: Boolean Function",
+      "layout": "nyu-activity-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "Write a Boolean function that takes a single number as an argument and returns whether or not that number is even."
+        }
+      ],
+      "prairielearn_signpost": {
+        "status": "deployment_pending",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week06Lecture07BooleanFunction",
+        "question_path": "questions/InClassExercises/CS1/Week06Lecture07/BooleanFunction/Base"
+      }
+    },
+    {
+      "id": "ed-slide-659794",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "659794",
+      "ed_slide_type": "document",
+      "title": "Returning Multiple Results from Functions",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "Functions can return more than one result. To do this, separate the results by commas."
+        },
+        {
+          "type": "paragraph",
+          "text": "For instance, the following function returns the lowest factor of a number and the other factor that it is paired with."
+        }
+      ],
+      "code_cells": [
+        {
+          "content": "# a function that returns more than one number\n# return the first pair of factors found of a number n\n# or 1, n if  n is prime\ndef first_factor_pair(n):\n  for i in range(2,int(n**0.5)+1):\n    if ((n%i)==0):\n      return i,n//i\n  return 1, n\n\nprint(first_factor_pair(63))\nprint(first_factor_pair(27))\nprint(first_factor_pair(25))\nprint(first_factor_pair(29))\nprint(first_factor_pair(35))\nx,y =first_factor_pair(35) # note double assignment!\nprint(x)\nprint(y)\na, b, c = 11, 12, 13\nprint(a,b,c)\n",
+          "tags": [
+            "nyu-long-code"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-659795",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "659795",
+      "ed_slide_type": "code_challenge",
+      "title": "Exercise: Computing the Area and Perimeter of a Circle",
+      "layout": "nyu-activity-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "Write a function called AreaPerimeter which takes one argument (the radius of a circle r) and returns the area and the perimeter."
+        },
+        {
+          "type": "paragraph",
+          "text": "To get pi, you can include the command \"import math\" and then it will be available as math.pi."
+        }
+      ],
+      "prairielearn_signpost": {
+        "status": "deployment_pending",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week06Lecture07ComputingTheAreaAndPerimeterOfACircle",
+        "question_path": "questions/InClassExercises/CS1/Week06Lecture07/ComputingTheAreaAndPerimeterOfACircle/Base"
+      }
+    },
+    {
+      "id": "ed-slide-659796",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "659796",
+      "ed_slide_type": "code_challenge",
+      "title": "Exercise: Randomly Rolling Two Dice",
+      "layout": "nyu-activity-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "Write a function that takes one parameter, which is the number of sides on a die, and returns the result of rolling two of that type of die as two numbers. So for instance, if the number of sides is 6, your function should return two numbers between 1 and 6, and if it is 4, your function should return two numbers between 1 and 4. Use random.randint()"
+        }
+      ],
+      "prairielearn_signpost": {
+        "status": "deployment_pending",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week06Lecture07RandomlyRollingTwoDice",
+        "question_path": "questions/InClassExercises/CS1/Week06Lecture07/RandomlyRollingTwoDice/Base"
+      }
+    },
+    {
+      "id": "ed-slide-659797",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "659797",
+      "ed_slide_type": "code_challenge",
+      "title": "Exercise: Converting from Pounds to Kilograms",
+      "layout": "nyu-activity-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "Write a function that takes a weight in kilograms and returns the number of pounds. Note there are 2.20462 pounds in a kilogram."
+        }
+      ],
+      "prairielearn_signpost": {
+        "status": "deployment_pending",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week06Lecture07ConvertingFromPoundsToKilograms",
+        "question_path": "questions/InClassExercises/CS1/Week06Lecture07/ConvertingFromPoundsToKilograms/Base"
+      }
+    },
+    {
+      "id": "ed-slide-659798",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "659798",
+      "ed_slide_type": "document",
+      "title": "Modules",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "All programming languages come pre-packaged with a standard library of functions that are designed to make your job as a programmer easier",
+            "Some of these functions are built right into the “core” of Python (print, input, range, etc)",
+            "Other more specialized functions are stored in a series of files called “modules” that Python can access upon request by using the “import” statement\n\nimport random\n\nimport time"
+          ]
+        }
+      ],
+      "code_cells": [
+        {
+          "content": "# after you import a module, you can get help on it\n# but it is easier to look online\nimport time\nprint(time.gmtime()) # Time in London (Greenwich Mean Time)\n#help(time)\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-659799",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "659799",
+      "ed_slide_type": "document",
+      "title": "Modules as \"Black Boxes\"",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "The import statement tells Python to load the functions that exist within a specific module into memory and make them available in your code",
+            {
+              "text": "Because you don’t see the inner workings of a function inside a module we sometimes call them “black boxes”",
+              "html": "Because you don’t see the inner workings of a function inside a module we sometimes call them <a href=\"https://www.google.com/url?q=https%3A%2F%2Fwww.elderresearch.com%2Fblog%2Fhow-and-why-to-interpret-black-box-models%2F\">“black boxes”</a>"
+            },
+            "A \"black box\" describes a mechanism that accepts input, performs an operation that can’t be seen using that input, and produces some kind of output"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-659800",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "659800",
+      "ed_slide_type": "document",
+      "title": "Functions in Modules",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "We call functions that exist within a module by using “dot notation” to tell Python to run a function that exists in that module, as in the following example:"
+        }
+      ],
+      "code_cells": [
+        {
+          "content": "import random\n# following function takes a list and gives you a random item in it\nprint(random.choice([\"Rock\",\"Paper\",\"Scissors\"]))\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-659802",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "659802",
+      "ed_slide_type": "document",
+      "title": "Creating Your Own Modules",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "You can easily create your own modules that you can populate with your own functions. Here’s how:\n\nCreate a new python script (i.e. “myfunctions.py”)\n\nPlace your function definitions in this script\n\nCreate a second python script (i..e “myprogram.py”)\n\nImport your function module using the import statement:"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Then call your functions using dot notation:"
+        },
+        {
+          "type": "paragraph",
+          "text": "etc."
+        }
+      ],
+      "code_cells": [
+        {
+          "content": "import myfuncttions\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        },
+        {
+          "content": "import myfuncttions\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        },
+        {
+          "content": "myfuncttions.function1()myfuncttions.function2()\n",
+          "tags": [
+            "nyu-short-code",
+            "expected-error",
+            "skip-auto-run"
+          ]
+        },
+        {
+          "content": "myfuncttions.function1()myfuncttions.function2()\n",
+          "tags": [
+            "nyu-short-code",
+            "expected-error",
+            "skip-auto-run"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-659803",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "659803",
+      "ed_slide_type": "code_challenge",
+      "title": "Exercise: Module",
+      "layout": "nyu-activity-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "Create a module called \"geometry_helper\". Write two functions in this module: circle_area() and circle_perimeter(). Each will take one parameter (the radius of the circle) and return the area or perimeter of the circle. You can import the value of pi from the math module as shown in the code cell below."
+        },
+        {
+          "type": "paragraph",
+          "text": "Ed doesn't support modules. However, I suggest you do the exercise on replit.com, which does support modules, and then post a link to your solution on Ed.",
+          "html": "Ed doesn't support modules. However, I suggest you do the exercise on <a href=\"https://www.google.com/url?q=https%3A%2F%2Freplit.com%2F%7E\">replit.com</a>, which does support modules, and then post a link to your solution on Ed."
+        }
+      ],
+      "prairielearn_signpost": {
+        "status": "deployment_pending",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week06Lecture07Module",
+        "question_path": "questions/InClassExercises/CS1/Week06Lecture07/Module/Base"
+      },
+      "include_source_with_signpost": true
+    },
+    {
+      "id": "ed-slide-659804",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "659804",
+      "ed_slide_type": "document",
+      "title": "Seeding the Random Number Generator",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "As we mentioned in an earlier class, the computer does not have the ability to generate a truly random number",
+            "It uses a series of complicated mathematical formulas that are based on a known value (usually the system clock)",
+            "The seed function in the random module allows you to specify the “seed” value for the pseudo-random numbers that the various random number functions generate",
+            "You can seed the random number generator with whatever value you want – and you can even reproduce a pseudo-random range this way!"
+          ]
+        }
+      ],
+      "code_cells": [
+        {
+          "content": "import random\nprint(random.randint(1,10))\n\n# each time you give the random module a fixed seed\n# it sets it to the same initial state\n# this allows you to get the same \"random\" results every time you run the program\n# this wouldn't be possible with a truly random random number generator\n# but the random module only produces \"pseudo-random\" numbers\nrandom.seed(2)\nprint(random.randint(1,10))\nprint(random.randint(1,10))\nprint(random.randint(1,10))\nfor i in range(100):\n  print(random.randint(1,10),\" \",end=\"\")\n",
+          "tags": [
+            "nyu-long-code"
+          ]
+        }
+      ]
+    }
+  ]
+}

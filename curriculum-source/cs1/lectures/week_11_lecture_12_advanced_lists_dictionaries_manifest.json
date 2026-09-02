@@ -1,0 +1,595 @@
+{
+  "id": "cs1_week_11_lecture_12_advanced_lists_dictionaries",
+  "course": "CS 1",
+  "title": "Week 11, Lecture 12: Advanced Lists and Dictionaries",
+  "source": {
+    "platform": "ed",
+    "lesson_id": "119221",
+    "course_id": "62123",
+    "inventory": "curriculum-source/cs1/ed/lessons/week_11_lecture_12_advanced_lists_dictionaries_ed_source.json"
+  },
+  "targets": [
+    "codespaces",
+    "prairielearn"
+  ],
+  "presentation": {
+    "ui": "semantic-callouts-v1",
+    "include_title": false,
+    "include_exercise_index": false,
+    "rise": {
+      "theme": "simple",
+      "transition": "slide",
+      "start_slideshow_at": "selected"
+    }
+  },
+  "lecture_blocks": [
+    {
+      "id": "ed-slide-662551",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662551",
+      "ed_slide_type": "document",
+      "title": "Advanced Lists",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "You can use a list to represent an complex structure, using a list of lists. For instance, the following structure represents a three by three array of numbers:"
+        },
+        {
+          "type": "paragraph",
+          "text": "If we want to change a cell, say the 5, we can use nested indexing, as in the following:"
+        },
+        {
+          "type": "paragraph",
+          "text": "You can also represent arrays of higher dimension by using more nesting."
+        },
+        {
+          "type": "paragraph",
+          "text": "We can use a structure like this to represent game boards like those used in tic-tac-toe, checkers, and chess. For instance, here is a tic-tac-toe board:"
+        },
+        {
+          "type": "paragraph",
+          "text": "Following is some code that simulates the playing of a game of Tic-Tac-Toe. Note it doesn't check whether all squares have been played or whether either player has won."
+        }
+      ],
+      "code_cells": [
+        {
+          "content": "array=[[1,2,3],[4,5,6],[7,8,9]]\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        },
+        {
+          "content": "array=[[1,2,3],[4,5,6],[7,8,9]]\narray[1][1]=55\nprint(array)\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        },
+        {
+          "content": "board=[[\"X\",\" \",\"O\"],[\"O\",\"X\",\" \"], [\"O\",\" \",\"X\"]]\nprint(board)\n\ndef printBoard(board):\n  for i in range(3):\n   for j in range(3):\n      print(board[i][j],end='')\n      if j!=2:\n        print(\"|\",end='')\n   if i<2:\n     print(\"\\n-----\",end='')\n   print()\nprintBoard(board)\n",
+          "tags": [
+            "nyu-long-code"
+          ]
+        },
+        {
+          "content": "board=[[\" \",\" \",\" \"],[\" \",\" \",\" \"],[\" \",\" \",\" \"]]\ndef printBoard(board):\n  for i in range(3):\n   for j in range(3):\n      print(board[i][j],end='')\n      if j!=2:\n        print(\"|\",end='')\n   if i<2:\n     print(\"\\n-----\",end='')\n   print()\nprintBoard(board)\nplayer=\"X\"\nwhile True:\n  print(\"Player\",player,\"'s move:\")\n  x=int(input(\"Enter row (1-3):\"))\n  y=int(input(\"Enter colunn (1-3):\"))\n  try:\n    board[x-1][y-1]\n  except:\n    print(\"invalid move\")\n  else:\n    if board[x-1][y-1]==\" \":\n      board[x-1][y-1]=player\n      printBoard(board)\n      if player==\"X\":\n        player=\"O\"\n      else:\n        player=\"X\"\n    else:\n      print(\"invalid move\")\n",
+          "tags": [
+            "nyu-long-code"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-662552",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662552",
+      "ed_slide_type": "code_challenge",
+      "title": "Exercise: Keeping Track of Squares Played in Tic-Tac-Toe",
+      "layout": "nyu-activity-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "Modify the code in the previous slide for playing tic-tac-toe so that it checks whether all squares have been played, and if so, exits the game."
+        }
+      ],
+      "prairielearn_signpost": {
+        "status": "deployment_pending",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week11Lecture12KeepingTrackOfSquaresPlayedInTicTacToe",
+        "question_path": "questions/InClassExercises/CS1/Week11Lecture12/KeepingTrackOfSquaresPlayedInTicTacToe/Base"
+      }
+    },
+    {
+      "id": "ed-slide-662553",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662553",
+      "ed_slide_type": "code_challenge",
+      "title": "Exercise: Shuffling a List",
+      "layout": "nyu-activity-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "Consider the following list:"
+        },
+        {
+          "type": "paragraph",
+          "text": "firstTen=[1,2,3,4,5,6,7,8,9,10]"
+        },
+        {
+          "type": "paragraph",
+          "text": "firstTen=[1,2,3,4,5,6,7,8,9,10]"
+        },
+        {
+          "type": "paragraph",
+          "text": "Randomly shuffle this list 100 times, each time swapping pairs of numbers in the list, so as to put the list of numbers into a random order. Use random.randint()."
+        }
+      ],
+      "prairielearn_signpost": {
+        "status": "deployment_pending",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week11Lecture12ShufflingAList",
+        "question_path": "questions/InClassExercises/CS1/Week11Lecture12/ShufflingAList/Base"
+      }
+    },
+    {
+      "id": "ed-slide-662555",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662555",
+      "ed_slide_type": "document",
+      "title": "Dictionaries",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "A dictionary in Python is like a list in that it holds indexed values",
+            "Unlike a list, a dictionary doesn't use integer-based index values",
+            "Instead, dictionaries use immutable objects (like Strings) to index their content",
+            "In other languages dictionaries are often referred to as \"associative arrays\" or \"hashmaps\""
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-662556",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662556",
+      "ed_slide_type": "document",
+      "title": "Differences between Dictionaries and Lists",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "Both dictionaries and lists are mutable (unlike strings)"
+        },
+        {
+          "type": "paragraph",
+          "text": "But lists have an inherent order in which the objects are stored and dictionaries do not"
+        },
+        {
+          "type": "paragraph",
+          "text": "List indeces are integers, but dictionary indeces can be any immutable object, like a string or an integer."
+        },
+        {
+          "type": "paragraph",
+          "text": "Dictionary indeces are called \"keys.\""
+        },
+        {
+          "type": "paragraph",
+          "text": "Following is a sample dictionary with one integer key and two string keys. The objects indexed by the keys are called values."
+        },
+        {
+          "type": "paragraph",
+          "text": "As shown above, to create an empty dictionary, you use a pair of curly braces. We wrote:"
+        }
+      ],
+      "code_cells": [
+        {
+          "content": "# create an empty dictionary\nd={}\n# set some values given keys\nd[1]=\"hello\"\nd[\"joe\"]=4\nd[\"maria\"]=5\n# print the dictionary\nprint(d)\n# print the keys\nprint(d.keys())\n# print the values\nprint(d.values())\n",
+          "tags": [
+            "nyu-long-code"
+          ]
+        },
+        {
+          "content": "d={}\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        },
+        {
+          "content": "d={}\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-662598",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662598",
+      "ed_slide_type": "document",
+      "title": "Adding Items to a Dictionary",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "In order to add an item to a Dictionary you need to specify a key. You then associate some data with the key. For instance, in the following dictionary, the keys are the states and the values are their capital cities."
+        },
+        {
+          "type": "paragraph",
+          "text": "We saw how to print out the whole dictionary. We can also print out a single value indexed by a key, as in the following:"
+        },
+        {
+          "type": "paragraph",
+          "text": "If we try to use a key not in the dictionary, we will get an error."
+        },
+        {
+          "type": "paragraph",
+          "text": "You can also set up an entire dictionary at once, as in the following example."
+        },
+        {
+          "type": "paragraph",
+          "text": "You can use the \"in\" operator to test if a key is in the dictionary, as in the following program:"
+        },
+        {
+          "type": "paragraph",
+          "text": "Note that \"in\" looks in the keys, not in the values."
+        },
+        {
+          "type": "paragraph",
+          "text": "You can use the del command to delete a key-value pair from the dictionary, as in the following. The key must be in the dictionary for this to work."
+        },
+        {
+          "type": "paragraph",
+          "text": "You can clear all of the keys in a Dictionary with the \"clear\" method as follows:"
+        },
+        {
+          "type": "paragraph",
+          "text": "Dictionaries work by transforming the keys with a \"hash function\" which allows the computer to look the values up in a table in the computer's memory. The hash function transforms the key to a numerical index."
+        },
+        {
+          "type": "paragraph",
+          "text": "It is easy to loop through the values of a list, as follows:"
+        },
+        {
+          "type": "paragraph",
+          "text": "To do something similar with a dictionary, we use the keys() method. This gives us an object similar to a list of all of the keys in the dictionary that we can then loop over."
+        },
+        {
+          "type": "paragraph",
+          "text": "There is no guarantee that the keys() method will return the keys of a dictionary in any particular order. For instance, it may return them in the order that the keys were inserted, but that is not guaranteed."
+        },
+        {
+          "type": "paragraph",
+          "text": "However, you can use the sorted function to sort the keys before you iterate through them."
+        },
+        {
+          "type": "paragraph",
+          "text": "This will sort the keys in ascending order, as in the following example."
+        }
+      ],
+      "code_cells": [
+        {
+          "content": "capital={}\ncapital[\"New Jersey\"]=\"Trenton\"\ncapital[\"New York\"]=\"Albany\"\nprint(capital)\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        },
+        {
+          "content": "capital={}\ncapital[\"New Jersey\"]=\"Trenton\"\ncapital[\"New York\"]=\"Albany\"\nprint(capital[\"New York\"])\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        },
+        {
+          "content": "capital={}\ncapital[\"New Jersey\"]=\"Trenton\"\ncapital[\"New York\"]=\"Albany\"\ntry:\n  print(capital(\"Rhode Island\"))\nexcept:\n  print(\"Key not in the dictionary\")\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        },
+        {
+          "content": "population={\"New York City\":8804190,\"Chicago\":2746388,\"Los Angeles\":4041707}\nprint(population)\nprint(population[\"Los Angeles\"])\nprint(population.keys())\nprint(population.values())\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        },
+        {
+          "content": "population={\"New York City\":8804190,\"Chicago\":2746388,\"Los Angeles\":4041707}\nwhile True:\n  city=input(\"Enter a city name ('end' to exit):\")\n  if city.lower()==\"end\": break\n  if city in population:\n    print(\"The population is\",population[city])\n  else:\n    print(\"City not found in data.\")\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        },
+        {
+          "content": "population={\"New York City\":8804190,\"Chicago\":2746388,\"Los Angeles\":4041707}\n# note I can only delete the key-value pair once\ntry:\n  del population[\"New York City\"]\nexcept:\n  print(\"Key not in dictionary\")\nprint(population)\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        },
+        {
+          "content": "population={\"New York City\":8804190,\"Chicago\":2746388,\"Los Angeles\":4041707}\npopulation.clear()\n# after this I get an empty dictionary\n# which is represented by just a pair of braces\nprint(population)\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        },
+        {
+          "content": "names=[\"Amy\",\"Raka\",\"Alice\"]\nages=[87, 22, 51]\nfor i in range(len(names)):\n  print(names[i],ages[i])\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        },
+        {
+          "content": "names=[\"Amy\",\"Raka\",\"Alice\"]\nages=[87, 22, 51]\n\n# set up a dictionary with the same data\nage={}\nfor i in range(len(names)):\n  age[names[i]]=ages[i]\nprint(age)\n\n# the keys are now the names\nfor key in age.keys():\n  print(key, age[key])\n",
+          "tags": [
+            "nyu-long-code"
+          ]
+        },
+        {
+          "content": "names=[\"Amy\",\"Raka\",\"Alice\"]\nages=[87, 22, 51]\n\n# set up a dictionary with the same data\nage={}\nfor i in range(len(names)):\n  age[names[i]]=ages[i]\n\nfor key in sorted(age.keys()):\n  print(key,age[key])\n\n# You can also iterate over just the values in a dictionary using the values method, as in the following example:\nfor a in sorted(age.values()):\n  print(a)\n\n# Note that if you use the sorted function on the dictionary itself, rather than the keys or the values, it will sort the keys.\nprint(sorted(age))\n\n# You can use the items method to loop over both the keys and the values, as in the following:\nfor key, value in age.items():\n  print(key,value)\n",
+          "tags": [
+            "nyu-long-code"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-662589",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662589",
+      "ed_slide_type": "document",
+      "title": "The Dictionary get() method",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "The get() method of a dictionary is another way to look up a key in a dictionary. Unlike indexing, the get() method will not fail if the key is not there, but will simply return the special value None."
+        }
+      ],
+      "code_cells": [
+        {
+          "content": "names=[\"Amy\",\"Raka\",\"Alice\"]\nages=[87, 22, 51]\n\n# set up a dictionary with the same data\nage={}\nfor i in range(len(names)):\n  age[names[i]]=ages[i]\n\nprint(age.get(\"Amy\"))\nprint(age.get(\"Tony\"))\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        },
+        {
+          "content": "names=[\"Amy\",\"Raka\",\"Alice\"]\nages=[87, 22, 51]\n\n# set up a dictionary with the same data\nage={}\nfor i in range(len(names)):\n  age[names[i]]=ages[i]\n\nname=input(\"Enter a name:\")\na=age.get(name)\nif a==None:\n  print(\"That name is not in the dictionary.\")\nelse:\n  print(\"The age of\",name,\"is\",a)\n",
+          "tags": [
+            "nyu-long-code"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-662590",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662590",
+      "ed_slide_type": "code_challenge",
+      "title": "Exercise: Dictionaries",
+      "layout": "nyu-activity-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "Given the data in the lists in the following cell."
+        },
+        {
+          "type": "paragraph",
+          "text": "Create two dictionaries, one representing the inventory and the other the prices. The keys should be the items for sale."
+        },
+        {
+          "type": "paragraph",
+          "text": "Print out both dictionaries."
+        },
+        {
+          "type": "paragraph",
+          "text": "items=[\"Onion Bagel\",\"Cream Cheese\",\"Tomato\"]\nprices=[0.99,3.99,1.49]\ninventory=[10,21,35]\n"
+        },
+        {
+          "type": "paragraph",
+          "text": "items=[\"Onion Bagel\",\"Cream Cheese\",\"Tomato\"]\nprices=[0.99,3.99,1.49]\ninventory=[10,21,35]\n"
+        }
+      ],
+      "prairielearn_signpost": {
+        "status": "deployment_pending",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week11Lecture12Dictionaries",
+        "question_path": "questions/InClassExercises/CS1/Week11Lecture12/Dictionaries/Base"
+      }
+    },
+    {
+      "id": "ed-slide-662591",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662591",
+      "ed_slide_type": "code_challenge",
+      "title": "Exercise: Names and Ages",
+      "layout": "nyu-activity-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "Write a program to ask for people's names and their ages. When you are done (use a sentinel word like \"end\" to stop), print out all of the names and all of the ages which you have stored in a dictionary. Then print out the names and ages in alphabetical order by name."
+        }
+      ],
+      "prairielearn_signpost": {
+        "status": "deployment_pending",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week11Lecture12NamesAndAges",
+        "question_path": "questions/InClassExercises/CS1/Week11Lecture12/NamesAndAges/Base"
+      }
+    },
+    {
+      "id": "ed-slide-662592",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662592",
+      "ed_slide_type": "code_challenge",
+      "title": "Exercise: Multiplication Table",
+      "layout": "nyu-activity-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "Create a multiplication table of the numbers up to 20 where the keys are things like \"15x14\" (a string) and the values are the result of the problem (for \"15x14\", 210). Then use the table to look up 18 times 19."
+        }
+      ],
+      "prairielearn_signpost": {
+        "status": "deployment_pending",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week11Lecture12MultiplicationTable",
+        "question_path": "questions/InClassExercises/CS1/Week11Lecture12/MultiplicationTable/Base"
+      }
+    },
+    {
+      "id": "ed-slide-662593",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662593",
+      "ed_slide_type": "code_challenge",
+      "title": "Exercise: Square Dictionary",
+      "layout": "nyu-activity-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "Create a dictionary where the keys are the numbers from 1 to 10 and the values are their squares."
+        }
+      ],
+      "prairielearn_signpost": {
+        "status": "deployment_pending",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week11Lecture12SquareDictionary",
+        "question_path": "questions/InClassExercises/CS1/Week11Lecture12/SquareDictionary/Base"
+      }
+    },
+    {
+      "id": "ed-slide-662594",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662594",
+      "ed_slide_type": "code_challenge",
+      "title": "Exercise: Shakespeare",
+      "layout": "nyu-activity-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "Consider Sonnet 18 from Shakespeare which follows."
+        },
+        {
+          "type": "paragraph",
+          "text": "Create a dictionary that counts how many times each letter in the alphabet appears in the sonnet. Ignore case and ignore spaces and punctuation."
+        },
+        {
+          "type": "paragraph",
+          "text": "What letter appears most frequently?"
+        },
+        {
+          "type": "paragraph",
+          "text": "Shall I compare thee to a summer’s day?Thou art more lovely and more temperate:Rough winds do shake the darling buds of May,And summer’s lease hath all too short a date;Sometime too hot the eye of heaven shines,And often is his gold complexion dimm'd;And every fair from fair sometime declines,By chance or nature’s changing course untrimm'd;But thy eternal summer shall not fade,Nor lose possession of that fair thou ow’st;Nor shall death brag thou wander’st in his shade,When in eternal lines to time thou grow’st:So long as men can breathe or eyes can see,So long lives this, and this gives life to thee."
+        },
+        {
+          "type": "paragraph",
+          "text": "Shall I compare thee to a summer’s day?Thou art more lovely and more temperate:Rough winds do shake the darling buds of May,And summer’s lease hath all too short a date;Sometime too hot the eye of heaven shines,And often is his gold complexion dimm'd;And every fair from fair sometime declines,By chance or nature’s changing course untrimm'd;But thy eternal summer shall not fade,Nor lose possession of that fair thou ow’st;Nor shall death brag thou wander’st in his shade,When in eternal lines to time thou grow’st:So long as men can breathe or eyes can see,So long lives this, and this gives life to thee."
+        },
+        {
+          "type": "paragraph",
+          "text": "Here's how to store a multi-line string in Python:"
+        }
+      ],
+      "prairielearn_signpost": {
+        "status": "deployment_pending",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week11Lecture12Shakespeare",
+        "question_path": "questions/InClassExercises/CS1/Week11Lecture12/Shakespeare/Base"
+      }
+    },
+    {
+      "id": "ed-slide-662595",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662595",
+      "ed_slide_type": "code_challenge",
+      "title": "Exercise: George Clooney",
+      "layout": "nyu-activity-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "Set up a dictionary. It will have six keys: \"first_name\", \"last_name\", \"movies\", \"birthday\", \"place of birth\" and \"age\"."
+        },
+        {
+          "type": "paragraph",
+          "text": "Then populate this dictionary with information about George Clooney. Get the information from Wikipedia. The value for \"movies\" should be a list of strings each of which is a movie. But since Clooney has been in a lot of movies, just pick five of them."
+        },
+        {
+          "type": "paragraph",
+          "text": "Then print the dictionary."
+        }
+      ],
+      "prairielearn_signpost": {
+        "status": "deployment_pending",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week11Lecture12GeorgeClooney",
+        "question_path": "questions/InClassExercises/CS1/Week11Lecture12/GeorgeClooney/Base"
+      }
+    },
+    {
+      "id": "ed-slide-662596",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662596",
+      "ed_slide_type": "code_challenge",
+      "title": "Exercise",
+      "layout": "nyu-activity-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "Use a dictionary to count how often each word occurs in the Declaration of Independence. Then determine what word occurs most frequently. Ignore case."
+        }
+      ],
+      "prairielearn_signpost": {
+        "status": "deployment_pending",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week11Lecture12Exercise662596",
+        "question_path": "questions/InClassExercises/CS1/Week11Lecture12/Exercise662596/Base"
+      }
+    },
+    {
+      "id": "ed-slide-662597",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662597",
+      "ed_slide_type": "code_challenge",
+      "title": "Exercise: Read Files",
+      "layout": "nyu-activity-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "Read the csv file, countries.csv, which contains the following fields on each line."
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "Country",
+            "Continent",
+            "GDP per capita",
+            "Population",
+            "Area",
+            "Gini"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Read this data into a dictionary where the countries are the keys and the values are the populations. Then use this dictionary to print out the first 10 countries in alphabetical order and the ten least populous countries. And use it to print out the total population of the world."
+        },
+        {
+          "type": "paragraph",
+          "text": "Skip those countries with missing population; that is, don't include them in the dictionary."
+        }
+      ],
+      "prairielearn_signpost": {
+        "status": "deployment_pending",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week11Lecture12ReadFiles",
+        "question_path": "questions/InClassExercises/CS1/Week11Lecture12/ReadFiles/Base"
+      },
+      "include_source_with_signpost": true
+    }
+  ]
+}

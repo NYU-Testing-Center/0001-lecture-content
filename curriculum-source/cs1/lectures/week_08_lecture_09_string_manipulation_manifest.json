@@ -1,0 +1,849 @@
+{
+  "id": "cs1_week_08_lecture_09_string_manipulation",
+  "course": "CS 1",
+  "title": "Week 8, Lecture 9: String Manipulation",
+  "source": {
+    "platform": "ed",
+    "lesson_id": "119154",
+    "course_id": "62123",
+    "inventory": "curriculum-source/cs1/ed/lessons/week_08_lecture_09_string_manipulation_ed_source.json"
+  },
+  "targets": [
+    "codespaces",
+    "prairielearn"
+  ],
+  "presentation": {
+    "ui": "semantic-callouts-v1",
+    "include_title": false,
+    "include_exercise_index": false,
+    "rise": {
+      "theme": "simple",
+      "transition": "slide",
+      "start_slideshow_at": "selected"
+    }
+  },
+  "lecture_blocks": [
+    {
+      "id": "ed-slide-662250",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662250",
+      "ed_slide_type": "document",
+      "title": "Strings and String Manipulation",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "heading",
+          "text": "What is a String?"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "A String is a Python data type",
+            "A String is a sequence of individual characters, like \"c\" or \"?\"",
+            "Characters are arranged in a particular order in a string",
+            "For instance, \"tale\" and \"teal\" are different strings, although they contain the same four characters"
+          ]
+        }
+      ],
+      "code_cells": [
+        {
+          "content": "w1=\"tale\"\nw2=\"teal\"\nif w1!=w2: print(f\"'{w1}' is different than '{w2}'\")\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-662251",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662251",
+      "ed_slide_type": "document",
+      "title": "Accessing the Individual Characters in a String",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "Some programming tasks require you to access the individual characters that are contained within a string.",
+            "You can isolate individual characters within a string by using a \"for\" loop. The target variable in your loop will assume each character in your string one at a time.",
+            "The following loop prints out each of the characters in \"tale\" on its own line."
+          ]
+        }
+      ],
+      "code_cells": [
+        {
+          "content": "for c in \"tale\":\n  print(c)\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-662252",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662252",
+      "ed_slide_type": "code_challenge",
+      "title": "Exercise: Counting",
+      "layout": "nyu-activity-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "Use a loop like the one above to count how many times the letter \"s\" appears in the string \"sally sells sea shells by the sea shore.\""
+        }
+      ],
+      "prairielearn_signpost": {
+        "status": "deployment_pending",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week08Lecture09Counting",
+        "question_path": "questions/InClassExercises/CS1/Week08Lecture09/Counting/Base"
+      }
+    },
+    {
+      "id": "ed-slide-662253",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662253",
+      "ed_slide_type": "document",
+      "title": "Indexing into Strings",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "Another way to access a string is to use an index value.",
+            "Index values refer to individual characters",
+            "You use square brackets to index into strings, with the numerical index value inside the brackets",
+            "Index values start at zero for the first character, one for the second, etc.",
+            "You can use negative values to count back from the end"
+          ]
+        }
+      ],
+      "code_cells": [
+        {
+          "content": "s=\"Superman\"\nprint(s[0]) # first character \"S\"\nprint(s[2]) # third character \"p\"\nprint(s[4]) # fifth character \"r\"\nprint(s[-2]) # second to last character \"a\"\nprint(s[-1]) # last character \"n\"\nprint(s[-8]) # first character \"S\"\n# print(s[8]) # this will be out of range\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-662254",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662254",
+      "ed_slide_type": "document",
+      "title": "The \"len\" function",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "The \"len\" function will tell us the length of a string."
+        },
+        {
+          "type": "paragraph",
+          "text": "If you index into a string with an index more than one minus the length, it will generate an error."
+        }
+      ],
+      "code_cells": [
+        {
+          "content": "s=\"Superman\"\nprint(len(s))\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        },
+        {
+          "content": "s=\"Superman\"\ntry:\n  print(s[8]) # index should be between 0 and 7, generates an error\nexcept:\n  print(\"indexing error\")\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-662255",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662255",
+      "ed_slide_type": "document",
+      "title": "Iterating Over a String Using Indexing",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "As we have seen, you can iterate over a string using the \"in\" statement and a \"for\" loop"
+        },
+        {
+          "type": "paragraph",
+          "text": "You can also loop using the index, but you will need to specify a range using the \"len\" function."
+        }
+      ],
+      "code_cells": [
+        {
+          "content": "# looping using \"in\"\nword=\"teal\"\nfor c in word:\n  print(c)\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        },
+        {
+          "content": "# looping using \"range\" and \"len\" and indexing\n# works out the same.\nword=\"teal\"\n# note if given one parameter, range gives values between\n# zero and one minus that parameter\nfor i in range(len(word)):\n  print(i, word[i])\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-662256",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662256",
+      "ed_slide_type": "code_challenge",
+      "title": "Exercise: Counting, Again",
+      "layout": "nyu-activity-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "Use string indexing and the len and range functions to count the combined number of \"S\" and \"s\" characters in the string \"Superman sings soulfully in the shower.\" Use a \"for\" loop."
+        }
+      ],
+      "prairielearn_signpost": {
+        "status": "deployment_pending",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week08Lecture09CountingAgain",
+        "question_path": "questions/InClassExercises/CS1/Week08Lecture09/CountingAgain/Base"
+      }
+    },
+    {
+      "id": "ed-slide-662257",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662257",
+      "ed_slide_type": "code_challenge",
+      "title": "Exercise: Reverse",
+      "layout": "nyu-activity-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "Use string indexing to print out the string \"Superman sings soulfully in the shower\" in reverse. Print the reversed version on a single line."
+        }
+      ],
+      "prairielearn_signpost": {
+        "status": "deployment_pending",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week08Lecture09Reverse",
+        "question_path": "questions/InClassExercises/CS1/Week08Lecture09/Reverse/Base"
+      }
+    },
+    {
+      "id": "ed-slide-662258",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662258",
+      "ed_slide_type": "document",
+      "title": "Strings are Immutable",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "Strings are an immutable data type. This means that they cannot be changed once they are created.",
+            "This may seem counter-intuitive, since we can (and have) been doing things like the following:"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "However, what happens in the code above is that Python creates a string \"Cheddar\" and sets the variable \"cheese\" to point to it. Then it creates another string \"Brie\" and changes the variable so it now points to \"Brie\". The original string \"Cheddar\" is still in memory but no variable points to it any more."
+        },
+        {
+          "type": "paragraph",
+          "text": "Since strings are immutable, you can't change the characters in them. The following won't work:"
+        }
+      ],
+      "code_cells": [
+        {
+          "content": "cheese=\"Cheddar\"\nprint(f\"The cheese is {cheese}\")\ncheese=\"Brie\"\nprint(f\"The cheese is {cheese}\")\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        },
+        {
+          "content": "name=\"Mary\"\n# try to change it to \"Gary\"\nname[0]=\"G\"\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-662259",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662259",
+      "ed_slide_type": "document",
+      "title": "Changing a String",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "Because strings are immutable, you can't change them by changing the characters in them. You need to construct a new string."
+        },
+        {
+          "type": "paragraph",
+          "text": "Suppose you want to change every vowel in a word to an underscore. Suppose the word is \"hello\". You could try to do the following, but it won't work."
+        },
+        {
+          "type": "paragraph",
+          "text": "Instead, you have to do something like the following:"
+        }
+      ],
+      "code_cells": [
+        {
+          "content": "word=\"hello\"\nword[1]=\"_\"\nword[4]=\"_\"\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        },
+        {
+          "content": "word=\"hello\"\nnew_word=\"\"\nfor c in word:\n    if c.lower() in \"aeiou\": # if is a vowel\n      new_word+=\"_\" # put an underscore at the end\n    else:\n      new_word+=c # put the non-vowel at the end\n# we can then set the old variable to the same\n# value as the new one\n# it now points to the new string\nword=new_word\nprint(word)\n",
+          "tags": [
+            "nyu-long-code"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-662260",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662260",
+      "ed_slide_type": "code_challenge",
+      "title": "Exercise: Replacement",
+      "layout": "nyu-activity-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "Write a function that accepts three arguments: a string, a character to search for, and a replacement character. Have your function search the string for all occurrences of the first character and replace it with the replacement character. Return the new string."
+        }
+      ],
+      "prairielearn_signpost": {
+        "status": "deployment_pending",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week08Lecture09Replacement",
+        "question_path": "questions/InClassExercises/CS1/Week08Lecture09/Replacement/Base"
+      }
+    },
+    {
+      "id": "ed-slide-662261",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662261",
+      "ed_slide_type": "document",
+      "title": "The ord Function: Getting the ASCII Value of a Character",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "If you recall, Python uses the ASCII coding scheme to store characters.",
+            "The ord() function gives you the ascii value of a character given as its argument",
+            "for instance, ord(\"A\") returns 65"
+          ]
+        }
+      ],
+      "code_cells": [
+        {
+          "content": "print(ord(\"A\"))\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-662262",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662262",
+      "ed_slide_type": "document",
+      "title": "The chr() function: Gets a Character from an ASCII Code",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "The chr() function is the reverse of the ORD function",
+            "Given an ASCII code, it returns a character",
+            "For instance, chr(65) returns \"A\""
+          ]
+        }
+      ],
+      "code_cells": [
+        {
+          "content": "print(chr(65))\nprint(chr(ord(\"A\")))\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-662263",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662263",
+      "ed_slide_type": "document",
+      "title": "String Functions",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "We already know a few string functions: len, chr, and ord",
+            "There are many more useful string functions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-662264",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662264",
+      "ed_slide_type": "document",
+      "title": "The min and max Functions",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "The min and max functions get the smallest and largest characters in a string, based on their ASCII codes."
+          ]
+        }
+      ],
+      "code_cells": [
+        {
+          "content": "print(max(\"python\"))\nprint(min(\"python\"))\nprint(max(\"123\"))\nprint(min(\"123\"))\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-662265",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662265",
+      "ed_slide_type": "document",
+      "title": "Extracting Substrings Using \"Slicing\" Notation",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "You can extract substrings of a string by giving the first index and the last index (plus one) desired separated by a colon"
+          ]
+        }
+      ],
+      "code_cells": [
+        {
+          "content": "full_name=\"Mirabel Madrigal\"\nfirst_name=full_name[:7]\nlast_name=full_name[8:]\nprint(first_name)\nprint(last_name)\ns=full_name[8:11:2]\nprint(s)\n\nl=full_name.split()\nprint(l)\nl=\"James Earl Jones\".split()\nprint(l)\n",
+          "tags": [
+            "nyu-long-code"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-662266",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662266",
+      "ed_slide_type": "document",
+      "title": "String Slicing Syntax",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "You use brackets to slice a string",
+            "The syntax is as follows:"
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "You must supply at least a starting or ending value",
+            "Substrings start at the start value specified and end at one minus the end value",
+            "Omitting a start value means you start at the beginning",
+            "Omitting a end value means you go all the way to the end",
+            "The syntax is similar to the range() function"
+          ]
+        }
+      ],
+      "code_cells": [
+        {
+          "content": "substring=bigstring[start:end:step]\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        },
+        {
+          "content": "substring=bigstring[start:end:step]\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        },
+        {
+          "content": "# Slicing Examples\ns=\"Superman sings in the shower.\"\nprint(s[0:8]) # Superman\nprint(s[:8]) # Superman\nprint(s[9:14]) # sings\nprint(s[:5]) # Super\nprint(s[9:]) # sings in the shower.\nprint(s[-7:]) # shower.\nprint(s[0:len(s):3]) # Seasgit or\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-662267",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662267",
+      "ed_slide_type": "document",
+      "title": "String Operators",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "We already know about two string operators, \"+\" and \"*\"",
+            "The \"+\" operator concanenates two strings, that is, puts the second at the end of the first",
+            "The \"*\" operator repeats a string a number of times (specified as an integer)"
+          ]
+        }
+      ],
+      "code_cells": [
+        {
+          "content": "a=\"Hello\"\nb=\", \"\nc=\"World\"\nd=\"!\"\ne=a+b+c+d\nprint(e)\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        },
+        {
+          "content": "print(\"Repeat Me \"*5)\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-662268",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662268",
+      "ed_slide_type": "document",
+      "title": "Testing for Substrings Using \"in\" and \"not in\"",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "a in b tests if string a is found inside string b",
+            "a not in b tests for the opposite"
+          ]
+        }
+      ],
+      "code_cells": [
+        {
+          "content": "names=\"Pedro Alma Julieta Papa Bruno Augustin Felix Isabela Luisa Mirabel\"\nprint(\"Luisa\" in names) # True\nprint(\"Louisa\" in names) # False\nprint(\"Alma\" not in names) # False\nprint(\"Ann\" not in names) # True\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-662269",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662269",
+      "ed_slide_type": "code_challenge",
+      "title": "Exercise: Password",
+      "layout": "nyu-activity-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "Write a program that asks the user for their user name and password. Then make sure that the user name is not part of the password. If it is part of it, print \"bad password\" otherwise print \"OK\"."
+        }
+      ],
+      "prairielearn_signpost": {
+        "status": "deployment_pending",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week08Lecture09Password",
+        "question_path": "questions/InClassExercises/CS1/Week08Lecture09/Password/Base"
+      }
+    },
+    {
+      "id": "ed-slide-662270",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662270",
+      "ed_slide_type": "document",
+      "title": "String Methods",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "A method is a function that belongs to a Python object.",
+            "We will be covering objects more later",
+            "Strings are objects and have methods",
+            "The syntax to call methods uses dot notation similar to that we have seen with modules, as follows:"
+          ]
+        }
+      ],
+      "code_cells": [
+        {
+          "content": "stringvariable.method(arguments)\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        },
+        {
+          "content": "stringvariable.method(arguments)\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-662271",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662271",
+      "ed_slide_type": "document",
+      "title": "String Testing Methods",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "String testing methods allow you to test patterns in a string",
+            "For instance, the \"isdigit\" method, if given a character, returns True if it is a numeric digit and False otherwise",
+            "If \"isdigit\" is given a string, it returns true if all of the characters in that string are digits"
+          ]
+        }
+      ],
+      "code_cells": [
+        {
+          "content": "print(\"5\".isdigit())\nprint(\"a\".isdigit())\nprint(\"1234\".isdigit())\nprint(\"a123\".isdigit())\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        },
+        {
+          "content": "x=\"3\"\ny=\"a3\"\nprint(x.isdigit())\nprint(y.isdigit())\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-662272",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662272",
+      "ed_slide_type": "document",
+      "title": "Some String Testing Methods",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "isalnum(): True if all characters are alphanumeric",
+            "isalpha(): True if all characters are alphabetic",
+            "isdigit(): True if all characters are digits",
+            "islower(): True if all alphabetic characters are lower case",
+            "isupper(): True if all alphabetic characters are upper case",
+            "isspace(): True if all characters are \"whitespace\""
+          ]
+        }
+      ],
+      "code_cells": [
+        {
+          "content": "print(ord(\"\\n\"))\nprint(\"\\n\".isspace())\nprint(\" \".isspace())\nprint(\"\\t\".isspace())\nprint(\"\\n\\n\\n\")\ns=\"Hello\\nThere\\nWorld!\"\nprint(s)\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-662273",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662273",
+      "ed_slide_type": "code_challenge",
+      "title": "A Third Counting Exercise",
+      "layout": "nyu-activity-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "Write a program that counts the numbers of spaces, digits, vowels and consonants in a string that the user inputs. Print the counts of each."
+        }
+      ],
+      "prairielearn_signpost": {
+        "status": "deployment_pending",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week08Lecture09AThirdCountingExercise",
+        "question_path": "questions/InClassExercises/CS1/Week08Lecture09/AThirdCountingExercise/Base"
+      }
+    },
+    {
+      "id": "ed-slide-662274",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662274",
+      "ed_slide_type": "document",
+      "title": "String Modification Methods",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "lower(): returns a lowercase version of a string",
+            "upper(): returns an uppercase version of a string",
+            "rstrip(): removes whitespace at the end of a string",
+            "lstrip(): removes whitespace at the beginning of a string",
+            "strip(): removes whitespace at both the beginning and end of a string",
+            "capitalize(): capitalizes a string (first character upper case)",
+            "title(): capitalizes the first character of each word in a string",
+            "swapcase(): turns lower case to upper and vice versa in a string"
+          ]
+        }
+      ],
+      "code_cells": [
+        {
+          "content": "print(\"HELLO\".lower()) # hello\nprint(\"hello\".upper()) # HELLO\nprint(\"hello   \".rstrip())\nprint(\"  hello\".lstrip())\nprint(\"  hello  \".strip())\nprint(\"hello\".capitalize()) # Hello\nprint(\"hello there\".title()) # \"Hello There\"\nprint(\"Hello There\".title().swapcase()) #  \"hELLO tHERE\"\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        },
+        {
+          "content": "x=\"HELLO\"\nx=x.lower()\nprint(x)\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-662275",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662275",
+      "ed_slide_type": "document",
+      "title": "Finding Substrings",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "You can find the location of a string inside another string using the find() method",
+            "It will return the index of the first occurence of the substring within a string.",
+            "If it isn't found, it will return -1"
+          ]
+        }
+      ],
+      "code_cells": [
+        {
+          "content": "sentence=\"Like finding a needle in a haystack!\"\nlocation=sentence.find(\"needle\")\nprint(location)\nl2=sentence.find(\"sword\")\nprint(l2)\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-662276",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662276",
+      "ed_slide_type": "document",
+      "title": "Replacing Substrings",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "The replace() method will replace all occurences of a substring in a string with a new string",
+            "An example is the following:"
+          ]
+        }
+      ],
+      "code_cells": [
+        {
+          "content": "text=\"\"\"Voldemort had one goal in life:\nto kill Harry Potter.\nVoldemort hated Harry.\"\"\"\nprint(text)\nnewtext=text.replace(\"Voldemort\",\"He who should not be named\")\nprint(newtext)\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-662277",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662277",
+      "ed_slide_type": "code_challenge",
+      "title": "Exercise: Redact",
+      "layout": "nyu-activity-slide",
+      "segments": [
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "Write a program that redacts all instances of “Python” from the following string:",
+              "items": [
+                "“Python is a programming language that is fairly easy to learn. Python is great for beginning and advanced programmers.”"
+              ]
+            },
+            {
+              "text": "To produce the following:",
+              "items": [
+                "“ZZZZZZ is a programming language that is fairly easy to learn. ZZZZZZ is great for beginning and advanced programmers.”"
+              ]
+            }
+          ]
+        }
+      ],
+      "prairielearn_signpost": {
+        "status": "deployment_pending",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week08Lecture09Redact",
+        "question_path": "questions/InClassExercises/CS1/Week08Lecture09/Redact/Base"
+      },
+      "include_source_with_signpost": true
+    }
+  ]
+}

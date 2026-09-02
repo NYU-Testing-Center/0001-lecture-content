@@ -1,0 +1,433 @@
+{
+  "id": "cs1_week_07_lecture_08_functions_part_ii",
+  "course": "CS 1",
+  "title": "Week 7, Lecture 8: Functions Part II",
+  "source": {
+    "platform": "ed",
+    "lesson_id": "119153",
+    "course_id": "62123",
+    "inventory": "curriculum-source/cs1/ed/lessons/week_07_lecture_08_functions_part_ii_ed_source.json"
+  },
+  "targets": [
+    "codespaces",
+    "prairielearn"
+  ],
+  "presentation": {
+    "ui": "semantic-callouts-v1",
+    "include_title": false,
+    "include_exercise_index": false,
+    "rise": {
+      "theme": "simple",
+      "transition": "slide",
+      "start_slideshow_at": "selected"
+    }
+  },
+  "lecture_blocks": [
+    {
+      "id": "ed-slide-662234",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662234",
+      "ed_slide_type": "document",
+      "title": "Functions Part II",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "Let's go over some more examples of functions."
+        },
+        {
+          "type": "paragraph",
+          "text": "The following function just prints out \"Happy birthday to you!\""
+        }
+      ],
+      "code_cells": [
+        {
+          "content": "def printBirthday():\n  print(\"Happy birthday to you!\")\n\nprintBirthday()\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-662235",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662235",
+      "ed_slide_type": "code_challenge",
+      "title": "Exercise: Customize the Happy Birthday song",
+      "layout": "nyu-activity-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "Write a function that takes a person's name as an argument and prints out the happy birthday song by calling the function above three times as well as customizing the third line of the song. So the output should be (if the argument to the function is \"Sally\"):"
+        },
+        {
+          "type": "paragraph",
+          "text": "Happy birthday to you!Happy birthday to you!Happy birthday, dear Sally.Happy birthday to you!"
+        },
+        {
+          "type": "paragraph",
+          "text": "Happy birthday to you!Happy birthday to you!Happy birthday, dear Sally.Happy birthday to you!"
+        }
+      ],
+      "prairielearn_signpost": {
+        "status": "deployment_pending",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week07Lecture08CustomizeTheHappyBirthdaySong",
+        "question_path": "questions/InClassExercises/CS1/Week07Lecture08/CustomizeTheHappyBirthdaySong/Base"
+      }
+    },
+    {
+      "id": "ed-slide-662236",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662236",
+      "ed_slide_type": "document",
+      "title": "Fibonnaci Numbers",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "The Fibonnaci sequence is the following:"
+        },
+        {
+          "type": "paragraph",
+          "text": "0,1,1,2,3,5,8,13 etc."
+        },
+        {
+          "type": "paragraph",
+          "text": "It starts with 0,1 and each subsequent value is the sum of the previous two."
+        },
+        {
+          "type": "paragraph",
+          "text": "Let's write a function to calculate the nth value in the Fibonaci sequence. We pass in n and return the value."
+        },
+        {
+          "type": "paragraph",
+          "text": "You can also write a recursive version. A recursive function is a function that calls itself. It is a bit strange, but it works!"
+        },
+        {
+          "type": "paragraph",
+          "text": "Note: we will not be requiring you to write recursive functions in this class, but you can if you like."
+        },
+        {
+          "type": "paragraph",
+          "text": "The output of the non-recursive version and the recursive version is the same, as expected."
+        }
+      ],
+      "code_cells": [
+        {
+          "content": "def fibonacci(n):\n  if n==1:  # first value\n    return 0\n  elif n==2:  # second value\n    return 1\n  else:\n    x, y = 0, 1 # first two values\n    for i in range(3,n+1):\n      # another double assignment\n      x, y = y, x+ y # update the last two values\n    return y\n\nfor i in range(1,11):\n  print(fibonacci(i),\"\",end=\"\")\nprint()\n",
+          "tags": [
+            "nyu-long-code"
+          ]
+        },
+        {
+          "content": "def fibonacci(n):\n  if n==1:  # first value\n    return 0\n  elif n==2:  # second value\n    return 1\n  else:\n    return fibonacci(n-1)+fibonacci(n-2) # call the function twice, recursively\n\nfor i in range(1,11):\n  print(fibonacci(i),\"\",end=\"\")\nprint()\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-671140",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "671140",
+      "ed_slide_type": "code_challenge",
+      "title": "Understanding the Fibonacci Function",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "Let's add some print statements to see if we can understand what is going on with the recursive Fibonacci function."
+        }
+      ],
+      "code_cells": [
+        {
+          "content": "def fibonacci(n):\n  print(\"Called function with\",n)\n  if n==1:  # first value\n    rval=0\n  elif n==2:  # second value\n    rval=1\n  else:\n    rval=fibonacci(n-1)+fibonacci(n-2) # call the function twice, recursively\n  print(f\"Call with n={n} returned {rval}\")\n  return(rval)\nprint(fibonacci(5))\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-662237",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662237",
+      "ed_slide_type": "document",
+      "title": "Tax Brackets",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "Let's say we live in a country with just two tax brackets: 15% on all income up to $100,000, and 25% on all income above. Here's a function to calculate the tax given an income."
+        }
+      ],
+      "code_cells": [
+        {
+          "content": "def calcTax(income):\n  if income<=100000:\n    return 0.15*income\n  else:\n    return 15000+0.25*(income-100000)\n\nprint(f'${calcTax(50000):.2f}')\nprint(f'${calcTax(100000):.2f}')\nprint(f'${calcTax(150000):.2f}')\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-662238",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662238",
+      "ed_slide_type": "code_challenge",
+      "title": "Exercise: New Tax Brackets",
+      "layout": "nyu-activity-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "Modify the function in the previous slide to add a third tax bracket of 35% on income above $200,000."
+        }
+      ],
+      "prairielearn_signpost": {
+        "status": "deployment_pending",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week07Lecture08NewTaxBrackets",
+        "question_path": "questions/InClassExercises/CS1/Week07Lecture08/NewTaxBrackets/Base"
+      }
+    },
+    {
+      "id": "ed-slide-662239",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662239",
+      "ed_slide_type": "document",
+      "title": "A Factorial Function",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "The factorial of n is the product of the first n integers. Here's a function to compute the factorial."
+        },
+        {
+          "type": "paragraph",
+          "text": "Here's a recursive version of the factorial function. It is actually easier to write the recursive version and it comes out simpler. There is no need for a loop."
+        }
+      ],
+      "code_cells": [
+        {
+          "content": "def factorial(n):\n  result=1\n  for i in range(2,n+1):\n    result*=i\n  return(result)\n\nfor i in range(1,11):\n  print(factorial(i),\"\",end=\"\")\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        },
+        {
+          "content": "def factorial_recursive(n):\n  if n==1: return 1\n  else: return n*factorial_recursive(n-1)\n\nfor i in range(1,11):\n  print(factorial_recursive(i),\"\",end=\"\")\n",
+          "tags": [
+            "nyu-short-code"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-662240",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662240",
+      "ed_slide_type": "code_challenge",
+      "title": "Exercise: Approximate the mathematical constant e",
+      "layout": "nyu-activity-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "The mathematical constant e (the root of the natural logarithms) can be approximated with the series"
+        },
+        {
+          "type": "paragraph",
+          "text": "1+(1/1!)+(1/2!)+(1/3!)+(1/4!) etc."
+        },
+        {
+          "type": "paragraph",
+          "text": "where 2! is the factorial of 2, etc."
+        },
+        {
+          "type": "paragraph",
+          "text": "Write a function that returns e approximated with n, where n is last denominator in the series above and the argument to the function. Try n=100 and n=1000. Compare your answer to that provided by the math library as shown in the following code block."
+        },
+        {
+          "type": "paragraph",
+          "text": "Call one of the factorial functions above when you write your function."
+        }
+      ],
+      "prairielearn_signpost": {
+        "status": "deployment_pending",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week07Lecture08ApproximateTheMathematicalConstantE",
+        "question_path": "questions/InClassExercises/CS1/Week07Lecture08/ApproximateTheMathematicalConstantE/Base"
+      }
+    },
+    {
+      "id": "ed-slide-662241",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662241",
+      "ed_slide_type": "document",
+      "title": "Pig Latin",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "In Pig Latin, words that begin with a consonant move that consonant to the end and an \"ay\" is added. For words that begin with a vowel, \"yay\" is added to the end. So \"tall\" becomes \"alltay\" and \"ant\" becomes \"antyay\"."
+        },
+        {
+          "type": "paragraph",
+          "text": "Let's write a function transforms a single word to Pig Latin."
+        },
+        {
+          "type": "paragraph",
+          "text": "Note that if the word contains more than one consonant at the beginning, they are supposed to all be moved to the end, that is \"split\" would become \"itsplay\". However, this would make our function harder to write, so we won't support this."
+        }
+      ],
+      "code_cells": [
+        {
+          "content": "def pigLatin(w):\n  atBeginning=True\n  newWord=\"\"\n  for c in w:\n    if atBeginning:\n      if (c.lower() in \"aeiou\"):\n        return w+\"yay\"\n      else:\n        ending=c+\"ay\"\n        atBeginning=False\n    else:\n      newWord+=c\n  return newWord+ending\n\nprint(pigLatin(\"Tall\"))\nprint(pigLatin(\"ant\"))\nprint(pigLatin(\"slant\"))  # this version doesn't handle consonant clusters properly\n",
+          "tags": [
+            "nyu-long-code"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-662242",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662242",
+      "ed_slide_type": "code_challenge",
+      "title": "Exercise: Reverse a String",
+      "layout": "nyu-activity-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "Write a function that takes a string as a parameter and returns the reversed version of that string."
+        },
+        {
+          "type": "paragraph",
+          "text": "Hint: loop through the string that is input to the function and concatenate each character to the beginning of a new string which is initially empty. Then return the new string."
+        }
+      ],
+      "prairielearn_signpost": {
+        "status": "deployment_pending",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week07Lecture08ReverseAString",
+        "question_path": "questions/InClassExercises/CS1/Week07Lecture08/ReverseAString/Base"
+      }
+    },
+    {
+      "id": "ed-slide-662243",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662243",
+      "ed_slide_type": "code_challenge",
+      "title": "Exercise: Separate a string into two strings",
+      "layout": "nyu-activity-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "Write a function that takes a string and returns two strings, one consisting of the vowels in the initial string and one consisting of the non-vowels. Don't worry about duplicates; just concatenate things in the order in which they came."
+        },
+        {
+          "type": "paragraph",
+          "text": "Remember you can return more than one thing in a return statement."
+        }
+      ],
+      "prairielearn_signpost": {
+        "status": "deployment_pending",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week07Lecture08SeparateAStringIntoTwoStrings",
+        "question_path": "questions/InClassExercises/CS1/Week07Lecture08/SeparateAStringIntoTwoStrings/Base"
+      }
+    },
+    {
+      "id": "ed-slide-662244",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662244",
+      "ed_slide_type": "document",
+      "title": "A Function to Draw Regular Polygons with a Specified Number of Sides, Side Length, Position and Color",
+      "layout": "nyu-explanation-code-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "On replit I've created a function that allows you to specify the number of sides, side length, color and position of a regular polygon, drawn using the turtle (which is also a parameter.)",
+          "html": "On replit I've created a <a class=\"amber-el amber-link amber-el ed-focus-outline\" href=\"https://replit.com/@MatthewZeidenbe/PolygonFunctionTurtle#main.py\" target=\"_blank\" rel=\"noopener noreferrer\">function</a> that allows you to specify the number of sides, side length, color and position of a regular polygon, drawn using the turtle (which is also a parameter.)"
+        },
+        {
+          "type": "paragraph",
+          "text": "I've put the function in the following cell for you to paste into replit for use in the following exercise. (Don't run it in Colab; it won't work in here in Ed.)"
+        }
+      ],
+      "code_cells": [
+        {
+          "content": "def polygon(t,xstart,ystart,nSides,sideLength,color):\n  # lift pen\n  t.penup()\n  # go to starting position\n  t.goto(xstart,ystart)\n  # put down pen\n  t.pendown()\n  # set fill color and begin fill\n  t.fillcolor(color)\n  t.begin_fill()\n  # loop through sides\n  for i in range(nSides):\n   # draw a side\n   t.forward(sideLength)\n   #  turn left\n   t.left(360/nSides)\n  # end fill and lift pen\n  t.end_fill()\n  t.penup()\n",
+          "tags": [
+            "nyu-long-code"
+          ]
+        },
+        {
+          "content": "def polygon(t,xstart,ystart,nSides,sideLength,color):\n  # lift pen\n  t.penup()\n  # go to starting position\n  t.goto(xstart,ystart)\n  # put down pen\n  t.pendown()\n  # set fill color and begin fill\n  t.fillcolor(color)\n  t.begin_fill()\n  # loop through sides\n  for i in range(nSides):\n   # draw a side\n   t.forward(sideLength)\n   #  turn left\n   t.left(360/nSides)\n  # end fill and lift pen\n  t.end_fill()\n  t.penup()\n",
+          "tags": [
+            "nyu-long-code"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ed-slide-662247",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662247",
+      "ed_slide_type": "code_challenge",
+      "title": "Exercise: Call the Function Above to Create a Grid of Polygons",
+      "layout": "nyu-activity-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "Call the function above repeatedly to create a grid of hexagons five across and three up and down. Start at (-250, -150) and separate the hexagons by 100 in both directions. Use a nested loop. Alternate red, green, blue, and purple. Your grid should look like the following image. Write your code in Replit using Python with Turtle and post a link to your code in Ed."
+        },
+        {
+          "type": "image",
+          "src": "images/lecture_08/662247_hexagon_grid.png",
+          "alt": ""
+        }
+      ],
+      "prairielearn_signpost": {
+        "status": "deployment_pending",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week07Lecture08CallTheFunctionAboveToCreateAGridOfPolygons",
+        "question_path": "questions/InClassExercises/CS1/Week07Lecture08/CallTheFunctionAboveToCreateAGridOfPolygons/Base"
+      },
+      "include_source_with_signpost": true
+    },
+    {
+      "id": "ed-slide-662248",
+      "block_type": "ed_slide",
+      "provenance": "ed-original",
+      "ed_slide_id": "662248",
+      "ed_slide_type": "code_challenge",
+      "title": "Exercise: A Function to Draw a Rectangle Used to Draw a Grid of Rectangles",
+      "layout": "nyu-activity-slide",
+      "segments": [
+        {
+          "type": "paragraph",
+          "text": "Write a function in Replit using the Python Turtle to draw a filled rectangle with horizontal and vertical sides. Pass as parameters the following: the starting point of the turtle (x and y), the length of the horizontal and vertical sides, and the fill color."
+        },
+        {
+          "type": "paragraph",
+          "text": "Then use this function to draw a grid of rectangles. Paste a link to your answer on Replit into Ed."
+        }
+      ],
+      "prairielearn_signpost": {
+        "status": "deployment_pending",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week07Lecture08AFunctionToDrawARectangleUsedToDrawAGridOfRectangles",
+        "question_path": "questions/InClassExercises/CS1/Week07Lecture08/AFunctionToDrawARectangleUsedToDrawAGridOfRectangles/Base"
+      }
+    }
+  ]
+}

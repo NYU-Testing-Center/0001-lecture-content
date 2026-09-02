@@ -1,0 +1,840 @@
+{
+  "schema_version": 1,
+  "course_id": "62123",
+  "source_course": "CS 0002, Section 10, Fall 2024",
+  "target_course": "CS0001",
+  "lesson_id": "119267",
+  "lesson_title": "Week 12, Lecture 13: Python Object-Oriented Programming",
+  "target_lecture": 13,
+  "week": 12,
+  "slide_count": 18,
+  "slides": [
+    {
+      "slide_id": "662621",
+      "slide_type": "document",
+      "title": "Object-Oriented Programming with Programmer-Defined Objects and Classes in Python",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/119267/slides/662621",
+      "segments": [
+        {
+          "html": "Everything in Python is an object, and every variable in Python points to an object which is an instance of a class.",
+          "text": "Everything in Python is an object, and every variable in Python points to an object which is an instance of a class.",
+          "type": "paragraph"
+        },
+        {
+          "html": "You can think of the class as a set and objects in that class as members of that set. For instance, a and b are both objects that are instances of the class \"string.\"",
+          "text": "You can think of the class as a set and objects in that class as members of that set. For instance, a and b are both objects that are instances of the class \"string.\"",
+          "type": "paragraph"
+        },
+        {
+          "language": "",
+          "text": "# All objects have methods that are specific to that type\ns=\"the rain in Spain\"\nprint(s.lower())\nx=1.5\ntry:\n  print(x.lower())\nexcept:\n  print(\"can't apply the 'lower' method to a float\")\n#print(x.lower())",
+          "type": "code"
+        },
+        {
+          "language": "",
+          "text": "a=\"hello\"\nprint(type(a)) # str\nb=\"world\"\nprint(type(b)) # str\ny=2.6\nprint(type(y)) # float\nz=5\nprint(type(z)) # int\ndef addOne(x):\n  return x+1\nz=addOne(z)\nprint(z)\nprint(type(addOne)) # function\n",
+          "type": "code"
+        },
+        {
+          "html": "c and d are both instances of the class \"list.\"",
+          "text": "c and d are both instances of the class \"list.\"",
+          "type": "paragraph"
+        },
+        {
+          "language": "",
+          "text": "c=[\"red\",\"green\",\"blue\"]\nprint(c)\nprint(type(c)) # list\nd=c+['purple']\nprint(d)\nprint(type(d)) # list\nd2={1:1, 2:4, 3:9, 4:16}\nprint(d2)\nprint(type(d2)) # dict",
+          "type": "code"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "# All objects have methods that are specific to that type\ns=\"the rain in Spain\"\nprint(s.lower())\nx=1.5\ntry:\n  print(x.lower())\nexcept:\n  print(\"can't apply the 'lower' method to a float\")\n#print(x.lower())",
+          "language": ""
+        },
+        {
+          "content": "a=\"hello\"\nprint(type(a)) # str\nb=\"world\"\nprint(type(b)) # str\ny=2.6\nprint(type(y)) # float\nz=5\nprint(type(z)) # int\ndef addOne(x):\n  return x+1\nz=addOne(z)\nprint(z)\nprint(type(addOne)) # function\n",
+          "language": ""
+        },
+        {
+          "content": "c=[\"red\",\"green\",\"blue\"]\nprint(c)\nprint(type(c)) # list\nd=c+['purple']\nprint(d)\nprint(type(d)) # list\nd2={1:1, 2:4, 3:9, 4:16}\nprint(d2)\nprint(type(d2)) # dict",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "662622",
+      "slide_type": "document",
+      "title": "Objects and their Classes have Associated Methods",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/119267/slides/662622",
+      "segments": [
+        {
+          "html": "Methods are functions that are specific to objects in a class. For instance, reverse and append are methods that work on lists. Methods are accessed using objects and \"dot notation.\"",
+          "text": "Methods are functions that are specific to objects in a class. For instance, reverse and append are methods that work on lists. Methods are accessed using objects and \"dot notation.\"",
+          "type": "paragraph"
+        },
+        {
+          "language": "",
+          "text": "c=[\"red\",\"green\",\"blue\"]\nd=c+['purple']\n\n#x=1\n#x.reverse\nprint(d)\nd.reverse() # destructively reversing (replaces the original )\nprint(d)\nd.append(\"orange\")\nprint(d)\ndiv5=list(range(5,101,5))\nprint(div5)\ndiv5.reverse()\nprint(div5)",
+          "type": "code"
+        },
+        {
+          "html": "Keys, values and items are methods that work on dictionaries.",
+          "text": "Keys, values and items are methods that work on dictionaries.",
+          "type": "paragraph"
+        },
+        {
+          "language": "",
+          "text": "heights={\"Sengbeng\":64, \"Mary\":65, \"Ganesh\":69}\nprint(heights.keys())\nprint(heights.values())\nprint(heights.items())\nimport string\nprint(string.ascii_lowercase)\nl=list(string.ascii_lowercase)\nprint(l)\ntry:\n  print(l.items())\nexcept:\n  print(\"can't run the items method on a list\")\n#print(l.items())",
+          "type": "code"
+        },
+        {
+          "language": "",
+          "text": "x=[\"abc\",\"bcd\"]\nx.reverse()\nprint(x)",
+          "type": "code"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "c=[\"red\",\"green\",\"blue\"]\nd=c+['purple']\n\n#x=1\n#x.reverse\nprint(d)\nd.reverse() # destructively reversing (replaces the original )\nprint(d)\nd.append(\"orange\")\nprint(d)\ndiv5=list(range(5,101,5))\nprint(div5)\ndiv5.reverse()\nprint(div5)",
+          "language": ""
+        },
+        {
+          "content": "heights={\"Sengbeng\":64, \"Mary\":65, \"Ganesh\":69}\nprint(heights.keys())\nprint(heights.values())\nprint(heights.items())\nimport string\nprint(string.ascii_lowercase)\nl=list(string.ascii_lowercase)\nprint(l)\ntry:\n  print(l.items())\nexcept:\n  print(\"can't run the items method on a list\")\n#print(l.items())",
+          "language": ""
+        },
+        {
+          "content": "x=[\"abc\",\"bcd\"]\nx.reverse()\nprint(x)",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "662623",
+      "slide_type": "document",
+      "title": "Python Programmer-Defined Objects and Classes",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/119267/slides/662623",
+      "segments": [
+        {
+          "level": 2,
+          "text": "Terminology",
+          "type": "heading"
+        },
+        {
+          "items": [
+            "A class defines a type of object",
+            "An object is an instance of a class",
+            "When defining a class, we define attributes and methods of that class",
+            "An attribute is a variable associated with a class and its objects",
+            "A method is a function associated with a class and its objects"
+          ],
+          "ordered": false,
+          "type": "list"
+        },
+        {
+          "level": 2,
+          "text": "We can define our own classes and then create objects using them.",
+          "type": "heading"
+        },
+        {
+          "level": 2,
+          "text": "Syntax of Programmer-Defined Classes",
+          "type": "heading"
+        },
+        {
+          "items": [
+            "\"Class\" keyword defines a class giving the class name",
+            "Methods are defined as functions indented under the class",
+            "\"Self\" refers to the object itself",
+            "All methods refer to self and optionally some other arguments",
+            "Special \"dunder\" or magic methods begin and end with double underscore"
+          ],
+          "ordered": false,
+          "type": "list"
+        }
+      ],
+      "code_blocks": [],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "662624",
+      "slide_type": "document",
+      "title": "Class methods",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/119267/slides/662624",
+      "segments": [
+        {
+          "items": [
+            "__init__ method is used to create an object",
+            "__str__ method is used to tell the print function how to print an object",
+            "__eq__ tells the == operator when two objects are equal",
+            "Methods are called with dot notation",
+            "Objects are created with the class name and the arguments to __init__"
+          ],
+          "ordered": false,
+          "type": "list"
+        },
+        {
+          "html": "A class for dogs with four methods:",
+          "text": "A class for dogs with four methods:",
+          "type": "paragraph"
+        },
+        {
+          "language": "",
+          "text": "# define a class\nclass Dog:\n  def __init__(self,name,weight,age,got_rabies_shot):\n    self.name=name\n    self.weight=weight\n    self.age=age\n    self.got_rabies_shot=got_rabies_shot\n  def __str__(self):\n    s=self.name+\" is a dog that weighs \"\n    s+=str(self.weight)+\" pounds and is \"\n    s+=str(self.age)+\" years old.\"\n    if self.got_rabies_shot:\n      s+=\"\\nVaccinated for Rabies.\"\n    else:\n      s+=\"\\nNot vaccinated for Rabies.\"\n    return s\n  def have_birthday(self):\n    self.age+=1\n  def compare_age(self, other):\n    if self.age>other.age:\n      print(self.name,\"is older.\")\n    elif self.age<other.age:\n      print(other.name,\"is older.\")\n    else:\n      print(self.name,'and',other.name,'are the same age.')\n\n# create an instance (calls __init__)\ndog1=Dog(\"Fido\",25,1,False)\n# Dog.__init__(dog1,\"Fido\",25,1,False)\n# print out the attributes\nprint(dog1.name)\nprint(dog1.weight)\nprint(dog1.age)\nprint(dog1.got_rabies_shot)\nprint(dog1)\ndog2=Dog(\"Spot\",33,5,False)\nprint(dog2)\ndog2.compare_age(dog1)\nDog.compare_age(dog2,dog1)\ndog1.compare_age(dog2)\nDog.compare_age(dog1,dog2)\n\n\n# change dog1's name\ndog1.name=\"Rover\"\n# print the object (calls the __str__ method)\nprint(dog1)\n# if he has a birthday he will be one year older\ndog1.have_birthday()\nprint(dog1)",
+          "type": "code"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "# define a class\nclass Dog:\n  def __init__(self,name,weight,age,got_rabies_shot):\n    self.name=name\n    self.weight=weight\n    self.age=age\n    self.got_rabies_shot=got_rabies_shot\n  def __str__(self):\n    s=self.name+\" is a dog that weighs \"\n    s+=str(self.weight)+\" pounds and is \"\n    s+=str(self.age)+\" years old.\"\n    if self.got_rabies_shot:\n      s+=\"\\nVaccinated for Rabies.\"\n    else:\n      s+=\"\\nNot vaccinated for Rabies.\"\n    return s\n  def have_birthday(self):\n    self.age+=1\n  def compare_age(self, other):\n    if self.age>other.age:\n      print(self.name,\"is older.\")\n    elif self.age<other.age:\n      print(other.name,\"is older.\")\n    else:\n      print(self.name,'and',other.name,'are the same age.')\n\n# create an instance (calls __init__)\ndog1=Dog(\"Fido\",25,1,False)\n# Dog.__init__(dog1,\"Fido\",25,1,False)\n# print out the attributes\nprint(dog1.name)\nprint(dog1.weight)\nprint(dog1.age)\nprint(dog1.got_rabies_shot)\nprint(dog1)\ndog2=Dog(\"Spot\",33,5,False)\nprint(dog2)\ndog2.compare_age(dog1)\nDog.compare_age(dog2,dog1)\ndog1.compare_age(dog2)\nDog.compare_age(dog1,dog2)\n\n\n# change dog1's name\ndog1.name=\"Rover\"\n# print the object (calls the __str__ method)\nprint(dog1)\n# if he has a birthday he will be one year older\ndog1.have_birthday()\nprint(dog1)",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "662625",
+      "slide_type": "code_challenge",
+      "title": "Exercise: Add a Got_Vaccine Method to the Dog Class",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/119267/slides/662625",
+      "segments": [
+        {
+          "html": "Add a method to the class called \"got_vaccine\" which sets the got_rabies_shot attribute of a dog object to True.",
+          "text": "Add a method to the class called \"got_vaccine\" which sets the got_rabies_shot attribute of a dog object to True.",
+          "type": "paragraph"
+        }
+      ],
+      "code_blocks": [],
+      "links": [],
+      "assets": [],
+      "exercise": {
+        "prompt": "Add a method to the class called \"got_vaccine\" which sets the got_rabies_shot attribute of a dog object to True.",
+        "prompt_segments": [
+          {
+            "html": "Add a method to the class called \"got_vaccine\" which sets the got_rabies_shot attribute of a dog object to True.",
+            "text": "Add a method to the class called \"got_vaccine\" which sets the got_rabies_shot attribute of a dog object to True.",
+            "type": "paragraph"
+          }
+        ],
+        "scaffold": {
+          "content": "class Dog:\n  def __init__(self,name,weight,age,got_rabies_shot):\n    self.name=name\n    self.weight=weight\n    self.age=age\n    self.got_rabies_shot=got_rabies_shot\n  def __str__(self):\n    s=self.name+\" is a dog that weighs \"\n    s+=str(self.weight)+\" pounds and is \"\n    s+=str(self.age)+\" years old.\"\n    if self.got_rabies_shot:\n      s+=\"\\nVaccinated for Rabies.\"\n    else:\n      s+=\"\\nNot vaccinated for Rabies.\"\n    return s\n  def have_birthday(self):\n    self.age+=1\n  def compare_age(self, other):\n    if self.age>other.age:\n      print(self.name,\"is older.\")\n    elif self.age<other.age:\n      print(other.name,\"is older.\")\n    else:\n      print(self.name,'and',other.name,'are the same age.')",
+          "file": "solution.py",
+          "language": "python"
+        },
+        "workspace_files": [
+          {
+            "content": "class Dog:\n  def __init__(self,name,weight,age,got_rabies_shot):\n    self.name=name\n    self.weight=weight\n    self.age=age\n    self.got_rabies_shot=got_rabies_shot\n  def __str__(self):\n    s=self.name+\" is a dog that weighs \"\n    s+=str(self.weight)+\" pounds and is \"\n    s+=str(self.age)+\" years old.\"\n    if self.got_rabies_shot:\n      s+=\"\\nVaccinated for Rabies.\"\n    else:\n      s+=\"\\nNot vaccinated for Rabies.\"\n    return s\n  def have_birthday(self):\n    self.age+=1\n  def compare_age(self, other):\n    if self.age>other.age:\n      print(self.name,\"is older.\")\n    elif self.age<other.age:\n      print(other.name,\"is older.\")\n    else:\n      print(self.name,'and',other.name,'are the same age.')",
+            "language": "python",
+            "name": "solution.py",
+            "role": "Ed staff-visible workspace file"
+          }
+        ],
+        "reference_solution_status": "present",
+        "reference_solution_provenance": "Ed staff edit view sample solution"
+      },
+      "activity_mapping": {
+        "question_path": "questions/InClassExercises/CS1/Week12Lecture13/AddAGotVaccineMethodToTheDogClass/Base",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week12Lecture13AddAGotVaccineMethodToTheDogClass",
+        "deployment_status": "pending"
+      }
+    },
+    {
+      "slide_id": "662627",
+      "slide_type": "code_challenge",
+      "title": "Exercise: Add a \"same_weight\" Method",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/119267/slides/662627",
+      "segments": [
+        {
+          "html": "Add a method to the class called \"same_weight\" which compares two dogs on their weight and returns a boolean value indicating whether their weights are the same.",
+          "text": "Add a method to the class called \"same_weight\" which compares two dogs on their weight and returns a boolean value indicating whether their weights are the same.",
+          "type": "paragraph"
+        }
+      ],
+      "code_blocks": [],
+      "links": [],
+      "assets": [],
+      "exercise": {
+        "prompt": "Add a method to the class called \"same_weight\" which compares two dogs on their weight and returns a boolean value indicating whether their weights are the same.",
+        "prompt_segments": [
+          {
+            "html": "Add a method to the class called \"same_weight\" which compares two dogs on their weight and returns a boolean value indicating whether their weights are the same.",
+            "text": "Add a method to the class called \"same_weight\" which compares two dogs on their weight and returns a boolean value indicating whether their weights are the same.",
+            "type": "paragraph"
+          }
+        ],
+        "scaffold": {
+          "content": "class Dog:\n  def __init__(self,name,weight,age,got_rabies_shot):\n    self.name=name\n    self.weight=weight\n    self.age=age\n    self.got_rabies_shot=got_rabies_shot\n  def __str__(self):\n    s=self.name+\" is a dog that weighs \"\n    s+=str(self.weight)+\" pounds and is \"\n    s+=str(self.age)+\" years old.\"\n    if self.got_rabies_shot:\n      s+=\"\\nVaccinated for Rabies.\"\n    else:\n      s+=\"\\nNot vaccinated for Rabies.\"\n    return s\n  def have_birthday(self):\n    self.age+=1\n  def compare_age(self, other):\n    if self.age>other.age:\n      print(self.name,\"is older.\")\n    elif self.age<other.age:\n      print(other.name,\"is older.\")\n    else:\n      print(self.name,'and',other.name,'are the same age.')",
+          "file": "solution.py",
+          "language": "python"
+        },
+        "workspace_files": [
+          {
+            "content": "class Dog:\n  def __init__(self,name,weight,age,got_rabies_shot):\n    self.name=name\n    self.weight=weight\n    self.age=age\n    self.got_rabies_shot=got_rabies_shot\n  def __str__(self):\n    s=self.name+\" is a dog that weighs \"\n    s+=str(self.weight)+\" pounds and is \"\n    s+=str(self.age)+\" years old.\"\n    if self.got_rabies_shot:\n      s+=\"\\nVaccinated for Rabies.\"\n    else:\n      s+=\"\\nNot vaccinated for Rabies.\"\n    return s\n  def have_birthday(self):\n    self.age+=1\n  def compare_age(self, other):\n    if self.age>other.age:\n      print(self.name,\"is older.\")\n    elif self.age<other.age:\n      print(other.name,\"is older.\")\n    else:\n      print(self.name,'and',other.name,'are the same age.')",
+            "language": "python",
+            "name": "solution.py",
+            "role": "Ed staff-visible workspace file"
+          }
+        ],
+        "reference_solution_status": "present",
+        "reference_solution_provenance": "Ed staff edit view sample solution"
+      },
+      "activity_mapping": {
+        "question_path": "questions/InClassExercises/CS1/Week12Lecture13/AddASameWeightMethod/Base",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week12Lecture13AddASameWeightMethod",
+        "deployment_status": "pending"
+      }
+    },
+    {
+      "slide_id": "662626",
+      "slide_type": "document",
+      "title": "A Point Class",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/119267/slides/662626",
+      "segments": [
+        {
+          "html": "The following is a class that defines points in the X-Y plane.",
+          "text": "The following is a class that defines points in the X-Y plane.",
+          "type": "paragraph"
+        },
+        {
+          "html": "It has four methods:",
+          "text": "It has four methods:",
+          "type": "paragraph"
+        },
+        {
+          "items": [
+            "A \"dunder\" __init__ method which tells how a point is initialized (with x and y values)",
+            "A \"dunder\" __str__ method which tells how a point is printed",
+            "A \"dist_to_origin\" method which tells how far a point is from the origin.",
+            "A \"manhattan_distance\" method which tells the \"Manhattan Distance\" between two points, which is the distance between them using only horizontal and vertical motion in the x-y grid."
+          ],
+          "ordered": false,
+          "type": "list"
+        },
+        {
+          "html": "It also has a \"doc string\" which is the string right below the class definition.",
+          "text": "It also has a \"doc string\" which is the string right below the class definition.",
+          "type": "paragraph"
+        },
+        {
+          "language": "",
+          "text": "class point:\n  '''Defines a point in terms of its x and y coordinates'''\n  def __init__(self, x, y):\n    self.x=x\n    self.y=y\n  def __str__(self):\n    return f\"({self.x}, {self.y})\"\n  def dist_to_origin(self):\n    return (self.x**2+self.y**2)**(0.5)\n  def manhattan_distance(self,other):\n    return abs(self.x-other.x)+abs(self.y-other.y)\n\np1=point(3,2)\nprint(p1)\np2=point(1,1)\nprint(p2)\nprint(p2.dist_to_origin())\nprint(p1.manhattan_distance(p2))\nprint(p2.manhattan_distance(p1))\nprint(point.__doc__)",
+          "type": "code"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "class point:\n  '''Defines a point in terms of its x and y coordinates'''\n  def __init__(self, x, y):\n    self.x=x\n    self.y=y\n  def __str__(self):\n    return f\"({self.x}, {self.y})\"\n  def dist_to_origin(self):\n    return (self.x**2+self.y**2)**(0.5)\n  def manhattan_distance(self,other):\n    return abs(self.x-other.x)+abs(self.y-other.y)\n\np1=point(3,2)\nprint(p1)\np2=point(1,1)\nprint(p2)\nprint(p2.dist_to_origin())\nprint(p1.manhattan_distance(p2))\nprint(p2.manhattan_distance(p1))\nprint(point.__doc__)",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "662628",
+      "slide_type": "code_challenge",
+      "title": "Exercise: Point Class Continued",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/119267/slides/662628",
+      "segments": [
+        {
+          "html": "Add a method to the class that finds the Euclidean distance between two points.",
+          "text": "Add a method to the class that finds the Euclidean distance between two points.",
+          "type": "paragraph"
+        }
+      ],
+      "code_blocks": [],
+      "links": [],
+      "assets": [],
+      "exercise": {
+        "prompt": "Add a method to the class that finds the Euclidean distance between two points.",
+        "prompt_segments": [
+          {
+            "html": "Add a method to the class that finds the Euclidean distance between two points.",
+            "text": "Add a method to the class that finds the Euclidean distance between two points.",
+            "type": "paragraph"
+          }
+        ],
+        "scaffold": {
+          "content": "class point:\n  '''Defines a point in terms of its x and y coordinates'''\n  def __init__(self, x, y):\n    self.x=x\n    self.y=y\n  def __str__(self):\n    return f\"({self.x}, {self.y})\"\n  def dist_to_origin(self):\n    return (self.x**2+self.y**2)**(0.5)\n  def manhattan_distance(self,other):\n    return abs(self.x-other.x)+abs(self.y-other.y)",
+          "file": "solution.py",
+          "language": "python"
+        },
+        "workspace_files": [
+          {
+            "content": "class point:\n  '''Defines a point in terms of its x and y coordinates'''\n  def __init__(self, x, y):\n    self.x=x\n    self.y=y\n  def __str__(self):\n    return f\"({self.x}, {self.y})\"\n  def dist_to_origin(self):\n    return (self.x**2+self.y**2)**(0.5)\n  def manhattan_distance(self,other):\n    return abs(self.x-other.x)+abs(self.y-other.y)",
+            "language": "python",
+            "name": "solution.py",
+            "role": "Ed staff-visible workspace file"
+          }
+        ],
+        "reference_solution_status": "present",
+        "reference_solution_provenance": "Ed staff edit view sample solution"
+      },
+      "activity_mapping": {
+        "question_path": "questions/InClassExercises/CS1/Week12Lecture13/PointClassContinued/Base",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week12Lecture13PointClassContinued",
+        "deployment_status": "pending"
+      }
+    },
+    {
+      "slide_id": "662629",
+      "slide_type": "document",
+      "title": "A Square Class",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/119267/slides/662629",
+      "segments": [
+        {
+          "html": "Following is a a class that defines a square in terms of its lower left corner x, y coordinates and the length of its side.",
+          "text": "Following is a a class that defines a square in terms of its lower left corner x, y coordinates and the length of its side.",
+          "type": "paragraph"
+        },
+        {
+          "html": "It has the __init__ method and one additional method, \"upper_right\", which finds the point at the upper right of the square.",
+          "text": "It has the __init__ method and one additional method, \"upper_right\", which finds the point at the upper right of the square.",
+          "type": "paragraph"
+        },
+        {
+          "html": "It also has a doc string.",
+          "text": "It also has a doc string.",
+          "type": "paragraph"
+        },
+        {
+          "language": "",
+          "text": "class point:\n  '''Defines a point in terms of its x and y coordinates'''\n  def __init__(self, x, y):\n    self.x=x\n    self.y=y\n  def __str__(self):\n    return f\"({self.x}, {self.y})\"\n  def dist_to_origin(self):\n    return (self.x**2+self.y**2)**(0.5)\n  def manhattan_distance(self,other):\n    return abs(self.x-other.x)+abs(self.y-other.y)\n\nclass square:\n  '''Defines a square in terms of the x and y\n  coordinates of its lower left corner and the\n  length of a side'''\n  def __init__(self,llx,lly,side):\n    self.ll=point(llx,lly)\n    self.side=side\n  def upper_right(self):\n    return point(self.ll.x+self.side,self.ll.y+self.side)\n\n\nsq1=square(0,0,2)\nprint(sq1.ll)\nprint(sq1.upper_right())\nprint(square.__doc__)",
+          "type": "code"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "class point:\n  '''Defines a point in terms of its x and y coordinates'''\n  def __init__(self, x, y):\n    self.x=x\n    self.y=y\n  def __str__(self):\n    return f\"({self.x}, {self.y})\"\n  def dist_to_origin(self):\n    return (self.x**2+self.y**2)**(0.5)\n  def manhattan_distance(self,other):\n    return abs(self.x-other.x)+abs(self.y-other.y)\n\nclass square:\n  '''Defines a square in terms of the x and y\n  coordinates of its lower left corner and the\n  length of a side'''\n  def __init__(self,llx,lly,side):\n    self.ll=point(llx,lly)\n    self.side=side\n  def upper_right(self):\n    return point(self.ll.x+self.side,self.ll.y+self.side)\n\n\nsq1=square(0,0,2)\nprint(sq1.ll)\nprint(sq1.upper_right())\nprint(square.__doc__)",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "662630",
+      "slide_type": "code_challenge",
+      "title": "Exercise: Square Class Continued",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/119267/slides/662630",
+      "segments": [
+        {
+          "html": "Write methods that return the area and perimeter of the square.",
+          "text": "Write methods that return the area and perimeter of the square.",
+          "type": "paragraph"
+        }
+      ],
+      "code_blocks": [],
+      "links": [],
+      "assets": [],
+      "exercise": {
+        "prompt": "Write methods that return the area and perimeter of the square.",
+        "prompt_segments": [
+          {
+            "html": "Write methods that return the area and perimeter of the square.",
+            "text": "Write methods that return the area and perimeter of the square.",
+            "type": "paragraph"
+          }
+        ],
+        "scaffold": {
+          "content": "class point:\n  '''Defines a point in terms of its x and y coordinates'''\n  def __init__(self, x, y):\n    self.x=x\n    self.y=y\n  def __str__(self):\n    return f\"({self.x}, {self.y})\"\n  def dist_to_origin(self):\n    return (self.x**2+self.y**2)**(0.5)\n  def manhattan_distance(self,other):\n    return abs(self.x-other.x)+abs(self.y-other.y)\n\nclass square:\n  '''Defines a square in terms of the x and y\n  coordinates of its lower left corner and the\n  length of a side'''\n  def __init__(self,llx,lly,side):\n    self.ll=point(llx,lly)\n    self.side=side\n  def upper_right(self):\n    return point(self.ll.x+self.side,self.ll.y+self.side)",
+          "file": "solution.py",
+          "language": "python"
+        },
+        "workspace_files": [
+          {
+            "content": "class point:\n  '''Defines a point in terms of its x and y coordinates'''\n  def __init__(self, x, y):\n    self.x=x\n    self.y=y\n  def __str__(self):\n    return f\"({self.x}, {self.y})\"\n  def dist_to_origin(self):\n    return (self.x**2+self.y**2)**(0.5)\n  def manhattan_distance(self,other):\n    return abs(self.x-other.x)+abs(self.y-other.y)\n\nclass square:\n  '''Defines a square in terms of the x and y\n  coordinates of its lower left corner and the\n  length of a side'''\n  def __init__(self,llx,lly,side):\n    self.ll=point(llx,lly)\n    self.side=side\n  def upper_right(self):\n    return point(self.ll.x+self.side,self.ll.y+self.side)",
+            "language": "python",
+            "name": "solution.py",
+            "role": "Ed staff-visible workspace file"
+          }
+        ],
+        "reference_solution_status": "present",
+        "reference_solution_provenance": "Ed staff edit view sample solution"
+      },
+      "activity_mapping": {
+        "question_path": "questions/InClassExercises/CS1/Week12Lecture13/SquareClassContinued/Base",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week12Lecture13SquareClassContinued",
+        "deployment_status": "pending"
+      }
+    },
+    {
+      "slide_id": "662631",
+      "slide_type": "code_challenge",
+      "title": "Exercise: Square Class Continued",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/119267/slides/662631",
+      "segments": [
+        {
+          "html": "Write a method that finds the center of the square, returned as a point.",
+          "text": "Write a method that finds the center of the square, returned as a point.",
+          "type": "paragraph"
+        }
+      ],
+      "code_blocks": [],
+      "links": [],
+      "assets": [],
+      "exercise": {
+        "prompt": "Write a method that finds the center of the square, returned as a point.",
+        "prompt_segments": [
+          {
+            "html": "Write a method that finds the center of the square, returned as a point.",
+            "text": "Write a method that finds the center of the square, returned as a point.",
+            "type": "paragraph"
+          }
+        ],
+        "scaffold": {
+          "content": "class point:\n  '''Defines a point in terms of its x and y coordinates'''\n  def __init__(self, x, y):\n    self.x=x\n    self.y=y\n  def __str__(self):\n    return f\"({self.x}, {self.y})\"\n  def dist_to_origin(self):\n    return (self.x**2+self.y**2)**(0.5)\n  def manhattan_distance(self,other):\n    return abs(self.x-other.x)+abs(self.y-other.y)\n\nclass square:\n  '''Defines a square in terms of the x and y\n  coordinates of its lower left corner and the\n  length of a side'''\n  def __init__(self,llx,lly,side):\n    self.ll=point(llx,lly)\n    self.side=side\n  def upper_right(self):\n    return point(self.ll.x+self.side,self.ll.y+self.side)\n",
+          "file": "solution.py",
+          "language": "python"
+        },
+        "workspace_files": [
+          {
+            "content": "class point:\n  '''Defines a point in terms of its x and y coordinates'''\n  def __init__(self, x, y):\n    self.x=x\n    self.y=y\n  def __str__(self):\n    return f\"({self.x}, {self.y})\"\n  def dist_to_origin(self):\n    return (self.x**2+self.y**2)**(0.5)\n  def manhattan_distance(self,other):\n    return abs(self.x-other.x)+abs(self.y-other.y)\n\nclass square:\n  '''Defines a square in terms of the x and y\n  coordinates of its lower left corner and the\n  length of a side'''\n  def __init__(self,llx,lly,side):\n    self.ll=point(llx,lly)\n    self.side=side\n  def upper_right(self):\n    return point(self.ll.x+self.side,self.ll.y+self.side)\n",
+            "language": "python",
+            "name": "solution.py",
+            "role": "Ed staff-visible workspace file"
+          }
+        ],
+        "reference_solution_status": "present",
+        "reference_solution_provenance": "Ed staff edit view sample solution"
+      },
+      "activity_mapping": {
+        "question_path": "questions/InClassExercises/CS1/Week12Lecture13/SquareClassContinued662631/Base",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week12Lecture13SquareClassContinued662631",
+        "deployment_status": "pending"
+      }
+    },
+    {
+      "slide_id": "662633",
+      "slide_type": "code_challenge",
+      "title": "Exercise: Square Class Continued",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/119267/slides/662633",
+      "segments": [
+        {
+          "html": "Add a __str__ method which can be used to print out the description of a square (its lower left corner and side)",
+          "text": "Add a __str__ method which can be used to print out the description of a square (its lower left corner and side)",
+          "type": "paragraph"
+        }
+      ],
+      "code_blocks": [],
+      "links": [],
+      "assets": [],
+      "exercise": {
+        "prompt": "Add a __str__ method which can be used to print out the description of a square (its lower left corner and side)",
+        "prompt_segments": [
+          {
+            "html": "Add a __str__ method which can be used to print out the description of a square (its lower left corner and side)",
+            "text": "Add a __str__ method which can be used to print out the description of a square (its lower left corner and side)",
+            "type": "paragraph"
+          }
+        ],
+        "scaffold": {
+          "content": "class point:\n  '''Defines a point in terms of its x and y coordinates'''\n  def __init__(self, x, y):\n    self.x=x\n    self.y=y\n  def __str__(self):\n    return f\"({self.x}, {self.y})\"\n  def dist_to_origin(self):\n    return (self.x**2+self.y**2)**(0.5)\n  def manhattan_distance(self,other):\n    return abs(self.x-other.x)+abs(self.y-other.y)\n\nclass square:\n  '''Defines a square in terms of the x and y\n  coordinates of its lower left corner and the\n  length of a side'''\n  def __init__(self,llx,lly,side):\n    self.ll=point(llx,lly)\n    self.side=side\n  def upper_right(self):\n    return point(self.ll.x+self.side,self.ll.y+self.side)",
+          "file": "solution.py",
+          "language": "python"
+        },
+        "workspace_files": [
+          {
+            "content": "class point:\n  '''Defines a point in terms of its x and y coordinates'''\n  def __init__(self, x, y):\n    self.x=x\n    self.y=y\n  def __str__(self):\n    return f\"({self.x}, {self.y})\"\n  def dist_to_origin(self):\n    return (self.x**2+self.y**2)**(0.5)\n  def manhattan_distance(self,other):\n    return abs(self.x-other.x)+abs(self.y-other.y)\n\nclass square:\n  '''Defines a square in terms of the x and y\n  coordinates of its lower left corner and the\n  length of a side'''\n  def __init__(self,llx,lly,side):\n    self.ll=point(llx,lly)\n    self.side=side\n  def upper_right(self):\n    return point(self.ll.x+self.side,self.ll.y+self.side)",
+            "language": "python",
+            "name": "solution.py",
+            "role": "Ed staff-visible workspace file"
+          }
+        ],
+        "reference_solution_status": "present",
+        "reference_solution_provenance": "Ed staff edit view sample solution"
+      },
+      "activity_mapping": {
+        "question_path": "questions/InClassExercises/CS1/Week12Lecture13/SquareClassContinued662633/Base",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week12Lecture13SquareClassContinued662633",
+        "deployment_status": "pending"
+      }
+    },
+    {
+      "slide_id": "662634",
+      "slide_type": "code_challenge",
+      "title": "Exercise: Circle Class",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/119267/slides/662634",
+      "segments": [
+        {
+          "html": "Write a class that defines a circle as a point which is the center of the circle and a radius.",
+          "text": "Write a class that defines a circle as a point which is the center of the circle and a radius.",
+          "type": "paragraph"
+        }
+      ],
+      "code_blocks": [],
+      "links": [],
+      "assets": [],
+      "exercise": {
+        "prompt": "Write a class that defines a circle as a point which is the center of the circle and a radius.",
+        "prompt_segments": [
+          {
+            "html": "Write a class that defines a circle as a point which is the center of the circle and a radius.",
+            "text": "Write a class that defines a circle as a point which is the center of the circle and a radius.",
+            "type": "paragraph"
+          }
+        ],
+        "scaffold": {
+          "content": "",
+          "file": "solution.py",
+          "language": "python"
+        },
+        "workspace_files": [
+          {
+            "content": "",
+            "language": "python",
+            "name": "solution.py",
+            "role": "Ed staff-visible workspace file"
+          }
+        ],
+        "reference_solution_status": "present",
+        "reference_solution_provenance": "Ed staff edit view sample solution"
+      },
+      "activity_mapping": {
+        "question_path": "questions/InClassExercises/CS1/Week12Lecture13/CircleClass/Base",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week12Lecture13CircleClass",
+        "deployment_status": "pending"
+      }
+    },
+    {
+      "slide_id": "662635",
+      "slide_type": "code_challenge",
+      "title": "Exercise: Circle Class Continued",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/119267/slides/662635",
+      "segments": [
+        {
+          "html": "Add area and perimeter methods to the class.",
+          "text": "Add area and perimeter methods to the class.",
+          "type": "paragraph"
+        }
+      ],
+      "code_blocks": [],
+      "links": [],
+      "assets": [],
+      "exercise": {
+        "prompt": "Add area and perimeter methods to the class.",
+        "prompt_segments": [
+          {
+            "html": "Add area and perimeter methods to the class.",
+            "text": "Add area and perimeter methods to the class.",
+            "type": "paragraph"
+          }
+        ],
+        "scaffold": {
+          "content": "",
+          "file": "solution.py",
+          "language": "python"
+        },
+        "workspace_files": [
+          {
+            "content": "",
+            "language": "python",
+            "name": "solution.py",
+            "role": "Ed staff-visible workspace file"
+          }
+        ],
+        "reference_solution_status": "present",
+        "reference_solution_provenance": "Ed staff edit view sample solution"
+      },
+      "activity_mapping": {
+        "question_path": "questions/InClassExercises/CS1/Week12Lecture13/CircleClassContinued/Base",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week12Lecture13CircleClassContinued",
+        "deployment_status": "pending"
+      }
+    },
+    {
+      "slide_id": "662636",
+      "slide_type": "code_challenge",
+      "title": "Exercise: Circle Class Continued",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/119267/slides/662636",
+      "segments": [
+        {
+          "html": "Add a method to the circle class to determine whether or not two circles intersect.",
+          "text": "Add a method to the circle class to determine whether or not two circles intersect.",
+          "type": "paragraph"
+        },
+        {
+          "html": "Hint: Two circles intersect if the distance between their centers is less than or equal to the sum of their radii.",
+          "text": "Hint: Two circles intersect if the distance between their centers is less than or equal to the sum of their radii.",
+          "type": "paragraph"
+        }
+      ],
+      "code_blocks": [],
+      "links": [],
+      "assets": [],
+      "exercise": {
+        "prompt": "Add a method to the circle class to determine whether or not two circles intersect.\n\nHint: Two circles intersect if the distance between their centers is less than or equal to the sum of their radii.",
+        "prompt_segments": [
+          {
+            "html": "Add a method to the circle class to determine whether or not two circles intersect.",
+            "text": "Add a method to the circle class to determine whether or not two circles intersect.",
+            "type": "paragraph"
+          },
+          {
+            "html": "Hint: Two circles intersect if the distance between their centers is less than or equal to the sum of their radii.",
+            "text": "Hint: Two circles intersect if the distance between their centers is less than or equal to the sum of their radii.",
+            "type": "paragraph"
+          }
+        ],
+        "scaffold": {
+          "content": "",
+          "file": "solution.py",
+          "language": "python"
+        },
+        "workspace_files": [
+          {
+            "content": "",
+            "language": "python",
+            "name": "solution.py",
+            "role": "Ed staff-visible workspace file"
+          }
+        ],
+        "reference_solution_status": "empty",
+        "reference_solution_provenance": "Ed source contains no reference solution."
+      },
+      "activity_mapping": {
+        "question_path": "questions/InClassExercises/CS1/Week12Lecture13/CircleClassContinued662636/Base",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week12Lecture13CircleClassContinued662636",
+        "deployment_status": "pending"
+      }
+    },
+    {
+      "slide_id": "662637",
+      "slide_type": "document",
+      "title": "A Random Playing Card Class",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/119267/slides/662637",
+      "segments": [
+        {
+          "html": "Following is a class that deals a random card from a deck (with replacement, which means you can get the same card twice.)",
+          "text": "Following is a class that deals a random card from a deck (with replacement, which means you can get the same card twice.)",
+          "type": "paragraph"
+        },
+        {
+          "html": "It has a __str__ method for printing, and methods which tell whether two cards have the same suit or are the same card. The latter is the __eq__ method which defines the \"==\" operator for the class.",
+          "text": "It has a __str__ method for printing, and methods which tell whether two cards have the same suit or are the same card. The latter is the __eq__ method which defines the \"==\" operator for the class.",
+          "type": "paragraph"
+        },
+        {
+          "language": "",
+          "text": "class random_card:\n\n  def __init__(self):\n    suits=(\"Hearts\",\"Diamonds\",\"Spades\",\"Clubs\")\n    values=(\"Ace\",\"2\",\"3\",\"4\",\"5\",\"6\",\"7\",\"8\",\"9\",\"10\",\"Jack\",\"Queen\",\"King\")\n    import random\n    self.suit=random.choice(suits)\n    self.value=random.choice(values)\n  def __str__(self):\n    return self.value+\" of \"+self.suit\n  def same_suit(self,other):\n    return self.suit==other.suit\n  def __eq__(self,other):\n    return (self.suit==other.suit) and (self.value==other.value)\n\ncard1=random_card()\nprint(card1)\ncard2=random_card()\nprint(card2)\nprint(card2.same_suit(card1))\nprint(card1.same_suit(card2))\n\n# Let's see how long it takes to get two cards that are identical.\ndef findMatchingPair():\n  i=0\n  while True:\n    i+=1\n    card1=random_card()\n    card2=random_card()\n    if card1==card2: return i\nprint(f\"It took {findMatchingPair()} pairs of cards to get the same card twice.\")\n\ntotal=0\nfor i in range(1000):\n  total+=findMatchingPair()\naverage=total/1000\nprint(average)\n",
+          "type": "code"
+        }
+      ],
+      "code_blocks": [
+        {
+          "content": "class random_card:\n\n  def __init__(self):\n    suits=(\"Hearts\",\"Diamonds\",\"Spades\",\"Clubs\")\n    values=(\"Ace\",\"2\",\"3\",\"4\",\"5\",\"6\",\"7\",\"8\",\"9\",\"10\",\"Jack\",\"Queen\",\"King\")\n    import random\n    self.suit=random.choice(suits)\n    self.value=random.choice(values)\n  def __str__(self):\n    return self.value+\" of \"+self.suit\n  def same_suit(self,other):\n    return self.suit==other.suit\n  def __eq__(self,other):\n    return (self.suit==other.suit) and (self.value==other.value)\n\ncard1=random_card()\nprint(card1)\ncard2=random_card()\nprint(card2)\nprint(card2.same_suit(card1))\nprint(card1.same_suit(card2))\n\n# Let's see how long it takes to get two cards that are identical.\ndef findMatchingPair():\n  i=0\n  while True:\n    i+=1\n    card1=random_card()\n    card2=random_card()\n    if card1==card2: return i\nprint(f\"It took {findMatchingPair()} pairs of cards to get the same card twice.\")\n\ntotal=0\nfor i in range(1000):\n  total+=findMatchingPair()\naverage=total/1000\nprint(average)\n",
+          "language": ""
+        }
+      ],
+      "links": [],
+      "assets": []
+    },
+    {
+      "slide_id": "662638",
+      "slide_type": "code_challenge",
+      "title": "Exercise: Hand Class",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/119267/slides/662638",
+      "segments": [
+        {
+          "html": "Write a class that creates a hand of n cards using the card class above with no duplicate cards. The hand should be a list of card objects. Then write the __str__ class for printing a hand.",
+          "text": "Write a class that creates a hand of n cards using the card class above with no duplicate cards. The hand should be a list of card objects. Then write the __str__ class for printing a hand.",
+          "type": "paragraph"
+        }
+      ],
+      "code_blocks": [],
+      "links": [],
+      "assets": [],
+      "exercise": {
+        "prompt": "Write a class that creates a hand of n cards using the card class above with no duplicate cards. The hand should be a list of card objects. Then write the __str__ class for printing a hand.",
+        "prompt_segments": [
+          {
+            "html": "Write a class that creates a hand of n cards using the card class above with no duplicate cards. The hand should be a list of card objects. Then write the __str__ class for printing a hand.",
+            "text": "Write a class that creates a hand of n cards using the card class above with no duplicate cards. The hand should be a list of card objects. Then write the __str__ class for printing a hand.",
+            "type": "paragraph"
+          }
+        ],
+        "scaffold": {
+          "content": "",
+          "file": "solution.py",
+          "language": "python"
+        },
+        "workspace_files": [
+          {
+            "content": "",
+            "language": "python",
+            "name": "solution.py",
+            "role": "Ed staff-visible workspace file"
+          }
+        ],
+        "reference_solution_status": "present",
+        "reference_solution_provenance": "Ed staff edit view sample solution"
+      },
+      "activity_mapping": {
+        "question_path": "questions/InClassExercises/CS1/Week12Lecture13/HandClass/Base",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week12Lecture13HandClass",
+        "deployment_status": "pending"
+      }
+    },
+    {
+      "slide_id": "662639",
+      "slide_type": "code_challenge",
+      "title": "Exercise: Hand Class Continued",
+      "source_url": "https://edstem.org/us/courses/62123/lessons/119267/slides/662639",
+      "segments": [
+        {
+          "html": "Write a method for the hand class that uses the card's same_suit method to determine whether a hand is a flush.",
+          "text": "Write a method for the hand class that uses the card's same_suit method to determine whether a hand is a flush.",
+          "type": "paragraph"
+        },
+        {
+          "html": "Then deal 100,000 five-card hands and find the frequency of flushes.",
+          "text": "Then deal 100,000 five-card hands and find the frequency of flushes.",
+          "type": "paragraph"
+        }
+      ],
+      "code_blocks": [],
+      "links": [],
+      "assets": [],
+      "exercise": {
+        "prompt": "Write a method for the hand class that uses the card's same_suit method to determine whether a hand is a flush.\n\nThen deal 100,000 five-card hands and find the frequency of flushes.",
+        "prompt_segments": [
+          {
+            "html": "Write a method for the hand class that uses the card's same_suit method to determine whether a hand is a flush.",
+            "text": "Write a method for the hand class that uses the card's same_suit method to determine whether a hand is a flush.",
+            "type": "paragraph"
+          },
+          {
+            "html": "Then deal 100,000 five-card hands and find the frequency of flushes.",
+            "text": "Then deal 100,000 five-card hands and find the frequency of flushes.",
+            "type": "paragraph"
+          }
+        ],
+        "scaffold": {
+          "content": "",
+          "file": "solution.py",
+          "language": "python"
+        },
+        "workspace_files": [
+          {
+            "content": "",
+            "language": "python",
+            "name": "solution.py",
+            "role": "Ed staff-visible workspace file"
+          }
+        ],
+        "reference_solution_status": "present",
+        "reference_solution_provenance": "Ed staff edit view sample solution"
+      },
+      "activity_mapping": {
+        "question_path": "questions/InClassExercises/CS1/Week12Lecture13/HandClassContinued/Base",
+        "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week12Lecture13HandClassContinued",
+        "deployment_status": "pending"
+      }
+    }
+  ]
+}
