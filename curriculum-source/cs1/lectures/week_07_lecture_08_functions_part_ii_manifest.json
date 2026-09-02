@@ -73,7 +73,7 @@
         }
       ],
       "prairielearn_signpost": {
-        "status": "deployment_pending",
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2727837",
         "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week07Lecture08CustomizeTheHappyBirthdaySong",
         "question_path": "questions/InClassExercises/CS1/Week07Lecture08/CustomizeTheHappyBirthdaySong/Base"
       }
@@ -192,7 +192,7 @@
         }
       ],
       "prairielearn_signpost": {
-        "status": "deployment_pending",
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2727838",
         "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week07Lecture08NewTaxBrackets",
         "question_path": "questions/InClassExercises/CS1/Week07Lecture08/NewTaxBrackets/Base"
       }
@@ -261,7 +261,7 @@
         }
       ],
       "prairielearn_signpost": {
-        "status": "deployment_pending",
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2727835",
         "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week07Lecture08ApproximateTheMathematicalConstantE",
         "question_path": "questions/InClassExercises/CS1/Week07Lecture08/ApproximateTheMathematicalConstantE/Base"
       }
@@ -316,7 +316,7 @@
         }
       ],
       "prairielearn_signpost": {
-        "status": "deployment_pending",
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2727839",
         "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week07Lecture08ReverseAString",
         "question_path": "questions/InClassExercises/CS1/Week07Lecture08/ReverseAString/Base"
       }
@@ -340,7 +340,7 @@
         }
       ],
       "prairielearn_signpost": {
-        "status": "deployment_pending",
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2727840",
         "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week07Lecture08SeparateAStringIntoTwoStrings",
         "question_path": "questions/InClassExercises/CS1/Week07Lecture08/SeparateAStringIntoTwoStrings/Base"
       }
@@ -399,7 +399,7 @@
         }
       ],
       "prairielearn_signpost": {
-        "status": "deployment_pending",
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2727836",
         "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week07Lecture08CallTheFunctionAboveToCreateAGridOfPolygons",
         "question_path": "questions/InClassExercises/CS1/Week07Lecture08/CallTheFunctionAboveToCreateAGridOfPolygons/Base"
       },
@@ -424,7 +424,7 @@
         }
       ],
       "prairielearn_signpost": {
-        "status": "deployment_pending",
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2727834",
         "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week07Lecture08AFunctionToDrawARectangleUsedToDrawAGridOfRectangles",
         "question_path": "questions/InClassExercises/CS1/Week07Lecture08/AFunctionToDrawARectangleUsedToDrawAGridOfRectangles/Base"
       }

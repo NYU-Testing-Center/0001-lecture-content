@@ -290,7 +290,7 @@
         }
       ],
       "prairielearn_signpost": {
-        "status": "deployment_pending",
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2727855",
         "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week09Lecture10RandomIntegers",
         "question_path": "questions/InClassExercises/CS1/Week09Lecture10/RandomIntegers/Base"
       }
@@ -368,7 +368,7 @@
         }
       ],
       "prairielearn_signpost": {
-        "status": "deployment_pending",
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2727854",
         "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week09Lecture10ProfessionalLevel",
         "question_path": "questions/InClassExercises/CS1/Week09Lecture10/ProfessionalLevel/Base"
       }
@@ -511,7 +511,7 @@
         }
       ],
       "prairielearn_signpost": {
-        "status": "deployment_pending",
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2727848",
         "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week09Lecture10FibonacciSequence",
         "question_path": "questions/InClassExercises/CS1/Week09Lecture10/FibonacciSequence/Base"
       }
@@ -531,7 +531,7 @@
         }
       ],
       "prairielearn_signpost": {
-        "status": "deployment_pending",
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2727853",
         "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week09Lecture10Prices",
         "question_path": "questions/InClassExercises/CS1/Week09Lecture10/Prices/Base"
       }
@@ -579,7 +579,7 @@
         }
       ],
       "prairielearn_signpost": {
-        "status": "deployment_pending",
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2727851",
         "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week09Lecture10ListSlicing",
         "question_path": "questions/InClassExercises/CS1/Week09Lecture10/ListSlicing/Base"
       }
@@ -657,7 +657,7 @@
         }
       ],
       "prairielearn_signpost": {
-        "status": "deployment_pending",
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2727849",
         "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week09Lecture10IndexMethod",
         "question_path": "questions/InClassExercises/CS1/Week09Lecture10/IndexMethod/Base"
       }
@@ -716,7 +716,7 @@
         }
       ],
       "prairielearn_signpost": {
-        "status": "deployment_pending",
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2727850",
         "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week09Lecture10Intersection",
         "question_path": "questions/InClassExercises/CS1/Week09Lecture10/Intersection/Base"
       }
@@ -759,7 +759,7 @@
         }
       ],
       "prairielearn_signpost": {
-        "status": "deployment_pending",
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2727856",
         "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week09Lecture10SortingAList",
         "question_path": "questions/InClassExercises/CS1/Week09Lecture10/SortingAList/Base"
       }
@@ -884,7 +884,7 @@
         }
       ],
       "prairielearn_signpost": {
-        "status": "deployment_pending",
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2727852",
         "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week09Lecture10Lottery",
         "question_path": "questions/InClassExercises/CS1/Week09Lecture10/Lottery/Base"
       },

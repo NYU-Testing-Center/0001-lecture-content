@@ -345,7 +345,7 @@
         }
       ],
       "prairielearn_signpost": {
-        "status": "deployment_pending",
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2727831",
         "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week06Lecture07ProductFunction",
         "question_path": "questions/InClassExercises/CS1/Week06Lecture07/ProductFunction/Base"
       }
@@ -365,7 +365,7 @@
         }
       ],
       "prairielearn_signpost": {
-        "status": "deployment_pending",
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2727833",
         "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week06Lecture07RestaurantBillFunction",
         "question_path": "questions/InClassExercises/CS1/Week06Lecture07/RestaurantBillFunction/Base"
       }
@@ -471,7 +471,7 @@
         }
       ],
       "prairielearn_signpost": {
-        "status": "deployment_pending",
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2727825",
         "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week06Lecture07Average",
         "question_path": "questions/InClassExercises/CS1/Week06Lecture07/Average/Base"
       }
@@ -495,7 +495,7 @@
         }
       ],
       "prairielearn_signpost": {
-        "status": "deployment_pending",
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2727827",
         "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week06Lecture07CompoundInterest",
         "question_path": "questions/InClassExercises/CS1/Week06Lecture07/CompoundInterest/Base"
       }
@@ -566,7 +566,7 @@
         }
       ],
       "prairielearn_signpost": {
-        "status": "deployment_pending",
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2727824",
         "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week06Lecture07ADistanceFunction",
         "question_path": "questions/InClassExercises/CS1/Week06Lecture07/ADistanceFunction/Base"
       }
@@ -613,7 +613,7 @@
         }
       ],
       "prairielearn_signpost": {
-        "status": "deployment_pending",
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2727826",
         "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week06Lecture07BooleanFunction",
         "question_path": "questions/InClassExercises/CS1/Week06Lecture07/BooleanFunction/Base"
       }
@@ -664,7 +664,7 @@
         }
       ],
       "prairielearn_signpost": {
-        "status": "deployment_pending",
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2727828",
         "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week06Lecture07ComputingTheAreaAndPerimeterOfACircle",
         "question_path": "questions/InClassExercises/CS1/Week06Lecture07/ComputingTheAreaAndPerimeterOfACircle/Base"
       }
@@ -684,7 +684,7 @@
         }
       ],
       "prairielearn_signpost": {
-        "status": "deployment_pending",
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2727832",
         "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week06Lecture07RandomlyRollingTwoDice",
         "question_path": "questions/InClassExercises/CS1/Week06Lecture07/RandomlyRollingTwoDice/Base"
       }
@@ -704,7 +704,7 @@
         }
       ],
       "prairielearn_signpost": {
-        "status": "deployment_pending",
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2727829",
         "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week06Lecture07ConvertingFromPoundsToKilograms",
         "question_path": "questions/InClassExercises/CS1/Week06Lecture07/ConvertingFromPoundsToKilograms/Base"
       }
@@ -859,7 +859,7 @@
         }
       ],
       "prairielearn_signpost": {
-        "status": "deployment_pending",
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2727830",
         "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week06Lecture07Module",
         "question_path": "questions/InClassExercises/CS1/Week06Lecture07/Module/Base"
       },

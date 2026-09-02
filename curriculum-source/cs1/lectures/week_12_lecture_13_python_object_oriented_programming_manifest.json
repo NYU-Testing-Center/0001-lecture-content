@@ -199,7 +199,7 @@
         }
       ],
       "prairielearn_signpost": {
-        "status": "deployment_pending",
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2727875",
         "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week12Lecture13AddAGotVaccineMethodToTheDogClass",
         "question_path": "questions/InClassExercises/CS1/Week12Lecture13/AddAGotVaccineMethodToTheDogClass/Base"
       }
@@ -219,7 +219,7 @@
         }
       ],
       "prairielearn_signpost": {
-        "status": "deployment_pending",
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2727876",
         "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week12Lecture13AddASameWeightMethod",
         "question_path": "questions/InClassExercises/CS1/Week12Lecture13/AddASameWeightMethod/Base"
       }
@@ -280,7 +280,7 @@
         }
       ],
       "prairielearn_signpost": {
-        "status": "deployment_pending",
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2727882",
         "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week12Lecture13PointClassContinued",
         "question_path": "questions/InClassExercises/CS1/Week12Lecture13/PointClassContinued/Base"
       }
@@ -331,7 +331,7 @@
         }
       ],
       "prairielearn_signpost": {
-        "status": "deployment_pending",
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2727883",
         "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week12Lecture13SquareClassContinued",
         "question_path": "questions/InClassExercises/CS1/Week12Lecture13/SquareClassContinued/Base"
       }
@@ -351,7 +351,7 @@
         }
       ],
       "prairielearn_signpost": {
-        "status": "deployment_pending",
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2727884",
         "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week12Lecture13SquareClassContinued662631",
         "question_path": "questions/InClassExercises/CS1/Week12Lecture13/SquareClassContinued662631/Base"
       }
@@ -371,7 +371,7 @@
         }
       ],
       "prairielearn_signpost": {
-        "status": "deployment_pending",
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2727885",
         "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week12Lecture13SquareClassContinued662633",
         "question_path": "questions/InClassExercises/CS1/Week12Lecture13/SquareClassContinued662633/Base"
       }
@@ -391,7 +391,7 @@
         }
       ],
       "prairielearn_signpost": {
-        "status": "deployment_pending",
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2727877",
         "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week12Lecture13CircleClass",
         "question_path": "questions/InClassExercises/CS1/Week12Lecture13/CircleClass/Base"
       }
@@ -411,7 +411,7 @@
         }
       ],
       "prairielearn_signpost": {
-        "status": "deployment_pending",
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2727878",
         "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week12Lecture13CircleClassContinued",
         "question_path": "questions/InClassExercises/CS1/Week12Lecture13/CircleClassContinued/Base"
       }
@@ -435,7 +435,7 @@
         }
       ],
       "prairielearn_signpost": {
-        "status": "deployment_pending",
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2727879",
         "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week12Lecture13CircleClassContinued662636",
         "question_path": "questions/InClassExercises/CS1/Week12Lecture13/CircleClassContinued662636/Base"
       }
@@ -482,7 +482,7 @@
         }
       ],
       "prairielearn_signpost": {
-        "status": "deployment_pending",
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2727880",
         "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week12Lecture13HandClass",
         "question_path": "questions/InClassExercises/CS1/Week12Lecture13/HandClass/Base"
       }
@@ -506,7 +506,7 @@
         }
       ],
       "prairielearn_signpost": {
-        "status": "deployment_pending",
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2727881",
         "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week12Lecture13HandClassContinued",
         "question_path": "questions/InClassExercises/CS1/Week12Lecture13/HandClassContinued/Base"
       }

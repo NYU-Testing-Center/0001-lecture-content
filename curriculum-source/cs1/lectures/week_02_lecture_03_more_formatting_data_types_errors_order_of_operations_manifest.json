@@ -343,7 +343,7 @@
         }
       ],
       "prairielearn_signpost": {
-        "status": "deployment_pending",
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2727781",
         "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week02Lecture03Quiz652935",
         "question_path": "questions/InClassExercises/CS1/Week02Lecture03/Quiz652935/Base"
       }
@@ -441,7 +441,7 @@
         }
       ],
       "prairielearn_signpost": {
-        "status": "deployment_pending",
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2727782",
         "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week02Lecture03Quiz652939",
         "question_path": "questions/InClassExercises/CS1/Week02Lecture03/Quiz652939/Base"
       }
@@ -471,7 +471,7 @@
         }
       ],
       "prairielearn_signpost": {
-        "status": "deployment_pending",
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2727783",
         "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week02Lecture03Quiz652940",
         "question_path": "questions/InClassExercises/CS1/Week02Lecture03/Quiz652940/Base"
       }
@@ -628,7 +628,7 @@
         }
       ],
       "prairielearn_signpost": {
-        "status": "deployment_pending",
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2727786",
         "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week02Lecture03TotalValueOfChange",
         "question_path": "questions/InClassExercises/CS1/Week02Lecture03/TotalValueOfChange/Base"
       }
@@ -946,7 +946,7 @@
         }
       ],
       "prairielearn_signpost": {
-        "status": "deployment_pending",
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2727784",
         "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week02Lecture03Quiz652991",
         "question_path": "questions/InClassExercises/CS1/Week02Lecture03/Quiz652991/Base"
       }
@@ -966,7 +966,7 @@
         }
       ],
       "prairielearn_signpost": {
-        "status": "deployment_pending",
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2727785",
         "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week02Lecture03TimeCalculation",
         "question_path": "questions/InClassExercises/CS1/Week02Lecture03/TimeCalculation/Base"
       }
@@ -986,7 +986,7 @@
         }
       ],
       "prairielearn_signpost": {
-        "status": "deployment_pending",
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2727780",
         "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week02Lecture03InterestCalculation",
         "question_path": "questions/InClassExercises/CS1/Week02Lecture03/InterestCalculation/Base"
       }

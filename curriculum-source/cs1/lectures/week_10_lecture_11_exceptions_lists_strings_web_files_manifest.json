@@ -150,7 +150,7 @@
         }
       ],
       "prairielearn_signpost": {
-        "status": "deployment_pending",
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2727864",
         "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week10Lecture11TryExcept",
         "question_path": "questions/InClassExercises/CS1/Week10Lecture11/TryExcept/Base"
       }
@@ -226,7 +226,7 @@
         }
       ],
       "prairielearn_signpost": {
-        "status": "deployment_pending",
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2727861",
         "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week10Lecture11GolfScores",
         "question_path": "questions/InClassExercises/CS1/Week10Lecture11/GolfScores/Base"
       }
@@ -559,7 +559,7 @@
         }
       ],
       "prairielearn_signpost": {
-        "status": "deployment_pending",
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2727860",
         "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week10Lecture11File",
         "question_path": "questions/InClassExercises/CS1/Week10Lecture11/File/Base"
       }
@@ -728,7 +728,7 @@
         }
       ],
       "prairielearn_signpost": {
-        "status": "deployment_pending",
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2727857",
         "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week10Lecture11AppendingToAFile",
         "question_path": "questions/InClassExercises/CS1/Week10Lecture11/AppendingToAFile/Base"
       },
@@ -749,7 +749,7 @@
         }
       ],
       "prairielearn_signpost": {
-        "status": "deployment_pending",
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2727862",
         "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week10Lecture11ReadValues",
         "question_path": "questions/InClassExercises/CS1/Week10Lecture11/ReadValues/Base"
       }
@@ -797,7 +797,7 @@
         }
       ],
       "prairielearn_signpost": {
-        "status": "deployment_pending",
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2727859",
         "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week10Lecture11CreateFiles",
         "question_path": "questions/InClassExercises/CS1/Week10Lecture11/CreateFiles/Base"
       }
@@ -818,7 +818,7 @@
         }
       ],
       "prairielearn_signpost": {
-        "status": "deployment_pending",
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2727858",
         "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week10Lecture11Counting",
         "question_path": "questions/InClassExercises/CS1/Week10Lecture11/Counting/Base"
       },
@@ -843,7 +843,7 @@
         }
       ],
       "prairielearn_signpost": {
-        "status": "deployment_pending",
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2727863",
         "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week10Lecture11Stop",
         "question_path": "questions/InClassExercises/CS1/Week10Lecture11/Stop/Base"
       }

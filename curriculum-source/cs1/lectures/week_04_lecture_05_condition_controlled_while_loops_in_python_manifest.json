@@ -122,7 +122,7 @@
         }
       ],
       "prairielearn_signpost": {
-        "status": "deployment_pending",
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2727811",
         "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week04Lecture05UseAWhileLoop",
         "question_path": "questions/InClassExercises/CS1/Week04Lecture05/UseAWhileLoop/Base"
       }
@@ -151,7 +151,7 @@
         }
       ],
       "prairielearn_signpost": {
-        "status": "deployment_pending",
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2727803",
         "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week04Lecture05InfiniteLoops",
         "question_path": "questions/InClassExercises/CS1/Week04Lecture05/InfiniteLoops/Base"
       },
@@ -239,7 +239,7 @@
         }
       ],
       "prairielearn_signpost": {
-        "status": "deployment_pending",
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2727798",
         "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week04Lecture05AWhileLoop",
         "question_path": "questions/InClassExercises/CS1/Week04Lecture05/AWhileLoop/Base"
       }
@@ -268,7 +268,7 @@
         }
       ],
       "prairielearn_signpost": {
-        "status": "deployment_pending",
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2727805",
         "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week04Lecture05Quiz656815",
         "question_path": "questions/InClassExercises/CS1/Week04Lecture05/Quiz656815/Base"
       }
@@ -350,7 +350,7 @@
         }
       ],
       "prairielearn_signpost": {
-        "status": "deployment_pending",
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2727809",
         "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week04Lecture05TestingIfANumberIsPrime",
         "question_path": "questions/InClassExercises/CS1/Week04Lecture05/TestingIfANumberIsPrime/Base"
       }
@@ -413,7 +413,7 @@
         }
       ],
       "prairielearn_signpost": {
-        "status": "deployment_pending",
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2727810",
         "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week04Lecture05TotalPositiveNumbersEnteredWhileIgnoringNegativeNumbers",
         "question_path": "questions/InClassExercises/CS1/Week04Lecture05/TotalPositiveNumbersEnteredWhileIgnoringNegativeNumbers/Base"
       }
@@ -465,7 +465,7 @@
         }
       ],
       "prairielearn_signpost": {
-        "status": "deployment_pending",
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2727806",
         "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week04Lecture05Quiz656822",
         "question_path": "questions/InClassExercises/CS1/Week04Lecture05/Quiz656822/Base"
       }
@@ -512,7 +512,7 @@
         }
       ],
       "prairielearn_signpost": {
-        "status": "deployment_pending",
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2727802",
         "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week04Lecture05FlippingACoin",
         "question_path": "questions/InClassExercises/CS1/Week04Lecture05/FlippingACoin/Base"
       }
@@ -541,7 +541,7 @@
         }
       ],
       "prairielearn_signpost": {
-        "status": "deployment_pending",
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2727807",
         "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week04Lecture05Quiz656825",
         "question_path": "questions/InClassExercises/CS1/Week04Lecture05/Quiz656825/Base"
       }
@@ -619,7 +619,7 @@
         }
       ],
       "prairielearn_signpost": {
-        "status": "deployment_pending",
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2727804",
         "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week04Lecture05MathQuiz",
         "question_path": "questions/InClassExercises/CS1/Week04Lecture05/MathQuiz/Base"
       }
@@ -670,7 +670,7 @@
         }
       ],
       "prairielearn_signpost": {
-        "status": "deployment_pending",
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2727799",
         "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week04Lecture05CumulativeSum",
         "question_path": "questions/InClassExercises/CS1/Week04Lecture05/CumulativeSum/Base"
       }
@@ -733,7 +733,7 @@
         }
       ],
       "prairielearn_signpost": {
-        "status": "deployment_pending",
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2727797",
         "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week04Lecture05ApproximatingE",
         "question_path": "questions/InClassExercises/CS1/Week04Lecture05/ApproximatingE/Base"
       }
@@ -776,7 +776,7 @@
         }
       ],
       "prairielearn_signpost": {
-        "status": "deployment_pending",
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2727800",
         "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week04Lecture05FactorsOfANumber",
         "question_path": "questions/InClassExercises/CS1/Week04Lecture05/FactorsOfANumber/Base"
       }
@@ -796,7 +796,7 @@
         }
       ],
       "prairielearn_signpost": {
-        "status": "deployment_pending",
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2727801",
         "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week04Lecture05FindingPerfectNumbers",
         "question_path": "questions/InClassExercises/CS1/Week04Lecture05/FindingPerfectNumbers/Base"
       }
@@ -855,7 +855,7 @@
         }
       ],
       "prairielearn_signpost": {
-        "status": "deployment_pending",
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2727796",
         "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week04Lecture05ApproximatingASquareRoot",
         "question_path": "questions/InClassExercises/CS1/Week04Lecture05/ApproximatingASquareRoot/Base"
       }
@@ -875,7 +875,7 @@
         }
       ],
       "prairielearn_signpost": {
-        "status": "deployment_pending",
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2727808",
         "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week04Lecture05RaisingANumberToAPower",
         "question_path": "questions/InClassExercises/CS1/Week04Lecture05/RaisingANumberToAPower/Base"
       }

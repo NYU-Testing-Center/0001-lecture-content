@@ -95,7 +95,7 @@
         }
       ],
       "prairielearn_signpost": {
-        "status": "deployment_pending",
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2727868",
         "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week11Lecture12KeepingTrackOfSquaresPlayedInTicTacToe",
         "question_path": "questions/InClassExercises/CS1/Week11Lecture12/KeepingTrackOfSquaresPlayedInTicTacToe/Base"
       }
@@ -127,7 +127,7 @@
         }
       ],
       "prairielearn_signpost": {
-        "status": "deployment_pending",
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2727873",
         "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week11Lecture12ShufflingAList",
         "question_path": "questions/InClassExercises/CS1/Week11Lecture12/ShufflingAList/Base"
       }
@@ -397,7 +397,7 @@
         }
       ],
       "prairielearn_signpost": {
-        "status": "deployment_pending",
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2727865",
         "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week11Lecture12Dictionaries",
         "question_path": "questions/InClassExercises/CS1/Week11Lecture12/Dictionaries/Base"
       }
@@ -417,7 +417,7 @@
         }
       ],
       "prairielearn_signpost": {
-        "status": "deployment_pending",
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2727870",
         "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week11Lecture12NamesAndAges",
         "question_path": "questions/InClassExercises/CS1/Week11Lecture12/NamesAndAges/Base"
       }
@@ -437,7 +437,7 @@
         }
       ],
       "prairielearn_signpost": {
-        "status": "deployment_pending",
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2727869",
         "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week11Lecture12MultiplicationTable",
         "question_path": "questions/InClassExercises/CS1/Week11Lecture12/MultiplicationTable/Base"
       }
@@ -457,7 +457,7 @@
         }
       ],
       "prairielearn_signpost": {
-        "status": "deployment_pending",
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2727874",
         "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week11Lecture12SquareDictionary",
         "question_path": "questions/InClassExercises/CS1/Week11Lecture12/SquareDictionary/Base"
       }
@@ -497,7 +497,7 @@
         }
       ],
       "prairielearn_signpost": {
-        "status": "deployment_pending",
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2727872",
         "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week11Lecture12Shakespeare",
         "question_path": "questions/InClassExercises/CS1/Week11Lecture12/Shakespeare/Base"
       }
@@ -525,7 +525,7 @@
         }
       ],
       "prairielearn_signpost": {
-        "status": "deployment_pending",
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2727867",
         "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week11Lecture12GeorgeClooney",
         "question_path": "questions/InClassExercises/CS1/Week11Lecture12/GeorgeClooney/Base"
       }
@@ -545,7 +545,7 @@
         }
       ],
       "prairielearn_signpost": {
-        "status": "deployment_pending",
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2727866",
         "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week11Lecture12Exercise662596",
         "question_path": "questions/InClassExercises/CS1/Week11Lecture12/Exercise662596/Base"
       }
@@ -585,7 +585,7 @@
         }
       ],
       "prairielearn_signpost": {
-        "status": "deployment_pending",
+        "href": "https://us.prairielearn.com/pl/course_instance/221647/assessment/2727871",
         "assessment_source_path": "courseInstances/OpenPractice/assessments/CS1Week11Lecture12ReadFiles",
         "question_path": "questions/InClassExercises/CS1/Week11Lecture12/ReadFiles/Base"
       },
