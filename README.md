@@ -1,6 +1,6 @@
-# CS0002 Lecture Content
+# CS0001 Lecture Content
 
-This repository contains the lecture materials and presentation runtime for NYU CS0002. It is a lecture-only repository: PrairieLearn questions, solutions, graders, rubrics, and answer keys are intentionally stored elsewhere.
+This repository contains the lecture materials and presentation runtime for NYU CS0001. It is a lecture-only repository: PrairieLearn questions, solutions, graders, rubrics, and answer keys are intentionally stored elsewhere.
 
 ## Open the lectures in GitHub Codespaces
 
