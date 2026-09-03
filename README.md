@@ -11,7 +11,7 @@ This repository contains the lecture materials and presentation runtime for NYU 
    - macOS: `Option` + `R`
    - Windows/Linux: `Alt` + `R`
 
-In RISE, runnable code cells display a Francis-style **Run** button. Clicking it executes the real notebook cell, keeps the output attached to that cell, and does not advance the presentation.
+In RISE, runnable code cells display a **Run** button. Clicking it executes the real notebook cell, keeps the output attached to that cell, and does not advance the presentation.
 
 Amber **🧪 In-Class Exercise** cards are signposts to the corresponding PrairieLearn assessment. Follow the link on the card to complete the activity in PrairieLearn.
 
