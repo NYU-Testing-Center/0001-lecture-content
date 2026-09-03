@@ -302,7 +302,7 @@
       "layout": "nyu-quiz-slide",
       "prairielearn_signpost": {
         "href": "https://us.prairielearn.com/pl/course_instance/231448/assessment/2727962",
-        "location": "Single-exercise PrairieLearn assessment"
+        "location": "Week 1 PrairieLearn assessment (4 questions)"
       },
       "segments": [
         {"type": "prompt", "label": "Question", "text": "Which of the following is not a valid Python variable name?"},
@@ -367,7 +367,7 @@
       "layout": "nyu-activity-slide",
       "prairielearn_signpost": {
         "href": "https://us.prairielearn.com/pl/course_instance/231448/assessment/2727962",
-        "location": "Single-exercise PrairieLearn assessment"
+        "location": "Week 1 PrairieLearn assessment (4 questions)"
       },
       "segments": [
         {"type": "paragraph", "text": "Using four input statements, have the user enter a noun, a verb, an adjective, and an adverb."},
