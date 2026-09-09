@@ -1,0 +1,12 @@
+{
+  "display": "CS 1: Intro to Computer Programming",
+  "short": "CS 1: Intro to Computer Programming",
+  "ed_course_id": 62123,
+  "ed_module": "Lectures",
+  "_notes": {
+    "display": "Small-caps line across the top of every lecture's title card. Use literal characters (·, —), not HTML entities: the converter escapes this string.",
+    "short": "Left-hand label in the persistent footer bar on every slide. The same string as `display` is fine; shorten it if the footer looks crowded on a projector.",
+    "ed_course_id": "Ed course number from the lessons URL: edstem.org/us/courses/<THIS>/lessons. Recorded in each notebook's `dma` metadata block so a future reader can trace a deck back to its source lesson.",
+    "ed_module": "Name of the Ed module the lectures live in, as shown in Ed's sidebar. Used by the scrape script to pick the right module_id; not read by the converter."
+  }
+}
