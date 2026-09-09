@@ -1,7 +1,7 @@
 {
-  "name": "cs1-rise-run-button",
+  "name": "dma-rise-run-button",
   "version": "1.0.0",
-  "description": "A per-cell Run button for RISE slideshows (CS0001 lecture decks).",
+  "description": "A per-cell Run button for RISE slideshows (CS 0479 lecture decks).",
   "keywords": [
     "jupyter",
     "jupyterlab",
@@ -35,9 +35,9 @@
   },
   "jupyterlab": {
     "extension": true,
-    "outputDir": "../jupyter-data/labextensions/cs1-rise-run-button",
+    "outputDir": "../jupyter-data/labextensions/dma-rise-run-button",
     "_build": {
-      "load": "static/remoteEntry.4d87d7ae9c9d14a6fb9d.js",
+      "load": "static/remoteEntry.1ba74c56cbd02a36868d.js",
       "extension": "./extension",
       "style": "./style"
     }

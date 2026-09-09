@@ -1,68 +1,101 @@
-/* Hidden in the ordinary editor; visible only when RISE/reveal is active. */
-.cs1-run-button {
+/*
+ * Run button for RISE slideshows.
+ *
+ * Hidden by default so this extension changes nothing about the ordinary
+ * notebook editor -- JupyterLab already has its own toolbar there, and a second
+ * button would just be clutter. It appears only inside a slideshow.
+ *
+ * `rise-enabled` is the class RISE puts on <body> when the deck starts. The
+ * `:has(.reveal)` rule is a belt-and-braces fallback in case that class ever
+ * changes upstream.
+ */
+
+.dma-run-button {
   display: none;
 }
 
-body.rise-enabled .cs1-run-button,
-body:has(.reveal) .cs1-run-button {
+body.rise-enabled .dma-run-button,
+body:has(.reveal) .dma-run-button {
   display: flex;
+  /*
+   * Repeated here, not just in the base rule below, purely for specificity.
+   * JupyterLab ships `.jp-ThemedContainer button { border-radius:
+   * var(--jp-border-radius) }` -- one class plus one type, which outranks a
+   * bare `.dma-run-button` -- so the base rule lost and the button rendered as
+   * a 2px-rounded square instead of a circle. Prefixing with `body.rise-enabled`
+   * settles it without resorting to !important.
+   */
+  border-radius: 50%;
 }
 
+/* Anchor for the absolutely-positioned button. */
 body.rise-enabled .jp-CodeCell,
 body:has(.reveal) .jp-CodeCell {
   position: relative;
 }
 
+/*
+ * The button sits where the `[ ]:` execution prompt would be -- the same place
+ * Colab and VS Code put it. Hiding the prompt avoids overlapping text; the
+ * button takes over its job of showing that a cell is running (see the busy
+ * state below).
+ */
 body.rise-enabled .jp-CodeCell .jp-InputPrompt,
 body:has(.reveal) .jp-CodeCell .jp-InputPrompt {
   visibility: hidden;
 }
 
-.cs1-run-button {
+.dma-run-button {
   position: absolute;
   top: 5px;
   left: 8px;
   z-index: 12;
+
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
   width: 30px;
   height: 30px;
   padding: 0;
-  border: 1.5px solid #57068c;
+
+  border: 1.5px solid #57068c; /* NYU violet, matching the deck theme */
   border-radius: 50%;
   background: #ffffff;
   color: #57068c;
+
   cursor: pointer;
   transition: background 0.12s ease, color 0.12s ease, transform 0.12s ease;
 }
 
-.cs1-run-button svg {
+.dma-run-button svg {
+  /* Nudge the triangle so it looks centred inside the circle. A square needs
+     no nudge, so the stop state undoes it below. */
   margin-left: 2px;
 }
 
-.cs1-run-button:hover {
+.dma-run-button:hover {
   background: #57068c;
   color: #ffffff;
 }
 
-.cs1-run-button:active {
+.dma-run-button:active {
   transform: scale(0.92);
 }
 
-.cs1-run-button:focus-visible {
+.dma-run-button:focus-visible {
   outline: 2px solid #b26a00;
   outline-offset: 2px;
 }
 
-.cs1-run-button.cs1-run-button-busy {
+/* Busy state: the prompt is hidden, so the button carries the signal. */
+.dma-run-button.dma-run-button-busy {
   cursor: progress;
   border-color: #b26a00;
   color: #b26a00;
-  animation: cs1-run-pulse 1s ease-in-out infinite;
+  animation: dma-run-pulse 1s ease-in-out infinite;
 }
 
-@keyframes cs1-run-pulse {
+@keyframes dma-run-pulse {
   0%,
   100% {
     opacity: 1;
@@ -72,11 +105,36 @@ body:has(.reveal) .jp-CodeCell .jp-InputPrompt {
   }
 }
 
+/*
+ * Stop state: this cell is parked on an `input()` prompt and is what is
+ * blocking the kernel. Red, steady, and unmistakably a stop button -- the pulse
+ * is switched off because a stop glyph already implies "still running", and a
+ * pulsing red circle mid-lecture reads as an error rather than a control.
+ *
+ * Listed after the busy rules on purpose: a waiting cell is also a running one,
+ * so both classes are present and this one has to win.
+ */
+.dma-run-button.dma-run-button-stop {
+  cursor: pointer;
+  border-color: #b3261e;
+  color: #b3261e;
+  animation: none;
+}
+
+.dma-run-button.dma-run-button-stop svg {
+  margin-left: 0;
+}
+
+.dma-run-button.dma-run-button-stop:hover {
+  background: #b3261e;
+  color: #ffffff;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .cs1-run-button {
+  .dma-run-button {
     transition: none;
   }
-  .cs1-run-button.cs1-run-button-busy {
+  .dma-run-button.dma-run-button-busy {
     animation: none;
   }
 }
