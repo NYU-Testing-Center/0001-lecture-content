@@ -1,0 +1,53 @@
+{
+  // Rename this to the course, e.g. "CS 0479 Lectures — JupyterLab + RISE".
+  "name": "CS 1: Intro to Computer Programming — JupyterLab + RISE",
+
+  // A plain Python image, deliberately not an Anaconda/datascience one.
+  // Those bundle the JupyterLab extensions that break RISE (see setup.sh).
+  "image": "mcr.microsoft.com/devcontainers/python:1-3.12-bookworm",
+
+  // JUPYTER_PATH makes the prebuilt per-cell Run button extension discoverable
+  // (Jupyter reads `labextensions/` under each entry on this path).
+  //
+  // Add any connection string a lecture reads from the environment here too,
+  // e.g. "MONGO_HOST": "mongodb://127.0.0.1:27017".
+  "remoteEnv": {
+    "JUPYTER_PATH": "${containerWorkspaceFolder}/tools/jupyter-data"
+  },
+
+  "postCreateCommand": "bash .devcontainer/setup.sh",
+  "postAttachCommand": "bash .devcontainer/start-jupyter.sh",
+
+  // "silent", not "notify", on purpose. VS Code's auto-forward toast and the
+  // Ports tab both surface the port's *internal* address --
+  // `codespaces-<id>:8888` -- and the Ports tab's "Open in Browser" drops the
+  // `?token=`. Either one is a dead link, and both look more official than the
+  // terminal banner, so students click them first. Silencing the toast leaves
+  // the banner printed by start-jupyter.sh as the only link on offer, which is
+  // the one that actually carries the forwarded host and the token.
+  //
+  // The port is still forwarded and still listed under Ports; only the popup
+  // is suppressed. If the banner scrolls away, re-print it with
+  //   bash .devcontainer/start-jupyter.sh
+  "forwardPorts": [8888],
+  "portsAttributes": {
+    "8888": {
+      "label": "JupyterLab (RISE)",
+      "onAutoForward": "silent"
+    }
+  },
+
+  "customizations": {
+    "vscode": {
+      // The Jupyter extension lets you edit the notebooks in the VS Code
+      // editor. It cannot run RISE — presenting happens in JupyterLab on the
+      // forwarded port. See README.
+      "extensions": ["ms-toolsai.jupyter", "ms-python.python"],
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/local/bin/python"
+      }
+    }
+  },
+
+  "remoteUser": "vscode"
+}
