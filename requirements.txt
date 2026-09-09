@@ -1,4 +1,38 @@
-jupyterlab>=4.1.2,<5
+# Runtime for the lecture decks.
+#
+# Deliberately minimal. RISE's standalone app loads every JupyterLab extension
+# it can find, but its own bundle does not provide the `@jupyterlab/console`
+# shared module -- so extensions that need it (jupyter-widgets, pyviz/panel,
+# plotly, variableinspector) fail to initialise and the slideshow renders blank.
+# Do not add any of those here without reading .devcontainer/setup.sh first.
+
+jupyterlab>=4.1.2,<5          # 4.1.2 is RISE's floor
 jupyterlab_rise>=0.43,<0.44
 ipykernel
-nbformat
+
+# ---------------------------------------------------------------------------
+# Libraries the lectures' own code imports.
+#
+# CS 1 needs NOTHING here, and that is a finding rather than an omission. The
+# import scan from docs/3-build-and-verify.md, run over all 347 slides plus the
+# four harvested jupyter notebooks, turns up only the standard library:
+#
+#     random  76 mentions      time    20      math  26
+#     string 132               urllib   3      csv    2
+#
+# All six ship with Python, so numpy / pandas / matplotlib were removed from
+# this file -- they were the kit's generic starting point, and nothing in this
+# course imports them. Every extra package is another thing that can shadow or
+# break RISE in a fresh codespace.
+#
+# Two notes for whoever extends this:
+#
+#   * `turtle` is mentioned twice, both in Lecture 8, and both times the
+#     professor sends students to Replit for it ("Don't run it in Colab; it
+#     won't work in here in Ed"). It needs tkinter and a display, so it will not
+#     work in a codespace either. Do not add it; keep Lecture 8's polygon work
+#     pointing at Replit.
+#   * The 95 untranscribed Ed `code` slides are in-class exercises whose Ed
+#     workspaces are empty, so they contribute no imports. Re-run the scan
+#     anyway if any of them is later reclassified as a live example.
+# ---------------------------------------------------------------------------
