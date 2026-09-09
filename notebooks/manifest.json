@@ -1,0 +1,119 @@
+[
+ {
+  "number": 1,
+  "title": "Week 1, First Lecture: History of Computing; Introduction to Computers",
+  "file": "lecture-01-week-1-first-lecture-history-of-computing-introduction-to-co.ipynb",
+  "cells": 32,
+  "content": 26,
+  "demo": 1,
+  "exercise": 2
+ },
+ {
+  "number": 2,
+  "title": "Week 1, Lecture 2: Functions, Print, Variables, Input, Format",
+  "file": "lecture-02-week-1-lecture-2-functions-print-variables-input-format.ipynb",
+  "cells": 60,
+  "content": 18,
+  "demo": 1,
+  "exercise": 2
+ },
+ {
+  "number": 3,
+  "title": "Week 2, Lecture 3: More Formatting, Data Types, Errors, Order of Operations",
+  "file": "lecture-03-week-2-lecture-3-more-formatting-data-types-errors-order-of-.ipynb",
+  "cells": 76,
+  "content": 36,
+  "demo": 0,
+  "exercise": 7
+ },
+ {
+  "number": 4,
+  "title": "Week 3, Lecture 4: Decision Structures (If--Elif-Else) and Boolean Logic",
+  "file": "lecture-04-week-3-lecture-4-decision-structures-if-elif-else-and-boolea.ipynb",
+  "cells": 46,
+  "content": 18,
+  "demo": 0,
+  "exercise": 9
+ },
+ {
+  "number": 5,
+  "title": "Week 4, Lecture 5: Condition-Controlled (While) Loops in Python",
+  "file": "lecture-05-week-4-lecture-5-condition-controlled-while-loops-in-python.ipynb",
+  "cells": 60,
+  "content": 15,
+  "demo": 2,
+  "exercise": 16
+ },
+ {
+  "number": 6,
+  "title": "Week 5, Lecture 6: \"For\" Loops",
+  "file": "lecture-06-week-5-lecture-6-for-loops.ipynb",
+  "cells": 44,
+  "content": 11,
+  "demo": 1,
+  "exercise": 12
+ },
+ {
+  "number": 7,
+  "title": "Week 6, Lecture 7: Functions",
+  "file": "lecture-07-week-6-lecture-7-functions.ipynb",
+  "cells": 61,
+  "content": 22,
+  "demo": 0,
+  "exercise": 10
+ },
+ {
+  "number": 8,
+  "title": "Week 7, Lecture 8: Functions Part II",
+  "file": "lecture-08-week-7-lecture-8-functions-part-ii.ipynb",
+  "cells": 26,
+  "content": 6,
+  "demo": 0,
+  "exercise": 8
+ },
+ {
+  "number": 9,
+  "title": "Week 8, Lecture 9: String Manipulation",
+  "file": "lecture-09-week-8-lecture-9-string-manipulation.ipynb",
+  "cells": 59,
+  "content": 21,
+  "demo": 0,
+  "exercise": 7
+ },
+ {
+  "number": 10,
+  "title": "Week 9, Lecture 10: Lists",
+  "file": "lecture-10-week-9-lecture-10-lists.ipynb",
+  "cells": 67,
+  "content": 24,
+  "demo": 0,
+  "exercise": 9
+ },
+ {
+  "number": 11,
+  "title": "Week 10, Lecture 11: Exceptions, Lists, Strings, the Web and Files",
+  "file": "lecture-11-week-10-lecture-11-exceptions-lists-strings-the-web-and-file.ipynb",
+  "cells": 45,
+  "content": 22,
+  "demo": 0,
+  "exercise": 8
+ },
+ {
+  "number": 12,
+  "title": "Week 11, Lecture 12: Advanced Lists and Dictionaries",
+  "file": "lecture-12-week-11-lecture-12-advanced-lists-and-dictionaries.ipynb",
+  "cells": 47,
+  "content": 5,
+  "demo": 0,
+  "exercise": 10
+ },
+ {
+  "number": 13,
+  "title": "Week 12, Lecture 13: Python Object-Oriented Programming",
+  "file": "lecture-13-week-12-lecture-13-python-object-oriented-programming.ipynb",
+  "cells": 32,
+  "content": 7,
+  "demo": 0,
+  "exercise": 11
+ }
+]
