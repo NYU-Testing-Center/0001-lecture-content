@@ -1,8 +1,99 @@
-// JupyterLab keyboard overrides for presenting CS0001 lectures.
+// JupyterLab keyboard-shortcut overrides for presenting.
 //
-// Shift+Enter runs the active cell without selecting the next cell, so RISE
-// stays on the current slide while its output appears. Disabling JupyterLab's
-// command-mode Left/Right bindings lets reveal.js advance exactly one slide.
+// Problem: Jupyter's default Shift+Enter is `notebook:run-cell-and-select-next`.
+// The "select next" half is what moves you on -- when the next cell belongs to
+// the next slide, RISE follows the selection and the deck jumps forward the
+// instant the cell finishes. Mid-lecture that means you run a demo and never
+// see its output.
+//
+// Fix: disable that binding and point Shift+Enter at `notebook:run-cell`, which
+// runs the cell and leaves the selection (and therefore the slide) alone.
+// Advance deliberately with Space / Right / Down instead.
+//
+// Ctrl+Enter and Cmd+Enter are already bound to `notebook:run-cell` by default,
+// so they behave this way with or without this file.
+//
+// Installed by present.sh (into its isolated config dir) and by
+// .devcontainer/setup.sh (into the container's ~/.jupyter). Delete either copy
+// to get stock Shift+Enter behaviour back.
+//
+// Second problem, same cause: Left/Right arrows skipped whole slides.
+//
+// JupyterLab binds ArrowRight to `notebook:move-cursor-heading-below-or-expand`
+// (and ArrowLeft to the -above- variant) in command mode. Those jump the active
+// cell to the next/previous *markdown heading*, and RISE follows the active
+// cell to whichever slide it lives on. Content slides start with a `##`
+// heading, but the exercise cards and live-example banners are pure HTML with no
+// heading -- so the arrows leapt straight over them. Measured on Lecture 4:
+// one keypress went from slide 20 to 22, skipping the "Fruits Beginning with a
+// Vowel" exercise entirely. `Space` was unaffected because it never reaches
+// Lumino's keymap.
+//
+// Disabling both lets reveal.js handle the arrows natively, so they step one
+// slide at a time like Space does.
+//
+// Third problem, same cause: typing into an `input()` prompt loses characters.
+//
+// CS 1 is full of `input()` -- Lecture 5's "A Simple While Loop" asks the class
+// to type "yes" to end the loop -- and the box would only ever receive "ye".
+//
+// RISE contributes its own shortcuts (schemas/jupyterlab-rise/plugin.json), and
+// unlike JupyterLab's own single-letter notebook shortcuts, their selector is
+//
+//     .lm-Widget.reveal .jp-mod-commandMode
+//
+// with NO `:not(.jp-mod-readWrite)` guard. While a stdin prompt is focused the
+// notebook node carries BOTH `jp-mod-commandMode` and `jp-mod-readWrite`, so
+// JupyterLab's own letter shortcuts (A B C J K M R V X Y Z, 1-6) correctly stand
+// down -- which is why "y" and "e" arrive -- but every RISE letter matches and
+// Lumino claims it at document capture, calling preventDefault() and
+// stopPropagation() before the character can reach the input. Measured: the
+// keydown is un-prevented at window-capture and already prevented at
+// document-capture, and focus drops from the input to the cell.
+//
+// So each of these letters is unusable in any typed answer:
+//
+//     S  RISE:chalkboard-colorNext          T  RISE:notes-open
+//     W  RISE:toggleOverview                Q  RISE:chalkboard-colorPrev
+//     F  RISE:fullscreenHelp
+//
+// plus the punctuation ones, which matter because CS 1 asks for negative and
+// comma-grouped numbers: minus, =, [, ], \, and "," .
+//
+// `T` was also the mystery "a reveal.js window just popped up mid-lecture":
+// RISE:notes-open calls window.open("about:blank", "reveal.js - Notes"), and on
+// every later press it just re-focuses that window, so it keeps stealing the
+// screen.
+//
+// Disabling them costs almost nothing here: `enable_chalkboard` is false (the
+// RISE default, and this repo does not turn it on), so the five chalkboard
+// bindings are dead keys that only eat typing. The overview grid is still
+// reachable from RISE's own on-screen buttons, and Escape/`?` still work.
+//
+// Deliberately KEPT: Alt+R (start/stop), Shift+Enter (run), Shift+I/B/G (set
+// slide type), Home/End, and `?` (help) -- none is a letter a student types
+// into a prompt.
+//
+// Why the letters had to go, concretely: Lectures 2, 4, 7 and 12 ask for a
+// NAME, a STRING and a CITY NAME ("What is your name?", "Please enter a
+// string:", "Enter a city name"). Any of s/t/w/q/f is ordinary in an answer --
+// "Stewart", "Seattle", "Quinn" -- so those keys have to reach the box. The
+// `minus` binding matters for the same reason: Lecture 4 asks for a Fahrenheit
+// temperature, which can be negative.
+//
+// REBOUND rather than lost. Two of the disabled commands are worth keeping for
+// a presenter, so they move to Alt combinations, which no typed answer can
+// produce. Note that reveal.js's own overview keys are NOT a fallback: RISE
+// passes reveal a `keyboard` config that nulls keyCode 27 (Escape) and 79 (O)
+// as well as 87 (W), so `RISE:toggleOverview` was the only way in and
+// disabling it bare left no way at all.
+//
+//     Alt+W   slide overview       (was W)
+//     Alt+T   speaker-notes window (was T)
+//     Alt+,   show/hide RISE's own on-screen buttons (was ,)
+//
+// The rest are chalkboard commands, and `enable_chalkboard` is false, so there
+// is nothing behind them to reach.
 {
   "shortcuts": [
     {
@@ -32,6 +123,47 @@
       "command": "notebook:run-cell",
       "keys": ["Shift Enter"],
       "selector": ".jp-Notebook.jp-mod-commandMode:not(.jp-mod-readWrite) :focus"
-    }
+    },
+
+    { "command": "RISE:chalkboard-colorNext",
+      "keys": ["S"], "selector": ".lm-Widget.reveal .jp-mod-commandMode",
+      "disabled": true },
+    { "command": "RISE:notes-open",
+      "keys": ["T"], "selector": ".lm-Widget.reveal .jp-mod-commandMode",
+      "disabled": true },
+    { "command": "RISE:toggleOverview",
+      "keys": ["W"], "selector": ".lm-Widget.reveal .jp-mod-commandMode",
+      "disabled": true },
+    { "command": "RISE:chalkboard-colorPrev",
+      "keys": ["Q"], "selector": ".lm-Widget.reveal .jp-mod-commandMode",
+      "disabled": true },
+    { "command": "RISE:fullscreenHelp",
+      "keys": ["F"], "selector": ".lm-Widget.reveal .jp-Notebook:focus",
+      "disabled": true },
+    { "command": "RISE:chalkboard-clear",
+      "keys": ["minus"], "selector": ".lm-Widget.reveal .jp-mod-commandMode",
+      "disabled": true },
+    { "command": "RISE:chalkboard-reset",
+      "keys": ["="], "selector": ".lm-Widget.reveal .jp-mod-commandMode",
+      "disabled": true },
+    { "command": "RISE:chalkboard-toggleChalkboard",
+      "keys": ["["], "selector": ".lm-Widget.reveal .jp-mod-commandMode",
+      "disabled": true },
+    { "command": "RISE:chalkboard-toggleNotesCanvas",
+      "keys": ["]"], "selector": ".lm-Widget.reveal .jp-mod-commandMode",
+      "disabled": true },
+    { "command": "RISE:chalkboard-download",
+      "keys": ["\\"], "selector": ".lm-Widget.reveal .jp-mod-commandMode",
+      "disabled": true },
+    { "command": "RISE:toggleAllRiseButtons",
+      "keys": [","], "selector": ".lm-Widget.reveal .jp-mod-commandMode",
+      "disabled": true },
+
+    { "command": "RISE:toggleOverview",
+      "keys": ["Alt W"], "selector": ".lm-Widget.reveal .jp-mod-commandMode" },
+    { "command": "RISE:notes-open",
+      "keys": ["Alt T"], "selector": ".lm-Widget.reveal .jp-mod-commandMode" },
+    { "command": "RISE:toggleAllRiseButtons",
+      "keys": ["Alt ,"], "selector": ".lm-Widget.reveal .jp-mod-commandMode" }
   ]
 }
