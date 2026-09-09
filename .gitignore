@@ -1,0 +1,21 @@
+# macOS
+*.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+
+# Jupyter Notebook
+.ipynb_checkpoints
+.jupyter-rise/
+.jupyter_runtime/
+.jupyter-workspaces/
+
+# Codespaces/Jupyter runtime output
+.devcontainer/logs/
+
+# JupyterLab extension build scratch (the prebuilt bundle is intentional)
+node_modules/
+.npm/
+tools/rise-run-button/lib/
+tools/rise-run-button/*.tsbuildinfo
