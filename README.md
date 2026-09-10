@@ -91,44 +91,21 @@ To close it, click the **×** on the slideshow panel's tab.
 
 ## 3. Moving around a slideshow
 
-A deck is laid out in **two directions**, and the arrow keys do different jobs.
+A deck is one straight sequence. There is no second direction to learn.
 
 | Key | What it does |
 | --- | --- |
-| `→` / `←` | Move **forward / back one slide** — the main way through a lecture |
-| `↓` / `↑` | Move **down into / back up out of** a live example's individual steps |
-| `Space` / `Shift`+`Space` | Walks the whole deck in order, including every step of every live example |
-
-### Why there are two directions
-
-Most of a lecture is a straight left-to-right sequence, so `→` is all you need:
+| `→` / `←` | Move **forward / back one slide** |
+| `Space` / `Shift`+`Space` | Exactly the same thing, if you prefer a bigger key |
 
 ```
 →   →   →   →   →   →
 [1] [2] [3] [4] [5] [6]  …
 ```
 
-A few live examples are long enough that their steps are stacked **underneath**
-one slide instead of stretching the deck sideways. `→` treats the whole example
-as a single stop and moves past it; `↓` walks through its steps:
-
-```
-→        →                  →
-[4]     [5] LIVE EXAMPLE   [6]
-         │
-         ↓  step 1
-         ↓  step 2
-         ↓  step 3
-```
-
-So if you land on a 📈 `LIVE EXAMPLE` slide, press `↓` to work through it, then
-`→` to carry on with the lecture. Only one lecture really uses this — **Lecture 2
-(More Printing)**, whose example runs to 5 steps. Lecture 6's has a single step,
-and the live examples in Lectures 1 and 5 sit on one slide each, so `→` is enough
-for those.
-
-**If you'd rather not think about it, use `Space`.** It goes through everything
-in order and never skips a step, so you can hold to one key for a whole lecture.
+That includes live examples: a 📈 `LIVE EXAMPLE` banner is followed by its steps
+as ordinary slides, one per press, each showing its explanation and the code it
+describes together.
 
 If a slide has more content than fits on screen, just **scroll** — the slide
 scrolls on its own.
@@ -164,9 +141,9 @@ you can't affect anyone else.
 **Content slides** — the material itself: explanations, diagrams, formulas, and
 code you can run.
 
-**Live examples** — a teal banner marked 📈 `LIVE EXAMPLE`, followed by a working
-notebook. These are meant to be run. Press `↓` to step down through them, then
-`→` to move on (see section 3).
+**Live examples** — a teal banner marked 📈 `LIVE EXAMPLE`, followed by a worked
+notebook broken into steps, one per slide. These are meant to be run: press `→`
+through them like any other slide.
 
 **In-class exercises** — an amber card marked 🧪 `IN-CLASS EXERCISE`:
 

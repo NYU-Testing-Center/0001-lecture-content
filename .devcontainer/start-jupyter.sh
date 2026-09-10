@@ -139,7 +139,7 @@ cat <<BANNER
 
   Then:  press  Alt+R  (Option+R on macOS) to enter the slideshow.
 
-         Space / →   next slide        ↓        sub-slides in a demo
+         Space / →   next slide        ←        previous slide
          Shift+Enter run a code cell   Alt+R    leave the slideshow
 
          Code cells that ask a question with input() work normally: click the
