@@ -4,10 +4,10 @@ Lecture notebooks for the course. Each lecture is a Jupyter notebook you can
 **read, run, and watch as a slideshow**.
 
 ```
-notebooks/lecture-01-week-1-first-lecture-history-of-computing-introduction-to-co.ipynb
-notebooks/lecture-02-week-1-lecture-2-functions-print-variables-input-format.ipynb
+notebooks/lecture-01-history-of-computing-introduction-to-computers.ipynb
+notebooks/lecture-02-functions-print-variables-input-format.ipynb
 …
-notebooks/lecture-13-week-12-lecture-13-python-object-oriented-programming.ipynb
+notebooks/lecture-13-python-object-oriented-programming.ipynb
 ```
 
 ---
