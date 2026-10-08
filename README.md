@@ -251,7 +251,6 @@ Keep in mind:
   want to keep them.
 - **Save your own copy** with **File → Save a copy in Drive** if you want to
   keep your edits; the copy opened from GitHub is not saved.
-- **The slideshow view** needs a codespace or your own machine, and some
-  pictures stored as image files in the repository may not show up in Colab.
+- **The slideshow view** needs a codespace or your own machine.
 
 ---
