@@ -233,4 +233,25 @@ slideshow comes up blank. Anaconda installations ship these by default, which is
 why both the codespace and `present.sh` use a clean environment instead. If
 you're on Anaconda and hit a blank slideshow, use `present.sh` or the codespace.
 
+## 8. Using Google Colab instead
+
+Every lecture has an **Open in Colab** button just below its title. Click it to
+open that lecture in [Google Colab](https://colab.research.google.com), with
+nothing to install.
+
+Lecture 11 reads a data file (`worldseries.txt`), so it also has a **Colab
+setup** cell right after the button. **Run it first:** it downloads this
+repository into Colab (a few seconds) so the lecture finds the file. Outside
+Colab the cell does nothing.
+
+Keep in mind:
+
+- **Colab forgets everything when the session ends.** Run the setup cell again
+  each time you reopen Lecture 11, and download any files you create if you
+  want to keep them.
+- **Save your own copy** with **File → Save a copy in Drive** if you want to
+  keep your edits; the copy opened from GitHub is not saved.
+- **The slideshow view** needs a codespace or your own machine, and some
+  pictures stored as image files in the repository may not show up in Colab.
+
 ---
